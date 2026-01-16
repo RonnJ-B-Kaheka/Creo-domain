@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Creo Media</title>
+
+    <!-- 
+    - favicon
+  -->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/unified-hero.css">
+    <link rel="stylesheet" href="./assets/css/wow.css">
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- 
+    - preload images
+  -->
+    <link rel="preload" as="image" href="./assets/images/hero-banner.png">
+
+</head>
+
+<body id="top">
+
+    <!-- GRAIN OVERLAY -->
+    <div class="grain-overlay"></div>
+
+    <!-- 
+    - #HEADER
+  -->
+
+    <header class="header" data-header>
+        <div class="container">
+
+            <a href="index.html" class="logo">Creo Media</a>
+
+            <nav class="navbar" data-navbar>
+
+                <div class="wrapper">
+                    <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+                        <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+                    </button>
+                </div>
+
+                <ul class="navbar-list">
+
+                    <li class="navbar-item">
+                        <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="service.html" class="navbar-link" data-nav-link>Services</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="about.html" class="navbar-link active" data-nav-link>About</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="portfolio.html" class="navbar-link" data-nav-link>Portfolio</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+                <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+            </button>
+
+            <a href="contact.html" class="btn btn-primary has-before has-after">Let's Talk 👋</a>
+
+            <div class="overlay" data-nav-toggler data-overlay></div>
+
+        </div>
+    </header>
+
+
+    <main>
+        <article>
+
+            <!-- 
+        - #HERO
+      -->
+
+            <!-- UNIFIED HERO -->
+            <section class="unified-hero" id="home" aria-label="hero">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80" class="hero-bg-layer" alt="Team Collaboration">
+                <div class="hero-gradient-overlay"></div>
+
+                <div class="hero-center-content">
+                    <h1 class="hero-mega-title glitch-text glitch-hover" data-text="BEYOND CONTENT" data-value="BEYOND CONTENT">BEYOND CONTENT
+                    </h1>
+                    <p class="hero-subtitle">Premium Storytellers</p>
+                    <p class="hero-description">
+                        Creo Media is an elite creative collective. We blend data-driven strategy with cinematic production to move the needle for brands that want to lead, not follow.
+                    </p>
+                    <div class="hero-cta-group">
+                        <a href="#vision" class="hero-btn-primary">Our Vision</a>
+                        <a href="contact.html" class="hero-btn-secondary">
+                            <ion-icon name="mail-outline"></ion-icon>
+                            Partner With Us
+                        </a>
+                    </div>
+                </div>
+
+                <div class="scroll-indicator">
+                    <span>Scroll</span>
+                    <div class="scroll-arrow"></div>
+                </div>
+            </section>
+
+            <!-- 
+                - #TRUST WALL
+            -->
+            <section class="section trust-wall" style="padding-block: 40px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <div class="container">
+                    <p class="section-subtitle text-center" style="margin-bottom: 30px; opacity: 0.5;">TRUSTED BY GLOBAL INNOVATORS
+                    </p>
+                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; filter: grayscale(1) brightness(2); opacity: 0.6;">
+                        <!-- Placeholder logos using text for now, could be replaced with images later -->
+                        <div style="font-weight: 900; font-size: 1.5rem; letter-spacing: 2px;">TECHCORP</div>
+                        <div style="font-weight: 900; font-size: 1.5rem; letter-spacing: 2px;">VIBE_MEDIA</div>
+                        <div style="font-weight: 900; font-size: 1.5rem; letter-spacing: 2px;">LUMINA</div>
+                        <div style="font-weight: 900; font-size: 1.5rem; letter-spacing: 2px;">APEX_GLOBAL</div>
+                        <div style="font-weight: 900; font-size: 1.5rem; letter-spacing: 2px;">ZION_STUDIOS</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 
+        - #VISION SECTION
+      -->
+            <section class="section about-vision" id="vision" aria-label="vision">
+                <div class="container">
+                    <div class="grid-list">
+                        <div class="glass-card" style="padding: 40px; text-align: center;">
+                            <h2 class="h2 glitch-text" data-text="THE MISSION">THE <span class="has-before">MISSION</span></h2>
+                            <p class="section-text" style="font-size: 1.8rem; margin-top: 20px;">
+                                To bridge the gap between African creativity and global standards, delivering unmatched value through every pixel and every frame.
+                            </p>
+                        </div>
+                        <div class="glass-card" style="padding: 40px; text-align: center;">
+                            <h2 class="h2 glitch-text" data-text="THE VISION">THE <span class="has-before">VISION</span>
+                            </h2>
+                            <p class="section-text" style="font-size: 1.8rem; margin-top: 20px;">
+                                To become the most influential content production powerhouse in Africa, defining the modern digital landscape.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 
+                - #CORE VALUES
+            -->
+            <section class="section values" aria-label="values" style="background: var(--bg-secondary);">
+                <div class="container">
+                    <p class="section-subtitle has-before text-center">Our DNA</p>
+                    <h2 class="h2 section-title text-center">CORED <span class="has-before">VALUES</span></h2>
+                    <div class="grid-list" style="margin-top: 60px;">
+                        <div class="glass-card value-card" style="padding: 40px; border-left: 4px solid var(--hot-pink);">
+                            <h3 class="h3" style="color: var(--white); margin-bottom: 15px;">Craft Over Volume</h3>
+                            <p class="card-text">We don't churn. We create. Every project is a bespoke masterpiece designed for longevity and impact.</p>
+                        </div>
+                        <div class="glass-card value-card" style="padding: 40px; border-left: 4px solid var(--cyan);">
+                            <h3 class="h3" style="color: var(--white); margin-bottom: 15px;">Radical Transparency</h3>
+                            <p class="card-text">Direct lines of communication. No fluff. No corporate jargon. Just raw data and honest feedback.</p>
+                        </div>
+                        <div class="glass-card value-card" style="padding: 40px; border-left: 4px solid #FFE600;">
+                            <h3 class="h3" style="color: var(--white); margin-bottom: 15px;">Speed as a Feature</h3>
+                            <p class="card-text">Culture moves fast. We move faster. High-velocity delivery without ever compromising on elite quality.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- 
+                - #LEADERSHIP
+            -->
+            <section class="section leadership" id="leadership" aria-label="leadership">
+                <div class="container">
+                    <p class="section-subtitle has-before text-center">Elite Minds</p>
+                    <h2 class="h2 section-title text-center">MEET OUR <span class="has-before">LEADERS</span></h2>
+
+                    <div class="grid-list" style="margin-top: 60px;">
+                        <div class="leader-card glass-card">
+                            <figure class="leader-banner" style="border: 3px solid #FF0000; overflow: hidden;">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Founder & Director" class="img-cover">
+                            </figure>
+                            <div class="leader-content" style="padding: 25px; text-align: center;">
+                                <h3 class="h3 leader-name">Sabelo M.</h3>
+                                <p class="leader-role" style="color: var(--hot-pink); font-weight: 700; margin-bottom: 10px;">Executive Director
+                                </p>
+                                <p class="card-text">Visionary strategist with 15+ years in African media and digital transformation.
+                                </p>
+                                <a href="#" class="social-link" style="margin-top: 15px; display: inline-block;">
+                                    <ion-icon name="logo-linkedin"></ion-icon>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="leader-card glass-card">
+                            <figure class="leader-banner" style="border: 3px solid #FF0000; overflow: hidden;">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop" alt="Creative Lead" class="img-cover">
+                            </figure>
+                            <div class="leader-content" style="padding: 25px; text-align: center;">
+                                <h3 class="h3 leader-name">Tanya L.</h3>
+                                <p class="leader-role" style="color: var(--cyan); font-weight: 700; margin-bottom: 10px;">Creative Lead</p>
+                                <p class="card-text">Award-winning director specializing in cinematic storytelling and brand identity.</p>
+                                <a href="#" class="social-link" style="margin-top: 15px; display: inline-block;">
+                                    <ion-icon name="logo-linkedin"></ion-icon>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="leader-card glass-card">
+                            <figure class="leader-banner" style="border: 3px solid #FF0000; overflow: hidden;">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop" alt="Head of Digital" class="img-cover">
+                            </figure>
+                            <div class="leader-content" style="padding: 25px; text-align: center;">
+                                <h3 class="h3 leader-name">Jared K.</h3>
+                                <p class="leader-role" style="color: #FFE600; font-weight: 700; margin-bottom: 10px;">
+                                    Head of Digital</p>
+                                <p class="card-text">Data-obsessed technologist building the future of African e-commerce and web ops.</p>
+                                <a href="#" class="social-link" style="margin-top: 15px; display: inline-block;">
+                                    <ion-icon name="logo-linkedin"></ion-icon>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 
+                - #JOURNEY TIMELINE
+            -->
+            <section class="section journey" id="journey" aria-label="journey" style="background: var(--bg-secondary);">
+                <div class="container">
+                    <p class="section-subtitle has-before text-center">Our Heritage</p>
+                    <h2 class="h2 section-title text-center">THE <span class="has-before">JOURNEY</span></h2>
+
+                    <div class="timeline" style="max-width: 800px; margin: 60px auto 0; position: relative; padding-left: 30px;">
+                        <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--hot-pink); opacity: 0.3;">
+                        </div>
+
+                        <div class="timeline-item" style="margin-bottom: 40px; position: relative;">
+                            <div style="position: absolute; left: -36px; top: 0; width: 14px; height: 14px; border-radius: 50%; background: var(--hot-pink); box-shadow: 0 0 10px var(--hot-pink);">
+                            </div>
+                            <h4 class="h4" style="color: var(--hot-pink);">2019 — THE SPARK</h4>
+                            <p class="card-text">Creo Media is founded in Cape Town with a single camera and a massive vision for African storytelling.</p>
+                        </div>
+
+                        <div class="timeline-item" style="margin-bottom: 40px; position: relative;">
+                            <div style="position: absolute; left: -36px; top: 0; width: 14px; height: 14px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 10px var(--cyan);">
+                            </div>
+                            <h4 class="h4" style="color: var(--cyan);">2021 — DIGITAL EXPANSION</h4>
+                            <p class="card-text">Launch of our Digital Ops pillar, helping local brands scale to international markets via elite web strategy.</p>
+                        </div>
+
+                        <div class="timeline-item" style="position: relative;">
+                            <div style="position: absolute; left: -36px; top: 0; width: 14px; height: 14px; border-radius: 50%; background: #FFE600; box-shadow: 0 0 10px #FFE600;">
+                            </div>
+                            <h4 class="h4" style="color: #FFE600;">2024 — GLOBAL STANDARDS</h4>
+                            <p class="card-text">Establishment of our multi-cam podcast studios and event activation wings. The mission continues.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 
+        - #CONTACT (CTA)
+      -->
+            <section class="section contact" id="contact" aria-label="contact">
+                <div class="container">
+                    <p class="section-subtitle has-before text-center">Ready To Scale?</p>
+                    <h2 class="h2 section-title text-center glitch-text glitch-hover" data-text="START THE JOURNEY">
+                        START THE <span class="has-before">JOURNEY</span></h2>
+                    <div style="display: flex; justify-content: center; margin-top: 30px;">
+                        <a href="contact.html" class="hero-btn-primary">Get A Quote</a>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+
+    <!-- 
+    - #FOOTER
+  -->
+
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer-top section">
+
+                <div class="footer-brand">
+
+                    <p class="footer-list-title">About Creo Media</p>
+
+                    <p class="footer-text">
+                        Premium African creative agency delivering global standards in content, digital, events, and podcasting.
+                    </p>
+
+                    <ul class="social-list">
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-youtube"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-twitter"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </a>
+                        </li>
+
+
+
+                    </ul>
+
+                </div>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <p class="footer-list-title">Usefull Links</p>
+                    </li>
+
+                    <li>
+                        <a href="contact.html" class="footer-link">Contact us</a>
+                    </li>
+
+                    <li>
+                        <a href="service.html" class="footer-link">Services</a>
+                    </li>
+
+                    <li>
+                        <a href="about.html" class="footer-link">About Us</a>
+                    </li>
+
+                    <li>
+                        <a href="portfolio.html" class="footer-link">Portfolio</a>
+                    </li>
+
+                </ul>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <p class="footer-list-title">Community</p>
+                    </li>
+
+                    <li>
+                        <a href="./help.html" class="footer-link">Help Center</a>
+                    </li>
+
+                    <li>
+                        <a href="./partners.html" class="footer-link">Partners</a>
+                    </li>
+
+                    <li>
+                        <a href="./suggestions.html" class="footer-link">Suggestions</a>
+                    </li>
+
+
+                </ul>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <p class="footer-list-title">Social Stream</p>
+                    </li>
+
+                    <li>
+                        <ul class="insta-post">
+
+                            <li>
+                                <div class="insta-card">
+                                    <figure class="post-banner">
+                                        <img src="./assets/images/insta-post-1.jpg" width="77" height="63" loading="lazy" alt="instagram post" class="img-cover">
+                                    </figure>
+                                    <a href="https://instagram.com/creomedia" class="card-content" aria-label="View our Instagram profile">
+                                        <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="insta-card">
+                                    <figure class="post-banner">
+                                        <img src="./assets/images/insta-post-2.jpg" width="77" height="63" loading="lazy" alt="instagram post" class="img-cover">
+                                    </figure>
+                                    <a href="https://instagram.com/creomedia" class="card-content" aria-label="View our Instagram profile">
+                                        <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="insta-card">
+                                    <figure class="post-banner">
+                                        <img src="./assets/images/insta-post-3.jpg" width="77" height="63" loading="lazy" alt="instagram post" class="img-cover">
+                                    </figure>
+                                    <a href="https://instagram.com/creomedia" class="card-content" aria-label="View our Instagram profile">
+                                        <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+                                    </a>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p class="copyright">
+                    &copy; 2026 Creomedia. All Rights Reserved.
+                </p>
+
+                <ul class="footer-bottom-list">
+
+                    <li>
+                        <a href="./terms.html" class="footer-bottom-link">Terms and conditions</a>
+                    </li>
+
+                    <li>
+                        <a href="./privacy.html" class="footer-bottom-link">Privacy policy</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- 
+    - #BACK TO TOP
+  -->
+
+    <a href="#top" class="back-top-btn has-after active" aria-label="back to top" data-back-top-btn>
+        <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
+    </a>
+
+    <!-- 
+    - custom js link
+  -->
+    <script src="./assets/js/script.js" defer></script>
+
+    <!-- 
+    - ionicon link
+  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- WOW FEATURES -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="./assets/js/wow.js" defer></script>
+    <script src="./assets/js/chatbot.js" defer></script>
+
+</body>
+
+</html>

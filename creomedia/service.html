@@ -1,0 +1,633 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creo Media - Our Services</title>
+
+    <!-- 
+    - favicon
+  -->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/unified-hero.css">
+    <link rel="stylesheet" href="./assets/css/wow.css">
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- 
+    - preload images
+  -->
+    <link rel="preload" as="image" href="./assets/images/hero-banner.png">
+
+</head>
+
+<body id="top">
+
+    <!-- GRAIN OVERLAY -->
+    <div class="grain-overlay"></div>
+
+    <!-- 
+    - #HEADER
+  -->
+
+    <header class="header" data-header>
+        <div class="container">
+
+            <a href="index.html" class="logo">Creo Media</a>
+
+            <nav class="navbar" data-navbar>
+
+                <div class="wrapper">
+
+                    <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+                </div>
+
+                <ul class="navbar-list">
+
+                    <li class="navbar-item">
+                        <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link active" data-nav-link>Services</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="about.html" class="navbar-link" data-nav-link>About</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="portfolio.html" class="navbar-link" data-nav-link>Portfolio</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+            <a href="contact.html" class="btn btn-primary has-before has-after">Let's Talk 👋</a>
+
+            <div class="overlay" data-nav-toggler data-overlay></div>
+
+        </div>
+    </header>
+
+
+    <main>
+        <article>
+
+            <!-- 
+        - #HERO
+      -->
+
+            <!-- UNIFIED HERO -->
+            <section class="unified-hero" id="home" aria-label="hero">
+                <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1920&q=80" class="hero-bg-layer" alt="Production Equipment">
+                <div class="hero-gradient-overlay"></div>
+
+                <div class="hero-center-content">
+                    <h1 class="hero-mega-title glitch-text glitch-hover" data-text="WHAT WE DO" data-value="WHAT WE DO">WHAT WE DO
+                    </h1>
+                    <p class="hero-subtitle">Four Core Pillars</p>
+                    <p class="hero-description">
+                        Content production, digital management, event experiences, and podcast studios. All executed at global standards.
+                    </p>
+                    <div class="hero-cta-group">
+                        <a href="#service" class="hero-btn-primary">Explore Services</a>
+                        <a href="./contact.html" class="hero-btn-secondary">
+                            <ion-icon name="calendar-outline"></ion-icon>
+                            Book Consultation
+                        </a>
+                    </div>
+                </div>
+
+                <div class="scroll-indicator">
+                    <span>Scroll</span>
+                    <div class="scroll-arrow"></div>
+                </div>
+            </section>
+
+
+            <!-- 
+        - #SERVICE
+      -->
+
+            <section class="section service" id="service" aria-label="service">
+                <div class="container">
+
+                    <p class="section-subtitle has-before text-center">Our Services</p>
+
+                    <h2 class="h2 section-title text-center">Core Service <span class="has-before">Pillars</span></h2>
+
+                    <ul class="grid-list">
+
+                        <li>
+                            <div class="service-card" data-color="teal">
+                                <div class="card-icon">
+                                    <ion-icon name="videocam-outline" aria-hidden="true" style="font-size: 30px; color: hsl(174, 77%, 50%);"></ion-icon>
+                                </div>
+                                <h3 class="h3">
+                                    <a href="./services/content-production.html" class="card-title">Content Production</a>
+                                </h3>
+                                <p class="card-text" style="margin-top: 10px; color: var(--text-secondary);">
+                                    Cinematic storytelling that moves the needle.
+                                </p>
+                                <ul class="deliverables-list" style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+                                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-main);">
+                                        <ion-icon name="checkmark-circle-outline" style="color: var(--cyan);"></ion-icon> 4K Video Production
+                                    </li>
+                                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-main);">
+                                        <ion-icon name="checkmark-circle-outline" style="color: var(--cyan);"></ion-icon> Professional Photography
+                                    </li>
+                                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-main);">
+                                        <ion-icon name="checkmark-circle-outline" style="color: var(--cyan);"></ion-icon> Motion Graphics
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="service-card" data-color="purple">
+                                <div class="card-icon">
+                                    <ion-icon name="desktop-outline" aria-hidden="true" style="font-size: 30px; color: hsl(267, 76%, 57%);"></ion-icon>
+                                </div>
+                                <h3 class="h3">
+                                    <a href="./services/digital-management.html" class="card-title">Digital Management</a>
+                                </h3>
+                                <p class="card-text" style="margin-top: 10px; color: var(--text-secondary);">
+                                    Data-driven experiences at scale.
+                                </p>
+                                <ul class="deliverables-list" style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+                                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-main);">
+                                        <ion-icon name="checkmark-circle-outline" style="color: var(--hot-pink);"></ion-icon> UI/UX Web Design
+                                    </li>
+                                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-main);">
+                                        <ion-icon name="checkmark-circle-outline" style="color: var(--hot-pink);"></ion-icon> Full-stack Ops
+                                    </li>
+                                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-main);">
+                                        <ion-icon name="checkmark-circle-outline" style="color: var(--hot-pink);"></ion-icon> Social Growth Ads
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="service-card" data-color="orange">
+                                <div class="card-icon">
+                                    <ion-icon name="calendar-outline" aria-hidden="true" style="font-size: 30px; color: hsl(343, 98%, 60%);"></ion-icon>
+                                </div>
+                                <h3 class="h3">
+                                    <a href="./services/event-management.html" class="card-title">Event Management</a>
+                                </h3>
+                                <p class="card-text" style="margin-top: 10px; color: var(--text-secondary);">
+                                    High-stakes activations and experiences.
+                                </p>
+                                <ul class="deliverables-list" style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+                                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-main);">
+                                        <ion-icon name="checkmark-circle-outline" style="color: #FFE600;"></ion-icon> Hybrid Streaming
+                                    </li>
+                                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-main);">
+                                        <ion-icon name="checkmark-circle-outline" style="color: #FFE600;"></ion-icon> Technical Production
+                                    </li>
+                                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-main);">
+                                        <ion-icon name="checkmark-circle-outline" style="color: #FFE600;"></ion-icon> Brand Activations
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="service-card" data-color="pink">
+                                <div class="card-icon">
+                                    <ion-icon name="mic-outline" aria-hidden="true" style="font-size: 30px; color: hsl(343, 98%, 60%);"></ion-icon>
+                                </div>
+                                <h3 class="h3">
+                                    <a href="./services/podcasting.html" class="card-title">Podcasting</a>
+                                </h3>
+                                <p class="card-text" style="margin-top: 10px; color: var(--text-secondary);">
+                                    Commanding the airwaves with authority.
+                                </p>
+                                <ul class="deliverables-list" style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+                                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-main);">
+                                        <ion-icon name="checkmark-circle-outline" style="color: #9D00FF;"></ion-icon> Multi-cam 4K Video
+                                    </li>
+                                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-main);">
+                                        <ion-icon name="checkmark-circle-outline" style="color: #9D00FF;"></ion-icon> Studio Audio Post
+                                    </li>
+                                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-main);">
+                                        <ion-icon name="checkmark-circle-outline" style="color: #9D00FF;"></ion-icon> Full Distribution
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </section>
+
+            <!-- 
+        - #PROTOCOL (WORKFLOW)
+      -->
+            <section class="section protocol" id="protocol" aria-label="protocol" style="background-color: var(--pure-black);">
+                <div class="container">
+                    <p class="section-subtitle has-before text-center">Our Process</p>
+                    <h2 class="h2 section-title text-center glitch-text" data-text="THE PROTOCOL">THE <span class="has-before">PROTOCOL</span></h2>
+
+                    <div class="grid-list" style="margin-top: 60px;">
+                        <div class="glass-card" style="padding: 40px; position: relative;">
+                            <span style="font-size: 4rem; font-weight: 900; color: rgba(255,255,255,0.05); position: absolute; top: 10px; right: 20px;">01</span>
+                            <h3 class="h3" style="color: var(--cyan); margin-bottom: 15px;">Discovery</h3>
+                            <p class="card-text">We deep-dive into your brand's DNA, identifying hidden opportunities and defining hard KPI targets.</p>
+                        </div>
+
+                        <div class="glass-card" style="padding: 40px; position: relative;">
+                            <span style="font-size: 4rem; font-weight: 900; color: rgba(255,255,255,0.05); position: absolute; top: 10px; right: 20px;">02</span>
+                            <h3 class="h3" style="color: var(--hot-pink); margin-bottom: 15px;">Strategy</h3>
+                            <p class="card-text">Building the architectural blueprint. We map out every touchpoint and cinematic beat for maximum impact.</p>
+                        </div>
+
+                        <div class="glass-card" style="padding: 40px; position: relative;">
+                            <span style="font-size: 4rem; font-weight: 900; color: rgba(255,255,255,0.05); position: absolute; top: 10px; right: 20px;">03</span>
+                            <h3 class="h3" style="color: #FFE600; margin-bottom: 15px;">Execution</h3>
+                            <p class="card-text">High-velocity production. Our elite creators build, shoot, and code with obsessive attention to detail.</p>
+                        </div>
+
+                        <div class="glass-card" style="padding: 40px; position: relative;">
+                            <span style="font-size: 4rem; font-weight: 900; color: rgba(255,255,255,0.05); position: absolute; top: 10px; right: 20px;">04</span>
+                            <h3 class="h3" style="color: #9D00FF; margin-bottom: 15px;">Delivery</h3>
+                            <p class="card-text">Launch and optimization. We don't just ship—we monitor and refine to ensure global standards are met.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 
+        - #FAQ
+      -->
+            <section class="section faq" id="faq" aria-label="faq">
+                <div class="container">
+                    <p class="section-subtitle has-before text-center">F.A.Q</p>
+                    <h2 class="h2 section-title text-center">Common <span class="has-before">Questions</span></h2>
+
+                    <div style="max-width: 800px; margin: 60px auto 0;">
+                        <div class="glass-card faq-item" style="padding: 25px; margin-bottom: 15px; cursor: pointer;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 class="h4">What is your typical turnaround time?</h4>
+                                <ion-icon name="add-outline"></ion-icon>
+                            </div>
+                            <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
+                                <p style="margin-top: 15px; color: var(--text-secondary);">Timeline varies by project complexity. Simple projects may take 2-3 weeks, while comprehensive campaigns can take 2-3 months. We provide estimates during consultation.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card faq-item" style="padding: 25px; margin-bottom: 15px; cursor: pointer;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 class="h4">Do you handle international projects?</h4>
+                                <ion-icon name="add-outline"></ion-icon>
+                            </div>
+                            <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
+                                <p style="margin-top: 15px; color: var(--text-secondary);">Absolutely! Though based in Namibia, we serve clients globally with our advanced digital collaboration tools and global creator network.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card faq-item" style="padding: 25px; margin-bottom: 15px; cursor: pointer;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 class="h4">What is the onboarding process?</h4>
+                                <ion-icon name="add-outline"></ion-icon>
+                            </div>
+                            <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
+                                <p style="margin-top: 15px; color: var(--text-secondary);">After form submission, we schedule a 15-minute Discovery Call. If there's alignment, we issue a formal Protocol Proposal within 24 hours.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card faq-item" style="padding: 25px; margin-bottom: 15px; cursor: pointer;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 class="h4">What is your refund policy?</h4>
+                                <ion-icon name="add-outline"></ion-icon>
+                            </div>
+                            <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
+                                <p style="margin-top: 15px; color: var(--text-secondary);">We offer project-specific refund policies outlined in our contract terms. Generally, refunds are considered based on project stage and deliverable completion.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card faq-item" style="padding: 25px; margin-bottom: 15px; cursor: pointer;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 class="h4">Do you provide ongoing support after project completion?</h4>
+                                <ion-icon name="add-outline"></ion-icon>
+                            </div>
+                            <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
+                                <p style="margin-top: 15px; color: var(--text-secondary);">Yes, we offer maintenance and support packages to ensure continued success of your project. These can be customized to meet your specific needs.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card faq-item" style="padding: 25px; margin-bottom: 15px; cursor: pointer;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 class="h4">How do you ensure brand consistency across different platforms?</h4>
+                                <ion-icon name="add-outline"></ion-icon>
+                            </div>
+                            <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
+                                <p style="margin-top: 15px; color: var(--text-secondary);">We develop comprehensive brand guidelines and style guides to maintain consistency across all touchpoints and platforms for your brand.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card faq-item" style="padding: 25px; margin-bottom: 15px; cursor: pointer;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 class="h4">What technology stack do you use for web development?</h4>
+                                <ion-icon name="add-outline"></ion-icon>
+                            </div>
+                            <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
+                                <p style="margin-top: 15px; color: var(--text-secondary);">We work with modern technologies including React, Vue, Next.js, Node.js, and cloud platforms like AWS and Google Cloud, depending on project requirements.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card faq-item" style="padding: 25px; margin-bottom: 15px; cursor: pointer;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 class="h4">How do you handle revisions and feedback?</h4>
+                                <ion-icon name="add-outline"></ion-icon>
+                            </div>
+                            <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
+                                <p style="margin-top: 15px; color: var(--text-secondary);">We include a specified number of revision rounds in our contracts. We encourage structured feedback to ensure efficient project iteration and client satisfaction.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card faq-item" style="padding: 25px; margin-bottom: 15px; cursor: pointer;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 class="h4">Can you provide examples of past work?</h4>
+                                <ion-icon name="add-outline"></ion-icon>
+                            </div>
+                            <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
+                                <p style="margin-top: 15px; color: var(--text-secondary);">Yes, visit our Portfolio section to see diverse projects across various industries. We showcase our work in content production, digital management, events, and podcasting.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+
+    <!-- 
+    - #FOOTER
+  -->
+
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer-top section">
+
+                <div class="footer-brand">
+
+                    <p class="footer-list-title">About Creo Media</p>
+
+                    <p class="footer-text">
+                        Premium African creative agency delivering global standards in content, digital, events, and podcasting.
+                    </p>
+
+                    <ul class="social-list">
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-youtube"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-twitter"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </a>
+                        </li>
+
+
+
+                    </ul>
+
+                </div>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <p class="footer-list-title">Useful Links</p>
+                    </li>
+
+                    <li>
+                        <a href="contact.html" class="footer-link">Contact us</a>
+                    </li>
+
+                    <li>
+                        <a href="service.html" class="footer-link">Services</a>
+                    </li>
+
+                    <li>
+                        <a href="about.html" class="footer-link">About Us</a>
+                    </li>
+
+                    <li>
+                        <a href="portfolio.html" class="footer-link">Portfolio</a>
+                    </li>
+
+                </ul>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <p class="footer-list-title">Community</p>
+                    </li>
+
+                    <li>
+                        <a href="./help.html" class="footer-link">Help Center</a>
+                    </li>
+
+                    <li>
+                        <a href="./partners.html" class="footer-link">Partners</a>
+                    </li>
+
+                    <li>
+                        <a href="./suggestions.html" class="footer-link">Suggestions</a>
+                    </li>
+
+
+                    <li>
+                        <a href="./newsletter.html" class="footer-link">Newsletters</a>
+                    </li>
+
+                </ul>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <p class="footer-list-title">Instagram post</p>
+                    </li>
+
+                    <li>
+                        <ul class="insta-post">
+
+                            <li>
+                                <div class="insta-card">
+
+                                    <figure class="post-banner">
+                                        <img src="./assets/images/insta-post-1.jpg" width="77" height="63" loading="lazy" alt="instagram post" class="img-cover">
+                                    </figure>
+
+                                    <a href="https://instagram.com/creomedia" class="card-content" aria-label="View our Instagram profile">
+                                        <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+                                    </a>
+
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="insta-card">
+
+                                    <figure class="post-banner">
+                                        <img src="./assets/images/insta-post-2.jpg" width="77" height="63" loading="lazy" alt="instagram post" class="img-cover">
+                                    </figure>
+
+                                    <a href="https://instagram.com/creomedia" class="card-content" aria-label="View our Instagram profile">
+                                        <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+                                    </a>
+
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="insta-card">
+
+                                    <figure class="post-banner">
+                                        <img src="./assets/images/insta-post-3.jpg" width="77" height="63" loading="lazy" alt="instagram post" class="img-cover">
+                                    </figure>
+
+                                    <a href="https://instagram.com/creomedia" class="card-content" aria-label="View our Instagram profile">
+                                        <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+                                    </a>
+
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="insta-card">
+
+                                    <figure class="post-banner">
+                                        <img src="./assets/images/insta-post-4.jpg" width="77" height="63" loading="lazy" alt="instagram post" class="img-cover">
+                                    </figure>
+
+                                    <a href="https://instagram.com/creomedia" class="card-content" aria-label="View our Instagram profile">
+                                        <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+                                    </a>
+
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="insta-card">
+
+                                    <figure class="post-banner">
+                                        <img src="./assets/images/insta-post-5.jpg" width="77" height="63" loading="lazy" alt="instagram post" class="img-cover">
+                                    </figure>
+
+                                    <a href="https://instagram.com/creomedia" class="card-content" aria-label="View our Instagram profile">
+                                        <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+                                    </a>
+
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="insta-card">
+
+                                    <figure class="post-banner">
+                                        <img src="./assets/images/insta-post-6.jpg" width="77" height="63" loading="lazy" alt="instagram post" class="img-cover">
+                                    </figure>
+
+                                    <a href="https://instagram.com/creomedia" class="card-content" aria-label="View our Instagram profile">
+                                        <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+                                    </a>
+
+                                </div>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p class="copyright">
+                    &copy; 2026 Creomedia. All Rights Reserved.
+                </p>
+
+                <ul class="footer-bottom-list">
+
+                    <li>
+                        <a href="./terms.html" class="footer-bottom-link">Terms and conditions</a>
+                    </li>
+
+                    <li>
+                        <a href="./privacy.html" class="footer-bottom-link">Privacy policy</a>
+                    </li>
+
+
+
+                </ul>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- 
+    - #BACK TO TOP
+  -->
+
+    <a href="#top" class="back-top-btn has-after active" aria-label="back to top" data-back-top-btn>
+        <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
+    </a>
+
+
+    <!-- 
+    - custom js link
+  -->
+    <script src="./assets/js/script.js" defer></script>
+
+    <!-- 
+    - ionicon link
+  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- WOW FEATURES -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="./assets/js/wow.js" defer></script>
+    <script src="./assets/js/chatbot.js" defer></script>
+
+</body>
+
+</html>
