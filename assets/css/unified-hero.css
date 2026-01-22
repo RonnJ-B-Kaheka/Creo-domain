@@ -10,7 +10,9 @@
     --hero-muted: #888888;
 }
 
+
 /* UNIFIED HERO LAYOUT */
+
 .unified-hero {
     min-height: 90vh;
     position: relative;
@@ -31,6 +33,50 @@
     z-index: 0;
     opacity: 0.5;
     filter: contrast(1.2) brightness(0.7);
+}
+
+.hero-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.5;
+    filter: contrast(1.2) brightness(0.7);
+}
+
+
+/* Mute Button Styles */
+
+.mute-button {
+    position: fixed;
+    top: calc(6cm + 100px);
+    /* Approximately 6cm below the top, accounting for header height */
+    left: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.mute-button:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+}
+
+.mute-button:active {
+    transform: scale(0.95);
 }
 
 .hero-gradient-overlay {
@@ -141,7 +187,16 @@
     transform: scale(1.05);
 }
 
+
+/* Mute Button Active State */
+
+.mute-button[data-muted="true"] ion-icon {
+    color: #ff6b6b;
+}
+
+
 /* SCROLL INDICATOR */
+
 .scroll-indicator {
     position: absolute;
     bottom: 40px;
@@ -166,44 +221,39 @@
 }
 
 @keyframes scrollBounce {
-
     0%,
     100% {
         transform: translateY(0);
         opacity: 1;
     }
-
     50% {
         transform: translateY(10px);
         opacity: 0.5;
     }
 }
 
+
 /* RESPONSIVE */
+
 @media (max-width: 768px) {
     .unified-hero {
         min-height: 80vh;
         padding-top: 80px;
     }
-
     .hero-mega-title {
         font-size: 3.5rem;
     }
-
     .hero-subtitle {
         font-size: 1rem;
         letter-spacing: 3px;
     }
-
     .hero-description {
         font-size: 1rem;
     }
-
     .hero-cta-group {
         flex-direction: column;
         align-items: center;
     }
-
     .hero-btn-primary,
     .hero-btn-secondary {
         width: 100%;

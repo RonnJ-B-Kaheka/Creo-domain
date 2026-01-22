@@ -123,34 +123,124 @@ const chatbotKnowledge = {
         "Orion initialized. Ready to bridge the gap between your brand and global standards."
     ],
     // Additional FAQs for enhanced functionality
-    additional_faqs: [{
+    additional_faqs: [
+        // Original additional FAQs
+        {
             keywords: ["refund", "policy", "money back", "return"],
             responses: [
-                "We offer project-specific refund policies outlined in our contract terms. Generally, refunds are considered based on project stage and deliverable completion."
+                "Our refund approach is tailored to each project and detailed in our agreement. Refunds typically depend on the current project phase and how much work has been completed."
             ]
         },
         {
             keywords: ["support", "after delivery", "maintenance", "ongoing"],
             responses: [
-                "Yes, we offer maintenance and support packages to ensure continued success of your project. These can be customized to meet your specific needs."
+                "Absolutely! We craft bespoke support packages to guarantee your project's sustained success. These can be tailored specifically to your operational requirements."
             ]
         },
         {
             keywords: ["brand consistency", "guidelines", "identity", "standards"],
             responses: [
-                "We develop comprehensive brand guidelines and style guides to maintain consistency across all touchpoints and platforms for your brand."
+                "We construct thorough brand manuals and style frameworks to ensure uniformity across every customer interaction point and digital platform."
             ]
         },
         {
             keywords: ["technology", "stack", "frameworks", "tools"],
             responses: [
-                "We work with modern technologies including React, Vue, Next.js, Node.js, and cloud platforms like AWS and Google Cloud, depending on project requirements."
+                "Our tech arsenal encompasses cutting-edge solutions like React, Vue, Next.js, Node.js, and cloud infrastructures from AWS and Google Cloud, selected based on your project's unique demands."
             ]
         },
         {
             keywords: ["revisions", "feedback", "changes", "iterations"],
             responses: [
-                "We include a specified number of revision rounds in our contracts. We encourage structured feedback to ensure efficient project iteration and client satisfaction."
+                "Our agreements specify the number of revision cycles. We promote organized feedback mechanisms to ensure streamlined project development and client contentment."
+            ]
+        },
+
+        // Service Page FAQs
+        {
+            keywords: ["response time", "reply time", "how long to respond", "turnaround"],
+            responses: [
+                "We typically review all submissions within 12 business hours. For time-sensitive production needs, our executive team receives immediate notifications."
+            ]
+        },
+        {
+            keywords: ["international projects", "global clients", "worldwide", "abroad"],
+            responses: [
+                "Certainly! While rooted in Namibia, our global creator network enables us to execute campaigns across multiple continents."
+            ]
+        },
+        {
+            keywords: ["onboarding", "getting started", "process", "initiation"],
+            responses: [
+                "Following form completion, we arrange a brief 15-minute Discovery Session. Upon mutual alignment, a formal proposal is delivered within 24 hours."
+            ]
+        },
+        {
+            keywords: ["pricing", "cost", "rates", "investment"],
+            responses: [
+                "Our pricing structure is tailored to project scope. We provide transparent packages engineered to produce premium outcomes at competitive prices."
+            ]
+        },
+        {
+            keywords: ["timeline", "duration", "project length", "delivery time"],
+            responses: [
+                "Delivery schedules vary with project complexity. Basic projects might span 2-3 weeks, whereas comprehensive initiatives can range from 2-3 months. Detailed estimates are provided during consultation."
+            ]
+        },
+        {
+            keywords: ["examples", "past work", "portfolio", "showcase"],
+            responses: [
+                "Our Portfolio section displays a variety of projects spanning multiple sectors. You'll find our work showcased in content creation, digital strategies, events, and podcast production."
+            ]
+        },
+
+        // Contact Page FAQs (exact text from the page)
+        {
+            keywords: ["response time", "reply time", "how long to respond", "turnaround"],
+            responses: [
+                "We review all intake forms within 12 business hours. For urgent production requests, our executive team is notified immediately."
+            ]
+        },
+        {
+            keywords: ["international projects", "global clients", "worldwide", "abroad"],
+            responses: [
+                "Yes. While based in Africa, we have a global creator network and have executed campaigns across 4 continents."
+            ]
+        },
+        {
+            keywords: ["onboarding", "getting started", "process", "initiation"],
+            responses: [
+                "After form submission, we schedule a 15-minute Discovery Call. If there's alignment, we issue a formal Protocol Proposal within 24 hours."
+            ]
+        },
+        {
+            keywords: ["services", "what do you offer", "offerings"],
+            responses: [
+                "We specialize in Content Production, Digital Management, Event Management, and Podcasting. Each service is tailored to elevate your brand presence."
+            ]
+        },
+        {
+            keywords: ["pricing", "cost", "rates", "investment"],
+            responses: [
+                "Our pricing is customized based on project scope and requirements. We offer transparent packages designed to deliver premium results at competitive rates."
+            ]
+        },
+        {
+            keywords: ["timeline", "duration", "project length", "delivery time"],
+            responses: [
+                "Timeline varies by project complexity. Simple projects may take 2-3 weeks, while comprehensive campaigns can take 2-3 months. We provide estimates during consultation."
+            ]
+        },
+        {
+            keywords: ["international clients", "global clients", "worldwide", "abroad"],
+            responses: [
+                "Absolutely! Though based in Namibia, we serve clients globally with our advanced digital collaboration tools and global creator network."
+            ]
+        },
+        {
+            keywords: ["examples", "past work", "portfolio", "showcase"],
+            responses: [
+                "Yes, visit our Portfolio section to see diverse projects across various industries. We showcase our work in content production, digital management, events, and podcasting."
             ]
         }
     ]
@@ -234,6 +324,22 @@ class CreoChatbot {
         this.getResponse(text);
     }
 
+
+
+    addMessage(text, side) {
+        const msgEl = document.createElement('div');
+        msgEl.className = `message ${side}`;
+        msgEl.innerHTML = `<div class="message-content">${text}</div>`;
+        this.messagesContainer.appendChild(msgEl);
+        this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+    }
+
+    showTyping(show) {
+        this.typingIndicator.style.display = show ? 'block' : 'none';
+        this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+    }
+
+    // Enhanced matching algorithm with better scoring
     async getResponse(query) {
         this.showTyping(true);
 
@@ -243,11 +349,37 @@ class CreoChatbot {
             let foundResponse = null;
             const normalizedQuery = query.toLowerCase();
 
+            // Enhanced matching algorithm with better scoring
+            let bestMatch = null;
+            let bestScore = 0;
+
             for (const intent of chatbotKnowledge.intents) {
-                if (intent.keywords.some(k => normalizedQuery.includes(k))) {
-                    foundResponse = intent.responses[Math.floor(Math.random() * intent.responses.length)];
-                    break;
+                let score = 0;
+
+                // Score based on keyword matches
+                for (const keyword of intent.keywords) {
+                    if (normalizedQuery.includes(keyword)) {
+                        score += 1;
+                    } else if (this.calculateSimilarity(normalizedQuery, keyword) > 0.6) {
+                        // Partial match based on similarity
+                        score += 0.5;
+                    }
                 }
+
+                // Boost score if multiple keywords match
+                const matchedKeywords = intent.keywords.filter(k => normalizedQuery.includes(k)).length;
+                if (matchedKeywords > 1) {
+                    score *= matchedKeywords;
+                }
+
+                if (score > bestScore) {
+                    bestScore = score;
+                    bestMatch = intent;
+                }
+            }
+
+            if (bestMatch && bestScore > 0) {
+                foundResponse = bestMatch.responses[Math.floor(Math.random() * bestMatch.responses.length)];
             }
 
             if (!foundResponse) {
@@ -263,17 +395,42 @@ class CreoChatbot {
         }
     }
 
-    addMessage(text, side) {
-        const msgEl = document.createElement('div');
-        msgEl.className = `message ${side}`;
-        msgEl.innerHTML = `<div class="message-content">${text}</div>`;
-        this.messagesContainer.appendChild(msgEl);
-        this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+    // Helper function to calculate string similarity
+    calculateSimilarity(str1, str2) {
+        const longer = str1.length > str2.length ? str1 : str2;
+        const shorter = str1.length > str2.length ? str2 : str1;
+
+        if (longer.length === 0) {
+            return 1.0;
+        }
+
+        const editDistance = this.levenshteinDistance(longer.toLowerCase(), shorter.toLowerCase());
+        return (longer.length - editDistance) / longer.length;
     }
 
-    showTyping(show) {
-        this.typingIndicator.style.display = show ? 'block' : 'none';
-        this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+    levenshteinDistance(str1, str2) {
+        const matrix = Array(str2.length + 1).fill().map(() => Array(str1.length + 1).fill(0));
+
+        for (let i = 0; i <= str1.length; i++) {
+            matrix[0][i] = i;
+        }
+
+        for (let j = 0; j <= str2.length; j++) {
+            matrix[j][0] = j;
+        }
+
+        for (let j = 1; j <= str2.length; j++) {
+            for (let i = 1; i <= str1.length; i++) {
+                const cost = str1[i - 1] === str2[j - 1] ? 0 : 1;
+                matrix[j][i] = Math.min(
+                    matrix[j][i - 1] + 1,
+                    matrix[j - 1][i] + 1,
+                    matrix[j - 1][i - 1] + cost
+                );
+            }
+        }
+
+        return matrix[str2.length][str1.length];
     }
 }
 

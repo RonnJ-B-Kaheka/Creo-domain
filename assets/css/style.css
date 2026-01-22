@@ -584,6 +584,34 @@ body {
     border-bottom: 1px solid var(--border-color);
 }
 
+.header.active .logo {
+    font-size: 5rem;
+    /* Increase size when header is active */
+    transition: var(--transition-1);
+}
+
+.logo span {
+    display: inline;
+}
+
+.logo .media-text {
+    color: #FF6B4A;
+    /* Light-medium red with warm orange undertones */
+    transition: var(--transition-1);
+}
+
+
+/* Mobile navbar logo */
+
+.navbar .logo {
+    color: var(--white);
+}
+
+.navbar .logo .media-text {
+    color: #FF6B4A;
+    /* Light-medium red with warm orange undertones */
+}
+
 .header .container {
     display: flex;
     justify-content: space-between;
@@ -591,7 +619,7 @@ body {
 }
 
 .logo {
-    color: var(--text-color);
+    color: white;
     font-size: 3.6rem;
     font-weight: var(--fw-700);
     font-family: var(--ff-heading);
@@ -2864,4 +2892,38 @@ body {
         height: 450px;
         transform-origin: bottom left;
     }
+}
+
+
+/* Google Form CTA Button Styles */
+
+.google-form-cta-wrapper {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.google-form-cta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.google-form-cta-container .btn {
+    margin-bottom: 15px;
+}
+
+.helper-text {
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+    font-size: var(--fs-9);
+}
+
+.privacy-note {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 10px;
 }

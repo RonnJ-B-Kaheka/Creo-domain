@@ -142,7 +142,9 @@
     <header class="header" data-header>
         <div class="container">
 
-            <a href="index.html" class="logo">Creo Media</a>
+            <a href="index.html" class="logo">
+                Creo<span class="media-text">Media</span>
+            </a>
 
             <nav class="navbar" data-navbar aria-label="Main navigation">
 
@@ -185,8 +187,10 @@
         </div>
     </header>
 
-
-
+    <!-- MUTE BUTTON -->
+    <button id="muteButton" class="mute-button" title="Toggle Mute">
+        <ion-icon name="volume-high" id="volumeIcon"></ion-icon>
+    </button>
 
 
     <main id="main-content">
@@ -198,7 +202,11 @@
 
             <!-- UNIFIED HERO -->
             <section class="unified-hero" id="home" aria-label="hero">
-                <img src="./assets/images/hero-banner.png" class="hero-bg-layer" alt="Creo Media creative agency workspace" loading="eager" fetchpriority="high">
+                <!-- Video Background -->
+                <video autoplay muted loop playsinline preload="auto" class="hero-video-bg" id="hero-video" poster="./assets/images/hero-banner.png">
+                    <source src="./assets/videos/Marketing%20Strategy/My%20Video-1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
                 <div class="hero-gradient-overlay"></div>
 
                 <div class="hero-center-content">
@@ -948,6 +956,35 @@
   -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- Video Mute Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('hero-video');
+            const muteButton = document.getElementById('muteButton');
+            const volumeIcon = document.getElementById('volumeIcon');
+
+            if (video && muteButton) {
+                // Initially the video is muted for browser compatibility
+                video.muted = true;
+                muteButton.setAttribute('data-muted', 'true');
+                volumeIcon.name = 'volume-mute';
+
+                muteButton.addEventListener('click', function() {
+                    video.muted = !video.muted;
+
+                    // Update button state and icon
+                    muteButton.setAttribute('data-muted', video.muted);
+
+                    if (video.muted) {
+                        volumeIcon.name = 'volume-mute';
+                    } else {
+                        volumeIcon.name = 'volume-high';
+                    }
+                });
+            }
+        });
+    </script>
 
     <!-- WOW FEATURES -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>

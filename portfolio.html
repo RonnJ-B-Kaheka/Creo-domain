@@ -526,7 +526,7 @@
     <!-- HEADER -->
     <header class="header" data-header>
         <div class="container">
-            <a href="./index.html" class="logo">Creo Media</a>
+            <a href="./index.html" class="logo">Creo<span class="media-text">Media</span></a>
             <nav class="navbar" data-navbar>
                 <div class="wrapper">
                     <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
@@ -863,6 +863,34 @@
     <script src="./assets/js/chatbot.js" defer></script>
 
     <script>
+        // Ensure navbar functionality is initialized
+        document.addEventListener('DOMContentLoaded', function() {
+            // Re-initialize navbar functionality for Portfolio page
+            const navbar = document.querySelector("[data-navbar]");
+            const navTogglers = document.querySelectorAll("[data-nav-toggler]");
+            const navbarLinks = document.querySelectorAll("[data-nav-link]");
+            const overlay = document.querySelector("[data-overlay]");
+
+            const toggleNavbar = function() {
+                if (navbar) navbar.classList.toggle("active");
+                if (overlay) overlay.classList.toggle("active");
+            };
+
+            const closeNavbar = function() {
+                if (navbar) navbar.classList.remove("active");
+                if (overlay) overlay.classList.remove("active");
+            };
+
+            // Attach event listeners
+            navTogglers.forEach(toggler => {
+                toggler.addEventListener("click", toggleNavbar);
+            });
+
+            navbarLinks.forEach(link => {
+                link.addEventListener("click", closeNavbar);
+            });
+        });
+
         // PROJECT DATA
         const projectData = {
             'apex-sport': {

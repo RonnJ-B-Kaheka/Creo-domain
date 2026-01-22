@@ -31,12 +31,16 @@
     <header class="header" data-header>
         <div class="container">
 
-            <a href="index.html" class="logo">Creo Media</a>
+            <a href="index.html" class="logo">
+                Creo<span class="media-text">Media</span>
+            </a>
 
             <nav class="navbar" data-navbar>
 
                 <div class="wrapper">
-                    <a href="index.html" class="logo">Creo Media</a>
+                    <a href="index.html" class="logo">
+                        Creo<span class="media-text">Media</span>
+                    </a>
 
                     <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
             <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
@@ -96,8 +100,9 @@
                         Whether you need a campaign, an event, or a full rebrand—let's build something unforgettable. We're ready when you are.
                     </p>
                     <div class="hero-cta-group">
-                        <a href="#contact" class="hero-btn-primary">Send Message</a>
-                        <a href="#contact" class="hero-btn-secondary">
+
+                        <a href="#contact" class="hero-btn-primary" onclick="smoothScrollToContact(event)">Send Message</a>
+                        <a href="#contact" class="hero-btn-secondary" onclick="smoothScrollToContact(event)">
                             <ion-icon name="videocam-outline"></ion-icon>
                             Book Call
                         </a>
@@ -126,7 +131,7 @@
                             </h2>
 
                             <p class="section-text">
-                                Have a project in mind? We'd love to hear about it. Send us a message and we'll get back to you within 24 hours.
+                                Have a project in mind? We'd love to hear about it. Send us a message and we'll get back to you ASAP.
                             </p>
 
                             <ul class="contact-list">
@@ -164,197 +169,177 @@
                                 </li>
                             </ul>
 
-                            <!-- DARK MAP EMBED -->
-                            <div class="map-container glass-card" style="margin-top: 30px; height: 250px; overflow: hidden; filter: grayscale(1) invert(1) contrast(1.2) opacity(0.8);">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10000!2d18.4233!3d-33.9249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDU1JzI5LjYiUyAxOMKwMjUnMjMuOSJF!5e0!3m2!1sen!2sza!4v1700000000000" width="100%" height="100%"
-                                    style="border:0;" allowfullscreen="" loading="lazy">
-                </iframe>
+                            <!-- CENTERED CTA BUTTON FOR GOOGLE FORM -->
+                            <div class="google-form-cta-wrapper" id="contact-form-wrapper">
+                                <h3 class="h3 form-title">Contact</h3>
+
+                                <div class="google-form-cta-container">
+                                    <a href="https://docs.google.com/forms/u/1/d/1JbapGw64oYSnWpPC74dee0191swKPrK2CDK-O3s1Y7c/edit?usp=drivesdk" target="_blank" rel="noopener noreferrer" class="btn btn-primary has-before has-after google-form-btn" aria-label="Open contact form in new tab"
+                                        onclick="trackGoogleFormClick()">
+                                        <span class="span">Want To Reach out?
+                                        Please fill out our questionnaire.
+                                    </span>
+                                        <ion-icon name="open-outline" aria-hidden="true"></ion-icon>
+                                    </a>
+
+                                    <p class="helper-text">You will be redirected to a secure Google Form in a new tab.</p>
+
+                                    <p class="helper-text">Once you submit the form, we'll get back to you as soon as possible.</p>
+
+                                    <p class="privacy-note">This form is hosted by Google; responses are subject to Google's privacy policy.</p>
+                                </div>
+                            </div>
+
+                            <!-- DARK MAP EMBED - MOVED BELOW BUTTON WITH 10CM MARGIN -->
+                            <div class="map-container glass-card" style="margin-top: 1cm; height: 350px; overflow: hidden; filter: brightness(1) invert(1) contrast(1.2) opacity(0.8);">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29472.67475519205!2d17.045291975655847!3d-22.575948537288422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1c0b1b15d0e82cef%3A0xacd313549065489e!2sStyle%20Graphics%20Cc!5e0!3m2!1sen!2sna!4v1768674012515!5m2!1sen!2sna"
+                                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="eager" referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
                             </div>
                         </div>
 
-                        <form action="" class="contact-form">
-                            <h3 class="h3 form-title">Send us a message</h3>
+                        <!-- PROSPECT FAQ -->
+                        <div class="prospect-faq" style="margin-top: 100px;">
+                            <p class="section-subtitle has-before text-center">F.A.Q</p>
+                            <h2 class="h2 section-title text-center">Questions Before <span class="has-before">Reaching Out?</span></h2>
 
-                            <div class="input-wrapper">
-                                <input type="text" name="full_name" placeholder="Full name" required class="form-field">
+                            <div style="max-width: 800px; margin: 40px auto 0;">
+                                <div class="glass-card faq-item">
+                                    <div class="faq-item-header">
+                                        <h4 class="h4 faq-item-question">What is the typical response time?</h4>
+                                        <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
+                                    </div>
+                                    <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
+                                        <p style="margin-top: 15px; color: var(--text-secondary);">We review all intake forms within 12 business hours. For urgent production requests, our executive team is notified immediately.</p>
+                                    </div>
+                                </div>
 
-                                <input type="email" name="email_address" placeholder="Email address" required class="form-field">
+                                <div class="glass-card faq-item">
+                                    <div class="faq-item-header">
+                                        <h4 class="h4 faq-item-question">Do you handle international projects?</h4>
+                                        <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
+                                    </div>
+                                    <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
+                                        <p style="margin-top: 15px; color: var(--text-secondary);">Yes. While based in Africa, we have a global creator network and have executed campaigns across 4 continents.</p>
+                                    </div>
+                                </div>
+
+                                <div class="glass-card faq-item">
+                                    <div class="faq-item-header">
+                                        <h4 class="h4 faq-item-question">What is the onboarding process?</h4>
+                                        <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
+                                    </div>
+                                    <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
+                                        <p style="margin-top: 15px; color: var(--text-secondary);">After form submission, we schedule a 15-minute Discovery Call. If there's alignment, we issue a formal Protocol Proposal within 24 hours.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="input-wrapper">
-                                <input type="text" name="company" placeholder="Company name" class="form-field">
-
-                                <select name="project_type" class="form-field" required>
-                  <option value="" disabled selected>Project type</option>
-                  <option value="content-production">Content Production</option>
-                  <option value="digital-management">Digital Management</option>
-                  <option value="event-management">Event Management</option>
-                  <option value="podcasting">Podcasting</option>
-                  <option value="branding">Branding & Strategy</option>
-                  <option value="other">Other</option>
-                </select>
+                            <div class="glass-card faq-item">
+                                <div class="faq-item-header">
+                                    <h4 class="h4 faq-item-question">What services do you offer?</h4>
+                                    <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
+                                </div>
+                                <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
+                                    <p style="margin-top: 15px; color: var(--text-secondary);">We specialize in Content Production, Digital Management, Event Management, and Podcasting. Each service is tailored to elevate your brand presence.</p>
+                                </div>
                             </div>
 
-                            <select name="budget" class="form-field" required>
-                <option value="" disabled selected>Budget range</option>
-                <option value="2-5k">$2k â€“ $5k</option>
-                <option value="5-15k">$5k â€“ $15k</option>
-                <option value="15-50k">$15k â€“ $50k</option>
-                <option value="50k+">$50k+</option>
-              </select>
+                            <div class="glass-card faq-item">
+                                <div class="faq-item-header">
+                                    <h4 class="h4 faq-item-question">How much do your services cost?</h4>
+                                    <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
+                                </div>
+                                <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
+                                    <p style="margin-top: 15px; color: var(--text-secondary);">Our pricing is customized based on project scope and requirements. We offer transparent packages designed to deliver premium results at competitive rates.</p>
+                                </div>
+                            </div>
 
-                            <textarea name="message" placeholder="Tell us about your project goals..." rows="5" class="form-field"></textarea>
+                            <div class="glass-card faq-item">
+                                <div class="faq-item-header">
+                                    <h4 class="h4 faq-item-question">How long does a typical project take?</h4>
+                                    <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
+                                </div>
+                                <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
+                                    <p style="margin-top: 15px; color: var(--text-secondary);">Timeline varies by project complexity. Simple projects may take 2-3 weeks, while comprehensive campaigns can take 2-3 months. We provide estimates during consultation.</p>
+                                </div>
+                            </div>
 
-                            <button type="submit" class="btn btn-primary has-before has-after">
-                <span class="span">Send Message</span>
-                <ion-icon name="paper-plane-outline" aria-hidden="true"></ion-icon>
-              </button>
-                        </form>
+                            <div class="glass-card faq-item">
+                                <div class="faq-item-header">
+                                    <h4 class="h4 faq-item-question">Do you work with international clients?</h4>
+                                    <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
+                                </div>
+                                <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
+                                    <p style="margin-top: 15px; color: var(--text-secondary);">Absolutely! Though based in Namibia, we serve clients globally with our advanced digital collaboration tools and global creator network.</p>
+                                </div>
+                            </div>
+
+                            <div class="glass-card faq-item">
+                                <div class="faq-item-header">
+                                    <h4 class="h4 faq-item-question">Can you provide examples of past work?</h4>
+                                    <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
+                                </div>
+                                <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
+                                    <p style="margin-top: 15px; color: var(--text-secondary);">Yes, visit our Portfolio section to see diverse projects across various industries. We showcase our work in content production, digital management, events, and podcasting.</p>
+                                </div>
+                            </div>
+
+                            <div class="glass-card faq-item">
+                                <div class="faq-item-header">
+                                    <h4 class="h4 faq-item-question">What is your refund policy?</h4>
+                                    <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
+                                </div>
+                                <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
+                                    <p style="margin-top: 15px; color: var(--text-secondary);">We offer project-specific refund policies outlined in our contract terms. Generally, refunds are considered based on project stage and deliverable completion.</p>
+                                </div>
+                            </div>
+
+                            <div class="glass-card faq-item">
+                                <div class="faq-item-header">
+                                    <h4 class="h4 faq-item-question">Do you provide ongoing support after project completion?</h4>
+                                    <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
+                                </div>
+                                <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
+                                    <p style="margin-top: 15px; color: var(--text-secondary);">Yes, we offer maintenance and support packages to ensure continued success of your project. These can be customized to meet your specific needs.</p>
+                                </div>
+                            </div>
+
+                            <div class="glass-card faq-item">
+                                <div class="faq-item-header">
+                                    <h4 class="h4 faq-item-question">How do you ensure brand consistency across different platforms?</h4>
+                                    <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
+                                </div>
+                                <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
+                                    <p style="margin-top: 15px; color: var(--text-secondary);">We develop comprehensive brand guidelines and style guides to maintain consistency across all touchpoints and platforms for your brand.</p>
+                                </div>
+                            </div>
+
+                            <div class="glass-card faq-item">
+                                <div class="faq-item-header">
+                                    <h4 class="h4 faq-item-question">What technology stack do you use for web development?</h4>
+                                    <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
+                                </div>
+                                <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
+                                    <p style="margin-top: 15px; color: var(--text-secondary);">We work with modern technologies including React, Vue, Next.js, Node.js, and cloud platforms like AWS and Google Cloud, depending on project requirements.</p>
+                                </div>
+                            </div>
+
+                            <div class="glass-card faq-item">
+                                <div class="faq-item-header">
+                                    <h4 class="h4 faq-item-question">How do you handle revisions and feedback?</h4>
+                                    <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
+                                </div>
+                                <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
+                                    <p style="margin-top: 15px; color: var(--text-secondary);">We include a specified number of revision rounds in our contracts. We encourage structured feedback to ensure efficient project iteration and client satisfaction.</p>
+                                </div>
+                            </div>
+
+                        </div>
+
 
                     </div>
-
-                    <!-- PROSPECT FAQ -->
-                    <div class="prospect-faq" style="margin-top: 100px;">
-                        <p class="section-subtitle has-before text-center">F.A.Q</p>
-                        <h2 class="h2 section-title text-center">Questions Before <span class="has-before">Reaching Out?</span></h2>
-
-                        <div style="max-width: 800px; margin: 40px auto 0;">
-                            <div class="glass-card faq-item">
-                                <div class="faq-item-header">
-                                    <h4 class="h4 faq-item-question">What is the typical response time?</h4>
-                                    <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
-                                </div>
-                                <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
-                                    <p style="margin-top: 15px; color: var(--text-secondary);">We review all intake forms within 12 business hours. For urgent production requests, our executive team is notified immediately.</p>
-                                </div>
-                            </div>
-
-                            <div class="glass-card faq-item">
-                                <div class="faq-item-header">
-                                    <h4 class="h4 faq-item-question">Do you handle international projects?</h4>
-                                    <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
-                                </div>
-                                <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
-                                    <p style="margin-top: 15px; color: var(--text-secondary);">Yes. While based in Africa, we have a global creator network and have executed campaigns across 4 continents.</p>
-                                </div>
-                            </div>
-
-                            <div class="glass-card faq-item">
-                                <div class="faq-item-header">
-                                    <h4 class="h4 faq-item-question">What is the onboarding process?</h4>
-                                    <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
-                                </div>
-                                <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
-                                    <p style="margin-top: 15px; color: var(--text-secondary);">After form submission, we schedule a 15-minute Discovery Call. If there's alignment, we issue a formal Protocol Proposal within 24 hours.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="glass-card faq-item">
-                            <div class="faq-item-header">
-                                <h4 class="h4 faq-item-question">What services do you offer?</h4>
-                                <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
-                            </div>
-                            <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
-                                <p style="margin-top: 15px; color: var(--text-secondary);">We specialize in Content Production, Digital Management, Event Management, and Podcasting. Each service is tailored to elevate your brand presence.</p>
-                            </div>
-                        </div>
-
-                        <div class="glass-card faq-item">
-                            <div class="faq-item-header">
-                                <h4 class="h4 faq-item-question">How much do your services cost?</h4>
-                                <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
-                            </div>
-                            <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
-                                <p style="margin-top: 15px; color: var(--text-secondary);">Our pricing is customized based on project scope and requirements. We offer transparent packages designed to deliver premium results at competitive rates.</p>
-                            </div>
-                        </div>
-
-                        <div class="glass-card faq-item">
-                            <div class="faq-item-header">
-                                <h4 class="h4 faq-item-question">How long does a typical project take?</h4>
-                                <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
-                            </div>
-                            <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
-                                <p style="margin-top: 15px; color: var(--text-secondary);">Timeline varies by project complexity. Simple projects may take 2-3 weeks, while comprehensive campaigns can take 2-3 months. We provide estimates during consultation.</p>
-                            </div>
-                        </div>
-
-                        <div class="glass-card faq-item">
-                            <div class="faq-item-header">
-                                <h4 class="h4 faq-item-question">Do you work with international clients?</h4>
-                                <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
-                            </div>
-                            <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
-                                <p style="margin-top: 15px; color: var(--text-secondary);">Absolutely! Though based in Namibia, we serve clients globally with our advanced digital collaboration tools and global creator network.</p>
-                            </div>
-                        </div>
-
-                        <div class="glass-card faq-item">
-                            <div class="faq-item-header">
-                                <h4 class="h4 faq-item-question">Can you provide examples of past work?</h4>
-                                <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
-                            </div>
-                            <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
-                                <p style="margin-top: 15px; color: var(--text-secondary);">Yes, visit our Portfolio section to see diverse projects across various industries. We showcase our work in content production, digital management, events, and podcasting.</p>
-                            </div>
-                        </div>
-
-                        <div class="glass-card faq-item">
-                            <div class="faq-item-header">
-                                <h4 class="h4 faq-item-question">What is your refund policy?</h4>
-                                <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
-                            </div>
-                            <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
-                                <p style="margin-top: 15px; color: var(--text-secondary);">We offer project-specific refund policies outlined in our contract terms. Generally, refunds are considered based on project stage and deliverable completion.</p>
-                            </div>
-                        </div>
-
-                        <div class="glass-card faq-item">
-                            <div class="faq-item-header">
-                                <h4 class="h4 faq-item-question">Do you provide ongoing support after project completion?</h4>
-                                <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
-                            </div>
-                            <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
-                                <p style="margin-top: 15px; color: var(--text-secondary);">Yes, we offer maintenance and support packages to ensure continued success of your project. These can be customized to meet your specific needs.</p>
-                            </div>
-                        </div>
-
-                        <div class="glass-card faq-item">
-                            <div class="faq-item-header">
-                                <h4 class="h4 faq-item-question">How do you ensure brand consistency across different platforms?</h4>
-                                <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
-                            </div>
-                            <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
-                                <p style="margin-top: 15px; color: var(--text-secondary);">We develop comprehensive brand guidelines and style guides to maintain consistency across all touchpoints and platforms for your brand.</p>
-                            </div>
-                        </div>
-
-                        <div class="glass-card faq-item">
-                            <div class="faq-item-header">
-                                <h4 class="h4 faq-item-question">What technology stack do you use for web development?</h4>
-                                <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
-                            </div>
-                            <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
-                                <p style="margin-top: 15px; color: var(--text-secondary);">We work with modern technologies including React, Vue, Next.js, Node.js, and cloud platforms like AWS and Google Cloud, depending on project requirements.</p>
-                            </div>
-                        </div>
-
-                        <div class="glass-card faq-item">
-                            <div class="faq-item-header">
-                                <h4 class="h4 faq-item-question">How do you handle revisions and feedback?</h4>
-                                <ion-icon name="add-outline" class="faq-item-icon"></ion-icon>
-                            </div>
-                            <div class="faq-content" style="max-height: 0; overflow: hidden; transition: 0.3s ease-out;">
-                                <p style="margin-top: 15px; color: var(--text-secondary);">We include a specified number of revision rounds in our contracts. We encourage structured feedback to ensure efficient project iteration and client satisfaction.</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                </div>
             </section>
 
             <!-- SOCIAL PROOF RE-ITERATION -->
@@ -530,6 +515,152 @@
             }
         });
     </script>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // URL Parameter Pre-fill
+            const urlParams = new URLSearchParams(window.location.search);
+            const serviceParam = urlParams.get('service');
+
+            if (serviceParam) {
+                const select = document.querySelector('select[name="project_type"]');
+                if (select) {
+                    select.value = serviceParam;
+                }
+            }
+
+
+        });
+    </script>
+
+    <!-- Google Form Embed Script -->
+    <script>
+        // Google Form Embed functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const iframe = document.getElementById('google-form-iframe');
+            const loadingState = document.getElementById('form-loading');
+            const embedContainer = document.getElementById('form-embed-container');
+            const fallbackContainer = document.getElementById('form-fallback');
+
+            // Timeout for loading (8 seconds)
+            const loadTimeout = setTimeout(function() {
+                if (loadingState.style.display !== 'none') {
+                    // Still showing loading state after timeout
+                    loadingState.style.display = 'none';
+                    fallbackContainer.style.display = 'block';
+
+                    // Track timeout event if analytics exists
+                    if (window.gtag) {
+                        window.gtag('event', 'iframe_timeout', {
+                            event_category: 'Contact',
+                            event_label: 'Google Form Load Timeout'
+                        });
+                    }
+                    if (window.dataLayer) {
+                        window.dataLayer.push({
+                            event: 'iframe_timeout',
+                            category: 'Contact',
+                            label: 'Google Form Load Timeout'
+                        });
+                    }
+                }
+            }, 8000); // 8 seconds timeout
+
+            // Handle iframe load
+            iframe.onload = function() {
+                clearTimeout(loadTimeout);
+
+                // Hide loading state and show embed
+                loadingState.style.display = 'none';
+                embedContainer.style.display = 'block';
+
+                // Track load event if analytics exists
+                if (window.gtag) {
+                    window.gtag('event', 'iframe_loaded', {
+                        event_category: 'Contact',
+                        event_label: 'Google Form'
+                    });
+                }
+                if (window.dataLayer) {
+                    window.dataLayer.push({
+                        event: 'iframe_loaded',
+                        category: 'Contact',
+                        label: 'Google Form'
+                    });
+                }
+
+                // Add focus event listener to iframe
+                iframe.addEventListener('focus', function() {
+                    // Track focus event if analytics exists
+                    if (window.gtag) {
+                        window.gtag('event', 'iframe_focused', {
+                            event_category: 'Contact',
+                            event_label: 'Google Form Interaction'
+                        });
+                    }
+                    if (window.dataLayer) {
+                        window.dataLayer.push({
+                            event: 'iframe_focused',
+                            category: 'Contact',
+                            label: 'Google Form Interaction'
+                        });
+                    }
+                });
+            };
+
+            // Handle iframe error
+            iframe.onerror = function() {
+                clearTimeout(loadTimeout);
+                loadingState.style.display = 'none';
+                fallbackContainer.style.display = 'block';
+
+                // Track error event if analytics exists
+                if (window.gtag) {
+                    window.gtag('event', 'iframe_error', {
+                        event_category: 'Contact',
+                        event_label: 'Google Form Load Error'
+                    });
+                }
+                if (window.dataLayer) {
+                    window.dataLayer.push({
+                        event: 'iframe_error',
+                        category: 'Contact',
+                        label: 'Google Form Load Error'
+                    });
+                }
+            };
+        });
+
+        // Function to track Google Form link clicks
+        function trackGoogleFormClick() {
+            // Track click event if analytics exists
+            if (window.gtag) {
+                window.gtag('event', 'click', {
+                    event_category: 'Contact',
+                    event_label: 'Open Google Form'
+                });
+            }
+            if (window.dataLayer) {
+                window.dataLayer.push({
+                    event: 'open_google_form',
+                    category: 'Contact',
+                    label: 'Open Google Form'
+                });
+            }
+        }
+
+        // Function to smoothly scroll to contact section
+        function smoothScrollToContact(event) {
+            event.preventDefault();
+            const contactSection = document.getElementById('contact');
+            contactSection.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
 </body>
 
 </html>
