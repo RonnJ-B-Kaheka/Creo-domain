@@ -6,7 +6,7 @@
  * add Event on elements
  */
 
-const addEventOnElem = function(elem, type, callback) {
+const addEventOnElem = function (elem, type, callback) {
     if (!elem || !type || !callback) {
         console.warn('Missing required parameters for addEventOnElem');
         return;
@@ -36,54 +36,283 @@ const addEventOnElem = function(elem, type, callback) {
  */
 
 // Safe element selection with error handling
-const navbar = document.querySelector("[data-navbar]");
-const navTogglers = document.querySelectorAll("[data-nav-toggler]");
-const navbarLinks = document.querySelectorAll("[data-nav-link]");
-const overlay = document.querySelector("[data-overlay]");
+let navbar, navTogglers, navbarLinks, overlay;
 
-const toggleNavbar = function() {
-    try {
-        if (navbar) {
-            navbar.classList.toggle("active");
-        } else {
-            console.warn('Navbar element not found');
-        }
+// Initialize all navbar functionality after DOM is loaded
+function initNavbar() {
+    // Select elements
+    navbar = document.querySelector("[data-navbar]");
+    navTogglers = document.querySelectorAll("[data-nav-toggler]");
+    navbarLinks = document.querySelectorAll("[data-nav-link]");
+    overlay = document.querySelector("[data-overlay]");
 
-        if (overlay) {
-            overlay.classList.toggle("active");
-        } else {
-            console.warn('Overlay element not found');
-        }
-    } catch (error) {
-        console.error('Error toggling navbar:', error);
+    // Validate elements
+    if (!navbar) {
+        console.error('ERROR: Navbar element not found');
+        return;
     }
+
+    if (navTogglers.length === 0) {
+        console.error('ERROR: No nav toggler elements found');
+        return;
+    }
+
+    // Define toggle function
+    const toggleNavbar = function (event) {
+        // Prevent default behavior
+        if (event) {
+            event.preventDefault();
+        }
+
+        try {
+            // Ensure navbar exists
+            if (!navbar) {
+                console.error('ERROR: Navbar element not available');
+                return;
+            }
+
+            // Toggle navbar active class
+            navbar.classList.toggle('active');
+
+            // Fade nav actions when navbar is active
+            const navActions = document.querySelector('.nav-actions');
+            if (navActions) {
+                if (navbar.classList.contains('active')) {
+                    navActions.classList.add('faded');
+                } else {
+                    navActions.classList.remove('faded');
+                }
+            }
+
+            // Toggle overlay if it exists
+            if (overlay) {
+                overlay.classList.toggle('active');
+            }
+
+        } catch (error) {
+            console.error('Error in toggleNavbar function:', error);
+        }
+    }
+
+    // Attach event listeners
+    if (navTogglers.length > 0) {
+        // Use direct event listener attachment for better reliability
+        navTogglers.forEach((toggler) => {
+            toggler.addEventListener('click', toggleNavbar);
+        });
+    } else {
+        console.error('CRITICAL ERROR: No navbar toggler elements found');
+    }
+
+    // Setup other navbar listeners
+    setupNavTogglers();
+    setupNavbarLinkListeners();
+    setupOverlayListener();
 }
 
-if (navTogglers.length > 0) {
-    addEventOnElem(navTogglers, "click", toggleNavbar);
+// Initialize navbar when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () {
+        initNavbar();
+        setupNavbarKeyboardNavigation();
+    });
 } else {
-    console.warn('No navbar toggler elements found');
+    // DOM is already loaded, initialize immediately
+    initNavbar();
+    setupNavbarKeyboardNavigation();
 }
 
-const closeNavbar = function() {
+const closeNavbar = function () {
     try {
         if (navbar) {
             navbar.classList.remove("active");
+            // Remove focus trap when closing navbar
+            removeFocusTrap();
         }
 
         if (overlay) {
             overlay.classList.remove("active");
+        }
+
+        // Unfade nav actions when navbar is closed
+        const navActions = document.querySelector('.nav-actions');
+        if (navActions) {
+            navActions.classList.remove('faded');
         }
     } catch (error) {
         console.error('Error closing navbar:', error);
     }
 }
 
-if (navbarLinks.length > 0) {
-    addEventOnElem(navbarLinks, "click", closeNavbar);
-} else {
-    console.warn('No navbar link elements found');
+// Focus trap functionality for accessibility
+function setupFocusTrap() {
+    if (!navbar || !navbar.classList.contains('active')) return;
+
+    const focusableElements = navbar.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+
+    if (focusableElements.length === 0) return;
+
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    // Set initial focus to the first element
+    firstElement.focus();
+
+    // Handle Tab and Shift+Tab
+    function trapFocus(e) {
+        if (e.key === 'Tab') {
+            if (e.shiftKey) {
+                if (document.activeElement === firstElement) {
+                    e.preventDefault();
+                    lastElement.focus();
+                }
+            } else {
+                if (document.activeElement === lastElement) {
+                    e.preventDefault();
+                    firstElement.focus();
+                }
+            }
+        }
+
+        // Close menu if Escape key is pressed
+        if (e.key === 'Escape') {
+            closeNavbar();
+            document.querySelector('.nav-open-btn').focus();
+        }
+
+        // Close menu if user tabs out of the navbar
+        if (e.key === 'Tab' && !navbar.contains(document.activeElement)) {
+            closeNavbar();
+        }
+    }
+
+    // Add event listener to trap focus
+    document.addEventListener('keydown', trapFocus);
+
+    // Store the function to remove it later
+    navbar.trapFocusHandler = trapFocus;
 }
+
+// Enhanced keyboard navigation for navbar
+function setupNavbarKeyboardNavigation() {
+    if (!navbar) return;
+
+    // Add keyboard shortcuts for navbar navigation
+    document.addEventListener('keydown', function (e) {
+        // Ctrl/Cmd + M to toggle menu
+        if ((e.ctrlKey || e.metaKey) && e.key === 'm') {
+            e.preventDefault();
+            const navOpenBtn = document.querySelector('.nav-open-btn');
+            if (navOpenBtn) {
+                navOpenBtn.click();
+            }
+        }
+
+        // Alt + 1-4 to navigate to menu items (if navbar is open)
+        if (e.altKey && navbar.classList.contains('active')) {
+            const menuItemIndex = parseInt(e.key) - 1;
+            if (menuItemIndex >= 0 && menuItemIndex < navbarLinks.length) {
+                e.preventDefault();
+                navbarLinks[menuItemIndex].focus();
+            }
+        }
+    });
+}
+
+function removeFocusTrap() {
+    if (navbar && navbar.trapFocusHandler) {
+        document.removeEventListener('keydown', navbar.trapFocusHandler);
+        delete navbar.trapFocusHandler;
+    }
+}
+
+// Add event listener to nav togglers to handle focus trap
+function setupNavTogglers() {
+    if (navTogglers && navTogglers.length > 0) {
+        navTogglers.forEach(toggler => {
+            toggler.addEventListener('click', function () {
+                // Small delay to ensure the navbar is rendered before setting up focus trap
+                setTimeout(() => {
+                    if (navbar && navbar.classList.contains('active')) {
+                        setupFocusTrap();
+                    }
+                }, 100);
+            });
+        });
+    }
+}
+
+// Initialize all navbar event listeners
+function setupAllNavbarListeners() {
+    setupNavTogglers();
+    setupNavbarLinkListeners();
+    setupOverlayListener();
+}
+
+// Close navbar when clicking on a link
+function setupNavbarLinkListeners() {
+    if (navbarLinks && navbarLinks.length > 0) {
+        addEventOnElem(navbarLinks, "click", function () {
+            closeNavbar();
+            updateActiveNavLink(this);
+        });
+
+        // Set initial active link based on current page
+        setActiveNavLinkByPage();
+    } else {
+        console.warn('No navbar link elements found');
+    }
+}
+
+// Update active navigation link
+function updateActiveNavLink(clickedLink) {
+    try {
+        // Remove active class from all links
+        navbarLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+
+        // Add active class to clicked link
+        if (clickedLink) {
+            clickedLink.classList.add('active');
+        }
+    } catch (error) {
+        console.error('Error updating active nav link:', error);
+    }
+}
+
+// Set active link based on current page
+function setActiveNavLinkByPage() {
+    try {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const currentPageName = currentPage.replace('.html', '').toLowerCase();
+
+        navbarLinks.forEach(link => {
+            const href = link.getAttribute('href') || '';
+            const linkPage = href.split('/').pop().replace('.html', '').toLowerCase();
+
+            // Match current page with link
+            if (currentPageName === linkPage ||
+                (currentPageName === 'index' && linkPage === '#home') ||
+                (currentPageName === '' && linkPage === '#home')) {
+                link.classList.add('active');
+            }
+        });
+    } catch (error) {
+        console.error('Error setting active nav link by page:', error);
+    }
+}
+
+// Close navbar when clicking on overlay
+function setupOverlayListener() {
+    if (overlay) {
+        overlay.addEventListener('click', closeNavbar);
+    }
+}
+
+
 
 
 
@@ -94,7 +323,7 @@ if (navbarLinks.length > 0) {
 const header = document.querySelector("[data-header]");
 const backTopBtn = document.querySelector("[data-back-top-btn]");
 
-const headerActive = function() {
+const headerActive = function () {
     try {
         if (window.scrollY > 80) {
             if (header) {
@@ -123,7 +352,7 @@ addEventOnElem(window, "scroll", headerActive);
  * Smooth scroll for back to top button
  */
 
-const scrollToTop = function(e) {
+const scrollToTop = function (e) {
     e.preventDefault();
 
     // Use Lenis smooth scrolling if available, otherwise fallback to native
@@ -155,7 +384,7 @@ const projectItems = document.querySelectorAll("[data-filter-item]");
 
 let lastClickedBtn = filterBtns[0] || null;
 
-const filterProjectItems = function() {
+const filterProjectItems = function () {
     try {
         if (lastClickedBtn) {
             lastClickedBtn.classList.remove("active");
@@ -218,7 +447,7 @@ if (cardElements.length > 0) {
         card.setAttribute('tabindex', '0');
 
         // Add event listeners for mouse and keyboard interaction
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-10px)';
             this.style.boxShadow = '0 15px 30px rgba(255, 0, 85, 0.2)';
 
@@ -230,7 +459,7 @@ if (cardElements.length > 0) {
             });
         });
 
-        card.addEventListener('mouseleave', function() {
+        card.addEventListener('mouseleave', function () {
             this.style.transform = 'translateY(0)';
             this.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
 
@@ -242,7 +471,7 @@ if (cardElements.length > 0) {
             });
         });
 
-        card.addEventListener('keydown', function(e) {
+        card.addEventListener('keydown', function (e) {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
                 this.click();
@@ -256,7 +485,7 @@ const scrollContainers = document.querySelectorAll('.grid-list');
 
 scrollContainers.forEach(container => {
     // Enable horizontal scrolling if needed
-    container.addEventListener('wheel', function(e) {
+    container.addEventListener('wheel', function (e) {
         if (e.deltaX === 0) {
             e.preventDefault();
             this.scrollLeft += e.deltaY;
@@ -288,4 +517,54 @@ faqItems.forEach(item => {
             icon.name = 'remove-outline';
         }
     });
+});
+
+// Analytics for contact form button
+const contactButton = document.querySelector('.contact-button');
+if (contactButton) {
+    contactButton.addEventListener('click', function (e) {
+        // Fire analytics events if globals exist
+        try {
+            if (window.gtag) {
+                gtag('event', 'click', {
+                    event_category: 'Contact',
+                    event_label: 'Open Google Form'
+                });
+            }
+
+            if (window.dataLayer) {
+                dataLayer.push({
+                    event: 'open_google_form',
+                    category: 'Contact',
+                    label: 'Open Google Form'
+                });
+            }
+        } catch (error) {
+            console.warn('Error firing analytics events:', error);
+        }
+    });
+}
+
+/**
+ * Reveal Elements on Scroll
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
+    if (revealElements.length > 0) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            revealObserver.observe(el);
+        });
+    }
 });

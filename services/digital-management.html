@@ -5,10 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creo Media - Digital Management</title>
-    <meta name="description" content="Creo Media Digital Management: Data-driven strategies that dominate. SEO, Social Media, and Analytic Growth.">
 
-    <link rel="shortcut icon" href="../favicon.svg" type="image/svg+xml">
+    <!-- SEO Meta Tags -->
+    <title>Creo Media - Digital Management</title>
+    <meta name="description"
+        content="Creo Media Digital Management: Data-driven strategies that dominate. SEO, Social Media, and Analytic Growth.">
+    <meta name="keywords"
+        content="digital marketing namibia, seo services, social media management, data analytics, growth marketing">
+    <meta name="author" content="Creomedia">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.creomedia.com/services/digital-management.html">
+    <meta property="og:title" content="Creo Media - Digital Management">
+    <meta property="og:description"
+        content="Creo Media Digital Management: Data-driven strategies that dominate. SEO, Social Media, and Analytic Growth.">
+    <meta property="og:image" content="https://www.creomedia.com/assets/images/hero-banner.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.creomedia.com/services/digital-management.html">
+    <meta property="twitter:title" content="Creo Media - Digital Management">
+    <meta property="twitter:description"
+        content="Creo Media Digital Management: Data-driven strategies that dominate. SEO, Social Media, and Analytic Growth.">
+    <meta property="twitter:image" content="https://www.creomedia.com/assets/images/hero-banner.png">
+
+    <link rel="shortcut icon" href="../Creo,Logo.jpg" type="image/jpg">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/wow.css">
 
@@ -17,7 +40,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
 
     <style>
-         :root {
+        :root {
             --ev-bg: #000000;
             --ev-neon: #00E5FF;
             /* Cyan Neon */
@@ -25,21 +48,22 @@
             /* Electric Purple */
             --ev-text: #ffffff;
         }
-        
+
         body.page-digital-management {
             background-color: var(--ev-bg);
             color: var(--ev-text);
             font-family: 'Outfit', sans-serif;
             overflow-x: hidden;
         }
+
         /* UTILS */
-        
+
         .ev-container {
             max-width: 1300px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         h1,
         h2,
         h3 {
@@ -48,8 +72,9 @@
             font-weight: 900;
             line-height: 0.9;
         }
+
         /* 1. HERO: High Energy Video Loop */
-        
+
         .ev-hero-full {
             height: 100vh;
             position: relative;
@@ -58,7 +83,7 @@
             justify-content: center;
             overflow: hidden;
         }
-        
+
         .bg-video-layer {
             position: absolute;
             inset: 0;
@@ -69,21 +94,22 @@
             opacity: 0.6;
             filter: contrast(1.2) brightness(0.8);
         }
+
         /* Gradient Overlay */
-        
+
         .hero-overlay {
             position: absolute;
             inset: 0;
             background: linear-gradient(0deg, #000 0%, transparent 60%);
             z-index: 1;
         }
-        
+
         .hero-center {
             position: relative;
             z-index: 2;
             text-align: center;
         }
-        
+
         .mega-title {
             font-size: clamp(4rem, 15vw, 12rem);
             color: transparent;
@@ -92,7 +118,7 @@
             margin-bottom: 20px;
             mix-blend-mode: overlay;
         }
-        
+
         .mega-title::after {
             content: attr(data-text);
             position: absolute;
@@ -105,7 +131,7 @@
             z-index: -1;
             mix-blend-mode: color-dodge;
         }
-        
+
         .hero-sub {
             font-size: 1.5rem;
             text-transform: uppercase;
@@ -113,7 +139,7 @@
             margin-bottom: 40px;
             font-weight: 700;
         }
-        
+
         .btn-neon {
             background: var(--ev-neon);
             color: black;
@@ -126,15 +152,16 @@
             transition: 0.3s;
             display: inline-block;
         }
-        
+
         .btn-neon:hover {
             background: white;
             color: var(--ev-neon);
             transform: scale(1.05);
             box-shadow: 0 0 30px var(--ev-neon);
         }
+
         /* 2. SERVICES TICKER */
-        
+
         .ticker-wrap {
             background: var(--ev-neon-2);
             color: white;
@@ -143,19 +170,20 @@
             margin: 50px 0;
             border: 4px solid black;
         }
-        
+
         .ticker-txt {
             font-size: 2rem;
             font-weight: 900;
             white-space: nowrap;
             text-transform: uppercase;
         }
+
         /* 3. SHOWCASE SLIDER (Glitch Effect) */
-        
+
         .showcase-sec {
             padding: 100px 0;
         }
-        
+
         .event-card-lg {
             position: relative;
             height: 600px;
@@ -163,7 +191,7 @@
             display: flex;
             align-items: center;
         }
-        
+
         .ec-img {
             width: 70%;
             height: 100%;
@@ -171,11 +199,11 @@
             filter: grayscale(100%);
             transition: 0.5s;
         }
-        
+
         .event-card-lg:hover .ec-img {
             filter: grayscale(0%);
         }
-        
+
         .ec-content {
             background: black;
             border: 2px solid white;
@@ -185,7 +213,7 @@
             right: 0;
             box-shadow: -20px 20px 0 rgba(0, 229, 255, 0.5);
         }
-        
+
         .ec-tag {
             color: var(--ev-neon-2);
             font-weight: 700;
@@ -193,63 +221,69 @@
             margin-bottom: 15px;
             display: block;
         }
-        
+
         .ec-h2 {
             font-size: 3rem;
             margin-bottom: 20px;
             line-height: 1;
         }
+
         /* Reverse Layout */
-        
+
         .event-card-lg.rev {
             flex-direction: row-reverse;
         }
-        
+
         .event-card-lg.rev .ec-content {
             left: 0;
             right: auto;
             box-shadow: 20px 20px 0 rgba(143, 0, 255, 0.5);
         }
+
         /* 4. STATS / URGENCY */
-        
+
         .stats-sec {
             background: #111;
             padding: 100px 0;
             text-align: center;
         }
-        
+
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 50px;
         }
-        
+
         .stat-big {
             font-size: 5rem;
             font-weight: 900;
             color: transparent;
             -webkit-text-stroke: 1px white;
         }
-        
+
         .stat-lbl {
             color: #888;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
+
         /* RESPONSIVE */
-        
+
         @media (max-width: 992px) {
             .mega-title {
                 font-size: 5rem;
             }
+
             .event-card-lg {
                 flex-direction: column;
                 height: auto;
             }
+
             .ec-img {
                 width: 100%;
                 height: 400px;
             }
+
             .ec-content {
                 position: relative;
                 width: 90%;
@@ -257,6 +291,7 @@
                 right: auto;
                 left: auto;
             }
+
             .event-card-lg.rev {
                 flex-direction: column;
             }
@@ -271,26 +306,34 @@
 
     <header class="header" data-header>
         <div class="container">
-            <a href="../index.html" class="logo">Creo Media</a>
+            <a href="../index.html" class="logo"><span class="creo-text">Creo</span><span
+                    class="media-text">Media</span></a>
+
+            <div class="nav-actions">
+                <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+                    <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+                </button>
+
+                <a href="../contact.html" class="btn btn-primary has-before has-after">Let's Talk 👋</a>
+            </div>
+
             <nav class="navbar" data-navbar>
                 <div class="wrapper">
-                    <a href="../index.html" class="logo">Creo Media</a>
+                    <a href="../index.html" class="logo"><span class="creo-text">Creo</span><span
+                            class="media-text">Media</span></a>
                     <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
                         <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
                     </button>
                 </div>
                 <ul class="navbar-list">
                     <li class="navbar-item"><a href="../index.html" class="navbar-link" data-nav-link>Home</a></li>
-                    <li class="navbar-item"><a href="../service.html" class="navbar-link active" data-nav-link>Services</a></li>
+                    <li class="navbar-item"><a href="../service.html" class="navbar-link active"
+                            data-nav-link>Services</a></li>
                     <li class="navbar-item"><a href="../about.html" class="navbar-link" data-nav-link>About</a></li>
                     <li class="navbar-item"><a href="../portfolio.html" class="navbar-link" data-nav-link>Portfolio</a>
                     </li>
                 </ul>
             </nav>
-            <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
-                <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
-            </button>
-            <a href="../contact.html" class="btn btn-primary has-before has-after">Let's Talk 👋</a>
             <div class="overlay" data-nav-toggler data-overlay></div>
         </div>
     </header>
@@ -299,7 +342,8 @@
 
         <!-- 1. HERO -->
         <section class="ev-hero-full">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80" class="bg-video-layer" alt="Data Network">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80" class="bg-video-layer"
+                alt="Data Network">
             <div class="hero-overlay"></div>
 
             <div class="hero-center">
@@ -312,7 +356,8 @@
         <!-- 2. TICKER -->
         <div class="ticker-wrap">
             <div class="ev-container">
-                <div class="ticker-txt"> // SEO // Analytics // Paid Ads // Social Strategy // Conversion Rate Opt // SEO // Analytics</div>
+                <div class="ticker-txt"> // SEO // Analytics // Paid Ads // Social Strategy // Conversion Rate Opt //
+                    SEO // Analytics</div>
             </div>
         </div>
 
@@ -322,23 +367,29 @@
 
                 <!-- Project 1 -->
                 <div class="event-card-lg reveal-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&q=80" class="ec-img" alt="Growth Chart">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&q=80" class="ec-img"
+                        alt="Growth Chart">
                     <div class="ec-content">
                         <span class="ec-tag">SEO & Content</span>
                         <h2 class="ec-h2">Tech Giant Scale</h2>
-                        <p style="margin-bottom: 20px;">Increased organic traffic by 400% in 6 months using our proprietary keyword clustering engine.</p>
-                        <a href="../contact.html?service=digital-management" style="color: white; border-bottom: 2px solid var(--ev-neon);">Get Results</a>
+                        <p style="margin-bottom: 20px;">Increased organic traffic by 400% in 6 months using our
+                            proprietary keyword clustering engine.</p>
+                        <a href="../contact.html?service=digital-management"
+                            style="color: white; border-bottom: 2px solid var(--ev-neon);">Get Results</a>
                     </div>
                 </div>
 
                 <!-- Project 2 (Reverse) -->
                 <div class="event-card-lg rev reveal-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1000&q=80" class="ec-img" alt="Social Media">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1000&q=80" class="ec-img"
+                        alt="Social Media">
                     <div class="ec-content">
                         <span class="ec-tag">Paid Acquisition</span>
                         <h2 class="ec-h2">E-Comm Boom</h2>
-                        <p style="margin-bottom: 20px;">Achieved a 5.2x ROAS on Meta Ads for a luxury fashion brand during Black Friday.</p>
-                        <a href="../contact.html?service=digital-management" style="color: white; border-bottom: 2px solid var(--ev-neon-2);">Get Results</a>
+                        <p style="margin-bottom: 20px;">Achieved a 5.2x ROAS on Meta Ads for a luxury fashion brand
+                            during Black Friday.</p>
+                        <a href="../contact.html?service=digital-management"
+                            style="color: white; border-bottom: 2px solid var(--ev-neon-2);">Get Results</a>
                     </div>
                 </div>
 
@@ -369,24 +420,263 @@
 
     <footer class="footer">
         <div class="container">
+
             <div class="footer-top section">
+
                 <div class="footer-brand">
+
                     <p class="footer-list-title">About Creo Media</p>
-                    <p class="footer-text">Premium storytelling and digital experiences.</p>
+
+                    <p class="footer-text">
+                        Namibian-based premium creative agency delivering global standards in content, digital, events,
+                        and podcasting.
+                    </p>
+
+                    <ul class="social-list">
+
+                        <li>
+                            <a href="https://youtube.com/@morethanlogic?si=cmQSAu6s63-HpJO3" class="social-link"
+                                aria-label="Visit our YouTube channel">
+                                <ion-icon name="logo-youtube"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.tiktok.com/@creomedia.na?_r=1&_t=ZS-93HOHUWBStT" class="social-link"
+                                aria-label="Visit our TikTok profile">
+                                <ion-icon name="logo-tiktok"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.instagram.com/creomedia.na" class="social-link"
+                                aria-label="Visit our Instagram profile">
+                                <ion-icon name="logo-instagram"></ion-icon>
+                            </a>
+                        </li>
+
+
+
+
+                    </ul>
+
                 </div>
+
                 <ul class="footer-list">
+
                     <li>
                         <p class="footer-list-title">Useful Links</p>
                     </li>
-                    <li><a href="../contact.html" class="footer-link">Contact us</a></li>
-                    <li><a href="../service.html" class="footer-link">Services</a></li>
+
+                    <li>
+                        <a href="../contact.html" class="footer-link">Contact us</a>
+                    </li>
+
+                    <li>
+                        <a href="../service.html" class="footer-link">Services</a>
+                    </li>
+
+                    <li>
+                        <a href="../about.html" class="footer-link">About Us</a>
+                    </li>
+
+                    <li>
+                        <a href="../portfolio.html" class="footer-link">Portfolio</a>
+                    </li>
+
                 </ul>
+
+                <ul class="footer-list">
+                </ul>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <p class="footer-list-title">Instagram post</p>
+                    </li>
+
+                    <li>
+                        <ul class="insta-post">
+
+                            <li>
+                                <div class="insta-card">
+
+                                    <figure class="post-banner">
+                                        <img src="../assets/images/insta-post-1.jpg" width="77" height="63"
+                                            loading="lazy" alt="instagram post" class="img-cover">
+                                    </figure>
+
+                                    <a href="https://www.instagram.com/creomedia.na" class="card-content"
+                                        aria-label="View our Instagram profile">
+                                        <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+                                    </a>
+
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="insta-card">
+
+                                    <figure class="post-banner">
+                                        <img src="../assets/images/insta-post-2.jpg" width="77" height="63"
+                                            loading="lazy" alt="instagram post" class="img-cover">
+                                    </figure>
+
+                                    <a href="https://www.instagram.com/creomedia.na" class="card-content"
+                                        aria-label="View our Instagram profile">
+                                        <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+                                    </a>
+
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="insta-card">
+
+                                    <figure class="post-banner">
+                                        <img src="../assets/images/insta-post-3.jpg" width="77" height="63"
+                                            loading="lazy" alt="instagram post" class="img-cover">
+                                    </figure>
+
+                                    <a href="https://www.instagram.com/creomedia.na" class="card-content"
+                                        aria-label="View our Instagram profile">
+                                        <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+                                    </a>
+
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="insta-card">
+
+                                    <figure class="post-banner">
+                                        <img src="../assets/images/insta-post-4.jpg" width="77" height="63"
+                                            loading="lazy" alt="instagram post" class="img-cover">
+                                    </figure>
+
+                                    <a href="https://www.instagram.com/creomedia.na" class="card-content"
+                                        aria-label="View our Instagram profile">
+                                        <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+                                    </a>
+
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="insta-card">
+
+                                    <figure class="post-banner">
+                                        <img src="../assets/images/insta-post-5.jpg" width="77" height="63"
+                                            loading="lazy" alt="instagram post" class="img-cover">
+                                    </figure>
+
+                                    <a href="https://www.instagram.com/creomedia.na" class="card-content"
+                                        aria-label="View our Instagram profile">
+                                        <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+                                    </a>
+
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="insta-card">
+
+                                    <figure class="post-banner">
+                                        <img src="../assets/images/insta-post-6.jpg" width="77" height="63"
+                                            loading="lazy" alt="instagram post" class="img-cover">
+                                    </figure>
+
+                                    <a href="https://www.instagram.com/creomedia.na" class="card-content"
+                                        aria-label="View our Instagram profile">
+                                        <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+                                    </a>
+
+                                </div>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+
             </div>
+
+            <!-- Business Information Section -->
+            <div class="footer-business"
+                style="border-top: 1px solid rgba(255,255,255,0.1); padding: 30px 0; margin-top: 20px;">
+                <div class="container"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px;">
+
+                    <!-- Contact Info -->
+                    <div>
+                        <h4 style="color: var(--hot-pink); margin-bottom: 12px; font-size: 1rem;">Contact Info</h4>
+                        <p style="margin: 6px 0; color: var(--text-main); font-size: 15px;"><strong>📞</strong><a
+                                href="tel:0812674321" class="item-link">081 267 4321</a></p>
+                        <p style="margin: 6px 0; color: var(--text-main); font-size: 15px;"><strong>✉️</strong><a
+                                href="mailto:contact.creomedia@gmail.com"
+                                class="item-link">contact.creomedia@gmail.com</a></p>
+                        <p style="margin: 6px 0; color: var(--text-main); font-size: 15px;"><strong>📍</strong>
+                            Windhoek, Namibia</p>
+                    </div>
+
+                    <!-- Why Choose Us -->
+                    <div>
+                        <h4 style="color: var(--cyan); margin-bottom: 12px; font-size: 1rem;">Why Choose Us</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin: 6px 0; color: var(--text-main); font-size: 15px;">✓ Global Standards</li>
+                            <li style="margin: 6px 0; color: var(--text-main); font-size: 15px;">✓ African Excellence
+                            </li>
+                            <li style="margin: 6px 0; color: var(--text-main); font-size: 15px;">✓ Premium Quality</li>
+                            <li style="margin: 6px 0; color: var(--text-main); font-size: 15px;">✓ 24/7 Support</li>
+                        </ul>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div>
+                        <h4 style="color: var(--hot-pink); margin-bottom: 12px; font-size: 1rem;">Our Numbers</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                            <div>
+                                <p style="font-size: 1.5rem; font-weight: bold; color: var(--cyan); margin: 0;">50+</p>
+                                <p style="margin: 0; color: var(--text-main); font-size: 15px;">Projects</p>
+                            </div>
+                            <div>
+                                <p style="font-size: 1.5rem; font-weight: bold; color: var(--hot-pink); margin: 0;">25+
+                                </p>
+                                <p style="margin: 0; color: var(--text-main); font-size: 15px;">Clients</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="footer-bottom">
-                <p class="copyright">&copy; 2026 Creomedia. All Rights Reserved.</p>
+
+                <p class="copyright">
+                    &copy; 2026 Creomedia. All Rights Reserved.
+                </p>
+
+                <ul class="footer-bottom-list">
+
+                    <li>
+                        <a href="../terms.html" class="footer-bottom-link">Terms and conditions</a>
+                    </li>
+
+                    <li>
+                        <a href="../privacy.html" class="footer-bottom-link">Privacy policy</a>
+                    </li>
+
+
+
+                </ul>
+
             </div>
+
         </div>
     </footer>
+
+    <a href="#top" class="back-top-btn has-after" aria-label="back to top" data-back-top-btn>
+        <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
+    </a>
 
     <script src="../assets/js/script.js" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -396,25 +686,7 @@
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
     <script src="../assets/js/wow.js" defer></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            });
 
-            document.querySelectorAll('.reveal-on-scroll').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                observer.observe(el);
-            });
-        });
-    </script>
 </body>
 
 </html>

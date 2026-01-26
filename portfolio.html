@@ -5,514 +5,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Creo Media Solutions</title>
-    <meta name="description" content="Explore Creo Media's portfolio of premium content production, digital campaigns, events, and podcasts. Real work, real results.">
 
-    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+    <!-- SEO Meta Tags -->
+    <title>Portfolio - Creo Media Solutions</title>
+    <meta name="description"
+        content="Explore Creo Media's portfolio of premium content production, digital campaigns, events, and podcasts. Real work, real results.">
+    <meta name="keywords"
+        content="creative agency, design studio, video production, digital marketing, branding, content creation, Namibia creative agency, African design">
+    <meta name="author" content="Creomedia">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.creomedia.com/portfolio.html">
+    <meta property="og:title" content="Portfolio - Creo Media Solutions">
+    <meta property="og:description"
+        content="Explore Creo Media's portfolio of premium content production, digital campaigns, events, and podcasts.">
+    <meta property="og:image" content="https://www.creomedia.com/assets/images/hero-banner.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.creomedia.com/portfolio.html">
+    <meta property="twitter:title" content="Portfolio - Creo Media Solutions">
+    <meta property="twitter:description"
+        content="Explore Creo Media's portfolio of premium content production, digital campaigns, events, and podcasts.">
+    <meta property="twitter:image" content="https://www.creomedia.com/assets/images/hero-banner.png">
+
+    <link rel="shortcut icon" href="./Creo,Logo.jpg" type="image/jpg">
+
+    <!-- CSS Links -->
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/unified-hero.css">
     <link rel="stylesheet" href="./assets/css/wow.css">
+    <link rel="stylesheet" href="./assets/css/portfolio.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Performance optimizations -->
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+
+    <!-- Web Accessibility -->
+    <div class="visually-hidden">
+        <h2>Web Accessibility Statement</h2>
+        <p>Creomedia is committed to ensuring digital accessibility for people with disabilities. We are continuously
+            improving the user experience for everyone, and applying the relevant accessibility standards.</p>
+    </div>
 
     <style>
-         :root {
-            --portfolio-bg: #0a0a0a;
-            --portfolio-surface: #141414;
-            --portfolio-accent: #FF0055;
-            --portfolio-accent-2: #00E5FF;
-            --portfolio-text: #ffffff;
-            --portfolio-muted: #888888;
-        }
-        
-        body.page-portfolio {
-            background-color: var(--portfolio-bg);
-            color: var(--portfolio-text);
-            font-family: 'Outfit', sans-serif;
-        }
-        
-        .portfolio-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 30px;
-        }
-        /* HERO */
-        
-        .portfolio-hero {
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding-top: 120px;
-            position: relative;
-        }
-        
-        .portfolio-hero h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -3px;
-            margin-bottom: 20px;
-        }
-        
-        .portfolio-hero p {
-            font-size: 1.2rem;
-            color: var(--portfolio-muted);
-            max-width: 600px;
-            margin: 0 auto 40px;
-        }
-        /* FILTER BAR */
-        
-        .filter-bar {
-            background: var(--portfolio-surface);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 100px;
-            padding: 8px;
-            display: inline-flex;
-            gap: 8px;
-            margin-bottom: 60px;
-        }
-        
-        .filter-btn {
-            background: transparent;
-            border: none;
-            color: var(--portfolio-muted);
-            padding: 12px 28px;
-            border-radius: 100px;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        
-        .filter-btn:hover {
-            color: white;
-        }
-        
-        .filter-btn.active {
-            background: var(--portfolio-accent);
-            color: white;
-        }
-        /* GRID */
-        
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            gap: 30px;
-            margin-bottom: 100px;
-        }
-        
-        .portfolio-item {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            background: var(--portfolio-surface);
-            cursor: pointer;
-            transition: 0.4s;
-        }
-        
-        .portfolio-item:hover {
-            transform: translateY(-8px);
-        }
-        
-        .portfolio-item.hidden {
-            display: none;
-        }
-        
-        .portfolio-img-wrapper {
-            position: relative;
-            width: 100%;
-            height: 350px;
-            overflow: hidden;
-        }
-        
-        .portfolio-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: 0.5s ease;
-        }
-        
-        .portfolio-video-preview {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: 0.5s ease;
-            pointer-events: none;
-        }
-        
-        .portfolio-item:hover .portfolio-img {
-            opacity: 0;
-            transform: scale(1.1);
-        }
-        
-        .portfolio-item:hover .portfolio-video-preview {
-            opacity: 1;
-        }
-        
-        .video-indicator {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(4px);
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            color: white;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            z-index: 5;
-            pointer-events: none;
-        }
-        
-        .portfolio-info {
-            padding: 25px;
-        }
-        
-        .portfolio-category {
-            display: inline-block;
-            background: rgba(255, 0, 85, 0.1);
-            color: var(--portfolio-accent);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 12px;
-        }
-        
-        .portfolio-item[data-category="digital"] .portfolio-category {
-            background: rgba(0, 229, 255, 0.1);
-            color: var(--portfolio-accent-2);
-        }
-        
-        .portfolio-item[data-category="events"] .portfolio-category {
-            background: rgba(255, 230, 0, 0.1);
-            color: #FFE600;
-        }
-        
-        .portfolio-item[data-category="podcasting"] .portfolio-category {
-            background: rgba(157, 0, 255, 0.1);
-            color: #9D00FF;
-        }
-        
-        .portfolio-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            line-height: 1.2;
-        }
-        
-        .portfolio-desc {
-            color: var(--portfolio-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        
-        .portfolio-meta {
-            display: flex;
-            gap: 20px;
-            font-size: 0.85rem;
-            color: var(--portfolio-muted);
-        }
-        
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        /* LIGHTBOX MODAL */
-        
-        .portfolio-modal {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 10000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 40px;
-            overflow-y: auto;
-            cursor: default;
-        }
-        
-        .portfolio-modal.active {
-            display: flex;
-        }
-        
-        .modal-content {
-            background: var(--portfolio-surface);
-            border-radius: 20px;
-            max-width: 90vw;
-            width: 90vw;
-            max-height: 85vh;
-            position: relative;
-            animation: modalSlideUp 0.4s ease;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            cursor: default;
-        }
-        
-        @keyframes modalSlideUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            z-index: 10;
-            transition: 0.3s;
-        }
-        
-        .modal-close:hover {
-            background: var(--portfolio-accent);
-            transform: rotate(90deg);
-        }
-        
-        .modal-hero-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 20px 20px 0 0;
-        }
-        
-        .modal-body {
-            padding: 25px;
-            flex: 1;
-            overflow-y: auto;
-            cursor: default;
-        }
-        
-        .modal-header {
-            margin-bottom: 30px;
-        }
-        
-        .modal-title {
-            font-size: 2.5rem;
-            font-weight: 900;
-            margin-bottom: 15px;
-        }
-        
-        .modal-tags {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        
-        .modal-tag {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-        }
-        
-        .modal-section {
-            margin-bottom: 40px;
-        }
-        
-        .modal-section h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .modal-section p {
-            color: var(--portfolio-muted);
-            line-height: 1.8;
-        }
-        
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .result-card {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-        }
-        
-        .result-number {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--portfolio-accent);
-            margin-bottom: 8px;
-        }
-        
-        .result-label {
-            font-size: 0.9rem;
-            color: var(--portfolio-muted);
-        }
-        /* TESTIMONIAL */
-        
-        .modal-testimonial {
-            background: linear-gradient(135deg, rgba(255, 0, 85, 0.05), rgba(0, 229, 255, 0.05));
-            border-left: 4px solid var(--portfolio-accent);
-            padding: 30px;
-            border-radius: 0 16px 16px 0;
-            margin-bottom: 40px;
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 15px;
-            color: white;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .author-info h4 {
-            font-size: 1rem;
-            font-weight: 700;
-        }
-        
-        .author-info p {
-            font-size: 0.85rem;
-            color: var(--portfolio-muted);
-        }
-        
-        .modal-footer-cta {
-            text-align: center;
-            padding: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 20px;
-        }
-        
-        .modal-cta-btn {
-            background: var(--portfolio-accent);
-            color: white;
-            padding: 18px 40px;
-            border-radius: 100px;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 1rem;
-        }
-        
-        .modal-cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 0, 85, 0.4);
-        }
-        /* BEFORE/AFTER SLIDER */
-        
-        .before-after-container {
-            position: relative;
-            width: 100%;
-            height: 400px;
-            margin-top: 20px;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        
-        .ba-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .ba-after {
-            clip-path: inset(0 50% 0 0);
-        }
-        
-        .ba-slider {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 4px;
-            height: 100%;
-            background: white;
-            cursor: ew-resize;
-            z-index: 10;
-        }
-        
-        .ba-handle {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 50px;
-            height: 50px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
-        /* RESPONSIVE */
-        
-        @media (max-width: 768px) {
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-            .filter-bar {
-                flex-wrap: wrap;
-                border-radius: 16px;
-            }
-            .results-grid {
-                grid-template-columns: 1fr;
-            }
-            .modal-body {
-                padding: 20px;
-            }
-            .modal-title {
-                font-size: 1.8rem;
-            }
-            .modal-content {
-                max-width: 95vw;
-                width: 95vw;
-                max-height: 90vh;
-            }
-            .modal-hero-img {
-                height: 250px;
+        /* Reduced Motion */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
@@ -520,39 +72,53 @@
 
 <body id="top" class="page-portfolio">
 
+    <!-- Skip navigation link for accessibility -->
+    <a href="#main-content" class="skip-link"
+        style="position: absolute; top: -40px; left: 6px; background: #000; color: white; padding: 8px; z-index: 1000; text-decoration: none; border-radius: 4px; transition: top 0.3s;">Skip
+        to main content</a>
+
     <!-- GRAIN OVERLAY -->
     <div class="grain-overlay"></div>
 
     <!-- HEADER -->
-    <header class="header" data-header>
+    <header class="header" data-header style="z-index: 1000;">
         <div class="container">
-            <a href="./index.html" class="logo">Creo Media</a>
-            <nav class="navbar" data-navbar>
+            <a href="./index.html" class="logo"><span class="creo-text">Creo</span><span
+                    class="media-text">Media</span></a>
+
+            <div class="nav-actions">
+                <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+                    <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+                </button>
+
+                <a href="./contact.html" class="btn btn-primary has-before has-after">Let's Talk 👋</a>
+            </div>
+
+            <nav class="navbar" data-navbar aria-label="Main navigation">
                 <div class="wrapper">
                     <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
                         <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
                     </button>
                 </div>
-                <ul class="navbar-list">
-                    <li class="navbar-item"><a href="./index.html" class="navbar-link" data-nav-link>Home</a></li>
-                    <li class="navbar-item"><a href="./service.html" class="navbar-link" data-nav-link>Services</a></li>
-                    <li class="navbar-item"><a href="./about.html" class="navbar-link" data-nav-link>About</a></li>
-                    <li class="navbar-item"><a href="./portfolio.html" class="navbar-link active" data-nav-link>Portfolio</a>
+                <ul class="navbar-list" role="menubar">
+                    <li class="navbar-item" role="none"><a href="./index.html" class="navbar-link" data-nav-link
+                            role="menuitem" aria-label="Home page">Home</a></li>
+                    <li class="navbar-item" role="none"><a href="./about.html" class="navbar-link" data-nav-link
+                            role="menuitem" aria-label="About us page">About</a></li>
+                    <li class="navbar-item" role="none"><a href="./portfolio.html" class="navbar-link active"
+                            data-nav-link role="menuitem" aria-label="Portfolio page">Portfolio</a>
                     </li>
                 </ul>
             </nav>
-            <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
-                <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
-            </button>
-            <a href="./contact.html" class="btn btn-primary has-before has-after">Let's Talk 👋</a>
             <div class="overlay" data-nav-toggler data-overlay></div>
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- UNIFIED HERO -->
         <section class="unified-hero" id="home" aria-label="hero">
-            <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1920&q=80" class="hero-bg-layer" alt="Portfolio Showcase">
+            <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1920&q=80" class="hero-bg-layer"
+                alt="Portfolio Showcase">
             <div class="hero-gradient-overlay"></div>
 
             <div class="hero-center-content">
@@ -560,9 +126,10 @@
                 </h1>
                 <p class="hero-subtitle">Real Projects, Real Results</p>
                 <p class="hero-description">
-                    From viral campaigns to sold-out events. See how we've helped brands scale their impact with our premium storytelling and digital expertise.
+                    From viral campaigns to sold-out events. See how we've helped brands scale their impact with our
+                    premium storytelling and digital expertise.
                 </p>
-                <div class="hero-cta-group" style="flex-direction: column; align-items: center;">
+                <div class="hero-cta-group centered-filter">
                     <div class="filter-bar" style="margin-bottom: 0;">
                         <button class="filter-btn active" data-filter="all">All Projects</button>
                         <button class="filter-btn" data-filter="content">Content</button>
@@ -590,13 +157,17 @@
                             <div class="video-indicator">
                                 <ion-icon name="play-outline"></ion-icon> Preview
                             </div>
-                            <img src="./assets/images/project-1.jpg" alt="Apex Sport Campaign" class="portfolio-img">
-                            <video class="portfolio-video-preview" muted loop playsinline src="https://assets.mixkit.co/videos/preview/mixkit-man-skating-in-a-skate-park-4433-large.mp4"></video>
+                            <img src="./assets/images/project-1.jpg"
+                                alt="Dynamic sports advertisement with neon lighting" class="portfolio-img"
+                                loading="lazy">
+                            <video class="portfolio-video-preview" muted loop playsinline
+                                src="https://assets.mixkit.co/videos/preview/mixkit-man-skating-in-a-skate-park-4433-large.mp4"></video>
                         </div>
                         <div class="portfolio-info">
                             <span class="portfolio-category">Content Production</span>
                             <h3 class="portfolio-title">Apex Sport - Brand Campaign</h3>
-                            <p class="portfolio-desc">High-octane 60s TVC shot on RED Raptor for a leading sportswear brand's product launch.</p>
+                            <p class="portfolio-desc">High-octane 60s TVC shot on RED Raptor for a leading sportswear
+                                brand's product launch.</p>
                             <div class="portfolio-meta">
                                 <span class="meta-item"><ion-icon name="calendar-outline"></ion-icon> Dec 2025</span>
                                 <span class="meta-item"><ion-icon name="eye-outline"></ion-icon> 2.4M Views</span>
@@ -606,11 +177,13 @@
 
                     <!-- PROJECT 2: Digital Campaign -->
                     <div class="portfolio-item reveal-on-scroll" data-category="digital" data-project="urban-flow">
-                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80" alt="Urban Flow Social" class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80"
+                            alt="Smartphone showing social media interface" class="portfolio-img" loading="lazy">
                         <div class="portfolio-info">
                             <span class="portfolio-category">Digital Management</span>
                             <h3 class="portfolio-title">Urban Flow - Viral Social Campaign</h3>
-                            <p class="portfolio-desc">Instagram Reels campaign that generated 2M+ organic views in 48 hours for a fashion startup.</p>
+                            <p class="portfolio-desc">Instagram Reels campaign that generated 2M+ organic views in 48
+                                hours for a fashion startup.</p>
                             <div class="portfolio-meta">
                                 <span class="meta-item"><ion-icon name="calendar-outline"></ion-icon> Nov 2025</span>
                                 <span class="meta-item"><ion-icon name="trending-up-outline"></ion-icon> +340%
@@ -621,11 +194,13 @@
 
                     <!-- PROJECT 3: Event -->
                     <div class="portfolio-item reveal-on-scroll" data-category="events" data-project="neon-nights">
-                        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&q=80" alt="Neon Nights Gala" class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&q=80"
+                            alt="Corporate awards ceremony with neon lighting" class="portfolio-img" loading="lazy">
                         <div class="portfolio-info">
                             <span class="portfolio-category">Event Management</span>
                             <h3 class="portfolio-title">Neon Nights Gala</h3>
-                            <p class="portfolio-desc">500-person corporate awards night transformed into a futuristic cyberpunk experience.</p>
+                            <p class="portfolio-desc">500-person corporate awards night transformed into a futuristic
+                                cyberpunk experience.</p>
                             <div class="portfolio-meta">
                                 <span class="meta-item"><ion-icon name="calendar-outline"></ion-icon> Oct 2025</span>
                                 <span class="meta-item"><ion-icon name="people-outline"></ion-icon> 500 Attendees</span>
@@ -639,13 +214,16 @@
                             <div class="video-indicator">
                                 <ion-icon name="mic-outline"></ion-icon> Preview
                             </div>
-                            <img src="./assets/images/project-3.jpg" alt="The Daily Grind Podcast" class="portfolio-img">
-                            <video class="portfolio-video-preview" muted loop playsinline src="https://assets.mixkit.co/videos/preview/mixkit-podcaster-talking-to-microphone-40156-large.mp4"></video>
+                            <img src="./assets/images/project-3.jpg" alt="Professional podcast recording setup"
+                                class="portfolio-img" loading="lazy">
+                            <video class="portfolio-video-preview" muted loop playsinline
+                                src="https://assets.mixkit.co/videos/preview/mixkit-podcaster-talking-to-microphone-40156-large.mp4"></video>
                         </div>
                         <div class="portfolio-info">
                             <span class="portfolio-category">Podcasting</span>
                             <h3 class="portfolio-title">The Daily Grind - Full Production</h3>
-                            <p class="portfolio-desc">Top 10 business podcast in SA. 3-cam 4K video, audio mixing, and same-day distribution.</p>
+                            <p class="portfolio-desc">Top 10 business podcast in SA. 3-cam 4K video, audio mixing, and
+                                same-day distribution.</p>
                             <div class="portfolio-meta">
                                 <span class="meta-item"><ion-icon name="calendar-outline"></ion-icon> Ongoing</span>
                                 <span class="meta-item"><ion-icon name="headset-outline"></ion-icon> 50k+
@@ -655,12 +233,15 @@
                     </div>
 
                     <!-- PROJECT 5: Content -->
-                    <div class="portfolio-item reveal-on-scroll" data-category="content" data-project="luxury-editorial">
-                        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&q=80" alt="Luxury Editorial" class="portfolio-img">
+                    <div class="portfolio-item reveal-on-scroll" data-category="content"
+                        data-project="luxury-editorial">
+                        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&q=80"
+                            alt="High-fashion editorial photography" class="portfolio-img" loading="lazy">
                         <div class="portfolio-info">
                             <span class="portfolio-category">Content Production</span>
                             <h3 class="portfolio-title">Luxury Fashion Editorial</h3>
-                            <p class="portfolio-desc">High-end photography and art direction for a premium fashion brand's SS26 lookbook.</p>
+                            <p class="portfolio-desc">High-end photography and art direction for a premium fashion
+                                brand's SS26 lookbook.</p>
                             <div class="portfolio-meta">
                                 <span class="meta-item"><ion-icon name="calendar-outline"></ion-icon> Sep 2025</span>
                                 <span class="meta-item"><ion-icon name="camera-outline"></ion-icon> 120+ Assets</span>
@@ -670,11 +251,13 @@
 
                     <!-- PROJECT 6: Digital -->
                     <div class="portfolio-item reveal-on-scroll" data-category="digital" data-project="ecom-scale">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="E-Commerce Growth" class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+                            alt="E-commerce dashboard with sales metrics" class="portfolio-img" loading="lazy">
                         <div class="portfolio-info">
                             <span class="portfolio-category">Digital Management</span>
                             <h3 class="portfolio-title">E-Commerce Black Friday Blitz</h3>
-                            <p class="portfolio-desc">Achieved 5.2x ROAS on Meta Ads for a luxury fashion brand during peak shopping season.</p>
+                            <p class="portfolio-desc">Achieved 5.2x ROAS on Meta Ads for a luxury fashion brand during
+                                peak shopping season.</p>
                             <div class="portfolio-meta">
                                 <span class="meta-item"><ion-icon name="calendar-outline"></ion-icon> Nov 2025</span>
                                 <span class="meta-item"><ion-icon name="flash-outline"></ion-icon> 5.2x ROAS</span>
@@ -718,7 +301,8 @@
                 <div class="modal-section" id="beforeAfterSection" style="display: none;">
                     <h3>Before & After</h3>
                     <div class="before-after-container">
-                        <img src="./assets/images/project-1.jpg" alt="Before" class="ba-image ba-before" id="baBeforeImg">
+                        <img src="./assets/images/project-1.jpg" alt="Before" class="ba-image ba-before"
+                            id="baBeforeImg">
                         <img src="./assets/images/project-2.jpg" alt="After" class="ba-image ba-after" id="baAfterImg">
                         <div class="ba-slider" id="baSlider">
                             <div class="ba-handle">
@@ -751,109 +335,267 @@
         </div>
     </div>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
+
             <div class="footer-top section">
+
                 <div class="footer-brand">
+
                     <p class="footer-list-title">About Creo Media</p>
+
                     <p class="footer-text">
-                        Premium African creative agency delivering global standards in content, digital, events, and podcasting.
+                        Namibian-based premium creative agency delivering global standards in content, digital, events,
+                        and podcasting.
                     </p>
+
                     <ul class="social-list">
+
                         <li>
-                            <a href="https://youtube.com/creomedia" class="social-link" aria-label="Visit our YouTube channel">
+                            <a href="https://youtube.com/@morethanlogic?si=cmQSAu6s63-HpJO3" class="social-link"
+                                aria-label="Visit our YouTube channel">
                                 <ion-icon name="logo-youtube"></ion-icon>
                             </a>
                         </li>
 
                         <li>
-                            <a href="https://facebook.com/creomedia" class="social-link" aria-label="Like us on Facebook">
-                                <ion-icon name="logo-facebook"></ion-icon>
+                            <a href="https://www.tiktok.com/@creomedia.na?_r=1&_t=ZS-93HOHUWBStT" class="social-link"
+                                aria-label="Visit our TikTok profile">
+                                <ion-icon name="logo-tiktok"></ion-icon>
                             </a>
                         </li>
+
                         <li>
-                            <a href="https://instagram.com/creomedia" class="social-link" aria-label="Follow us on Instagram">
+                            <a href="https://www.instagram.com/creomedia.na" class="social-link"
+                                aria-label="Visit our Instagram profile">
                                 <ion-icon name="logo-instagram"></ion-icon>
                             </a>
                         </li>
+
+
+
+
                     </ul>
+
                 </div>
 
                 <ul class="footer-list">
+
                     <li>
                         <p class="footer-list-title">Useful Links</p>
                     </li>
-                    <li><a href="./contact.html" class="footer-link">Contact us</a></li>
-                    <li><a href="./service.html" class="footer-link">Services</a></li>
-                    <li><a href="./about.html" class="footer-link">About Us</a></li>
-                    <li><a href="./portfolio.html" class="footer-link">Portfolio</a></li>
-                </ul>
 
-                <ul class="footer-list">
                     <li>
-                        <p class="footer-list-title">Community</p>
+                        <a href="contact.html" class="footer-link">Contact us</a>
                     </li>
-                    <li><a href="./help.html" class="footer-link">Help Center</a></li>
-                    <li><a href="./partners.html" class="footer-link">Partners</a></li>
-                    <li><a href="./suggestions.html" class="footer-link">Suggestions</a></li>
-                    <li><a href="./newsletter.html" class="footer-link">Newsletters</a></li>
+
+                    <li>
+                        <a href="about.html" class="footer-link">About Us</a>
+                    </li>
+
+                    <li>
+                        <a href="portfolio.html" class="footer-link">Portfolio</a>
+                    </li>
+
                 </ul>
 
                 <ul class="footer-list">
+                </ul>
+
+                <ul class="footer-list">
+
                     <li>
                         <p class="footer-list-title">Instagram post</p>
                     </li>
+
                     <li>
                         <ul class="insta-post">
+
                             <li>
                                 <div class="insta-card">
+
                                     <figure class="post-banner">
-                                        <img src="./assets/images/insta-post-1.jpg" width="77" height="63" loading="lazy" alt="instagram post" class="img-cover">
+                                        <img src="./assets/images/insta-post-1.jpg" width="77" height="63"
+                                            loading="lazy" alt="instagram post" class="img-cover">
                                     </figure>
-                                    <a href="https://instagram.com/creomedia" class="card-content" aria-label="View our Instagram profile">
+
+                                    <a href="https://www.instagram.com/creomedia.na" class="card-content"
+                                        aria-label="View our Instagram profile">
                                         <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
                                     </a>
+
                                 </div>
                             </li>
+
                             <li>
                                 <div class="insta-card">
+
                                     <figure class="post-banner">
-                                        <img src="./assets/images/insta-post-2.jpg" width="77" height="63" loading="lazy" alt="instagram post" class="img-cover">
+                                        <img src="./assets/images/insta-post-2.jpg" width="77" height="63"
+                                            loading="lazy" alt="instagram post" class="img-cover">
                                     </figure>
-                                    <a href="https://instagram.com/creomedia" class="card-content" aria-label="View our Instagram profile">
+
+                                    <a href="https://www.instagram.com/creomedia.na" class="card-content"
+                                        aria-label="View our Instagram profile">
                                         <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
                                     </a>
+
                                 </div>
                             </li>
+
                             <li>
                                 <div class="insta-card">
+
                                     <figure class="post-banner">
-                                        <img src="./assets/images/insta-post-3.jpg" width="77" height="63" loading="lazy" alt="instagram post" class="img-cover">
+                                        <img src="./assets/images/insta-post-3.jpg" width="77" height="63"
+                                            loading="lazy" alt="instagram post" class="img-cover">
                                     </figure>
-                                    <a href="https://instagram.com/creomedia" class="card-content" aria-label="View our Instagram profile">
+
+                                    <a href="https://www.instagram.com/creomedia.na" class="card-content"
+                                        aria-label="View our Instagram profile">
                                         <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
                                     </a>
+
                                 </div>
                             </li>
+
+                            <li>
+                                <div class="insta-card">
+
+                                    <figure class="post-banner">
+                                        <img src="./assets/images/insta-post-4.jpg" width="77" height="63"
+                                            loading="lazy" alt="instagram post" class="img-cover">
+                                    </figure>
+
+                                    <a href="https://www.instagram.com/creomedia.na" class="card-content"
+                                        aria-label="View our Instagram profile">
+                                        <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+                                    </a>
+
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="insta-card">
+
+                                    <figure class="post-banner">
+                                        <img src="./assets/images/insta-post-5.jpg" width="77" height="63"
+                                            loading="lazy" alt="instagram post" class="img-cover">
+                                    </figure>
+
+                                    <a href="https://www.instagram.com/creomedia.na" class="card-content"
+                                        aria-label="View our Instagram profile">
+                                        <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+                                    </a>
+
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="insta-card">
+
+                                    <figure class="post-banner">
+                                        <img src="./assets/images/insta-post-6.jpg" width="77" height="63"
+                                            loading="lazy" alt="instagram post" class="img-cover">
+                                    </figure>
+
+                                    <a href="https://www.instagram.com/creomedia.na" class="card-content"
+                                        aria-label="View our Instagram profile">
+                                        <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+                                    </a>
+
+                                </div>
+                            </li>
+
                         </ul>
                     </li>
+
                 </ul>
 
+            </div>
+
+            <!-- Business Information Section -->
+            <div class="footer-business"
+                style="border-top: 1px solid rgba(255,255,255,0.1); padding: 30px 0; margin-top: 20px;">
+                <div class="container"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px;">
+
+                    <!-- Contact Info -->
+                    <div>
+                        <h4 style="color: var(--hot-pink); margin-bottom: 12px; font-size: 1rem;">Contact Info</h4>
+                        <p style="margin: 6px 0; color: var(--text-main); font-size: 15px;"><strong>📞</strong><a
+                                href="tel:0812674321" class="item-link">081 267 4321</a></p>
+                        <p style="margin: 6px 0; color: var(--text-main); font-size: 15px;"><strong>✉️</strong><a
+                                href="mailto:contact.creomedia@gmail.com"
+                                class="item-link">contact.creomedia@gmail.com</a></p>
+                        <p style="margin: 6px 0; color: var(--text-main); font-size: 15px;"><strong>📍</strong>
+                            Windhoek, Namibia</p>
+                    </div>
+                    <!-- Why Choose Us -->
+                    <div>
+                        <h4 style="color: var(--cyan); margin-bottom: 12px; font-size: 1rem;">Why Choose Us</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin: 6px 0; color: var(--text-main); font-size: 15px;">✓ Global Standards</li>
+                            <li style="margin: 6px 0; color: var(--text-main); font-size: 15px;">✓ African Excellence
+                            </li>
+                            <li style="margin: 6px 0; color: var(--text-main); font-size: 15px;">✓ Premium Quality</li>
+                            <li style="margin: 6px 0; color: var(--text-main); font-size: 15px;">✓ 24/7 Support</li>
+                        </ul>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div>
+                        <h4 style="color: var(--hot-pink); margin-bottom: 12px; font-size: 1rem;">Our Numbers</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                            <div>
+                                <p style="font-size: 1.5rem; font-weight: bold; color: var(--cyan); margin: 0;">50+</p>
+                                <p style="margin: 0; color: var(--text-main); font-size: 15px;">Projects</p>
+                            </div>
+                            <div>
+                                <p style="font-size: 1.5rem; font-weight: bold; color: var(--hot-pink); margin: 0;">25+
+                                </p>
+                                <p style="margin: 0; color: var(--text-main); font-size: 15px;">Clients</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="footer-bottom">
+
                 <p class="copyright">
                     &copy; 2026 Creomedia. All Rights Reserved.
                 </p>
+
                 <ul class="footer-bottom-list">
-                    <li><a href="./terms.html" class="footer-bottom-link">Terms and conditions</a></li>
-                    <li><a href="./privacy.html" class="footer-bottom-link">Privacy policy</a></li>
+
+                    <li>
+                        <a href="./terms.html" class="footer-bottom-link">Terms and conditions</a>
+                    </li>
+
+                    <li>
+                        <a href="./privacy.html" class="footer-bottom-link">Privacy policy</a>
+                    </li>
+
+
+
                 </ul>
+
             </div>
+
         </div>
     </footer>
 
+    <!-- BACK TO TOP -->
+    <a href="#top" class="back-top-btn has-after active" aria-label="back to top" data-back-top-btn>
+        <ion-icon name="arrow-up" aria-hidden="true"></ion-icon>
+    </a>
+
+    <!-- SCRIPTS -->
     <script src="./assets/js/script.js" defer></script>
+    <script src="./assets/js/portfolio.js" defer></script>
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
@@ -862,301 +604,6 @@
     <script src="./assets/js/wow.js" defer></script>
     <script src="./assets/js/chatbot.js" defer></script>
 
-    <script>
-        // PROJECT DATA
-        const projectData = {
-            'apex-sport': {
-                title: 'Apex Sport - Brand Campaign',
-                tags: ['4K Video', 'RED Raptor', 'Commercial', 'Color Grading'],
-                challenge: 'Apex Sport needed a high-impact TVC to launch their new performance line. The brief demanded cinematic quality on a tight 2-week timeline, with dynamic action sequences that would resonate with Gen-Z athletes.',
-                approach: 'We deployed a 3-camera RED Raptor setup with gimbal rigs for fluid motion. Shot on-location at a Cape Town skate park, we used Aputure 600D lights to create dramatic contrast. Post-production involved advanced color grading in DaVinci Resolve to achieve the signature "neon grit" aesthetic.',
-                results: [{
-                    number: '2.4M',
-                    label: 'Views in 30 Days'
-                }, {
-                    number: '+180%',
-                    label: 'Brand Awareness Lift'
-                }, {
-                    number: '4.2%',
-                    label: 'Click-Through Rate'
-                }],
-                beforeAfter: {
-                    before: 'https://images.unsplash.com/photo-1536240478700-b869070f9279?w=1200&q=80',
-                    after: 'https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?w=1200&q=80'
-                },
-                testimonial: {
-                    text: "Creo Media completely transformed our brand's visual language. The cinematic quality of the Apex campaign exceeded everything we've done in the past decade.",
-                    author: "Marcus Thorne",
-                    role: "Chief Marketing Officer, Apex Sport"
-                }
-            },
-            'urban-flow': {
-                title: 'Urban Flow - Viral Social Campaign',
-                tags: ['Instagram Reels', 'Viral Strategy', 'UGC', 'Influencer'],
-                challenge: 'Urban Flow, a new streetwear brand, had zero social presence and needed to generate buzz before their product drop. Budget was limited, so organic reach was critical.',
-                approach: 'We created a "style challenge" Reels series featuring local micro-influencers. Each video was optimized for the algorithm: hook in first 0.5s, trending audio, vertical 9:16 format. We posted at peak engagement times (6-8pm SAST) and used strategic hashtag clusters.',
-                results: [{
-                    number: '2M+',
-                    label: 'Organic Views'
-                }, {
-                    number: '+340%',
-                    label: 'Follower Growth'
-                }, {
-                    number: '8.5%',
-                    label: 'Engagement Rate'
-                }]
-            },
-            'neon-nights': {
-                title: 'Neon Nights Gala',
-                tags: ['Event Production', 'Stage Design', 'Lighting', 'AV'],
-                challenge: 'A corporate client wanted to transform their annual awards night from "boring ballroom" into an unforgettable experience that would energize their 500-person team.',
-                approach: 'We designed a cyberpunk-themed environment with custom LED stage panels, intelligent moving lights, and projection mapping. The venue was divided into "zones" (Lounge, Main Stage, VR Experience). We coordinated with caterers, security, and AV teams to ensure seamless execution.',
-                results: [{
-                    number: '500',
-                    label: 'Attendees'
-                }, {
-                    number: '100%',
-                    label: 'Client Satisfaction'
-                }, {
-                    number: '0',
-                    label: 'Technical Issues'
-                }],
-                beforeAfter: {
-                    before: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1200&q=80',
-                    after: 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=1200&q=80'
-                }
-            },
-            'daily-grind': {
-                title: 'The Daily Grind - Full Production',
-                tags: ['Podcast', '4K Video', 'Audio Mixing', 'Distribution'],
-                challenge: 'The Daily Grind wanted to scale from audio-only to full video podcast while maintaining their signature conversational style. They needed a partner who could handle everything from recording to YouTube optimization.',
-                approach: 'We set up a permanent studio with 3-cam Sony FX3 setup, Shure SM7B mics, and Rodecaster Pro II. Each episode is recorded, edited, color-graded, and uploaded to Spotify + YouTube within 48 hours. We also create 10+ vertical clips per episode for social distribution.',
-                results: [{
-                    number: '50k+',
-                    label: 'Monthly Downloads'
-                }, {
-                    number: 'Top 10',
-                    label: 'Business Podcast (SA)'
-                }, {
-                    number: '5M+',
-                    label: 'Social Clip Views'
-                }],
-                testimonial: {
-                    text: "The transition to video podcasting was seamless thanks to the Creo team. Our engagement on YouTube alone has jumped by 400% since we partnered with them.",
-                    author: "Elena Vance",
-                    role: "Producer, The Daily Grind"
-                }
-            },
-            'luxury-editorial': {
-                title: 'Luxury Fashion Editorial',
-                tags: ['Photography', 'Art Direction', 'Retouching', 'Lookbook'],
-                challenge: 'A premium fashion brand needed a lookbook that would position them as "the African answer to European luxury." The imagery had to be editorial-quality and culturally resonant.',
-                approach: 'We scouted unique Cape Town locations (Bo-Kaap, Kirstenbosch) and cast local models. Shot on Phase One medium format camera for maximum detail. Art direction focused on blending traditional African textiles with modern silhouettes. Post-production involved meticulous retouching while preserving skin texture.',
-                results: [{
-                    number: '120+',
-                    label: 'Final Assets'
-                }, {
-                    number: '15',
-                    label: 'Magazine Features'
-                }, {
-                    number: '+200%',
-                    label: 'Website Traffic'
-                }]
-            },
-            'ecom-scale': {
-                title: 'E-Commerce Black Friday Blitz',
-                tags: ['Meta Ads', 'ROAS', 'Conversion Optimization', 'A/B Testing'],
-                challenge: 'A luxury e-commerce brand wanted to maximize Black Friday sales without diluting their premium positioning. They had tried Facebook Ads before with poor results (1.2x ROAS).',
-                approach: 'We rebuilt their entire funnel: new creative (UGC-style videos), dynamic product ads, and retargeting sequences. Implemented Advantage+ campaigns with strict audience exclusions to avoid bargain hunters. Ran 50+ A/B tests on ad copy, visuals, and CTAs. Monitored hourly and reallocated budget to top performers.',
-                results: [{
-                    number: '5.2x',
-                    label: 'Return on Ad Spend'
-                }, {
-                    number: 'R2.1M',
-                    label: 'Revenue Generated'
-                }, {
-                    number: '3.8%',
-                    label: 'Conversion Rate'
-                }]
-            }
-        };
-
-        // FILTER LOGIC
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const filter = btn.dataset.filter;
-
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                portfolioItems.forEach(item => {
-                    if (filter === 'all' || item.dataset.category === filter) {
-                        item.classList.remove('hidden');
-                    } else {
-                        item.classList.add('hidden');
-                    }
-                });
-            });
-        });
-
-        // MODAL LOGIC
-        const modal = document.getElementById('portfolioModal');
-        const modalClose = document.getElementById('modalClose');
-
-        portfolioItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const projectId = item.dataset.project;
-                const data = projectData[projectId];
-
-                if (!data) return;
-
-                // Populate modal
-                document.getElementById('modalHeroImg').src = item.querySelector('.portfolio-img').src;
-                document.getElementById('modalTitle').textContent = data.title;
-
-                const tagsHtml = data.tags.map(tag => `<span class="modal-tag">${tag}</span>`).join('');
-                document.getElementById('modalTags').innerHTML = tagsHtml;
-
-                document.getElementById('modalChallenge').textContent = data.challenge;
-                document.getElementById('modalApproach').textContent = data.approach;
-
-                const resultsHtml = data.results.map(r =>
-                    `<div class="result-card">
-                        <div class="result-number">${r.number}</div>
-                        <div class="result-label">${r.label}</div>
-                    </div>`
-                ).join('');
-                document.getElementById('modalResults').innerHTML = resultsHtml;
-
-                // Before/After (if exists)
-                const baSection = document.getElementById('beforeAfterSection');
-                if (data.beforeAfter) {
-                    baSection.style.display = 'block';
-                    document.getElementById('baBeforeImg').src = data.beforeAfter.before;
-                    document.getElementById('baAfterImg').src = data.beforeAfter.after;
-                } else {
-                    baSection.style.display = 'none';
-                }
-
-                // Testimonial (if exists)
-                const testimonialSection = document.getElementById('testimonialSection');
-                if (data.testimonial) {
-                    testimonialSection.style.display = 'block';
-                    document.getElementById('modalTestimonialText').textContent = data.testimonial.text;
-                    document.getElementById('modalTestimonialAuthor').textContent = data.testimonial.author;
-                    document.getElementById('modalTestimonialRole').textContent = data.testimonial.role;
-                } else {
-                    testimonialSection.style.display = 'none';
-                }
-
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
-        // HOVER TO PLAY VIDEO
-        portfolioItems.forEach(item => {
-            const video = item.querySelector('video');
-            if (video) {
-                item.addEventListener('mouseenter', () => {
-                    video.play();
-                });
-                item.addEventListener('mouseleave', () => {
-                    video.pause();
-                    video.currentTime = 0;
-                });
-            }
-        });
-
-        modalClose.addEventListener('click', () => {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-
-        // BEFORE/AFTER SLIDER
-        const baSlider = document.getElementById('baSlider');
-        const baAfter = document.querySelector('.ba-after');
-        let isDragging = false;
-
-        baSlider.addEventListener('mousedown', () => isDragging = true);
-        document.addEventListener('mouseup', () => isDragging = false);
-        document.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-            const container = document.querySelector('.before-after-container');
-            const rect = container.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const percent = (x / rect.width) * 100;
-
-            if (percent >= 0 && percent <= 100) {
-                baSlider.style.left = percent + '%';
-                baAfter.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
-            }
-        });
-
-        // SWIPE SCROLLING FOR MODAL
-        let startY;
-        let currentScroll;
-        const modalBody = document.querySelector('.modal-body');
-
-        if (modalBody) {
-            modalBody.addEventListener('touchstart', (e) => {
-                startY = e.touches[0].pageY;
-                currentScroll = modalBody.scrollTop;
-                modalBody.style.overflow = 'hidden';
-            });
-
-            modalBody.addEventListener('touchmove', (e) => {
-                if (!startY) return;
-
-                const deltaY = e.touches[0].pageY - startY;
-                const newScroll = currentScroll - deltaY;
-
-                // Check if we're at the top or bottom of the scrollable area
-                const isAtTop = newScroll <= 0;
-                const isAtBottom = newScroll >= modalBody.scrollHeight - modalBody.clientHeight;
-
-                // Only allow scrolling if we're not at the extremes
-                if ((deltaY > 0 && !isAtTop) || (deltaY < 0 && !isAtBottom)) {
-                    modalBody.scrollTop = newScroll;
-                    e.preventDefault();
-                }
-            });
-
-            modalBody.addEventListener('touchend', () => {
-                startY = null;
-                modalBody.style.overflow = 'auto';
-            });
-        }
-
-        // Reveal animation
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            });
-
-            document.querySelectorAll('.reveal-on-scroll').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                observer.observe(el);
-            });
-        });
-    </script>
 </body>
 
 </html>

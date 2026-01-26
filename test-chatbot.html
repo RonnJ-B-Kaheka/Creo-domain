@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        .test-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .test-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        .test-button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .result {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 5px;
+        }
+        
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="test-container">
+        <h1>Creo Chatbot Test</h1>
+        <p>Testing greeting functionality:</p>
+
+        <input type="text" id="testInput" class="test-input" placeholder="Type a greeting like 'hello' or 'hi'">
+        <button onclick="testGreeting()" class="test-button">Test Greeting</button>
+
+        <div id="result" class="result" style="display: none;"></div>
+
+        <h2>Test Cases:</h2>
+        <ul>
+            <li>Hello</li>
+            <li>Hi there</li>
+            <li>Hey Orion</li>
+            <li>Good morning</li>
+            <li>What's up</li>
+            <li>Bonjour</li>
+        </ul>
+    </div>
+
+    <script src="./assets/js/chatbot.js"></script>
+
+    <script>
+        function testGreeting() {
+            const input = document.getElementById('testInput').value.trim();
+            const resultDiv = document.getElementById('result');
+
+            if (!input) {
+                resultDiv.innerHTML = '<strong>Error:</strong> Please enter a greeting to test.';
+                resultDiv.className = 'result error';
+                resultDiv.style.display = 'block';
+                return;
+            }
+
+            try {
+                // Simulate the chatbot's response logic
+                const normalizedQuery = input.toLowerCase();
+                let foundResponse = null;
+
+                // Check for greetings first (same logic as in chatbot.js)
+                if (chatbotKnowledge.greeting.keywords.some(k => normalizedQuery.includes(k))) {
+                    foundResponse = chatbotKnowledge.greeting.responses[Math.floor(Math.random() * chatbotKnowledge.greeting.responses.length)];
+                }
+
+                if (foundResponse) {
+                    resultDiv.innerHTML = `
+                        <strong>Success!</strong><br>
+                        <strong>Input:</strong> "${input}"<br>
+                        <strong>Matched:</strong> Yes (greeting detected)<br>
+                        <strong>Response:</strong> "${foundResponse}"
+                    `;
+                    resultDiv.className = 'result success';
+                } else {
+                    resultDiv.innerHTML = `
+                        <strong>No Match</strong><br>
+                        <strong>Input:</strong> "${input}"<br>
+                        <strong>Matched:</strong> No (not recognized as greeting)
+                    `;
+                    resultDiv.className = 'result error';
+                }
+
+                resultDiv.style.display = 'block';
+            } catch (error) {
+                resultDiv.innerHTML = `<strong>Error:</strong> ${error.message}`;
+                resultDiv.className = 'result error';
+                resultDiv.style.display = 'block';
+            }
+        }
+
+        // Auto-test some common greetings on page load
+        window.addEventListener('load', function() {
+            console.log('Chatbot knowledge loaded:', Object.keys(chatbotKnowledge));
+            console.log('Greeting keywords:', chatbotKnowledge.greeting.keywords);
+            console.log('Number of greeting responses:', chatbotKnowledge.greeting.responses.length);
+        });
+    </script>
+</body>
+
+</html>
