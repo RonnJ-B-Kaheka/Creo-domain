@@ -101,15 +101,18 @@ body.page-portfolio {
 
 .portfolio-item {
     position: relative;
-    border-radius: 16px;
+    border-radius: 24px;
     overflow: hidden;
-    background: var(--portfolio-surface);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     cursor: pointer;
-    transition: 0.4s;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .portfolio-item:hover {
-    transform: translateY(-8px);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 0, 85, 0.2);
+    border-color: rgba(255, 0, 85, 0.3);
 }
 
 .portfolio-item.hidden {
@@ -119,7 +122,7 @@ body.page-portfolio {
 .portfolio-img-wrapper {
     position: relative;
     width: 100%;
-    height: 350px;
+    height: 380px;
     overflow: hidden;
 }
 
@@ -128,7 +131,7 @@ body.page-portfolio {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: 0.5s ease;
+    transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .portfolio-video-preview {
@@ -143,7 +146,6 @@ body.page-portfolio {
 }
 
 .portfolio-item:hover .portfolio-img {
-    opacity: 0;
     transform: scale(1.1);
 }
 
@@ -156,16 +158,18 @@ body.page-portfolio {
     top: 20px;
     right: 20px;
     background: rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
-    padding: 5px 10px;
-    border-radius: 4px;
+    padding: 6px 12px;
+    border-radius: 100px;
     font-size: 0.75rem;
     color: white;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
     z-index: 5;
     pointer-events: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .portfolio-info {
@@ -209,7 +213,7 @@ body.page-portfolio {
 
 .portfolio-desc {
     color: var(--portfolio-muted);
-    font-size: 0.95rem;
+    font-size: 1.5rem;
     line-height: 1.6;
     margin-bottom: 15px;
 }
@@ -217,7 +221,7 @@ body.page-portfolio {
 .portfolio-meta {
     display: flex;
     gap: 20px;
-    font-size: 0.85rem;
+    font-size: 1.5rem;
     color: var(--portfolio-muted);
 }
 
@@ -240,6 +244,7 @@ body.page-portfolio {
     padding: 40px;
     overflow-y: auto;
     cursor: default;
+    touch-action: pan-y;
 }
 
 .portfolio-modal.active {
@@ -302,8 +307,8 @@ body.page-portfolio {
 
 .modal-body {
     padding: 25px;
-    flex: 1;
-    overflow-y: auto;
+    /* Let the body expand naturally so the parent modal-content scrolls */
+    overflow-y: visible;
     cursor: default;
 }
 
@@ -312,9 +317,9 @@ body.page-portfolio {
 }
 
 .modal-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 900;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .modal-tags {
@@ -327,7 +332,7 @@ body.page-portfolio {
     background: rgba(255, 255, 255, 0.05);
     padding: 8px 16px;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 2rem;
 }
 
 .modal-section {
@@ -335,8 +340,8 @@ body.page-portfolio {
 }
 
 .modal-section h3 {
-    font-size: 1.3rem;
-    margin-bottom: 15px;
+    font-size: 2rem;
+    margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -344,6 +349,7 @@ body.page-portfolio {
 .modal-section p {
     color: var(--portfolio-muted);
     line-height: 1.8;
+    font-size: 2rem;
 }
 
 .results-grid {
@@ -361,14 +367,14 @@ body.page-portfolio {
 }
 
 .result-number {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 900;
     color: var(--portfolio-accent);
     margin-bottom: 8px;
 }
 
 .result-label {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: var(--portfolio-muted);
 }
 
@@ -384,7 +390,7 @@ body.page-portfolio {
 
 .testimonial-text {
     font-style: italic;
-    font-size: 1.1rem;
+    font-size: 2rem;
     line-height: 1.6;
     margin-bottom: 15px;
     color: white;
@@ -397,12 +403,12 @@ body.page-portfolio {
 }
 
 .author-info h4 {
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: 700;
 }
 
 .author-info p {
-    font-size: 0.85rem;
+    font-size: 2rem;
     color: var(--portfolio-muted);
 }
 
@@ -426,7 +432,7 @@ body.page-portfolio {
     transition: 0.3s;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 1rem;
+    font-size: 2rem;
 }
 
 .modal-cta-btn:hover {

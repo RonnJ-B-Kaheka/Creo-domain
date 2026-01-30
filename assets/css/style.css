@@ -252,6 +252,7 @@ ion-icon {
 
 .glass-card {
     background: rgba(255, 255, 255, 0.03);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-20);
@@ -304,6 +305,18 @@ html {
     background-color: var(--bg-primary);
 }
 
+@media (max-width: 768px) {
+    html {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 8px;
+    }
+}
+
 body {
     background-color: var(--bg-primary);
     color: var(--text-main);
@@ -345,6 +358,12 @@ body {
 
 .section {
     padding-block: var(--section-padding);
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding-block: var(--section-padding-sm);
+    }
 }
 
 .h1,
@@ -556,25 +575,25 @@ body {
     width: 100%;
     padding-block: 25px;
     background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.4s ease;
-    z-index: 4;
+    z-index: 1000;
 }
 
 .header.active {
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(59, 57, 57, 0.9);
     padding-block: 15px;
-    backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(220, 0, 75, 0.3);
 }
 
 .header .container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     position: relative;
 }
 
@@ -777,18 +796,22 @@ body {
     position: fixed;
     top: 0;
     right: 0;
-    background: #000000;
+    background-color: rgba(10, 10, 10, 0.7);
+    /* Slightly more transparent glass tint */
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
     color: var(--white);
-    max-width: 300px;
+    max-width: 350px;
+    /* Slightly wider for better presence */
     width: 100%;
     height: 100%;
-    padding: 30px;
-    z-index: 1;
+    padding: 40px 30px;
+    z-index: 1010;
     transform: translateX(100%);
     visibility: hidden;
-    transition: all 0.4s ease;
-    border-left: 1px solid rgba(220, 0, 75, 0.4);
-    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: -15px 0 50px rgba(0, 0, 0, 0.9);
 }
 
 .navbar.active {
@@ -897,10 +920,13 @@ body {
 .overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.8);
+    /* Darker overlay for better contrast */
     transition: all 0.3s ease;
     opacity: 0;
     pointer-events: none;
+    z-index: 1005;
+    /* Between header and navbar */
 }
 
 .overlay.active {
@@ -1522,6 +1548,7 @@ body {
     font-size: 40px;
     opacity: 0;
     transition: var(--transition-1);
+    -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
 }
 
@@ -1549,11 +1576,11 @@ body {
 
 .footer-bottom-link {
     font-size: 25px;
-    transition: var(--transition-1);
     -webkit-transition: var(--transition-1);
     -moz-transition: var(--transition-1);
     -ms-transition: var(--transition-1);
     -o-transition: var(--transition-1);
+    transition: var(--transition-1);
 }
 
 .footer-bottom-link:is(:hover, :focus) {
@@ -2259,6 +2286,7 @@ body {
     .navbar {
         position: static;
         background: transparent;
+        -webkit-backdrop-filter: none;
         backdrop-filter: none;
         max-width: none;
         width: auto;
@@ -2950,7 +2978,10 @@ body {
     overflow: hidden;
     user-select: none;
     display: flex;
+    -webkit-user-select: none;
+    user-select: none;
     gap: 100px;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
@@ -3328,6 +3359,7 @@ body {
     width: 380px;
     height: 550px;
     background: rgba(10, 10, 10, 0.9) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
     backdrop-filter: blur(25px) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-radius: var(--radius-20);

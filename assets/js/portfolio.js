@@ -1,29 +1,58 @@
 {
     // PROJECT DATA
+    // PROJECT DATA
     const projectData = {
-        'apex-sport': {
-            title: 'Apex Sport - Brand Campaign',
-            tags: ['4K Video', 'RED Raptor', 'Commercial', 'Color Grading'],
-            challenge: 'Apex Sport needed a high-impact TVC to launch their new performance line. The brief demanded cinematic quality on a tight 2-week timeline, with dynamic action sequences that would resonate with Gen-Z athletes.',
-            approach: 'We deployed a 3-camera RED Raptor setup with gimbal rigs for fluid motion. Shot on-location at a Cape Town skate park, we used Aputure 600D lights to create dramatic contrast. Post-production involved advanced color grading in DaVinci Resolve to achieve the signature "neon grit" aesthetic.',
+        'tatekulu-barbershop': {
+            title: 'Tatekulu Barbershop',
+            tags: ['Brand Identity', 'Commercial', 'Storytelling'],
+            challenge: 'Tatekulu Barbershop needed a brand identity that spoke to the "real man" - rugged, reliable, and timeless. The challenge was to create a narrative that felt authentic and grounded.',
+            approach: 'We crafted a story around the "Tatekulu Man" - someone who is capable and dependable. The visual language uses warm tones, classic typography, and candid photography to evoke a sense of tradition and trust.',
             results: [{
-                number: '2.4M',
-                label: 'Views in 30 Days'
+                number: 'Increased',
+                label: 'Foot Traffic'
             }, {
-                number: '+180%',
-                label: 'Brand Awareness Lift'
+                number: 'High',
+                label: 'Brand Loyalty'
+            }],
+            testimonial: {
+                text: "Creo Media captured the essence of what we stand for. The campaign resonated deeply with our customers.",
+                author: "Owner",
+                role: "Tatekulu Barbershop"
+            }
+        },
+        'Drive-Through Movie Night': {
+            title: 'Drive-Through Movie Night',
+            tags: ['Event Management', 'Community', 'Entertainment'],
+            challenge: 'Creating a safe and entertaining community event during a time when traditional gatherings were restricted. The goal was to bring people together while maintaining safety protocols.',
+            approach: 'We organized a nostalgic drive-through movie experience. This involved securing a large venue, setting up a massive projection screen, and coordinating FM radio audio transmission. We also managed ticketing and food delivery to cars.',
+            results: [{
+                number: 'Sold Out',
+                label: 'Tickets'
             }, {
-                number: '4.2%',
-                label: 'Click-Through Rate'
+                number: '500+',
+                label: 'happy attendees'
             }],
             beforeAfter: {
-                before: 'https://images.unsplash.com/photo-1536240478700-b869070f9279?w=1200&q=80',
-                after: 'https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?w=1200&q=80'
-            },
+                before: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1200&q=80',
+                after: 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=1200&q=80'
+            }
+        },
+        'More Than Logic': {
+            title: 'More Than Logic',
+            tags: ['Podcast', 'Entrepreneurship', 'Community'],
+            challenge: 'To build a platform that inspires and connects entrepreneurs in Namibia. The aim was to move beyond just business advice and foster a genuine community of growth and support.',
+            approach: 'We launched the "More Than Logic" podcast/channel. We focus on high-quality production and authentic conversations with entrepreneurs at all stages. The content runs the gamut from practical tools to personal stories of overcoming challenges.',
+            results: [{
+                number: '900+',
+                label: 'Subscribers'
+            }, {
+                number: 'Growing',
+                label: 'Community'
+            }],
             testimonial: {
-                text: "Creo Media completely transformed our brand's visual language. The cinematic quality of the Apex campaign exceeded everything we've done in the past decade.",
-                author: "Marcus Thorne",
-                role: "Chief Marketing Officer, Apex Sport"
+                text: "More Than Logic has become a go-to resource for local entrepreneurs. The quality of the content is world-class.",
+                author: "Subscriber",
+                role: "Community Member"
             }
         },
         'urban-flow': {
@@ -41,47 +70,6 @@
                 number: '8.5%',
                 label: 'Engagement Rate'
             }]
-        },
-        'neon-nights': {
-            title: 'Neon Nights Gala',
-            tags: ['Event Production', 'Stage Design', 'Lighting', 'AV'],
-            challenge: 'A corporate client wanted to transform their annual awards night from "boring ballroom" into an unforgettable experience that would energize their 500-person team.',
-            approach: 'We designed a cyberpunk-themed environment with custom LED stage panels, intelligent moving lights, and projection mapping. The venue was divided into "zones" (Lounge, Main Stage, VR Experience). We coordinated with caterers, security, and AV teams to ensure seamless execution.',
-            results: [{
-                number: '500',
-                label: 'Attendees'
-            }, {
-                number: '100%',
-                label: 'Client Satisfaction'
-            }, {
-                number: '0',
-                label: 'Technical Issues'
-            }],
-            beforeAfter: {
-                before: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1200&q=80',
-                after: 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=1200&q=80'
-            }
-        },
-        'daily-grind': {
-            title: 'The Daily Grind - Full Production',
-            tags: ['Podcast', '4K Video', 'Audio Mixing', 'Distribution'],
-            challenge: 'The Daily Grind wanted to scale from audio-only to full video podcast while maintaining their signature conversational style. They needed a partner who could handle everything from recording to YouTube optimization.',
-            approach: 'We set up a permanent studio with 3-cam Sony FX3 setup, Shure SM7B mics, and Rodecaster Pro II. Each episode is recorded, edited, color-graded, and uploaded to Spotify + YouTube within 48 hours. We also create 10+ vertical clips per episode for social distribution.',
-            results: [{
-                number: '50k+',
-                label: 'Monthly Downloads'
-            }, {
-                number: 'Top 10',
-                label: 'Business Podcast (SA)'
-            }, {
-                number: '5M+',
-                label: 'Social Clip Views'
-            }],
-            testimonial: {
-                text: "The transition to video podcasting was seamless thanks to the Creo team. Our engagement on YouTube alone has jumped by 400% since we partnered with them.",
-                author: "Elena Vance",
-                role: "Producer, The Daily Grind"
-            }
         },
         'luxury-editorial': {
             title: 'Luxury Fashion Editorial',
@@ -141,76 +129,88 @@
     // MODAL LOGIC
     const modal = document.getElementById('portfolioModal');
     const modalClose = document.getElementById('modalClose');
+    let currentFilteredProjects = [];
+    let currentProjectIndex = -1;
 
-    // Event Delegation for Portfolio Items (if new items are added dynamically, this might need check, but for now they are static or already in DOM)
-    // Actually standard listener is fine as items are in DOM
+    // Helper to get currently visible projects
+    const getVisibleProjects = () => {
+        return Array.from(document.querySelectorAll('.portfolio-item:not(.hidden)'));
+    };
+
+    const openProject = (index) => {
+        currentFilteredProjects = getVisibleProjects();
+        if (index < 0 || index >= currentFilteredProjects.length) return;
+
+        currentProjectIndex = index;
+        const item = currentFilteredProjects[currentProjectIndex];
+        const projectId = item.dataset.project;
+        const data = projectData[projectId];
+
+        if (!data) return;
+
+        // Populate modal
+        const img = item.querySelector('.portfolio-img');
+        if (img) {
+            document.getElementById('modalHeroImg').src = img.src;
+        }
+
+        document.getElementById('modalTitle').textContent = data.title;
+
+        const tagsHtml = data.tags.map(tag => `<span class="modal-tag">${tag}</span>`).join('');
+        document.getElementById('modalTags').innerHTML = tagsHtml;
+
+        // Use card description if available, otherwise fallback to data.challenge
+        const cardDesc = item.querySelector('.portfolio-desc');
+        document.getElementById('modalChallenge').textContent = cardDesc ? cardDesc.textContent : data.challenge;
+
+        document.getElementById('modalApproach').textContent = data.approach;
+
+        const resultsHtml = data.results.map(r =>
+            `<div class="result-card">
+            <div class="result-number">${r.number}</div>
+            <div class="result-label">${r.label}</div>
+        </div>`
+        ).join('');
+        document.getElementById('modalResults').innerHTML = resultsHtml;
+
+        // Before/After (if exists)
+        const baSection = document.getElementById('beforeAfterSection');
+        if (data.beforeAfter) {
+            baSection.style.display = 'block';
+            document.getElementById('baBeforeImg').src = data.beforeAfter.before;
+            document.getElementById('baAfterImg').src = data.beforeAfter.after;
+        } else {
+            baSection.style.display = 'none';
+        }
+
+        // Testimonial (if exists)
+        const testimonialSection = document.getElementById('testimonialSection');
+        if (data.testimonial) {
+            testimonialSection.style.display = 'block';
+            document.getElementById('modalTestimonialText').textContent = data.testimonial.text;
+            document.getElementById('modalTestimonialAuthor').textContent = data.testimonial.author;
+            document.getElementById('modalTestimonialRole').textContent = data.testimonial.role;
+        } else {
+            testimonialSection.style.display = 'none';
+        }
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        // Reset scroll position
+        const modalBody = document.querySelector('.modal-body');
+        if (modalBody) modalBody.scrollTop = 0;
+    };
+
+    // Event Delegation for Portfolio Items
     portfolioItems.forEach(item => {
         item.addEventListener('click', () => {
-            const projectId = item.dataset.project;
-            const data = projectData[projectId];
-
-            if (!data) return;
-
-            // Populate modal
-            const img = item.querySelector('.portfolio-img');
-            if (img) {
-                document.getElementById('modalHeroImg').src = img.src;
+            const visibleProjects = getVisibleProjects();
+            const index = visibleProjects.indexOf(item);
+            if (index !== -1) {
+                openProject(index);
             }
-
-            document.getElementById('modalTitle').textContent = data.title;
-
-            const tagsHtml = data.tags.map(tag => `<span class="modal-tag">${tag}</span>`).join('');
-            document.getElementById('modalTags').innerHTML = tagsHtml;
-
-            document.getElementById('modalChallenge').textContent = data.challenge;
-            document.getElementById('modalApproach').textContent = data.approach;
-
-            const resultsHtml = data.results.map(r =>
-                `<div class="result-card">
-                <div class="result-number">${r.number}</div>
-                <div class="result-label">${r.label}</div>
-            </div>`
-            ).join('');
-            document.getElementById('modalResults').innerHTML = resultsHtml;
-
-            // Before/After (if exists)
-            const baSection = document.getElementById('beforeAfterSection');
-            if (data.beforeAfter) {
-                baSection.style.display = 'block';
-                document.getElementById('baBeforeImg').src = data.beforeAfter.before;
-                document.getElementById('baAfterImg').src = data.beforeAfter.after;
-            } else {
-                baSection.style.display = 'none';
-            }
-
-            // Testimonial (if exists)
-            const testimonialSection = document.getElementById('testimonialSection');
-            if (data.testimonial) {
-                testimonialSection.style.display = 'block';
-                document.getElementById('modalTestimonialText').textContent = data.testimonial.text;
-                document.getElementById('modalTestimonialAuthor').textContent = data.testimonial.author;
-                document.getElementById('modalTestimonialRole').textContent = data.testimonial.role;
-            } else {
-                testimonialSection.style.display = 'none';
-            }
-
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
         });
-    });
-
-    // HOVER TO PLAY VIDEO
-    portfolioItems.forEach(item => {
-        const video = item.querySelector('video');
-        if (video) {
-            item.addEventListener('mouseenter', () => {
-                video.play();
-            });
-            item.addEventListener('mouseleave', () => {
-                video.pause();
-                video.currentTime = 0;
-            });
-        }
     });
 
     if (modalClose) {
@@ -227,6 +227,37 @@
                 document.body.style.overflow = '';
             }
         });
+
+        // SWIPE NAVIGATION
+        let touchStartX = 0;
+        let touchStartY = 0;
+        const minSwipeDistance = 50;
+
+        modal.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        modal.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].screenX;
+            const touchEndY = e.changedTouches[0].screenY;
+
+            const deltaX = touchEndX - touchStartX;
+            const deltaY = touchEndY - touchStartY;
+
+            // Check if horizontal swipe dominant
+            if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > minSwipeDistance) {
+                if (deltaX < 0) {
+                    // Swipe Left -> Next Project
+                    const nextIndex = (currentProjectIndex + 1) % currentFilteredProjects.length;
+                    openProject(nextIndex);
+                } else {
+                    // Swipe Right -> Previous Project
+                    const prevIndex = (currentProjectIndex - 1 + currentFilteredProjects.length) % currentFilteredProjects.length;
+                    openProject(prevIndex);
+                }
+            }
+        }, { passive: true });
     }
 
 
@@ -252,40 +283,7 @@
         });
     }
 
-    // SWIPE SCROLLING FOR MODAL
-    let startY;
-    let currentScroll;
-    const modalBody = document.querySelector('.modal-body');
-
-    if (modalBody) {
-        modalBody.addEventListener('touchstart', (e) => {
-            startY = e.touches[0].pageY;
-            currentScroll = modalBody.scrollTop;
-            modalBody.style.overflow = 'hidden';
-        });
-
-        modalBody.addEventListener('touchmove', (e) => {
-            if (!startY) return;
-
-            const deltaY = e.touches[0].pageY - startY;
-            const newScroll = currentScroll - deltaY;
-
-            // Check if we're at the top or bottom of the scrollable area
-            const isAtTop = newScroll <= 0;
-            const isAtBottom = newScroll >= modalBody.scrollHeight - modalBody.clientHeight;
-
-            // Only allow scrolling if we're not at the extremes
-            if ((deltaY > 0 && !isAtTop) || (deltaY < 0 && !isAtBottom)) {
-                modalBody.scrollTop = newScroll;
-                e.preventDefault();
-            }
-        });
-
-        modalBody.addEventListener('touchend', () => {
-            startY = null;
-            modalBody.style.overflow = 'auto';
-        });
-    }
+    // Manual swipe scrolling removed to allow native browser scrolling
 
     // Reveal animation
     document.addEventListener('DOMContentLoaded', () => {
