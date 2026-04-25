@@ -302,5 +302,69 @@
             el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
             observer.observe(el);
         });
+
+        // CASE STUDIES FILTERING
+        const caseStudyFilterBtns = document.querySelectorAll('.case-studies .filter-btn');
+        const caseStudyCards = document.querySelectorAll('.case-study-card');
+
+        caseStudyFilterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+
+                caseStudyFilterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                caseStudyCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // STATS COUNTER ANIMATION
+        const statCounters = document.querySelectorAll('.stat-counter');
+        
+        const animateCounter = (counter) => {
+            const target = parseInt(counter.dataset.target);
+            const duration = 2000; // 2 seconds
+            const step = target / (duration / 16); // 60fps
+            let current = 0;
+
+            const updateCounter = () => {
+                current += step;
+                if (current < target) {
+                    counter.textContent = Math.floor(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target;
+                }
+            };
+
+            updateCounter();
+        };
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statCounters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
     });
 }

@@ -736,30 +736,29 @@ body {
 }
 
 .nav-open-btn {
-    background: linear-gradient(135deg, rgba(255, 0, 85, 0.8) 0%, rgba(190, 0, 65, 0.9) 100%);
+    display: none;
     color: var(--white);
-    font-size: 35px;
-    padding: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    border-radius: var(--radius-10);
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    font-size: 32px;
+    background: rgba(190, 0, 65, 0.2);
+    padding: 14px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
     position: relative;
-    z-index: 2;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: 52px;
+    min-height: 52px;
+    /* Larger touch target for mobile */
 }
 
 .nav-open-btn::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, rgba(255, 0, 85, 0.3), rgba(190, 0, 65, 0.5));
-    border-radius: var(--radius-10);
-    z-index: -1;
+    inset: -4px;
+    border: 2px solid rgba(220, 0, 75, 0.5);
+    border-radius: 50%;
     opacity: 0;
     transition: opacity 0.3s ease;
+    animation: pulse-border 2s ease-in-out infinite;
 }
 
 .nav-open-btn:hover,
@@ -768,6 +767,7 @@ body {
     box-shadow: 0 8px 20px rgba(190, 0, 65, 0.4);
     background: linear-gradient(135deg, rgba(220, 0, 75, 0.9) 0%, rgba(160, 0, 55, 1) 100%);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    outline: none;
 }
 
 .nav-open-btn:hover::before,
@@ -867,11 +867,14 @@ body {
 .navbar-link {
     font-size: var(--fs-9);
     font-weight: var(--fw-700);
-    padding-block: 15px;
+    padding-block: 18px;
     text-transform: uppercase;
     transition: all 0.3s ease;
     position: relative;
-    display: block;
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    /* WCAG 2.1 touch target minimum */
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.9);
 }
@@ -1106,9 +1109,6 @@ body {
     overflow: hidden;
 }
 
-
-/* Ensure images remain visible on hover */
-
 .service-card img,
 .feature-card img,
 .project-card img {
@@ -1134,14 +1134,30 @@ body {
     transition: 0.5s;
 }
 
+.service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    transform: translateX(100%);
+    transition: 0.5s;
+}
+
 .service-card:is(:hover, :focus-within)::before {
     transform: translateX(100%);
 }
 
+.service-card:is(:hover, :focus-within)::after {
+    transform: translateX(-100%);
+}
+
 .service-card:is(:hover, :focus-within) {
     border-color: var(--primary-color);
-    box-shadow: 0 0 20px rgba(255, 0, 85, 0.1);
-    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(255, 0, 85, 0.2);
+    transform: translateY(-8px) scale(1.02);
 }
 
 .service-card .card-icon {
@@ -1151,18 +1167,61 @@ body {
     background-color: hsla(var(--color), 0.15);
     margin-block-end: 25px;
     transition: var(--transition-2);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card .card-icon::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, hsla(var(--color), 0.3), hsla(var(--color), 0.1));
+    opacity: 0;
+    transition: var(--transition-2);
+}
+
+.service-card:is(:hover, :focus-within) .card-icon::before {
+    opacity: 1;
 }
 
 .service-card:is(:hover, :focus-within) .card-icon {
-    transform: rotateY(0.5turn);
+    transform: rotateY(0.5turn) scale(1.1);
+    box-shadow: 0 0 20px hsla(var(--color), 0.4);
 }
 
 .service-card .card-title {
     transition: var(--transition-1);
+    position: relative;
 }
 
 .service-card .card-title:is(:hover, :focus-within) {
     color: hsl(var(--color));
+    transform: translateX(5px);
+}
+
+.deliverables-list li {
+    transition: var(--transition-2);
+    position: relative;
+}
+
+.deliverables-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, hsla(var(--color), 0.1), transparent);
+    transition: var(--transition-2);
+    z-index: -1;
+}
+
+.service-card:is(:hover, :focus-within) .deliverables-list li::before {
+    width: 100%;
+}
+
+.service-card:is(:hover, :focus-within) .deliverables-list li {
+    transform: translateX(10px);
 }
 
 .service .link-card {
@@ -1235,6 +1294,48 @@ body {
 
 .feature-card:is(:hover, :focus) .card-icon ion-icon {
     color: var(--pure-black);
+}
+
+
+/*-----------------------------------*\
+  #PRICING
+\*-----------------------------------*/
+
+.pricing-card {
+  transition: var(--transition-2);
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 229, 255, 0.15);
+}
+
+.pricing-card.w-100 {
+  width: 100%;
+}
+
+
+/*-----------------------------------*\
+  #CASE STUDIES
+\*-----------------------------------*/
+
+.case-study-card {
+  transition: var(--transition-2);
+}
+
+.case-study-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(255, 0, 85, 0.15);
+  border-color: var(--hot-pink);
+}
+
+.industry-badge {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-counter {
+  transition: var(--transition-1);
 }
 
 
@@ -3544,6 +3645,57 @@ body {
 .chat-input-area button:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px var(--hot-pink);
+}
+
+/*-----------------------------------*\
+  #MOBILE-FIRST REFINEMENTS
+\*-----------------------------------*/
+
+@media (max-width: 768px) {
+    /* Enhanced touch targets for cards */
+    .service-card,
+    .feature-card,
+    .project-card {
+        cursor: pointer;
+    }
+    
+    /* Better spacing for mobile */
+    .section {
+        padding-block: var(--section-padding);
+    }
+    
+    /* Improved button sizing on mobile */
+    .btn {
+        padding: 14px 24px;
+        font-size: var(--fs-9);
+    }
+    
+    /* Better tap targets for social links */
+    .social-link {
+        min-width: 48px;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Improved filter buttons on mobile */
+    .filter-btn {
+        padding: 12px 16px;
+        min-height: 44px;
+    }
+    
+    /* Better spacing for grid on mobile */
+    .grid-list {
+        gap: 20px;
+    }
+    
+    /* Improved card tap areas */
+    .card-title {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
 }
 
 @media (max-width: 450px) {

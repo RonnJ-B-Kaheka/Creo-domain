@@ -96,6 +96,8 @@
 
             <nav class="navbar" data-navbar aria-label="Main navigation">
                 <div class="wrapper">
+                    <a href="./index.html" class="logo"><span class="creo-text">Creo</span><span
+                            class="media-text">Media</span></a>
                     <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
                         <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
                     </button>
@@ -103,6 +105,8 @@
                 <ul class="navbar-list" role="menubar">
                     <li class="navbar-item" role="none"><a href="./index.html" class="navbar-link" data-nav-link
                             role="menuitem" aria-label="Home page">Home</a></li>
+                    <li class="navbar-item" role="none"><a href="./service.html" class="navbar-link" data-nav-link
+                            role="menuitem" aria-label="Services page">Services</a></li>
                     <li class="navbar-item" role="none"><a href="./about.html" class="navbar-link" data-nav-link
                             role="menuitem" aria-label="About us page">About</a></li>
                     <li class="navbar-item" role="none"><a href="./portfolio.html" class="navbar-link active"
@@ -208,6 +212,185 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- CASE STUDIES SECTION -->
+        <section class="section case-studies" id="case-studies" aria-label="case studies" style="background-color: var(--pure-black);">
+            <div class="container">
+                <p class="section-subtitle has-before text-center">Success Stories</p>
+                <h2 class="h2 section-title text-center">Client <span class="has-before">Case Studies</span></h2>
+                <p class="text-center" style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 40px;">Real results from real partnerships. See how we've transformed brands through strategic creative execution.</p>
+
+                <!-- FILTER BUTTONS -->
+                <div class="filter-buttons" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 50px;">
+                    <button class="filter-btn active" data-filter="all">All Cases</button>
+                    <button class="filter-btn" data-filter="content">Content Production</button>
+                    <button class="filter-btn" data-filter="digital">Digital Management</button>
+                    <button class="filter-btn" data-filter="events">Event Management</button>
+                    <button class="filter-btn" data-filter="podcasting">Podcasting</button>
+                </div>
+
+                <!-- CASE STUDY CARDS -->
+                <div class="case-studies-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+                    
+                    <!-- CASE STUDY 1: Tatekulu Barbershop -->
+                    <div class="case-study-card glass-card reveal-on-scroll" data-category="content" style="padding: 35px; border: 1px solid rgba(255,255,255,0.1); transition: var(--transition-2);">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                            <span class="industry-badge" style="background: var(--cyan); color: var(--pure-black); padding: 5px 15px; border-radius: var(--radius-pill); font-size: var(--fs-xs); font-weight: var(--fw-700);">Hospitality</span>
+                            <span style="color: var(--text-muted); font-size: var(--fs-sm);">Content Production</span>
+                        </div>
+                        <h3 class="h3" style="margin-bottom: 15px;">Tatekulu Barbershop</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 25px; line-height: 1.7;">Transformed a local barbershop into a viral sensation through authentic storytelling and dynamic social media content.</p>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: var(--hot-pink); font-size: var(--fs-6); margin-bottom: 10px;">Challenge</h4>
+                            <p style="color: var(--text-secondary); font-size: var(--fs-sm);">Low brand awareness, inconsistent social presence, struggling to attract new customers in competitive market.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: var(--cyan); font-size: var(--fs-6); margin-bottom: 10px;">Solution</h4>
+                            <p style="color: var(--text-secondary); font-size: var(--fs-sm);">Created authentic narrative content showcasing the barbershop experience, produced viral video campaigns, and implemented consistent brand messaging across platforms.</p>
+                        </div>
+
+                        <div style="background: rgba(0,229,255,0.05); padding: 20px; border-radius: var(--radius-12); margin-bottom: 25px;">
+                            <h4 style="color: var(--white); font-size: var(--fs-6); margin-bottom: 15px;">Results</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                <div>
+                                    <p style="font-size: var(--fs-2); font-weight: var(--fw-extrabold); color: var(--cyan);">300%</p>
+                                    <p style="color: var(--text-secondary); font-size: var(--fs-xs);">Engagement Increase</p>
+                                </div>
+                                <div>
+                                    <p style="font-size: var(--fs-2); font-weight: var(--fw-extrabold); color: var(--hot-pink);">50K+</p>
+                                    <p style="color: var(--text-secondary); font-size: var(--fs-xs);">Video Views</p>
+                                </div>
+                                <div>
+                                    <p style="font-size: var(--fs-2); font-weight: var(--fw-extrabold); color: #FFE600;">45%</p>
+                                    <p style="color: var(--text-secondary); font-size: var(--fs-xs);">New Customer Growth</p>
+                                </div>
+                                <div>
+                                    <p style="font-size: var(--fs-2); font-weight: var(--fw-extrabold); color: #9D00FF;">12</p>
+                                    <p style="color: var(--text-secondary); font-size: var(--fs-xs);">Content Pieces</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="./contact.html" class="btn btn-primary w-100" style="justify-content: center;">Start Similar Project</a>
+                    </div>
+
+                    <!-- CASE STUDY 2: NCRST -->
+                    <div class="case-study-card glass-card reveal-on-scroll" data-category="digital" style="padding: 35px; border: 1px solid rgba(255,255,255,0.1); transition: var(--transition-2);">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                            <span class="industry-badge" style="background: var(--hot-pink); color: var(--white); padding: 5px 15px; border-radius: var(--radius-pill); font-size: var(--fs-xs); font-weight: var(--fw-700);">Government</span>
+                            <span style="color: var(--text-muted); font-size: var(--fs-sm);">Digital Management</span>
+                        </div>
+                        <h3 class="h3" style="margin-bottom: 15px;">NCRST</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 25px; line-height: 1.7;">Revitalized digital presence for Namibia's National Commission on Research, Science and Technology.</p>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: var(--hot-pink); font-size: var(--fs-6); margin-bottom: 10px;">Challenge</h4>
+                            <p style="color: var(--text-secondary); font-size: var(--fs-sm);">Outdated website, poor user experience, limited digital engagement with stakeholders and research community.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: var(--cyan); font-size: var(--fs-6); margin-bottom: 10px;">Solution</h4>
+                            <p style="color: var(--text-secondary); font-size: var(--fs-sm);">Redesigned website with modern UI/UX, implemented digital strategy, created content marketing campaigns, and optimized for search engines.</p>
+                        </div>
+
+                        <div style="background: rgba(0,229,255,0.05); padding: 20px; border-radius: var(--radius-12); margin-bottom: 25px;">
+                            <h4 style="color: var(--white); font-size: var(--fs-6); margin-bottom: 15px;">Results</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                <div>
+                                    <p style="font-size: var(--fs-2); font-weight: var(--fw-extrabold); color: var(--cyan);">250%</p>
+                                    <p style="color: var(--text-secondary); font-size: var(--fs-xs);">Traffic Increase</p>
+                                </div>
+                                <div>
+                                    <p style="font-size: var(--fs-2); font-weight: var(--fw-extrabold); color: var(--hot-pink);">85%</p>
+                                    <p style="color: var(--text-secondary); font-size: var(--fs-xs);">Bounce Rate Reduction</p>
+                                </div>
+                                <div>
+                                    <p style="font-size: var(--fs-2); font-weight: var(--fw-extrabold); color: #FFE600;">4.5x</p>
+                                    <p style="color: var(--text-secondary); font-size: var(--fs-xs);">Page Views/Session</p>
+                                </div>
+                                <div>
+                                    <p style="font-size: var(--fs-2); font-weight: var(--fw-extrabold); color: #9D00FF;">60%</p>
+                                    <p style="color: var(--text-secondary); font-size: var(--fs-xs);">Mobile Users</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="./contact.html" class="btn btn-primary w-100" style="justify-content: center;">Start Similar Project</a>
+                    </div>
+
+                    <!-- CASE STUDY 3: Drive-Through Movie Night -->
+                    <div class="case-study-card glass-card reveal-on-scroll" data-category="events" style="padding: 35px; border: 1px solid rgba(255,255,255,0.1); transition: var(--transition-2);">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                            <span class="industry-badge" style="background: #FFE600; color: var(--pure-black); padding: 5px 15px; border-radius: var(--radius-pill); font-size: var(--fs-xs); font-weight: var(--fw-700);">Entertainment</span>
+                            <span style="color: var(--text-muted); font-size: var(--fs-sm);">Event Management</span>
+                        </div>
+                        <h3 class="h3" style="margin-bottom: 15px;">Drive-Through Movie Night</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 25px; line-height: 1.7;">Executed a unique drive-through cinema experience that brought community together during challenging times.</p>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: var(--hot-pink); font-size: var(--fs-6); margin-bottom: 10px;">Challenge</h4>
+                            <p style="color: var(--text-secondary); font-size: var(--fs-sm);">Create safe entertainment experience during restrictions, attract diverse audience, ensure technical execution of outdoor cinema setup.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <h4 style="color: var(--cyan); font-size: var(--fs-6); margin-bottom: 10px;">Solution</h4>
+                            <p style="color: var(--text-secondary); font-size: var(--fs-sm);">Managed end-to-end event production including venue setup, audio-visual systems, ticketing, safety protocols, and promotional campaign.</p>
+                        </div>
+
+                        <div style="background: rgba(0,229,255,0.05); padding: 20px; border-radius: var(--radius-12); margin-bottom: 25px;">
+                            <h4 style="color: var(--white); font-size: var(--fs-6); margin-bottom: 15px;">Results</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                <div>
+                                    <p style="font-size: var(--fs-2); font-weight: var(--fw-extrabold); color: var(--cyan);">500+</p>
+                                    <p style="color: var(--text-secondary); font-size: var(--fs-xs);">Attendees</p>
+                                </div>
+                                <div>
+                                    <p style="font-size: var(--fs-2); font-weight: var(--fw-extrabold); color: var(--hot-pink);">100%</p>
+                                    <p style="color: var(--text-secondary); font-size: var(--fs-xs);">Safety Compliance</p>
+                                </div>
+                                <div>
+                                    <p style="font-size: var(--fs-2); font-weight: var(--fw-extrabold); color: #FFE600;">4.8/5</p>
+                                    <p style="color: var(--text-secondary); font-size: var(--fs-xs);">Satisfaction Rating</p>
+                                </div>
+                                <div>
+                                    <p style="font-size: var(--fs-2); font-weight: var(--fw-extrabold); color: #9D00FF;">3</p>
+                                    <p style="color: var(--text-secondary); font-size: var(--fs-xs);">Movie Screenings</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="./contact.html" class="btn btn-primary w-100" style="justify-content: center;">Start Similar Project</a>
+                    </div>
+
+                </div>
+
+                <!-- LIVE STATS COUNTER -->
+                <div style="margin-top: 80px; text-align: center; padding: 50px; background: linear-gradient(135deg, rgba(255,0,85,0.1), rgba(0,229,255,0.1)); border-radius: var(--radius-20); border: 1px solid rgba(255,255,255,0.1);">
+                    <h3 class="h3" style="margin-bottom: 40px;">Our Impact in Numbers</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; max-width: 1000px; margin: 0 auto;">
+                        <div>
+                            <p class="stat-counter" data-target="50" style="font-size: 3rem; font-weight: var(--fw-extrabold); color: var(--cyan); margin-bottom: 10px;">0</p>
+                            <p style="color: var(--text-secondary);">Projects Delivered</p>
+                        </div>
+                        <div>
+                            <p class="stat-counter" data-target="25" style="font-size: 3rem; font-weight: var(--fw-extrabold); color: var(--hot-pink); margin-bottom: 10px;">0</p>
+                            <p style="color: var(--text-secondary);">Happy Clients</p>
+                        </div>
+                        <div>
+                            <p class="stat-counter" data-target="500" style="font-size: 3rem; font-weight: var(--fw-extrabold); color: #FFE600; margin-bottom: 10px;">0</p>
+                            <p style="color: var(--text-secondary);">K+ Impressions Generated</p>
+                        </div>
+                        <div>
+                            <p class="stat-counter" data-target="98" style="font-size: 3rem; font-weight: var(--fw-extrabold); color: #9D00FF; margin-bottom: 10px;">0</p>
+                            <p style="color: var(--text-secondary);">% Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
     </main>

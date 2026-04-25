@@ -497,28 +497,6 @@ scrollContainers.forEach(container => {
 // Continue with card enhancements from the first section
 // (No need to redeclare cardElements or scrollContainers as they're already defined)
 
-
-// FAQ Accordion Functionality
-const faqItems = document.querySelectorAll('.faq-item');
-faqItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const content = item.querySelector('.faq-content');
-        const icon = item.querySelector('ion-icon');
-        const isOpen = content.style.maxHeight !== '0px';
-
-        // Close all others
-        faqItems.forEach(other => {
-            other.querySelector('.faq-content').style.maxHeight = '0px';
-            other.querySelector('ion-icon').name = 'add-outline';
-        });
-
-        if (!isOpen) {
-            content.style.maxHeight = content.scrollHeight + 'px';
-            icon.name = 'remove-outline';
-        }
-    });
-});
-
 // Analytics for contact form button
 const contactButton = document.querySelector('.contact-button');
 if (contactButton) {
@@ -545,6 +523,29 @@ if (contactButton) {
     });
 }
 
+// FAQ Accordion Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const content = item.querySelector('.faq-content');
+            const icon = item.querySelector('ion-icon');
+            const isOpen = content.style.maxHeight !== '0px';
+
+            // Close all others
+            faqItems.forEach(other => {
+                other.querySelector('.faq-content').style.maxHeight = '0px';
+                other.querySelector('ion-icon').name = 'add-outline';
+            });
+
+            if (!isOpen) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.name = 'remove-outline';
+            }
+        });
+    });
+});
+
 /**
  * Reveal Elements on Scroll
  */
@@ -565,6 +566,186 @@ document.addEventListener('DOMContentLoaded', () => {
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
             revealObserver.observe(el);
+        });
+    }
+
+    // SERVICE DISCOVERY MODULE
+    const discoveryWidget = document.querySelector('.discovery-widget');
+    if (discoveryWidget) {
+        let currentStep = 1;
+        const totalSteps = 4;
+        const answers = {};
+
+        const steps = document.querySelectorAll('.discovery-step');
+        const progressSteps = document.querySelectorAll('.progress-step');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const options = document.querySelectorAll('.discovery-option');
+        const resultsSection = document.querySelector('.discovery-results');
+
+        // Service recommendations data
+        const recommendations = {
+            content: {
+                title: 'Content Production',
+                icon: 'videocam-outline',
+                desc: 'Based on your needs, we recommend our content production services to bring your vision to life with cinematic storytelling.',
+                metric1: '300%',
+                metric2: '50K+'
+            },
+            digital: {
+                title: 'Digital Management',
+                icon: 'desktop-outline',
+                desc: 'Based on your needs, we recommend our digital management services to optimize your online presence and drive engagement.',
+                metric1: '250%',
+                metric2: '85%'
+            },
+            events: {
+                title: 'Event Management',
+                icon: 'calendar-outline',
+                desc: 'Based on your needs, we recommend our event management services to create memorable experiences for your audience.',
+                metric1: '500+',
+                metric2: '100%'
+            },
+            podcasting: {
+                title: 'Podcasting',
+                icon: 'mic-outline',
+                desc: 'Based on your needs, we recommend our podcasting services to help you command the airwaves with authority.',
+                metric1: '900+',
+                metric2: '4.8/5'
+            }
+        };
+
+        // Update progress bar
+        const updateProgress = () => {
+            progressSteps.forEach((step, index) => {
+                if (index < currentStep) {
+                    step.style.background = 'var(--cyan)';
+                } else {
+                    step.style.background = 'rgba(255,255,255,0.1)';
+                }
+            });
+        };
+
+        // Show step
+        const showStep = (stepNum) => {
+            steps.forEach(step => {
+                step.style.display = 'none';
+            });
+            const targetStep = document.querySelector(`.discovery-step[data-step="${stepNum}"]`);
+            if (targetStep) {
+                targetStep.style.display = 'block';
+                targetStep.style.opacity = '0';
+                targetStep.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    targetStep.style.opacity = '1';
+                    targetStep.style.transform = 'translateY(0)';
+                }, 50);
+            }
+            
+            // Update nav buttons
+            prevBtn.style.display = stepNum > 1 ? 'block' : 'none';
+            nextBtn.textContent = stepNum === totalSteps ? 'See Results' : 'Next';
+        };
+
+        // Handle option selection
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                const value = option.dataset.value;
+                const step = option.closest('.discovery-step');
+                const stepNum = parseInt(step.dataset.step);
+                
+                answers[stepNum] = value;
+
+                // Highlight selected option
+                const stepOptions = step.querySelectorAll('.discovery-option');
+                stepOptions.forEach(opt => {
+                    opt.style.borderColor = '';
+                    opt.style.background = '';
+                });
+                option.style.borderColor = 'var(--cyan)';
+                option.style.background = 'rgba(0,229,255,0.1)';
+
+                // Auto-advance after selection
+                if (stepNum < totalSteps) {
+                    setTimeout(() => {
+                        currentStep++;
+                        updateProgress();
+                        showStep(currentStep);
+                    }, 300);
+                }
+            });
+        });
+
+        // Navigation
+        nextBtn.addEventListener('click', () => {
+            if (currentStep === totalSteps && answers[currentStep]) {
+                // Show results
+                showResults();
+            } else if (currentStep < totalSteps) {
+                currentStep++;
+                updateProgress();
+                showStep(currentStep);
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentStep > 1) {
+                currentStep--;
+                updateProgress();
+                showStep(currentStep);
+            }
+        });
+
+        // Show results
+        const showResults = () => {
+            steps.forEach(step => step.style.display = 'none');
+            document.querySelector('.discovery-nav').style.display = 'none';
+            resultsSection.style.display = 'block';
+            resultsSection.style.opacity = '0';
+            
+            setTimeout(() => {
+                resultsSection.style.opacity = '1';
+            }, 50);
+
+            // Get recommendation based on project type
+            const projectType = answers[1] || 'content';
+            const rec = recommendations[projectType];
+
+            // Update results
+            document.getElementById('recIcon').setAttribute('name', rec.icon);
+            document.getElementById('recTitle').textContent = rec.title;
+            document.getElementById('recDesc').textContent = rec.desc;
+            document.getElementById('recMetric1').textContent = rec.metric1;
+            document.getElementById('recMetric2').textContent = rec.metric2;
+
+            // Update progress bar to complete
+            progressSteps.forEach(step => {
+                step.style.background = 'var(--cyan)';
+            });
+        };
+    }
+
+    // HERO PARALLAX EFFECT
+    const heroBgLayer = document.querySelector('.hero-bg-layer');
+    if (heroBgLayer) {
+        heroBgLayer.classList.add('parallax-enabled');
+        
+        let ticking = false;
+        
+        const updateParallax = () => {
+            const scrolled = window.scrollY;
+            const rate = scrolled * -0.3;
+            heroBgLayer.style.transform = `scale(1.1) translateY(${rate}px)`;
+            ticking = false;
+        };
+        
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    updateParallax();
+                    ticking = true;
+                });
+            }
         });
     }
 });
