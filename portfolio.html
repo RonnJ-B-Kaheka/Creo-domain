@@ -149,6 +149,44 @@
             </div>
         </section>
 
+        <!-- VIDEO CAROUSEL -->
+        <section class="section" id="portfolio-carousel" aria-label="portfolio video carousel">
+            <div class="container">
+                <p class="section-subtitle has-before text-center">Featured Work</p>
+                <h2 class="h2 section-title text-center">Video <span class="has-before">Showcase</span></h2>
+
+                <div class="carousel-wrapper">
+                    <div class="carousel-main">
+                        <video id="carousel-video" class="carousel-video" controls poster="">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="carousel-info">
+                            <h3 id="carousel-title">Loading...</h3>
+                            <p id="carousel-description">Loading video content...</p>
+                            <a href="#" class="carousel-cta" id="carousel-cta">View Case Study</a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-thumbnails">
+                        <button class="carousel-btn" id="carousel-prev" aria-label="Previous video">
+                            <ion-icon name="chevron-back-outline"></ion-icon>
+                        </button>
+                        <div class="thumbnails-track" role="tablist"></div>
+                        <button class="carousel-btn" id="carousel-next" aria-label="Next video">
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        </button>
+                    </div>
+
+                    <div class="carousel-controls">
+                        <button class="autoplay-btn" id="autoplay-toggle" aria-pressed="true">
+                            <ion-icon name="play-outline"></ion-icon> Autoplay
+                        </button>
+                        <div class="carousel-indicators" role="tablist"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- PORTFOLIO GRID -->
         <section class="portfolio-section">
             <div class="portfolio-container">
@@ -688,6 +726,7 @@
     <!-- SCRIPTS -->
     <script src="./assets/js/script.js" defer></script>
     <script src="./assets/js/portfolio.js" defer></script>
+    <script src="./assets/js/video-carousel.js" defer></script>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

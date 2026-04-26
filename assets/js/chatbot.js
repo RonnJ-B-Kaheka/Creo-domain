@@ -174,6 +174,7 @@ delete chatbotKnowledge.enhancedFaqs;
 class CreoChatbot {
     constructor() {
         this.isOpen = false;
+        this.messages = [];
         this.createUI();
         this.addEventListeners();
         this.greet();
@@ -188,20 +189,20 @@ class CreoChatbot {
                             <div class="status-dot"></div>
                             <span class="bot-name">ORION AI</span>
                         </div>
-                        <button class="chat-close"><ion-icon name="close-outline"></ion-icon></button>
+                        <button class="chat-close" aria-label="Close chat"><ion-icon name="close-outline"></ion-icon></button>
                     </div>
-                    <div id="chat-messages" class="chat-messages"></div>
+                    <div id="chat-messages" class="chat-messages" role="log" aria-live="polite"></div>
                     <div id="typing-indicator" class="typing-indicator">Orion is thinking...</div>
                     <div class="chat-input-area">
-                        <input type="text" id="chat-input" placeholder="Ask Orion anything..." autocomplete="off">
-                        <button id="chat-send"><ion-icon name="paper-plane-outline"></ion-icon></button>
+                        <input type="text" id="chat-input" placeholder="Ask Orion anything..." autocomplete="off" aria-label="Chat message input">
+                        <button id="chat-send" aria-label="Send message"><ion-icon name="paper-plane-outline"></ion-icon></button>
                     </div>
                 </div>
-                <button class="chat-trigger">
+                <button class="chat-trigger" aria-label="Open chat">
                     <img src="./assets/images/robot-avatar.png" alt="Orion AI" class="robot-avatar-img">
                 </button>
             </div>
-            <a href="https://wa.me/264812442161" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+            <a href="https://wa.me/264812442161" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contact on WhatsApp">
                 <ion-icon name="logo-whatsapp"></ion-icon>
             </a>
         `;
@@ -258,7 +259,8 @@ class CreoChatbot {
         this.showTyping(true);
 
         try {
-            await new Promise(r => setTimeout(r, 1000 + Math.random() * 1000));
+            // Simulate API delay for more natural feel
+            await new Promise(r => setTimeout(r, 800 + Math.random() * 700));
 
             let foundResponse = null;
             const normalizedQuery = query.toLowerCase();
@@ -285,21 +287,45 @@ class CreoChatbot {
         } catch (error) {
             console.error('Error getting response:', error);
             this.showTyping(false);
-            this.addMessage("I'm having trouble processing your request. Please try again.", 'bot');
+            this.addMessage("I'm having trouble processing your request. Please try again or contact us directly at contact.creomedia@gmail.com", 'bot');
         }
     }
 
     addMessage(text, side) {
         const msgEl = document.createElement('div');
         msgEl.className = `message ${side}`;
-        msgEl.innerHTML = `<div class="message-content">${text}</div>`;
+        
+        // Format message with links
+        const formattedText = this.formatMessage(text);
+        msgEl.innerHTML = `<div class="message-content">${formattedText}</div>`;
+        
         this.messagesContainer.appendChild(msgEl);
-        this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+        this.messages.push({ text, side, timestamp: new Date() });
+        this.scrollToBottom();
+    }
+
+    formatMessage(text) {
+        // Convert URLs to links, preserve line breaks
+        return text
+            .replace(/\n/g, '<br />')
+            .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>');
     }
 
     showTyping(show) {
         this.typingIndicator.style.display = show ? 'block' : 'none';
+        this.scrollToBottom();
+    }
+
+    scrollToBottom() {
         this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+    }
+
+    getContext() {
+        // Return page context for smarter responses
+        return {
+            currentPage: window.location.pathname,
+            userAgent: navigator.userAgent
+        };
     }
 }
 

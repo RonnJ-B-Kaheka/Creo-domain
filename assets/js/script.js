@@ -523,28 +523,33 @@ if (contactButton) {
     });
 }
 
-// FAQ Accordion Functionality
+// Newsletter Form Handler
 document.addEventListener('DOMContentLoaded', () => {
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const content = item.querySelector('.faq-content');
-            const icon = item.querySelector('ion-icon');
-            const isOpen = content.style.maxHeight !== '0px';
-
-            // Close all others
-            faqItems.forEach(other => {
-                other.querySelector('.faq-content').style.maxHeight = '0px';
-                other.querySelector('ion-icon').name = 'add-outline';
-            });
-
-            if (!isOpen) {
-                content.style.maxHeight = content.scrollHeight + 'px';
-                icon.name = 'remove-outline';
+    const newsletterForm = document.getElementById('newsletter-form');
+    const newsletterFeedback = document.getElementById('newsletter-feedback');
+    
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = newsletterForm.querySelector('input[type="email"]').value;
+            
+            // Simulate newsletter subscription
+            if (newsletterFeedback) {
+                newsletterFeedback.style.display = 'block';
+                newsletterFeedback.style.color = 'var(--cyan)';
+                newsletterFeedback.textContent = 'Thank you for subscribing!';
+                
+                setTimeout(() => {
+                    newsletterFeedback.style.display = 'none';
+                }, 3000);
             }
+            
+            newsletterForm.reset();
         });
-    });
+    }
 });
+
+// FAQ Accordion Functionality is now handled by faq-component.js
 
 /**
  * Reveal Elements on Scroll
