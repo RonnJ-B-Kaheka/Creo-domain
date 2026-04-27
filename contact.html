@@ -1,10 +1,14 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0e0e0e">
 
     <!-- SEO Meta Tags -->
     <title>Creomedia - Contact</title>
@@ -67,8 +71,6 @@
                 <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
                     <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
                 </button>
-
-                <a href="contact.html" class="btn btn-primary has-before has-after">Let's Talk 👋</a>
             </div>
 
             <nav class="navbar" data-navbar aria-label="Main navigation">
@@ -88,9 +90,58 @@
                             aria-label="Home page">Home</a>
                     </li>
 
-                    <li class="navbar-item" role="none">
-                        <a href="service.html" class="navbar-link" data-nav-link role="menuitem"
-                            aria-label="Services page">Services</a>
+                    <li class="navbar-item has-mega-menu" role="none">
+                        <a href="service.html" class="navbar-link mega-menu-trigger" data-nav-link role="menuitem"
+                            aria-label="Services page" aria-expanded="false" aria-haspopup="true">Services</a>
+                        <!-- Mega Menu Dropdown -->
+                        <div class="mega-menu" aria-label="Services mega menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-column">
+                                    <h4 class="mega-menu-title">
+                                        <ion-icon name="videocam-outline"></ion-icon>
+                                        Content Production
+                                    </h4>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="services/content-production.html">4K Video Production</a></li>
+                                        <li><a href="services/content-production.html">Professional Photography</a></li>
+                                        <li><a href="services/content-production.html">Motion Graphics</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h4 class="mega-menu-title">
+                                        <ion-icon name="desktop-outline"></ion-icon>
+                                        Digital Management
+                                    </h4>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="services/digital-management.html">UI/UX Web Design</a></li>
+                                        <li><a href="services/digital-management.html">Social Media Management</a></li>
+                                        <li><a href="services/digital-management.html">Growth Marketing</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h4 class="mega-menu-title">
+                                        <ion-icon name="calendar-outline"></ion-icon>
+                                        Event Management
+                                    </h4>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="services/event-management.html">Brand Activations</a></li>
+                                        <li><a href="services/event-management.html">Hybrid Events</a></li>
+                                        <li><a href="services/event-management.html">Technical Production</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h4 class="mega-menu-title">
+                                        <ion-icon name="mic-outline"></ion-icon>
+                                        Podcasting
+                                    </h4>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="services/podcasting.html">Studio Production</a></li>
+                                        <li><a href="services/podcasting.html">Audio Post-Production</a></li>
+                                        <li><a href="services/podcasting.html">Distribution Strategy</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </li>
 
                     <li class="navbar-item" role="none">
@@ -99,12 +150,50 @@
                     </li>
 
                     <li class="navbar-item" role="none">
-                        <a href="portfolio.html" class="navbar-link" data-nav-link role="menuitem"
-                            aria-label="Portfolio page">Portfolio</a>
+                        <a href="contact.html" class="navbar-link active" data-nav-link role="menuitem"
+                            aria-label="Contact us page">Contact</a>
+                    </li>
+
+                    <li class="navbar-item has-mega-menu" role="none">
+                        <a href="portfolio.html" class="navbar-link mega-menu-trigger" data-nav-link role="menuitem"
+                            aria-label="Portfolio page" aria-expanded="false" aria-haspopup="true">Portfolio</a>
+                        <!-- Mega Menu Dropdown -->
+                        <div class="mega-menu" aria-label="Portfolio mega menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-column">
+                                    <h4 class="mega-menu-title">
+                                        <ion-icon name="grid-outline"></ion-icon>
+                                        View Projects
+                                    </h4>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="portfolio.html">All Projects</a></li>
+                                        <li><a href="portfolio.html">Featured Cases</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h4 class="mega-menu-title">
+                                        <ion-icon name="filter-outline"></ion-icon>
+                                        Filter by Type
+                                    </h4>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="portfolio.html?filter=content">Content Production</a></li>
+                                        <li><a href="portfolio.html?filter=digital">Digital Management</a></li>
+                                        <li><a href="portfolio.html?filter=events">Events</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column mega-menu-cta">
+                                    <a href="portfolio.html" class="btn btn-primary">View Full Portfolio</a>
+                                </div>
+                            </div>
+                        </div>
                     </li>
 
                 </ul>
 
+                <!-- Quick Booking CTA in Mobile Menu -->
+                <div class="mobile-menu-cta">
+                    <a href="contact.html" class="btn btn-primary has-before has-after">Book Consultation</a>
+                </div>
             </nav>
 
             <div class="overlay" data-nav-toggler data-overlay></div>
@@ -122,7 +211,7 @@
             <!-- UNIFIED HERO -->
             <section class="unified-hero" id="home" aria-label="hero">
                 <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1920&q=80"
-                    class="hero-bg-layer" alt="Let's build something together">
+                    class="hero-bg-layer" alt="Let's build something together" loading="eager" fetchpriority="high">
                 <div class="hero-gradient-overlay"></div>
 
                 <div class="hero-center-content">
@@ -335,8 +424,16 @@
                         <!-- NEW CONTACT FORM (Background Send) -->
                         <div class="contact-form-container">
                             <form action="https://formspree.io/f/mrepdvzz" id="contact-form" class="contact-form"
-                                method="POST">
+                                method="POST" novalidate>
                                 <h3 class="h3 form-title">Send us a Message</h3>
+
+                                <!-- Progress Indicator -->
+                                <div class="form-progress" id="formProgress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" id="progressFill"></div>
+                                    </div>
+                                    <span class="progress-text" id="progressText">Step 1 of 2</span>
+                                </div>
 
                                 <!-- Honeypot Field -->
                                 <div style="display:none;">
@@ -344,36 +441,138 @@
                                     <input type="text" name="_honeypot" id="_honeypot">
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="name">Your Name *</label>
-                                    <input type="text" name="name" id="name" placeholder="John Doe" class="form-field"
-                                        required>
+                                <!-- Step 1: Contact Information -->
+                                <div class="form-step" data-step="1">
+                                    <div class="form-group">
+                                        <label for="name">Your Name *</label>
+                                        <input type="text" name="name" id="name" placeholder="John Doe" class="form-field"
+                                            required autocomplete="name" minlength="2">
+                                        <span class="field-error" id="name-error"></span>
+                                        <span class="field-help">Minimum 2 characters</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="email">Email Address *</label>
+                                        <input type="email" name="email" id="email" placeholder="john@example.com"
+                                            class="form-field" required autocomplete="email">
+                                        <span class="field-error" id="email-error"></span>
+                                        <span class="field-help">We'll never share your email</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number</label>
+                                        <div class="phone-input-group">
+                                            <select name="country_code" id="country_code" class="country-code-select">
+                                                <option value="+264">+264 (Namibia)</option>
+                                                <option value="+1">+1 (USA)</option>
+                                                <option value="+44">+44 (UK)</option>
+                                                <option value="+27">+27 (South Africa)</option>
+                                                <option value="+49">+49 (Germany)</option>
+                                                <option value="+33">+33 (France)</option>
+                                            </select>
+                                            <input type="tel" name="phone" id="phone" placeholder="812345678" 
+                                                class="form-field" autocomplete="tel">
+                                        </div>
+                                        <span class="field-error" id="phone-error"></span>
+                                        <span class="field-help">Optional but recommended for faster response</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="company">Company Name</label>
+                                        <input type="text" name="company" id="company" placeholder="Your Company" 
+                                            class="form-field" autocomplete="organization">
+                                        <span class="field-error" id="company-error"></span>
+                                        <span class="field-help">Optional</span>
+                                    </div>
+
+                                    <button type="button" class="btn btn-secondary has-before has-after" id="nextStepBtn">
+                                        <span class="span">Next Step</span>
+                                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                                    </button>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="email">Email Address *</label>
-                                    <input type="email" name="email" id="email" placeholder="john@example.com"
-                                        class="form-field" required>
-                                </div>
+                                <!-- Step 2: Project Details -->
+                                <div class="form-step" data-step="2" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="service">Service Interested In *</label>
+                                        <select name="service" id="service" class="form-field" required>
+                                            <option value="">Select a service...</option>
+                                            <option value="content-production">Content Production</option>
+                                            <option value="digital-management">Digital Management</option>
+                                            <option value="event-management">Event Management</option>
+                                            <option value="podcasting">Podcasting</option>
+                                            <option value="other">Other / Not Sure</option>
+                                        </select>
+                                        <span class="field-error" id="service-error"></span>
+                                    </div>
 
-                                <div class="form-group">
-                                    <label for="subject">Subject *</label>
-                                    <input type="text" name="subject" id="subject" placeholder="How can we help?"
-                                        class="form-field" required>
-                                </div>
+                                    <div class="form-group">
+                                        <label for="budget">Budget Range *</label>
+                                        <div class="budget-options">
+                                            <label class="budget-option">
+                                                <input type="radio" name="budget" value="small" required>
+                                                <span class="budget-label">N$10K - N$50K</span>
+                                            </label>
+                                            <label class="budget-option">
+                                                <input type="radio" name="budget" value="medium">
+                                                <span class="budget-label">N$50K - N$100K</span>
+                                            </label>
+                                            <label class="budget-option">
+                                                <input type="radio" name="budget" value="large">
+                                                <span class="budget-label">N$100K - N$500K</span>
+                                            </label>
+                                            <label class="budget-option">
+                                                <input type="radio" name="budget" value="enterprise">
+                                                <span class="budget-label">N$500K+</span>
+                                            </label>
+                                        </div>
+                                        <span class="field-error" id="budget-error"></span>
+                                    </div>
 
-                                <div class="form-group">
-                                    <label for="message">Your Message *</label>
-                                    <textarea name="message" id="message" placeholder="Tell us about your project..."
-                                        class="form-field" required></textarea>
+                                    <div class="form-group">
+                                        <label for="timeline">Timeline *</label>
+                                        <select name="timeline" id="timeline" class="form-field" required>
+                                            <option value="">Select timeline...</option>
+                                            <option value="asap">ASAP (Within 2 weeks)</option>
+                                            <option value="1-3months">1-3 months</option>
+                                            <option value="3-6months">3-6 months</option>
+                                            <option value="6+months">6+ months</option>
+                                            <option value="flexible">Flexible</option>
+                                        </select>
+                                        <span class="field-error" id="timeline-error"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="subject">Subject *</label>
+                                        <input type="text" name="subject" id="subject" placeholder="How can we help?"
+                                            class="form-field" required autocomplete="off">
+                                        <span class="field-error" id="subject-error"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="message">Your Message *</label>
+                                        <textarea name="message" id="message" placeholder="Tell us about your project..."
+                                            class="form-field" required minlength="10" maxlength="1000"></textarea>
+                                        <div class="message-footer">
+                                            <span class="field-error" id="message-error"></span>
+                                            <span class="char-count" id="charCount">0/1000</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-nav-buttons">
+                                        <button type="button" class="btn btn-secondary has-before has-after" id="prevStepBtn">
+                                            <ion-icon name="arrow-back-outline"></ion-icon>
+                                            <span class="span">Previous</span>
+                                        </button>
+                                        <button type="submit" class="btn btn-primary has-before has-after" id="submitBtn" disabled>
+                                            <span class="span">Send Message</span>
+                                            <ion-icon name="send-outline"></ion-icon>
+                                        </button>
+                                    </div>
                                 </div>
 
                                 <div id="form-feedback" class="form-feedback" aria-live="polite" aria-hidden="true">
                                 </div>
-
-                                <button type="submit" class="btn btn-primary has-before has-after">
-                                    <span class="span">Send Message</span>
-                                </button>
                             </form>
 
                             <!-- RESTORED GOOGLE FORM CTA (Directly Under Contact Form) -->
@@ -412,7 +611,165 @@
                     <h2 class="h2 section-title text-center">Questions Before <span class="has-before">Reaching
                             Out?</span></h2>
 
-                    <div id="contact-faqs" style="max-width: 800px; margin: 40px auto 0;"></div>
+                    <div style="max-width: 800px; margin: 40px auto 0;">
+                        <button class="glass-card faq-item" style="padding: 25px; margin-bottom: 15px; cursor: pointer; width: 100%; text-align: left; border: none; background: transparent; transition: all 0.3s ease;" aria-expanded="false" aria-controls="faq-contact-1">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 class="h4" style="margin: 0;">What is the typical response time?</h4>
+                                <ion-icon name="chevron-forward-outline" class="faq-icon" style="transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);"></ion-icon>
+                            </div>
+                        </button>
+                        <div id="faq-contact-1" class="faq-content"
+                            style="max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease; opacity: 0;">
+                            <p style="margin: 15px 0 0 0; color: var(--text-secondary); padding: 0 10px 10px 10px;">We review all intake forms within 12 business hours. For urgent production requests,
+                                our executive team is notified immediately.</p>
+                        </div>
+
+                        <button class="glass-card faq-item" style="padding: 25px; margin-bottom: 15px; cursor: pointer; width: 100%; text-align: left; border: none; background: transparent; transition: all 0.3s ease;" aria-expanded="false" aria-controls="faq-contact-2">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 class="h4" style="margin: 0;">Do you handle international projects?</h4>
+                                <ion-icon name="chevron-forward-outline" class="faq-icon" style="transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);"></ion-icon>
+                            </div>
+                        </button>
+                        <div id="faq-contact-2" class="faq-content"
+                            style="max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease; opacity: 0;">
+                            <p style="margin: 15px 0 0 0; color: var(--text-secondary); padding: 0 10px 10px 10px;">Yes. While based in Africa, we have a global creator network and have executed
+                                campaigns across 4 continents.</p>
+                        </div>
+
+                        <button class="glass-card faq-item" style="padding: 25px; margin-bottom: 15px; cursor: pointer; width: 100%; text-align: left; border: none; background: transparent; transition: all 0.3s ease;" aria-expanded="false" aria-controls="faq-contact-3">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 class="h4" style="margin: 0;">What is the onboarding process?</h4>
+                                <ion-icon name="chevron-forward-outline" class="faq-icon" style="transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);"></ion-icon>
+                            </div>
+                        </button>
+                        <div id="faq-contact-3" class="faq-content"
+                            style="max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease; opacity: 0;">
+                            <p style="margin: 15px 0 0 0; color: var(--text-secondary); padding: 0 10px 10px 10px;">After form submission, we schedule a 15-minute Discovery Call. If there's alignment,
+                                we issue a formal Protocol Proposal within 24 hours.</p>
+                        </div>
+
+                        <button class="glass-card faq-item" style="padding: 25px; margin-bottom: 15px; cursor: pointer; width: 100%; text-align: left; border: none; background: transparent; transition: all 0.3s ease;" aria-expanded="false" aria-controls="faq-contact-4">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 class="h4" style="margin: 0;">What services do you offer?</h4>
+                                <ion-icon name="chevron-forward-outline" class="faq-icon" style="transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);"></ion-icon>
+                            </div>
+                        </button>
+                        <div id="faq-contact-4" class="faq-content"
+                            style="max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease; opacity: 0;">
+                            <p style="margin: 15px 0 0 0; color: var(--text-secondary); padding: 0 10px 10px 10px;">We specialize in Content Production, Digital Management, Event Management, and
+                                Podcasting. Each service is tailored to elevate your brand presence.</p>
+                        </div>
+
+                        <button class="glass-card faq-item" style="padding: 25px; margin-bottom: 15px; cursor: pointer; width: 100%; text-align: left; border: none; background: transparent; transition: all 0.3s ease;" aria-expanded="false" aria-controls="faq-contact-5">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 class="h4" style="margin: 0;">How much do your services cost?</h4>
+                                <ion-icon name="chevron-forward-outline" class="faq-icon" style="transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);"></ion-icon>
+                            </div>
+                        </button>
+                        <div id="faq-contact-5" class="faq-content"
+                            style="max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease; opacity: 0;">
+                            <p style="margin: 15px 0 0 0; color: var(--text-secondary); padding: 0 10px 10px 10px;">Our pricing is customized based on project scope and requirements. We offer
+                                transparent packages designed to deliver premium results at competitive rates.</p>
+                        </div>
+
+                        <button class="glass-card faq-item" style="padding: 25px; margin-bottom: 15px; cursor: pointer; width: 100%; text-align: left; border: none; background: transparent; transition: all 0.3s ease;" aria-expanded="false" aria-controls="faq-contact-6">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 class="h4" style="margin: 0;">How long does a typical project take?</h4>
+                                <ion-icon name="chevron-forward-outline" class="faq-icon" style="transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);"></ion-icon>
+                            </div>
+                        </button>
+                        <div id="faq-contact-6" class="faq-content"
+                            style="max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease; opacity: 0;">
+                            <p style="margin: 15px 0 0 0; color: var(--text-secondary); padding: 0 10px 10px 10px;">Timeline varies by project complexity. Simple projects may take 2-3 weeks, while
+                                comprehensive campaigns can take 2-3 months. We provide estimates during
+                                consultation.</p>
+                        </div>
+
+                        <button class="glass-card faq-item" style="padding: 25px; margin-bottom: 15px; cursor: pointer; width: 100%; text-align: left; border: none; background: transparent; transition: all 0.3s ease;" aria-expanded="false" aria-controls="faq-contact-7">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 class="h4" style="margin: 0;">Do you work with international clients?</h4>
+                                <ion-icon name="chevron-forward-outline" class="faq-icon" style="transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);"></ion-icon>
+                            </div>
+                        </button>
+                        <div id="faq-contact-7" class="faq-content"
+                            style="max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease; opacity: 0;">
+                            <p style="margin: 15px 0 0 0; color: var(--text-secondary); padding: 0 10px 10px 10px;">Absolutely! Though based in Namibia, we serve clients globally with our advanced
+                                digital collaboration tools and global creator network.</p>
+                        </div>
+
+                        <button class="glass-card faq-item" style="padding: 25px; margin-bottom: 15px; cursor: pointer; width: 100%; text-align: left; border: none; background: transparent; transition: all 0.3s ease;" aria-expanded="false" aria-controls="faq-contact-8">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 class="h4" style="margin: 0;">Can you provide examples of past work?</h4>
+                                <ion-icon name="chevron-forward-outline" class="faq-icon" style="transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);"></ion-icon>
+                            </div>
+                        </button>
+                        <div id="faq-contact-8" class="faq-content"
+                            style="max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease; opacity: 0;">
+                            <p style="margin: 15px 0 0 0; color: var(--text-secondary); padding: 0 10px 10px 10px;">Yes, visit our Portfolio section to see diverse projects across various industries.
+                                We showcase our work in content production, digital management, events, and
+                                podcasting.</p>
+                        </div>
+
+                        <button class="glass-card faq-item" style="padding: 25px; margin-bottom: 15px; cursor: pointer; width: 100%; text-align: left; border: none; background: transparent; transition: all 0.3s ease;" aria-expanded="false" aria-controls="faq-contact-9">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 class="h4" style="margin: 0;">What is your refund policy?</h4>
+                                <ion-icon name="chevron-forward-outline" class="faq-icon" style="transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);"></ion-icon>
+                            </div>
+                        </button>
+                        <div id="faq-contact-9" class="faq-content"
+                            style="max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease; opacity: 0;">
+                            <p style="margin: 15px 0 0 0; color: var(--text-secondary); padding: 0 10px 10px 10px;">We offer project-specific refund policies outlined in our contract terms. Generally,
+                                refunds are considered based on project stage and deliverable completion.</p>
+                        </div>
+
+                        <button class="glass-card faq-item" style="padding: 25px; margin-bottom: 15px; cursor: pointer; width: 100%; text-align: left; border: none; background: transparent; transition: all 0.3s ease;" aria-expanded="false" aria-controls="faq-contact-10">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 class="h4" style="margin: 0;">Do you provide ongoing support after project completion?</h4>
+                                <ion-icon name="chevron-forward-outline" class="faq-icon" style="transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);"></ion-icon>
+                            </div>
+                        </button>
+                        <div id="faq-contact-10" class="faq-content"
+                            style="max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease; opacity: 0;">
+                            <p style="margin: 15px 0 0 0; color: var(--text-secondary); padding: 0 10px 10px 10px;">Yes, we offer maintenance and support packages to ensure continued success of your
+                                project. These can be customized to meet your specific needs.</p>
+                        </div>
+
+                        <button class="glass-card faq-item" style="padding: 25px; margin-bottom: 15px; cursor: pointer; width: 100%; text-align: left; border: none; background: transparent; transition: all 0.3s ease;" aria-expanded="false" aria-controls="faq-contact-11">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 class="h4" style="margin: 0;">How do you ensure brand consistency across different platforms?</h4>
+                                <ion-icon name="chevron-forward-outline" class="faq-icon" style="transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);"></ion-icon>
+                            </div>
+                        </button>
+                        <div id="faq-contact-11" class="faq-content"
+                            style="max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease; opacity: 0;">
+                            <p style="margin: 15px 0 0 0; color: var(--text-secondary); padding: 0 10px 10px 10px;">We develop comprehensive brand guidelines and style guides to maintain consistency
+                                across all touchpoints and platforms for your brand.</p>
+                        </div>
+
+                        <button class="glass-card faq-item" style="padding: 25px; margin-bottom: 15px; cursor: pointer; width: 100%; text-align: left; border: none; background: transparent; transition: all 0.3s ease;" aria-expanded="false" aria-controls="faq-contact-12">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 class="h4" style="margin: 0;">What technology stack do you use for web development?</h4>
+                                <ion-icon name="chevron-forward-outline" class="faq-icon" style="transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);"></ion-icon>
+                            </div>
+                        </button>
+                        <div id="faq-contact-12" class="faq-content"
+                            style="max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease; opacity: 0;">
+                            <p style="margin: 15px 0 0 0; color: var(--text-secondary); padding: 0 10px 10px 10px;">We work with modern technologies including React, Vue, Next.js, Node.js, and cloud
+                                platforms like AWS and Google Cloud, depending on project requirements.</p>
+                        </div>
+
+                        <button class="glass-card faq-item" style="padding: 25px; margin-bottom: 15px; cursor: pointer; width: 100%; text-align: left; border: none; background: transparent; transition: all 0.3s ease;" aria-expanded="false" aria-controls="faq-contact-13">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h4 class="h4" style="margin: 0;">How do you handle revisions and feedback?</h4>
+                                <ion-icon name="chevron-forward-outline" class="faq-icon" style="transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);"></ion-icon>
+                            </div>
+                        </button>
+                        <div id="faq-contact-13" class="faq-content"
+                            style="max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease; opacity: 0;">
+                            <p style="margin: 15px 0 0 0; color: var(--text-secondary); padding: 0 10px 10px 10px;">We include a specified number of revision rounds in our contracts. We encourage
+                                structured feedback to ensure efficient project iteration and client satisfaction.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -643,7 +1000,6 @@
     </a>
 
     <script src="./assets/js/script.js" defer></script>
-    <script src="./assets/js/faq-component.js" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 

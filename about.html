@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0e0e0e">
 
     <!-- SEO Meta Tags -->
     <title>About Us - Creo Media</title>
@@ -90,9 +94,58 @@
                             aria-label="Home page">Home</a>
                     </li>
 
-                    <li class="navbar-item" role="none">
-                        <a href="service.html" class="navbar-link" data-nav-link role="menuitem"
-                            aria-label="Services page">Services</a>
+                    <li class="navbar-item has-mega-menu" role="none">
+                        <a href="service.html" class="navbar-link mega-menu-trigger" data-nav-link role="menuitem"
+                            aria-label="Services page" aria-expanded="false" aria-haspopup="true">Services</a>
+                        <!-- Mega Menu Dropdown -->
+                        <div class="mega-menu" aria-label="Services mega menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-column">
+                                    <h4 class="mega-menu-title">
+                                        <ion-icon name="videocam-outline"></ion-icon>
+                                        Content Production
+                                    </h4>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="services/content-production.html">4K Video Production</a></li>
+                                        <li><a href="services/content-production.html">Professional Photography</a></li>
+                                        <li><a href="services/content-production.html">Motion Graphics</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h4 class="mega-menu-title">
+                                        <ion-icon name="desktop-outline"></ion-icon>
+                                        Digital Management
+                                    </h4>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="services/digital-management.html">UI/UX Web Design</a></li>
+                                        <li><a href="services/digital-management.html">Social Media Management</a></li>
+                                        <li><a href="services/digital-management.html">Growth Marketing</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h4 class="mega-menu-title">
+                                        <ion-icon name="calendar-outline"></ion-icon>
+                                        Event Management
+                                    </h4>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="services/event-management.html">Brand Activations</a></li>
+                                        <li><a href="services/event-management.html">Hybrid Events</a></li>
+                                        <li><a href="services/event-management.html">Technical Production</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h4 class="mega-menu-title">
+                                        <ion-icon name="mic-outline"></ion-icon>
+                                        Podcasting
+                                    </h4>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="services/podcasting.html">Studio Production</a></li>
+                                        <li><a href="services/podcasting.html">Audio Post-Production</a></li>
+                                        <li><a href="services/podcasting.html">Distribution Strategy</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </li>
 
                     <li class="navbar-item" role="none">
@@ -101,12 +154,50 @@
                     </li>
 
                     <li class="navbar-item" role="none">
-                        <a href="portfolio.html" class="navbar-link" data-nav-link role="menuitem"
-                            aria-label="Portfolio page">Portfolio</a>
+                        <a href="contact.html" class="navbar-link" data-nav-link role="menuitem"
+                            aria-label="Contact us page">Contact</a>
+                    </li>
+
+                    <li class="navbar-item has-mega-menu" role="none">
+                        <a href="portfolio.html" class="navbar-link mega-menu-trigger" data-nav-link role="menuitem"
+                            aria-label="Portfolio page" aria-expanded="false" aria-haspopup="true">Portfolio</a>
+                        <!-- Mega Menu Dropdown -->
+                        <div class="mega-menu" aria-label="Portfolio mega menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-column">
+                                    <h4 class="mega-menu-title">
+                                        <ion-icon name="grid-outline"></ion-icon>
+                                        View Projects
+                                    </h4>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="portfolio.html">All Projects</a></li>
+                                        <li><a href="portfolio.html">Featured Cases</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h4 class="mega-menu-title">
+                                        <ion-icon name="filter-outline"></ion-icon>
+                                        Filter by Type
+                                    </h4>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="portfolio.html?filter=content">Content Production</a></li>
+                                        <li><a href="portfolio.html?filter=digital">Digital Management</a></li>
+                                        <li><a href="portfolio.html?filter=events">Events</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column mega-menu-cta">
+                                    <a href="portfolio.html" class="btn btn-primary">View Full Portfolio</a>
+                                </div>
+                            </div>
+                        </div>
                     </li>
 
                 </ul>
 
+                <!-- Quick Booking CTA in Mobile Menu -->
+                <div class="mobile-menu-cta">
+                    <a href="contact.html" class="btn btn-primary has-before has-after">Book Consultation</a>
+                </div>
             </nav>
 
             <div class="overlay" data-nav-toggler data-overlay></div>
@@ -125,7 +216,7 @@
             <!-- UNIFIED HERO -->
             <section class="unified-hero" id="home" aria-label="hero">
                 <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80"
-                    class="hero-bg-layer" alt="Team Collaboration">
+                    class="hero-bg-layer" alt="Team Collaboration" loading="eager" fetchpriority="high">
                 <div class="hero-gradient-overlay"></div>
 
                 <div class="hero-center-content">
@@ -285,7 +376,7 @@
             <section class="section values" aria-label="values" style="background: var(--bg-secondary);">
                 <div class="container">
                     <p class="section-subtitle has-before text-center">Our DNA</p>
-                    <h2 class="h2 section-title text-center">CORED <span class="has-before">VALUES</span></h2>
+                    <h2 class="h2 section-title text-center">CORE <span class="has-before">VALUES</span></h2>
                     <div class="grid-list" style="margin-top: 60px;">
                         <div class="glass-card value-card"
                             style="padding: 40px; border-left: 4px solid var(--hot-pink);">
@@ -302,6 +393,59 @@
                             <h3 class="h3" style="color: var(--white); margin-bottom: 15px;">Speed as a Feature</h3>
                             <p class="card-text">Culture moves fast. We move faster. High-velocity delivery without ever
                                 compromising on elite quality.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 
+                - #TEAM
+            -->
+            <section class="section team" id="team" aria-label="team" style="background: var(--bg-primary);">
+                <div class="container">
+                    <p class="section-subtitle has-before text-center">The Minds Behind</p>
+                    <h2 class="h2 section-title text-center glitch-text" data-text="OUR TEAM">OUR <span class="has-before">TEAM</span></h2>
+                    <p class="text-center" style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 50px;">An elite collective of creators, strategists, and innovators united by a shared passion for excellence.</p>
+
+                    <div class="grid-list" style="margin-top: 60px;">
+                        <!-- Team Member 1 -->
+                        <div class="glass-card" style="padding: 40px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
+                            <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, var(--cyan) 0%, var(--hot-pink) 100%); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                <ion-icon name="person-outline" style="font-size: 3rem; color: var(--white);"></ion-icon>
+                            </div>
+                            <h3 class="h3" style="color: var(--white); margin-bottom: 10px;">Founder & CEO</h3>
+                            <p style="color: var(--cyan); font-size: 0.9rem; margin-bottom: 15px;">Visionary Leader</p>
+                            <p class="card-text" style="color: var(--text-secondary); font-size: 0.9rem;">Driving the agency's mission to bridge African creativity with global standards.</p>
+                        </div>
+
+                        <!-- Team Member 2 -->
+                        <div class="glass-card" style="padding: 40px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
+                            <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, var(--hot-pink) 0%, #FFE600 100%); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                <ion-icon name="person-outline" style="font-size: 3rem; color: var(--white);"></ion-icon>
+                            </div>
+                            <h3 class="h3" style="color: var(--white); margin-bottom: 10px;">Creative Director</h3>
+                            <p style="color: var(--hot-pink); font-size: 0.9rem; margin-bottom: 15px;">Visual Storyteller</p>
+                            <p class="card-text" style="color: var(--text-secondary); font-size: 0.9rem;">Crafting cinematic narratives that move the needle for brands.</p>
+                        </div>
+
+                        <!-- Team Member 3 -->
+                        <div class="glass-card" style="padding: 40px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
+                            <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #FFE600 0%, #9D00FF 100%); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                <ion-icon name="person-outline" style="font-size: 3rem; color: var(--white);"></ion-icon>
+                            </div>
+                            <h3 class="h3" style="color: var(--white); margin-bottom: 10px;">Digital Strategist</h3>
+                            <p style="color: #FFE600; font-size: 0.9rem; margin-bottom: 15px;">Data-Driven Growth</p>
+                            <p class="card-text" style="color: var(--text-secondary); font-size: 0.9rem;">Transforming data into actionable insights for measurable impact.</p>
+                        </div>
+
+                        <!-- Team Member 4 -->
+                        <div class="glass-card" style="padding: 40px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
+                            <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #9D00FF 0%, var(--cyan) 100%); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                                <ion-icon name="person-outline" style="font-size: 3rem; color: var(--white);"></ion-icon>
+                            </div>
+                            <h3 class="h3" style="color: var(--white); margin-bottom: 10px;">Production Lead</h3>
+                            <p style="color: #9D00FF; font-size: 0.9rem; margin-bottom: 15px;">Technical Excellence</p>
+                            <p class="card-text" style="color: var(--text-secondary); font-size: 0.9rem;">Ensuring every frame meets elite production standards.</p>
                         </div>
                     </div>
                 </div>

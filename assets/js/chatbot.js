@@ -174,10 +174,38 @@ delete chatbotKnowledge.enhancedFaqs;
 class CreoChatbot {
     constructor() {
         this.isOpen = false;
-        this.messages = [];
+        this.messageHistory = [];
+        this.loadFromSession();
         this.createUI();
         this.addEventListeners();
-        this.greet();
+        this.addQuickActions();
+        this.addKeyboardShortcut();
+        if (this.messageHistory.length === 0) {
+            this.greet();
+        } else {
+            this.restoreMessages();
+        }
+    }
+
+    loadFromSession() {
+        const saved = sessionStorage.getItem('creoChatHistory');
+        if (saved) {
+            try {
+                this.messageHistory = JSON.parse(saved);
+            } catch (e) {
+                this.messageHistory = [];
+            }
+        }
+    }
+
+    saveToSession() {
+        sessionStorage.setItem('creoChatHistory', JSON.stringify(this.messageHistory));
+    }
+
+    restoreMessages() {
+        this.messageHistory.forEach(msg => {
+            this.addMessage(msg.text, msg.side, false);
+        });
     }
 
     createUI() {
@@ -189,20 +217,20 @@ class CreoChatbot {
                             <div class="status-dot"></div>
                             <span class="bot-name">ORION AI</span>
                         </div>
-                        <button class="chat-close" aria-label="Close chat"><ion-icon name="close-outline"></ion-icon></button>
+                        <button class="chat-close"><ion-icon name="close-outline"></ion-icon></button>
                     </div>
-                    <div id="chat-messages" class="chat-messages" role="log" aria-live="polite"></div>
+                    <div id="chat-messages" class="chat-messages"></div>
                     <div id="typing-indicator" class="typing-indicator">Orion is thinking...</div>
                     <div class="chat-input-area">
-                        <input type="text" id="chat-input" placeholder="Ask Orion anything..." autocomplete="off" aria-label="Chat message input">
-                        <button id="chat-send" aria-label="Send message"><ion-icon name="paper-plane-outline"></ion-icon></button>
+                        <input type="text" id="chat-input" placeholder="Ask Orion anything..." autocomplete="off">
+                        <button id="chat-send"><ion-icon name="paper-plane-outline"></ion-icon></button>
                     </div>
                 </div>
-                <button class="chat-trigger" aria-label="Open chat">
+                <button class="chat-trigger">
                     <img src="./assets/images/robot-avatar.png" alt="Orion AI" class="robot-avatar-img">
                 </button>
             </div>
-            <a href="https://wa.me/264812442161" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contact on WhatsApp">
+            <a href="https://wa.me/264812442161" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
                 <ion-icon name="logo-whatsapp"></ion-icon>
             </a>
         `;
@@ -224,6 +252,80 @@ class CreoChatbot {
         this.input.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') this.handleSend();
         });
+    }
+
+    addQuickActions() {
+        const quickActionsHTML = `
+            <div class="quick-actions">
+                <button class="quick-action" data-action="portfolio" aria-label="View Portfolio">
+                    <ion-icon name="grid-outline"></ion-icon>
+                    <span>Portfolio</span>
+                </button>
+                <button class="quick-action" data-action="quote" aria-label="Get Quote">
+                    <ion-icon name="pricetag-outline"></ion-icon>
+                    <span>Get Quote</span>
+                </button>
+                <button class="quick-action" data-action="call" aria-label="Call Us">
+                    <ion-icon name="call-outline"></ion-icon>
+                    <span>Call Us</span>
+                </button>
+                <button class="quick-action" data-action="services" aria-label="Services">
+                    <ion-icon name="apps-outline"></ion-icon>
+                    <span>Services</span>
+                </button>
+                <button class="quick-action clear-chat" data-action="clear" aria-label="Clear Chat">
+                    <ion-icon name="trash-outline"></ion-icon>
+                    <span>Clear</span>
+                </button>
+            </div>
+        `;
+        this.messagesContainer.insertAdjacentHTML('beforebegin', quickActionsHTML);
+
+        // Add event listeners to quick action buttons
+        document.querySelectorAll('.quick-action').forEach(btn => {
+            btn.addEventListener('click', (e) => this.handleQuickAction(e));
+        });
+    }
+
+    addKeyboardShortcut() {
+        document.addEventListener('keydown', (e) => {
+            if (e.altKey && e.key === 'c') {
+                e.preventDefault();
+                this.toggle();
+            }
+        });
+    }
+
+    handleQuickAction(e) {
+        const action = e.currentTarget.dataset.action;
+        switch(action) {
+            case 'portfolio':
+                this.addMessage("Show me the portfolio", 'user');
+                this.addMessage("Certainly! Visit our <a href='portfolio.html' target='_blank' style='color: var(--cyan); text-decoration: underline;'>Portfolio section</a> to see diverse projects across various industries. We showcase our expertise in content production, digital management, events, and podcasting.", 'bot');
+                break;
+            case 'quote':
+                this.addMessage("I want a quote", 'user');
+                this.addMessage("I'd be happy to help you get a quote! Please visit our <a href='contact.html' target='_blank' style='color: var(--cyan); text-decoration: underline;'>Contact page</a> to provide details about your project, and we'll get back to you with a customized quote.", 'bot');
+                break;
+            case 'call':
+                this.addMessage("I want to call you", 'user');
+                this.addMessage("You can reach us at <a href='tel:0812674321' style='color: var(--cyan); text-decoration: underline;'>081 267 4321</a> or message us on WhatsApp for immediate assistance.", 'bot');
+                break;
+            case 'services':
+                this.addMessage("Tell me about your services", 'user');
+                this.addMessage("We specialize in four main pillars: <strong>Content Production</strong> (video, photography, graphics), <strong>Digital Management</strong> (web design, social media, digital strategy), <strong>Event Management</strong> (corporate events, activations, conferences), and <strong>Podcasting</strong> (studio production, audio editing, distribution). Would you like to learn more about any specific service?", 'bot');
+                break;
+            case 'clear':
+                this.clearChat();
+                break;
+        }
+    }
+
+    clearChat() {
+        this.messageHistory = [];
+        this.messagesContainer.innerHTML = '';
+        this.saveToSession();
+        this.greet();
     }
 
     toggle() {
@@ -259,8 +361,7 @@ class CreoChatbot {
         this.showTyping(true);
 
         try {
-            // Simulate API delay for more natural feel
-            await new Promise(r => setTimeout(r, 800 + Math.random() * 700));
+            await new Promise(r => setTimeout(r, 1000 + Math.random() * 1000));
 
             let foundResponse = null;
             const normalizedQuery = query.toLowerCase();
@@ -287,45 +388,30 @@ class CreoChatbot {
         } catch (error) {
             console.error('Error getting response:', error);
             this.showTyping(false);
-            this.addMessage("I'm having trouble processing your request. Please try again or contact us directly at contact.creomedia@gmail.com", 'bot');
+            this.addMessage("I'm having trouble processing your request. Please try again.", 'bot');
         }
     }
 
-    addMessage(text, side) {
+    addMessage(text, side, save = true) {
+        const timestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         const msgEl = document.createElement('div');
         msgEl.className = `message ${side}`;
-        
-        // Format message with links
-        const formattedText = this.formatMessage(text);
-        msgEl.innerHTML = `<div class="message-content">${formattedText}</div>`;
-        
+        msgEl.innerHTML = `
+            <div class="message-content">${text}</div>
+            <div class="message-timestamp">${timestamp}</div>
+        `;
         this.messagesContainer.appendChild(msgEl);
-        this.messages.push({ text, side, timestamp: new Date() });
-        this.scrollToBottom();
-    }
+        this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
 
-    formatMessage(text) {
-        // Convert URLs to links, preserve line breaks
-        return text
-            .replace(/\n/g, '<br />')
-            .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>');
+        if (save) {
+            this.messageHistory.push({ text, side, timestamp });
+            this.saveToSession();
+        }
     }
 
     showTyping(show) {
         this.typingIndicator.style.display = show ? 'block' : 'none';
-        this.scrollToBottom();
-    }
-
-    scrollToBottom() {
         this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
-    }
-
-    getContext() {
-        // Return page context for smarter responses
-        return {
-            currentPage: window.location.pathname,
-            userAgent: navigator.userAgent
-        };
     }
 }
 

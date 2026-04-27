@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0e0e0e">
 
     <!-- SEO Meta Tags -->
     <title>Portfolio - Creo Media Solutions</title>
@@ -102,17 +106,116 @@
                         <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
                     </button>
                 </div>
+
                 <ul class="navbar-list" role="menubar">
                     <li class="navbar-item" role="none"><a href="./index.html" class="navbar-link" data-nav-link
                             role="menuitem" aria-label="Home page">Home</a></li>
-                    <li class="navbar-item" role="none"><a href="./service.html" class="navbar-link" data-nav-link
-                            role="menuitem" aria-label="Services page">Services</a></li>
-                    <li class="navbar-item" role="none"><a href="./about.html" class="navbar-link" data-nav-link
-                            role="menuitem" aria-label="About us page">About</a></li>
-                    <li class="navbar-item" role="none"><a href="./portfolio.html" class="navbar-link active"
-                            data-nav-link role="menuitem" aria-label="Portfolio page">Portfolio</a>
+
+                    <li class="navbar-item has-mega-menu" role="none">
+                        <a href="./service.html" class="navbar-link mega-menu-trigger" data-nav-link role="menuitem"
+                            aria-label="Services page" aria-expanded="false" aria-haspopup="true">Services</a>
+                        <!-- Mega Menu Dropdown -->
+                        <div class="mega-menu" aria-label="Services mega menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-column">
+                                    <h4 class="mega-menu-title">
+                                        <ion-icon name="videocam-outline"></ion-icon>
+                                        Content Production
+                                    </h4>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="./services/content-production.html">4K Video Production</a></li>
+                                        <li><a href="./services/content-production.html">Professional Photography</a></li>
+                                        <li><a href="./services/content-production.html">Motion Graphics</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h4 class="mega-menu-title">
+                                        <ion-icon name="desktop-outline"></ion-icon>
+                                        Digital Management
+                                    </h4>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="./services/digital-management.html">UI/UX Web Design</a></li>
+                                        <li><a href="./services/digital-management.html">Social Media Management</a></li>
+                                        <li><a href="./services/digital-management.html">Growth Marketing</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h4 class="mega-menu-title">
+                                        <ion-icon name="calendar-outline"></ion-icon>
+                                        Event Management
+                                    </h4>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="./services/event-management.html">Brand Activations</a></li>
+                                        <li><a href="./services/event-management.html">Hybrid Events</a></li>
+                                        <li><a href="./services/event-management.html">Technical Production</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h4 class="mega-menu-title">
+                                        <ion-icon name="mic-outline"></ion-icon>
+                                        Podcasting
+                                    </h4>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="./services/podcasting.html">Studio Production</a></li>
+                                        <li><a href="./services/podcasting.html">Audio Post-Production</a></li>
+                                        <li><a href="./services/podcasting.html">Distribution Strategy</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </li>
+
+                    <li class="navbar-item" role="none">
+                        <a href="./about.html" class="navbar-link" data-nav-link role="menuitem"
+                            aria-label="About us page">About</a>
+                    </li>
+
+                    <li class="navbar-item" role="none">
+                        <a href="./contact.html" class="navbar-link" data-nav-link role="menuitem"
+                            aria-label="Contact us page">Contact</a>
+                    </li>
+
+                    <li class="navbar-item has-mega-menu" role="none">
+                        <a href="./portfolio.html" class="navbar-link mega-menu-trigger active"
+                            data-nav-link role="menuitem" aria-label="Portfolio page" aria-expanded="false"
+                            aria-haspopup="true">Portfolio</a>
+                        <!-- Mega Menu Dropdown -->
+                        <div class="mega-menu" aria-label="Portfolio mega menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-column">
+                                    <h4 class="mega-menu-title">
+                                        <ion-icon name="grid-outline"></ion-icon>
+                                        View Projects
+                                    </h4>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="./portfolio.html">All Projects</a></li>
+                                        <li><a href="./portfolio.html">Featured Cases</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h4 class="mega-menu-title">
+                                        <ion-icon name="filter-outline"></ion-icon>
+                                        Filter by Type
+                                    </h4>
+                                    <ul class="mega-menu-list">
+                                        <li><a href="./portfolio.html?filter=content">Content Production</a></li>
+                                        <li><a href="./portfolio.html?filter=digital">Digital Management</a></li>
+                                        <li><a href="./portfolio.html?filter=events">Events</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column mega-menu-cta">
+                                    <a href="./portfolio.html" class="btn btn-primary">View Full Portfolio</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
                 </ul>
+
+                <!-- Quick Booking CTA in Mobile Menu -->
+                <div class="mobile-menu-cta">
+                    <a href="./contact.html" class="btn btn-primary has-before has-after">Book Consultation</a>
+                </div>
             </nav>
             <div class="overlay" data-nav-toggler data-overlay></div>
         </div>
@@ -122,7 +225,7 @@
         <!-- UNIFIED HERO -->
         <section class="unified-hero" id="home" aria-label="hero">
             <img src="./assets/images/hero-creomedia.png" class="hero-bg-layer"
-                alt="Portfolio Showcase">
+                alt="Portfolio Showcase" loading="eager" fetchpriority="high">
             <div class="hero-gradient-overlay"></div>
 
             <div class="hero-center-content">
@@ -149,49 +252,280 @@
             </div>
         </section>
 
-        <!-- VIDEO CAROUSEL -->
-        <section class="section" id="portfolio-carousel" aria-label="portfolio video carousel">
+        <!-- PORTFOLIO VIDEO CAROUSEL -->
+        <section class="section video-carousel-section" aria-label="featured portfolio videos">
             <div class="container">
                 <p class="section-subtitle has-before text-center">Featured Work</p>
-                <h2 class="h2 section-title text-center">Video <span class="has-before">Showcase</span></h2>
-
-                <div class="carousel-wrapper">
-                    <div class="carousel-main">
-                        <video id="carousel-video" class="carousel-video" controls poster="">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="carousel-info">
-                            <h3 id="carousel-title">Loading...</h3>
-                            <p id="carousel-description">Loading video content...</p>
-                            <a href="#" class="carousel-cta" id="carousel-cta">View Case Study</a>
+                <h2 class="h2 section-title text-center">Our <span class="has-before">Latest Projects</span></h2>
+                
+                <!-- VIDEO CAROUSEL -->
+                <div class="video-carousel-container">
+                    <div class="video-carousel" id="videoCarousel" role="region" aria-label="Portfolio video carousel">
+                        
+                        <!-- CARD 1: Tatekulu Barbershop -->
+                        <div class="video-card" data-index="0" role="article" aria-label="Tatekulu Barbershop project">
+                            <div class="card-bg" style="background: linear-gradient(135deg, #1a1209 0%, #3d2810 40%, #1f1208 100%);">
+                                <div class="card-overlay">
+                                    <div class="card-content">
+                                        <div class="card-top">
+                                            <span class="category-tag">Content Production</span>
+                                            <span class="card-index">01/06</span>
+                                        </div>
+                                        <div class="card-bottom">
+                                            <span class="client-name">TATEKULU BARBERSHOP</span>
+                                            <h3 class="project-title">Viral Content Campaign</h3>
+                                            <p class="project-desc">Authentic storytelling through social media</p>
+                                            <div class="project-stats">
+                                                <div class="stat">
+                                                    <span class="stat-value">300%</span>
+                                                    <span class="stat-label">Engagement</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <span class="stat-value">50K+</span>
+                                                    <span class="stat-label">Views</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <span class="stat-value">45%</span>
+                                                    <span class="stat-label">Growth</span>
+                                                </div>
+                                            </div>
+                                            <a href="#case-studies" class="card-cta">View Case Study</a>
+                                        </div>
+                                    </div>
+                                    <div class="play-button">
+                                        <ion-icon name="play-circle-outline"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="carousel-thumbnails">
-                        <button class="carousel-btn" id="carousel-prev" aria-label="Previous video">
-                            <ion-icon name="chevron-back-outline"></ion-icon>
-                        </button>
-                        <div class="thumbnails-track" role="tablist"></div>
-                        <button class="carousel-btn" id="carousel-next" aria-label="Next video">
-                            <ion-icon name="chevron-forward-outline"></ion-icon>
-                        </button>
-                    </div>
+                        <!-- CARD 2: NCRST -->
+                        <div class="video-card" data-index="1" role="article" aria-label="NCRST project">
+                            <div class="card-bg" style="background: linear-gradient(135deg, #0a1628 0%, #1a2d4a 40%, #0f1a28 100%);">
+                                <div class="card-overlay">
+                                    <div class="card-content">
+                                        <div class="card-top">
+                                            <span class="category-tag">Digital Management</span>
+                                            <span class="card-index">02/06</span>
+                                        </div>
+                                        <div class="card-bottom">
+                                            <span class="client-name">NCRST</span>
+                                            <h3 class="project-title">Digital Transformation</h3>
+                                            <p class="project-desc">Revitalized digital presence for research commission</p>
+                                            <div class="project-stats">
+                                                <div class="stat">
+                                                    <span class="stat-value">250%</span>
+                                                    <span class="stat-label">Traffic</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <span class="stat-value">85%</span>
+                                                    <span class="stat-label">Engagement</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <span class="stat-value">40%</span>
+                                                    <span class="stat-label">Conversion</span>
+                                                </div>
+                                            </div>
+                                            <a href="#case-studies" class="card-cta">View Case Study</a>
+                                        </div>
+                                    </div>
+                                    <div class="play-button">
+                                        <ion-icon name="play-circle-outline"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                    <div class="carousel-controls">
-                        <button class="autoplay-btn" id="autoplay-toggle" aria-pressed="true">
-                            <ion-icon name="play-outline"></ion-icon> Autoplay
-                        </button>
-                        <div class="carousel-indicators" role="tablist"></div>
+                        <!-- CARD 3: Drive-Through Movie Night -->
+                        <div class="video-card" data-index="2" role="article" aria-label="Drive-Through Movie Night project">
+                            <div class="card-bg" style="background: linear-gradient(135deg, #1a0a28 0%, #3d1a4a 40%, #1f0a28 100%);">
+                                <div class="card-overlay">
+                                    <div class="card-content">
+                                        <div class="card-top">
+                                            <span class="category-tag">Event Management</span>
+                                            <span class="card-index">03/06</span>
+                                        </div>
+                                        <div class="card-bottom">
+                                            <span class="client-name">DRIVE-THROUGH MOVIE</span>
+                                            <h3 class="project-title">Cinematic Experience</h3>
+                                            <p class="project-desc">Unique outdoor movie event concept</p>
+                                            <div class="project-stats">
+                                                <div class="stat">
+                                                    <span class="stat-value">500+</span>
+                                                    <span class="stat-label">Attendees</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <span class="stat-value">100%</span>
+                                                    <span class="stat-label">Satisfaction</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <span class="stat-value">3</span>
+                                                    <span class="stat-label">Events</span>
+                                                </div>
+                                            </div>
+                                            <a href="#case-studies" class="card-cta">View Case Study</a>
+                                        </div>
+                                    </div>
+                                    <div class="play-button">
+                                        <ion-icon name="play-circle-outline"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 4: More Than Logic -->
+                        <div class="video-card" data-index="3" role="article" aria-label="More Than Logic project">
+                            <div class="card-bg" style="background: linear-gradient(135deg, #0a1a28 0%, #1a3d4a 40%, #0f1f28 100%);">
+                                <div class="card-overlay">
+                                    <div class="card-content">
+                                        <div class="card-top">
+                                            <span class="category-tag">Podcasting</span>
+                                            <span class="card-index">04/06</span>
+                                        </div>
+                                        <div class="card-bottom">
+                                            <span class="client-name">MORE THAN LOGIC</span>
+                                            <h3 class="project-title">Entrepreneurship Podcast</h3>
+                                            <p class="project-desc">Inspiring business content for entrepreneurs</p>
+                                            <div class="project-stats">
+                                                <div class="stat">
+                                                    <span class="stat-value">900+</span>
+                                                    <span class="stat-label">Subscribers</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <span class="stat-value">4.8/5</span>
+                                                    <span class="stat-label">Rating</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <span class="stat-value">150+</span>
+                                                    <span class="stat-label">Episodes</span>
+                                                </div>
+                                            </div>
+                                            <a href="#case-studies" class="card-cta">View Case Study</a>
+                                        </div>
+                                    </div>
+                                    <div class="play-button">
+                                        <ion-icon name="play-circle-outline"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 5: Debmarine -->
+                        <div class="video-card" data-index="4" role="article" aria-label="Debmarine project">
+                            <div class="card-bg" style="background: linear-gradient(135deg, #0a2818 0%, #1a4a30 40%, #0f2818 100%);">
+                                <div class="card-overlay">
+                                    <div class="card-content">
+                                        <div class="card-top">
+                                            <span class="category-tag">Content Production</span>
+                                            <span class="card-index">05/06</span>
+                                        </div>
+                                        <div class="card-bottom">
+                                            <span class="client-name">DEBMARINE</span>
+                                            <h3 class="project-title">Corporate Campaign</h3>
+                                            <p class="project-desc">Brand storytelling for marine industry</p>
+                                            <div class="project-stats">
+                                                <div class="stat">
+                                                    <span class="stat-value">200%</span>
+                                                    <span class="stat-label">Reach</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <span class="stat-value">75%</span>
+                                                    <span class="stat-label">Engagement</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <span class="stat-value">10</span>
+                                                    <span class="stat-label">Videos</span>
+                                                </div>
+                                            </div>
+                                            <a href="#case-studies" class="card-cta">View Case Study</a>
+                                        </div>
+                                    </div>
+                                    <div class="play-button">
+                                        <ion-icon name="play-circle-outline"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 6: Edenberry -->
+                        <div class="video-card" data-index="5" role="article" aria-label="Edenberry project">
+                            <div class="card-bg" style="background: linear-gradient(135deg, #281a0a 0%, #4a3d1a 40%, #281f0a 100%);">
+                                <div class="card-overlay">
+                                    <div class="card-content">
+                                        <div class="card-top">
+                                            <span class="category-tag">Digital Management</span>
+                                            <span class="card-index">06/06</span>
+                                        </div>
+                                        <div class="card-bottom">
+                                            <span class="client-name">EDENBERRY</span>
+                                            <h3 class="project-title">Brand Development</h3>
+                                            <p class="project-desc">Complete digital branding solution</p>
+                                            <div class="project-stats">
+                                                <div class="stat">
+                                                    <span class="stat-value">180%</span>
+                                                    <span class="stat-label">Growth</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <span class="stat-value">90%</span>
+                                                    <span class="stat-label">Retention</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <span class="stat-value">5</span>
+                                                    <span class="stat-label">Platforms</span>
+                                                </div>
+                                            </div>
+                                            <a href="#case-studies" class="card-cta">View Case Study</a>
+                                        </div>
+                                    </div>
+                                    <div class="play-button">
+                                        <ion-icon name="play-circle-outline"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+
+                <!-- NAVIGATION DOTS -->
+                <div class="carousel-dots" role="tablist" aria-label="Carousel navigation">
+                    <button class="carousel-dot active" data-index="0" aria-label="View project 1" aria-selected="true" role="tab"></button>
+                    <button class="carousel-dot" data-index="1" aria-label="View project 2" aria-selected="false" role="tab"></button>
+                    <button class="carousel-dot" data-index="2" aria-label="View project 3" aria-selected="false" role="tab"></button>
+                    <button class="carousel-dot" data-index="3" aria-label="View project 4" aria-selected="false" role="tab"></button>
+                    <button class="carousel-dot" data-index="4" aria-label="View project 5" aria-selected="false" role="tab"></button>
+                    <button class="carousel-dot" data-index="5" aria-label="View project 6" aria-selected="false" role="tab"></button>
+                </div>
             </div>
-        </section>
 
-        <!-- PORTFOLIO GRID -->
-        <section class="portfolio-section">
-            <div class="portfolio-container">
-                <div class="portfolio-grid">
+            <!-- PORTFOLIO GRID -->
+            <section class="portfolio-section">
+                <div class="portfolio-container">
+                    <div class="portfolio-grid">
 
+                        <!-- PROJECT 1: Content Production -->
+                        <div class="portfolio-item reveal-on-scroll" data-category="content"
+                            data-project="tatekulu-barbershop">
+                            <div class="portfolio-img-wrapper">
+                                <img src="./assets/Partner Logos/Tatekulu Barbershop Logo.png"
+                                    alt="Dynamic sports advertisement with neon lighting" class="portfolio-img"
+                                    loading="lazy">
+                            </div>
+                            <div class="portfolio-info">
+                                <span class="portfolio-category">Content Production</span>
+                                <h3 class="portfolio-title">Tatekulu Barbershop</h3>
+                                <p class="portfolio-desc">A real man gets his haircut at Tatekulu Barbershop…
+                                    The kind of man that changes a tyre in the rain. With a baby in one hand and a wrench in
+                                    the other.</p>
+                                <div class="portfolio-meta">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PROJECT 3: Event -->
+                        <div class="portfolio-item reveal-on-scroll" data-category="events"
+                            data-project="Drive-Through Movie Night">
+                            <img src="./assets/images/project-6.jpg" alt="Drive-Through Movie Night" class="portfolio-img"
                     <!-- PROJECT 1: Content Production -->
                     <div class="portfolio-item reveal-on-scroll" data-category="content"
                         data-project="tatekulu-barbershop">
@@ -260,20 +594,118 @@
                 <h2 class="h2 section-title text-center">Client <span class="has-before">Case Studies</span></h2>
                 <p class="text-center" style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 40px;">Real results from real partnerships. See how we've transformed brands through strategic creative execution.</p>
 
-                <!-- FILTER BUTTONS -->
-                <div class="filter-buttons" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 50px;">
-                    <button class="filter-btn active" data-filter="all">All Cases</button>
-                    <button class="filter-btn" data-filter="content">Content Production</button>
-                    <button class="filter-btn" data-filter="digital">Digital Management</button>
-                    <button class="filter-btn" data-filter="events">Event Management</button>
-                    <button class="filter-btn" data-filter="podcasting">Podcasting</button>
+                <!-- ENHANCED FILTER & SORT SYSTEM -->
+                <div class="portfolio-filter-system" style="margin-bottom: 50px;">
+                    
+                    <!-- Filter Toggle Button (Mobile) -->
+                    <button class="filter-toggle-btn" style="display: none; width: 100%; padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: var(--radius-12); cursor: pointer; margin-bottom: 20px; justify-content: space-between; align-items: center; font-size: 1rem;">
+                        <span style="display: flex; align-items: center; gap: 10px;">
+                            <ion-icon name="filter-outline"></ion-icon>
+                            Filter & Sort
+                        </span>
+                        <ion-icon name="chevron-down-outline" class="toggle-icon" style="transition: transform 0.3s ease;"></ion-icon>
+                    </button>
+
+                    <!-- Filter Panel -->
+                    <div class="filter-panel" style="transition: all 0.3s ease;">
+                        
+                        <!-- Filter Categories -->
+                        <div class="filter-categories" style="margin-bottom: 30px;">
+                            
+                            <!-- Service Type Filter -->
+                            <div class="filter-category" style="margin-bottom: 25px;">
+                                <h4 style="color: var(--text-main); margin-bottom: 12px; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+                                    <ion-icon name="apps-outline" style="color: #c9a84c;"></ion-icon>
+                                    Service Type
+                                </h4>
+                                <div class="filter-buttons" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                                    <button class="filter-btn active" data-filter="service" data-value="all">All Services</button>
+                                    <button class="filter-btn" data-filter="service" data-value="content">Content Production</button>
+                                    <button class="filter-btn" data-filter="service" data-value="digital">Digital Management</button>
+                                    <button class="filter-btn" data-filter="service" data-value="events">Event Management</button>
+                                    <button class="filter-btn" data-filter="service" data-value="podcasting">Podcasting</button>
+                                </div>
+                            </div>
+
+                            <!-- Industry Filter -->
+                            <div class="filter-category" style="margin-bottom: 25px;">
+                                <h4 style="color: var(--text-main); margin-bottom: 12px; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+                                    <ion-icon name="business-outline" style="color: #c9a84c;"></ion-icon>
+                                    Industry
+                                </h4>
+                                <div class="filter-buttons" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                                    <button class="filter-btn active" data-filter="industry" data-value="all">All Industries</button>
+                                    <button class="filter-btn" data-filter="industry" data-value="hospitality">Hospitality</button>
+                                    <button class="filter-btn" data-filter="industry" data-value="technology">Technology</button>
+                                    <button class="filter-btn" data-filter="industry" data-value="government">Government</button>
+                                    <button class="filter-btn" data-filter="industry" data-value="entertainment">Entertainment</button>
+                                    <button class="filter-btn" data-filter="industry" data-value="healthcare">Healthcare</button>
+                                    <button class="filter-btn" data-filter="industry" data-value="retail">Retail</button>
+                                </div>
+                            </div>
+
+                            <!-- Results/Impact Filter -->
+                            <div class="filter-category" style="margin-bottom: 25px;">
+                                <h4 style="color: var(--text-main); margin-bottom: 12px; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+                                    <ion-icon name="trending-up-outline" style="color: #c9a84c;"></ion-icon>
+                                    Impact Level
+                                </h4>
+                                <div class="filter-buttons" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                                    <button class="filter-btn active" data-filter="impact" data-value="all">All Results</button>
+                                    <button class="filter-btn" data-filter="impact" data-value="high">High Impact (300%+)</button>
+                                    <button class="filter-btn" data-filter="impact" data-value="growth">Growth-Focused</button>
+                                    <button class="filter-btn" data-filter="impact" data-value="brand">Brand Building</button>
+                                    <button class="filter-btn" data-filter="impact" data-value="digital">Digital Transformation</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Sort & View Options -->
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap; gap: 15px;">
+                            
+                            <!-- Sort Options -->
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <span style="color: var(--text-secondary); font-size: 0.9rem;">Sort by:</span>
+                                <select id="sortSelect" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 8px 15px; border-radius: var(--radius-8); cursor: pointer; font-size: 0.9rem;">
+                                    <option value="latest">Latest First</option>
+                                    <option value="impactful">Most Impactful</option>
+                                    <option value="rated">Best Rated</option>
+                                    <option value="alphabetical">Alphabetical (A-Z)</option>
+                                </select>
+                            </div>
+
+                            <!-- View Toggle -->
+                            <div style="display: flex; gap: 10px;">
+                                <button class="view-toggle active" data-view="grid" aria-label="Grid view" style="width: 40px; height: 40px; border-radius: var(--radius-8); background: rgba(201,168,76,0.2); border: 1px solid rgba(201,168,76,0.3); color: #c9a84c; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                                    <ion-icon name="grid-outline"></ion-icon>
+                                </button>
+                                <button class="view-toggle" data-view="list" aria-label="List view" style="width: 40px; height: 40px; border-radius: var(--radius-8); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                                    <ion-icon name="list-outline"></ion-icon>
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <!-- Clear Filters Button -->
+                        <button id="clearFilters" style="display: none; width: 100%; padding: 12px; background: rgba(255,0,85,0.1); border: 1px solid rgba(255,0,85,0.3); color: var(--hot-pink); border-radius: var(--radius-8); cursor: pointer; margin-top: 20px; transition: all 0.3s ease; font-size: 0.9rem;">
+                            Clear All Filters
+                        </button>
+
+                    </div>
+
+                    <!-- Results Count -->
+                    <div class="results-count" style="text-align: center; margin-bottom: 30px; color: var(--text-secondary); font-size: 0.95rem;">
+                        Showing <span id="filteredCount" style="color: var(--cyan); font-weight: 700;">0</span> of <span id="totalCount" style="color: var(--white); font-weight: 700;">0</span> projects
+                    </div>
+
                 </div>
 
                 <!-- CASE STUDY CARDS -->
                 <div class="case-studies-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
                     
                     <!-- CASE STUDY 1: Tatekulu Barbershop -->
-                    <div class="case-study-card glass-card reveal-on-scroll" data-category="content" style="padding: 35px; border: 1px solid rgba(255,255,255,0.1); transition: var(--transition-2);">
+                    <div class="case-study-card glass-card reveal-on-scroll" data-category="content" data-industry="hospitality" data-impact="high" data-impact-value="300" data-title="Tatekulu Barbershop" style="padding: 35px; border: 1px solid rgba(255,255,255,0.1); transition: var(--transition-2);">
                         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
                             <span class="industry-badge" style="background: var(--cyan); color: var(--pure-black); padding: 5px 15px; border-radius: var(--radius-pill); font-size: var(--fs-xs); font-weight: var(--fw-700);">Hospitality</span>
                             <span style="color: var(--text-muted); font-size: var(--fs-sm);">Content Production</span>
@@ -317,7 +749,7 @@
                     </div>
 
                     <!-- CASE STUDY 2: NCRST -->
-                    <div class="case-study-card glass-card reveal-on-scroll" data-category="digital" style="padding: 35px; border: 1px solid rgba(255,255,255,0.1); transition: var(--transition-2);">
+                    <div class="case-study-card glass-card reveal-on-scroll" data-category="digital" data-industry="government" data-impact="digital" data-impact-value="250" data-title="NCRST" style="padding: 35px; border: 1px solid rgba(255,255,255,0.1); transition: var(--transition-2);">
                         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
                             <span class="industry-badge" style="background: var(--hot-pink); color: var(--white); padding: 5px 15px; border-radius: var(--radius-pill); font-size: var(--fs-xs); font-weight: var(--fw-700);">Government</span>
                             <span style="color: var(--text-muted); font-size: var(--fs-sm);">Digital Management</span>
@@ -361,7 +793,7 @@
                     </div>
 
                     <!-- CASE STUDY 3: Drive-Through Movie Night -->
-                    <div class="case-study-card glass-card reveal-on-scroll" data-category="events" style="padding: 35px; border: 1px solid rgba(255,255,255,0.1); transition: var(--transition-2);">
+                    <div class="case-study-card glass-card reveal-on-scroll" data-category="events" data-industry="entertainment" data-impact="growth" data-impact-value="500" data-title="Drive-Through Movie Night" style="padding: 35px; border: 1px solid rgba(255,255,255,0.1); transition: var(--transition-2);">
                         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
                             <span class="industry-badge" style="background: #FFE600; color: var(--pure-black); padding: 5px 15px; border-radius: var(--radius-pill); font-size: var(--fs-xs); font-weight: var(--fw-700);">Entertainment</span>
                             <span style="color: var(--text-muted); font-size: var(--fs-sm);">Event Management</span>
@@ -726,7 +1158,6 @@
     <!-- SCRIPTS -->
     <script src="./assets/js/script.js" defer></script>
     <script src="./assets/js/portfolio.js" defer></script>
-    <script src="./assets/js/video-carousel.js" defer></script>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
