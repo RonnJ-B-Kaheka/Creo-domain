@@ -1,760 +1,902 @@
-# CREO MEDIA WEBSITE — MOAB-LEVEL UPGRADE PROMPTS
-**Method of Action Based Development Framework**
+# CREOMEDIA WEBSITE - MOAB LEVEL ENHANCEMENT PROMPTS
+
+**Status:** Critical UI/UX fixes + Feature Implementation  
+**Scope:** Complete site overhaul (excluding Blog & Resource pages)  
+**Reference URL:** https://ronnj-b-kaheka.github.io/Creo-domain/index.html  
 
 ---
 
-## EXECUTIVE SUMMARY
-
-This document contains 18 strategic, action-based prompts designed to systematically fix, enhance, and upgrade the Creo Media website (https://ronnj-b-kaheka.github.io/Creo-domain/). Each prompt is structured to address specific technical debt, missing features, UI/UX compromises, and functional failures across the platform.
-
-**Scope**: Homepage, Services, About, Portfolio, Contact pages  
-**Excluded**: Blog page, Resource page  
-**Priority**: Critical fixes first → Enhancement features → UI/UX polish
-
----
-
-## SECTION 1: CRITICAL FIXES — NAVBAR & NAVIGATION
-
-### PROMPT 1: Audit & Rebuild Navbar Responsive Behavior
-**Objective**: Fix navbar collapse/expand functionality and ensure consistent styling across all screen sizes.
-
-**Action Brief**:
-- Inspect current navbar implementation across all pages (index.html, service.html, about.html, portfolio.html, contact.html)
-- Identify broken states: mobile menu not opening/closing, hamburger icon not functioning, navbar overlap with content
-- Rebuild navbar with:
-  - Working hamburger toggle (mobile <768px)
-  - Smooth slide-in/slide-out animation for mobile menu
-  - Proper z-index layering (navbar above all content, below modals)
-  - Consistent padding/margin on all pages
-  - Active state indicator for current page link
-  - Clear visual distinction between mobile and desktop states
-- Verify: Test on iPhone 12, iPad, desktop 1920px, tablet 768px
-
-**Deliverables**:
-- Updated navbar CSS (animations, responsive breakpoints)
-- Updated navbar HTML structure (semantic markup, aria labels)
-- Mobile menu toggle JavaScript (state management)
-- Visual confirmation on 4+ device sizes
+## TABLE OF CONTENTS
+1. [Critical Fixes](#critical-fixes)
+2. [Portfolio Page Enhancement](#portfolio-page-enhancement)
+3. [Navigation System](#navigation-system)
+4. [FAQ Accordion Implementation](#faq-accordion-implementation)
+5. [Chatbot Implementation](#chatbot-implementation)
+6. [Global UI/UX Improvements](#global-uiux-improvements)
+7. [Feature Restoration](#feature-restoration)
 
 ---
 
-### PROMPT 2: Fix Navbar Link Hover States & Visual Feedback
-**Objective**: Restore hover effects on navigation links to professional standards and ensure consistent interaction feedback.
+## CRITICAL FIXES
 
-**Action Brief**:
-- Current issue: Hover effects are broken, links don't provide visual feedback
-- Implement hover states:
-  - Underline animation (gold color #c9a84c) that expands from center
-  - Color transition to gold for 0.3s ease
-  - Text weight change (400 to 600) on hover
-  - Add subtle shadow beneath text on hover (0 2px 8px rgba(201,168,76,0.2))
-- Add active state styling:
-  - Permanent underline for current page link
-  - Gold color (#c9a84c) for active link text
-  - Distinguishable from hover state (more opaque, always visible)
-- Apply same hover pattern to:
-  - Main navigation links
-  - Footer links
-  - Breadcrumb navigation
-  - CTA buttons throughout site
+### PROMPT 1: Navbar & Navigation Stability Audit & Fix
+**Objective:** Restore full navbar functionality, fix hamburger menu, correct hover/active states
 
-**Deliverables**:
-- Hover state CSS with smooth transitions
-- Active state markers on all navigation instances
-- Tested on Chrome, Firefox, Safari (ensure no browser-specific issues)
+**Details:**
+- The navbar currently has broken hover effects and inconsistent active link styling
+- Hamburger menu transitions are glitchy on mobile viewports
+- Dropdown submenus (Services, Portfolio) are not responding to clicks/hovers properly
+- Active page indicators are not updating when users navigate
+- Submenu positioning is off-screen on smaller viewports
 
----
+**Requirements:**
+1. Audit current navbar CSS and JavaScript
+2. Implement smooth hamburger animation (3-line to X transition)
+3. Fix all dropdown functionality with proper event listeners (click + keyboard)
+4. Create persistent visual indicator for current page in navbar
+5. Ensure submenu items are fully visible and clickable on mobile (max-width: 768px)
+6. Add smooth backdrop blur when hamburger menu is open
+7. Fix z-index stacking context for navbar overlays
+8. Implement proper focus states for keyboard navigation (a11y)
+9. Test hover states with proper transition timing (300ms ease)
+10. Ensure logo click returns to home and closes any open menus
 
-### PROMPT 3: Implement Sticky Navbar with Scroll Behavior
-**Objective**: Create sticky navbar that remains accessible while scrolling, with smart show/hide on scroll direction.
-
-**Action Brief**:
-- Make navbar sticky on scroll (position: sticky with fallback to fixed)
-- Implement scroll direction detection:
-  - Hide navbar on scroll down (smooth 0.3s transition)
-  - Show navbar on scroll up
-  - Keep navbar visible when user hovers over it
-- Add subtle backdrop blur effect (blur(8px)) with semi-transparent background when scrolling
-- Maintain shadow depth: box-shadow: 0 2px 16px rgba(0,0,0,0.3)
-- Ensure navbar doesn't overlap hero images or critical content
-
-**Deliverables**:
-- JavaScript scroll listener with direction detection
-- CSS transition animations for hide/show
-- Tested scrolling behavior on long pages (About, Portfolio)
+**Expected Output:**
+- Fully functional navbar with smooth animations
+- Mobile hamburger menu that works without lag
+- All dropdown menus accessible and properly positioned
+- Clear visual feedback on active page
+- Keyboard navigation support
 
 ---
 
-## SECTION 2: CRITICAL FIXES — FAQ DROPDOWNS
+### PROMPT 2: Global Hover & Click Effect Restoration
+**Objective:** Fix broken hover states and click effects across the entire site
 
-### PROMPT 4: Audit & Fix FAQ Accordion Functionality Site-Wide
-**Objective**: Identify and repair all non-functioning FAQ accordion/dropdown components across the website.
+**Details:**
+- Button hover effects are not scaling/transitioning smoothly
+- Link colors aren't changing on hover (especially in footer and service cards)
+- Card hover animations are too slow or not triggering
+- Clicked state styling is not visible on CTAs
+- Transition timing is inconsistent across elements
 
-**Action Brief**:
-- Scan all pages for accordion/dropdown components:
-  - Service page FAQs (service.html)
-  - About page FAQs (about.html)
-  - Contact page FAQs (contact.html)
-  - Any hidden FAQ sections
-- Current problem: Dropdowns don't open/close, clicking doesn't trigger state change
-- Audit checklist:
-  - Are JavaScript event listeners attached? Check console for errors
-  - Is `<details>/<summary>` HTML used, or custom divs? (details/summary is native, preferred)
-  - Are CSS classes toggling properly on click?
-  - Is z-index preventing clicks? (check parent overflow: hidden)
-- Implement robust FAQ system:
-  - Use semantic `<details>` and `<summary>` tags (no JS required for basic functionality)
-  - OR: Custom div structure with click event listener + CSS state class toggle
-  - Add smooth height animation on open/close (max-height 0 → auto with transition)
-  - Prevent multiple open at once (optional, depends on UX design)
-  - Keyboard accessibility (Tab to focus, Enter/Space to toggle)
+**Requirements:**
+1. Establish global hover standard (scale: 1.05, opacity transitions)
+2. Define consistent transition timing (250ms for interactions, 400ms for complex animations)
+3. Fix all button states: default, hover, active, focus, disabled
+4. Implement active/visited state for internal links
+5. Add smooth color transitions for text links (from gold #c9a84c on hover)
+6. Create hover animations for service cards (lift effect with shadow)
+7. Fix case study card hover states (play button visibility, overlay opacity)
+8. Implement ripple/wave effect on primary CTA buttons
+9. Test cursor changes (pointer on clickables, grab on draggables)
+10. Ensure accessibility: maintain visible focus indicators
 
-**Deliverables**:
-- FAQ HTML audit report (pages, count, current implementation)
-- Updated FAQ markup with working structure
-- JavaScript for FAQ toggle (if not using native details element)
-- CSS animations for expand/collapse (0.4s ease)
-- Accessibility compliance check (keyboard navigation works)
+**Expected Output:**
+- Consistent, smooth hover effects on all interactive elements
+- Clear visual feedback for all user interactions
+- Proper focus states for keyboard users
+- Performance-optimized transitions (no jank)
 
 ---
 
-### PROMPT 5: Design & Style FAQ Component for Creo Brand
-**Objective**: Ensure all FAQ dropdowns match Creo Media's gold/ash/paper design system.
+## PORTFOLIO PAGE ENHANCEMENT
 
-**Action Brief**:
-- Apply Creo color palette to FAQs:
-  - Background: #f5f2ec (paper) for closed state
-  - Border: #c9a84c (gold) 1px solid when focused/open
-  - Text (closed): #0e0e0e (ink)
-  - Text (open): #c9a84c (gold) for question, #6b6b6b (muted) for answer
-  - Hover background: #e8c97a (gold-light) with 0.1 opacity overlay
-- Typography:
-  - Question (summary): Syne 700, 16px, line-height 1.3
-  - Answer (details): Syne 400, 14px, line-height 1.6, with max-width 500px
-- Icons:
-  - Chevron icon (rotate 0° → 180° on open)
-  - Icon color: #c9a84c
-  - Icon size: 20px, right-aligned
-- Spacing:
-  - Padding: 16px 20px on question
-  - Padding: 0 20px 20px on answer (revealed on open)
-  - Margin-bottom: 12px between each FAQ item
-  - Container max-width: 600px
+### PROMPT 3: Integrate Video Carousel Component (Premium Priority)
+**Objective:** Seamlessly integrate the provided video carousel into the Portfolio page with matching design
 
-**Deliverables**:
-- FAQ component CSS (fully styled, matches brand)
-- Icon animations (chevron rotation, smooth 0.3s)
-- Component screenshot showing open/closed states
+**Design Reference:** The provided HTML file contains a luxury carousel with:
+- 320px × 520px cards with gradient backgrounds
+- Featured strip indicator
+- Play button overlay on hover
+- Dynamic stats display
+- Progress bars
+- Navigation dots
+- Bottom ticker scrolling effect
 
----
+**Requirements:**
+1. Replace the current "Video Showcase" section with the integrated carousel
+2. Match the site's color scheme:
+   - Ink: #0e0e0e (background)
+   - Paper: #f5f2ec (text)
+   - Gold: #c9a84c (accents)
+   - Ash: #2a2a2a (secondary)
+3. Adapt the carousel data to use real Creo Media case studies:
+   - Tatekulu Barbershop (300% engagement, 50K+ views)
+   - NCRST Digital Transformation (250% traffic, 85% satisfaction)
+   - Drive-Through Movie Night (500+ attendees, 100% satisfaction)
+   - Brand Identity - Arca Ventures equivalent
+   - Digital Product - Meridian Health equivalent
+   - E-Commerce - Sorel Studio equivalent
+4. Implement drag-to-scroll with proper momentum scrolling
+5. Add keyboard navigation (arrow keys to scroll, Enter to open case study)
+6. Make carousel responsive (adjust card size on tablet: 280px, mobile: 240px)
+7. Implement auto-play with pause on hover (cycle every 8 seconds)
+8. Add loading states for video thumbnails
+9. Integrate with existing "View Case Study" modal/lightbox
+10. Ensure performance: use RequestAnimationFrame for smooth scrolling
 
-## SECTION 3: CRITICAL FIXES — CHATBOT
+**Video Integration:**
+- Add placeholder video backgrounds for each case study card
+- Implement Play icon overlay (appears on hover)
+- Support MP4 + WebM formats for compatibility
+- Auto-pause all videos when carousel scrolls
 
-### PROMPT 6: Debug & Fix Chatbot Response System
-**Objective**: Repair chatbot that is not responding correctly to user input. Ensure all conversation flows work.
+**Accessibility:**
+- Add aria-labels to carousel cards
+- Screen reader announcement for carousel position ("Card 1 of 6")
+- Keyboard-only navigation support
+- Captions for any video content
 
-**Action Brief**:
-- Identify chatbot implementation:
-  - Is it embedded iframe from third-party service (Drift, Intercom, etc.)?
-  - Is it custom JavaScript code?
-  - Where is chatbot initialized? (head? body? footer?)
-- Debug non-response issues:
-  - Check browser console for JavaScript errors
-  - Verify API endpoint/webhook is accessible (test with curl/Postman)
-  - Is API key/token valid? (check environment variables, config file)
-  - Are message payloads formatted correctly? (JSON structure match API spec)
-  - Is CORS enabled on backend? (check response headers)
-  - Is chatbot message history being stored? (localStorage, backend DB)
-- Implement response fixes:
-  - Add error handling: if API fails, show "Sorry, I'm having trouble connecting. Try again in a moment."
-  - Add request timeout: 5000ms max wait before showing error
-  - Log all messages to console in dev mode (console.log with timestamp)
-  - Verify chatbot sends: user message, timestamp, conversation ID, page URL
-  - Verify chatbot receives: bot response text, suggested replies (if applicable), typing indicator
-
-**Deliverables**:
-- Chatbot debugging report (current implementation, errors found)
-- Fixed API integration code
-- Error handling + fallback messages
-- Console logs showing successful message flow
+**Expected Output:**
+- Fully functional, luxury carousel on portfolio page
+- Smooth drag interaction and auto-scroll
+- Professional hover animations with play button
+- Responsive across all devices
+- Integrated with site's data and design system
 
 ---
 
-### PROMPT 7: Reposition Chatbot Icon to Opposite Side
-**Objective**: Move chatbot icon/button from current position to opposite side of page while maintaining same vertical alignment.
+### PROMPT 4: Portfolio Page Case Study Modal Enhancement
+**Objective:** Fix broken case study detail view and create proper modal experience
 
-**Action Brief**:
-- Current state: Chatbot icon on right side (likely position: fixed, right: 24px, bottom: 24px)
-- Move to left side:
-  - Change `right: 24px` to `left: 24px`
-  - Maintain `bottom: 24px` (same vertical position)
-- Ensure repositioning doesn't break:
-  - Click functionality
-  - Visibility on all screen sizes
-  - Z-index layering (should be above all content except modals)
-  - Animation/entrance effect still works
-- Add considerations:
-  - On mobile (<768px), position should adapt if needed
-  - Test that chatbot window opens correctly from left position
-  - Verify left position doesn't obscure important left-side content
-  - Check that footer/contact info not hidden by chatbot position
+**Details:**
+- Current "View Case Study" links don't navigate or open anything
+- Modal HTML structure is incomplete (missing Challenge, Approach, Results sections)
+- Images in modal are placeholder paths that don't load
+- No close button or escape key handling
+- Modal overlay opacity is too light
 
-**Deliverables**:
-- Updated chatbot CSS (left instead of right)
-- Visual confirmation on desktop, tablet, mobile
-- Screenshot showing new position from multiple viewports
+**Requirements:**
+1. Create full modal component with all sections:
+   - Hero image (full-width at top)
+   - Case study title and client info
+   - Challenge section with description
+   - Approach/Solution section with detailed explanation
+   - Results section with metrics and KPIs
+   - Before/After visual comparison
+   - Client testimonial quote
+   - CTA button ("Start a Similar Project")
+2. Implement modal animations:
+   - Fade-in on open (300ms)
+   - Slide-up content (400ms) with stagger effect
+   - Blur backdrop with proper z-index
+3. Add closing mechanisms:
+   - Close button (X) in top-right
+   - Click outside modal to close
+   - Escape key to close
+   - Back button in header
+4. Replace all placeholder image paths with real URLs
+5. Add scroll behavior: lock body scroll when modal open
+6. Implement share buttons (LinkedIn, Twitter, WhatsApp) on case study
+7. Add breadcrumb navigation showing case study progress (1 of 6)
+8. Mobile optimization: full-height modal with top close button
+9. Add loading state for images and video content
+10. Implement keyboard focus trap (Tab cycles through modal elements only)
 
----
-
-### PROMPT 8: Style Chatbot to Match Creo Brand Identity
-**Objective**: Ensure chatbot widget, window, and message bubbles align with Creo's gold/ash/paper aesthetic.
-
-**Action Brief**:
-- Chatbot icon/button styling:
-  - Background: #c9a84c (gold) with gradient to #e8c97a (gold-light)
-  - Icon color: #0e0e0e (ink) or white for contrast
-  - Size: 56px × 56px (standard floating button size)
-  - Border-radius: 50% for circular, or 8px for rounded square
-  - Shadow: 0 4px 16px rgba(0,0,0,0.25)
-  - Hover: scale(1.1), shadow increase to 0 8px 24px rgba(0,0,0,0.3)
-  - Active/open state: different color or pulse animation
-- Chatbot window styling:
-  - Header background: #0e0e0e (ink)
-  - Header text: #f5f2ec (paper)
-  - Message bubbles (user): #c9a84c (gold) background, #0e0e0e text
-  - Message bubbles (bot): #f5f2ec (paper) background, #0e0e0e text, 1px gold border
-  - Input field: white background, #0e0e0e border, placeholder #6b6b6b (muted)
-  - Send button: #c9a84c (gold) background, white text, hover: #e8c97a
-- Typography:
-  - Font: Syne (match site), 14px base
-  - Line height: 1.5
-- Animation:
-  - Window entrance: slide-up from bottom-left with 0.3s ease
-  - Button pulse on first visit (optional subtle animation)
-
-**Deliverables**:
-- Chatbot theme CSS (colors, typography, sizing)
-- Screenshot of styled chatbot (open and closed states)
-- Animation transitions defined
+**Expected Output:**
+- Fully functional case study detail modals
+- Smooth, professional animations
+- All data properly displayed and formatted
+- Accessibility-compliant focus management
+- Mobile-responsive design
 
 ---
 
-## SECTION 4: PORTFOLIO PAGE — VIDEO CAROUSEL INTEGRATION
+## NAVIGATION SYSTEM
 
-### PROMPT 9: Integrate Vertical Video Carousel into Portfolio Page
-**Objective**: Seamlessly embed the provided vertical video carousel component (vertical_video_carousel_case_studies__1_.html) into the portfolio.html page while maintaining design consistency.
+### PROMPT 5: Service Page Navigation Enhancement
+**Objective:** Fix service page links and category filtering
 
-**Action Brief**:
-- Review provided carousel component:
-  - 6 case study cards with metadata (client, title, description, stats)
-  - Horizontal scroll with drag support
-  - Dot navigation (page indicators)
-  - Scroll hint ("Drag to explore")
-  - Gold (#c9a84c) accent color matching Creo brand
-- Integration steps:
-  1. Extract carousel CSS from provided HTML → add to portfolio.html `<style>` or external stylesheet
-  2. Extract carousel HTML structure → insert into portfolio page (likely after "Featured Work" section, before or replacing current case studies section)
-  3. Extract carousel JavaScript → add to portfolio.html `<script>` or external JS file
-  4. Update carousel data:
-     - Replace placeholder case studies with actual Creo Media projects
-     - Ensure client names, titles, descriptions, stats align with portfolio content
-     - Add real images/gradients for each card (current: gradient backgrounds)
-  5. Modify carousel for Creo projects:
-     - Card 1: Tatekulu Barbershop (Content Production)
-     - Card 2: NCRST (Digital Management)
-     - Card 3: Drive-Through Movie Night (Event Management)
-     - Cards 4-6: Additional case studies or placeholder for future work
-  6. Test integration:
-     - Carousel scrolls horizontally on desktop
-     - Drag functionality works with mouse
-     - Dot navigation updates as user scrolls
-     - Responsive on tablet/mobile (may need to adjust card width for small screens)
+**Details:**
+- Service submenu links lead to /services/[category].html but pages don't exist or don't load
+- Portfolio filter links (filter=content, filter=digital, filter=events) don't filter
+- Navigation breadcrumbs don't update
 
-**Deliverables**:
-- Portfolio.html with fully integrated carousel
-- Updated carousel data with Creo project information
-- Responsive CSS adjustments for mobile (if needed)
-- Testing confirmation: scroll, drag, dot navigation all functional
+**Requirements:**
+1. Create /services/ subdirectory structure with proper pages:
+   - content-production.html (4K Video, Photography, Motion Graphics)
+   - digital-management.html (UI/UX Design, Social Media, Growth Marketing)
+   - event-management.html (Brand Activations, Hybrid Events, Tech Production)
+   - podcasting.html (Studio Production, Audio Post-Production, Distribution)
+2. Each service page should have:
+   - Hero section with service title and description
+   - Process/methodology section (3-5 steps)
+   - Case studies relevant to that service
+   - Pricing tiers (Basic, Professional, Premium)
+   - FAQ section specific to service
+   - CTA button for consultation
+3. Implement portfolio filtering:
+   - Add JavaScript to detect ?filter= URL parameter
+   - Show/hide portfolio items based on filter
+   - Update active filter button styling
+   - Maintain URL history with browser back button
+4. Add breadcrumb navigation:
+   - Home > Services > [Service Name]
+   - Home > Portfolio > [Filter Type]
+5. Implement active page detection in navbar
+6. Add smooth page transitions (fade between sections)
 
----
-
-### PROMPT 10: Customize Carousel Colors & Typography for Portfolio Consistency
-**Objective**: Ensure carousel visuals match portfolio page and overall site design language.
-
-**Action Brief**:
-- Color palette alignment:
-  - Background: #0e0e0e (ink) — matches portfolio dark theme
-  - Gold accents: #c9a84c (current gold) — already correct
-  - Text: #f5f2ec (paper) — already correct
-  - Borders/dividers: Adjust to match page divider lines (use rgba(245,242,236,0.12))
-- Typography consistency:
-  - Page label: Syne 700, 10px, uppercase, letter-spacing 0.25em — OK
-  - Section title: Cormorant Garamond 48px, 300 italic — OK
-  - Card titles (case-card .card-title): Cormorant Garamond 26px, 300 — OK
-  - Card descriptions: Syne 400, 12px — OK
-- Design refinements:
-  - Hover scale effect (1.015) feels subtle — good, keep it
-  - Border radius (4px) consistent with site buttons
-  - Gradient overlays on cards: ensure readability of text (current gradient looks good)
-  - Play icon on hover: verify it's visible and meaningful (for video cards if applicable)
-- Spacing adjustments:
-  - Carousel padding: 0 32px 32px — matches portfolio padding
-  - Card gap: 16px — adequate spacing
-  - Nav dots padding: 0 32px 20px — align with other sections
-
-**Deliverables**:
-- Carousel CSS with finalized colors/typography
-- Visual before/after comparison
-- Readability audit (text on gradient backgrounds, sufficient contrast)
+**Expected Output:**
+- All service pages fully functional and accessible
+- Proper portfolio filtering by category
+- Correct breadcrumb navigation
+- Clean URL handling with query parameters
 
 ---
 
-### PROMPT 11: Add Video Play Functionality to Carousel Cards
-**Objective**: Enable video playback from carousel cards (currently shows play icon on hover but doesn't link to video).
+## FAQ ACCORDION IMPLEMENTATION
 
-**Action Brief**:
-- Current carousel has play icon (`.card-video-play`) that appears on hover
-- Desired functionality:
-  - Click on card → open video in modal/lightbox
-  - Modal shows full-screen or large video player
-  - Modal has close button (X) in top-right
-  - Video controls: play/pause, volume, fullscreen, progress bar
-- Implementation:
-  1. Add data-video-url attribute to each case card:
-     ```html
-     <div class="case-card" data-index="0" data-video-url="URL_TO_VIDEO">
-     ```
-  2. Create modal HTML structure (hidden by default):
-     ```html
-     <div id="videoModal" class="video-modal hidden">
-       <div class="video-modal-content">
-         <button class="modal-close">&times;</button>
-         <video id="modalVideo" controls width="100%" height="auto">
-           <source src="" type="video/mp4">
-         </video>
-       </div>
+### PROMPT 6: FAQ Accordion Component - Full Implementation
+**Objective:** Convert static FAQ text into fully functional accordion with smooth animations
+
+**Current Issues:**
+- FAQs on contact.html display all Q&A at once (no collapse)
+- Click handlers are not attached to FAQ items
+- No visual indication of expanded/collapsed state
+- No smooth animations between states
+
+**Requirements:**
+1. Create reusable accordion component:
+   ```html
+   <div class="faq-item" data-index="0">
+     <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-0">
+       Question text here
+       <span class="faq-icon">+</span>
+     </button>
+     <div class="faq-answer" id="faq-answer-0" hidden>
+       Answer content here
      </div>
-     ```
-  3. Add JavaScript to:
-     - Listen for card clicks
-     - Get video URL from data attribute
-     - Populate modal video src
-     - Show modal (fade in, z-index 1000)
-     - Close modal on X button or outside click
-     - Pause video when modal closes
-  4. Style modal:
-     - Background: rgba(0,0,0,0.9) (darker overlay)
-     - Center video on screen
-     - Modal max-width: 900px
-     - Responsive: 100% on mobile
-     - Close button: positioned absolute top-right, size 40px, color gold
+   </div>
+   ```
+2. Implement JavaScript functionality:
+   - Click question to toggle expanded state
+   - Only one FAQ item open at a time (accordion behavior)
+   - Toggle aria-expanded attribute
+   - Toggle hidden attribute on answer div
+   - Add/remove "active" class on question button
+3. CSS animations:
+   - Answer slides down smoothly (max-height animation, 300ms)
+   - Question background color changes on hover (gold tint)
+   - Plus icon rotates 45° when expanded
+   - Proper padding/margin during animation
+4. Keyboard navigation:
+   - Tab to navigate between questions
+   - Enter/Space to toggle
+   - Escape to close current (optional)
+5. Mobile optimization:
+   - Larger touch targets (min 44px height)
+   - Simplified icon (easier to see on small screens)
+6. Add multiple FAQ sections on different pages:
+   - Contact page: General services FAQs (12 items)
+   - About page: Company/culture FAQs (8 items)
+   - Portfolio page: Project & process FAQs (6 items)
+   - Individual service pages: Service-specific FAQs (5-7 items)
+7. Implement "Frequently Asked" analytics:
+   - Track which FAQs are opened most (localStorage)
+   - Auto-reorder based on popularity
+8. Add search functionality:
+   - Input field to filter FAQs by keyword
+   - Highlight matching text
+   - Show count of matching items
 
-**Deliverables**:
-- Updated carousel HTML with data-video-url attributes
-- Modal HTML + CSS
-- JavaScript video player logic
-- Working demo with test video link
+**CSS Standards:**
+- Use CSS custom properties for animations
+- Ensure smooth transitions with ease-in-out timing
+- Maintain gold (#c9a84c) accent color for active states
+- Proper contrast for WCAG AA compliance
 
----
-
-## SECTION 5: FEATURE FIXES — GENERAL SITE-WIDE
-
-### PROMPT 12: Audit & Fix All CTA Button Functionality
-**Objective**: Ensure all Call-to-Action buttons across the site are functional and navigate correctly.
-
-**Action Brief**:
-- Identify all CTA buttons:
-  - "View Our Work" (homepage → portfolio page)
-  - "Get Started" (homepage → contact page)
-  - "Let's Talk 👋" (navbar → contact page)
-  - "View Case Study" (carousel cards → individual case study or modal)
-  - "Start Similar Project" (portfolio case studies → contact page)
-  - "Contact us" (footer → contact page)
-- Check each button:
-  - Does link href point to correct page?
-  - Are external links opening in new tab (_blank)?
-  - Do buttons have proper hover states (scale, color change)?
-  - Are buttons keyboard-accessible (Tab focus, Enter activates)?
-  - Do disabled buttons (if any) have visual indicator?
-- Fix broken links:
-  - Test all href paths (relative paths for GitHub Pages: /Creo-domain/index.html)
-  - Ensure contact form page is accessible
-  - Verify portfolio page loads case study modal correctly
-- Enhance button styling:
-  - Hover state: scale 1.05 + shadow increase
-  - Active state: darker color or shadow inset
-  - Focus state (keyboard): visible outline (gold border)
-  - Disabled state (if applicable): opacity 0.5, cursor not-allowed
-
-**Deliverables**:
-- CTA button audit report (all buttons, destinations, current state)
-- Fixed HTML with corrected hrefs
-- Updated CSS with hover/focus/active states
-- Testing checklist confirmation
+**Expected Output:**
+- Fully functional accordion on all pages with FAQs
+- Smooth animations and transitions
+- Complete keyboard and screen reader support
+- Search functionality working across FAQ databases
+- Mobile-optimized with proper touch targets
 
 ---
 
-### PROMPT 13: Fix Contact Form Submission & Validation
-**Objective**: Ensure contact form works end-to-end, validates input, and submits successfully.
+## CHATBOT IMPLEMENTATION
 
-**Action Brief**:
-- Audit contact form (contact.html):
-  - Does form have action attribute pointing to backend/handler? (e.g., Formspree, Netlify Forms, custom API)
-  - Are form fields present: name, email, phone (optional), message, subject?
-  - Is submit button functional and labeled clearly?
-  - Current issues: form likely not submitting or showing errors
-- Implement form validation:
-  - Required fields: name, email, message
-  - Email format validation (regex or HTML5 type="email")
-  - Min length: name 2 chars, message 10 chars
-  - Show validation errors inline (below field, red text, Syne 12px)
-  - Clear errors on focus
-- Submission flow:
-  - On submit, disable button + show loading spinner
-  - If success: show confirmation message ("Thanks for reaching out! We'll respond within 24 hours.")
-  - If error: show error message ("Something went wrong. Please try again or email us directly.")
-  - Form options:
-    - Use Formspree.io (free, no backend needed) — send to contact.creomedia@gmail.com
-    - Use Netlify Forms (if deployed on Netlify)
-    - Implement custom backend API (Node.js + SendGrid or similar)
-- Style form to match brand:
-  - Input fields: white background, #0e0e0e border, placeholder #6b6b6b
-  - Label text: Syne 400, 14px
-  - Submit button: gold (#c9a84c) background, white text, hover effect
+### PROMPT 7: AI Chatbot Integration - Complete Implementation
+**Objective:** Implement functional chatbot with proper positioning and response handling
 
-**Deliverables**:
-- Working contact form with validation
-- Backend integration (Formspree, Netlify, or custom API)
-- Success/error message handling
-- Confirmation screenshot showing submitted form
+**Current Issues:**
+- Chatbot icon exists but chatbot is not responding
+- Chatbot appears to be on one side; user wants it on the opposite side
+- No proper message handling or conversation context
 
----
+**Requirements:**
+1. Chatbot positioning and layout:
+   - Position on **right side** of page (opposite from current)
+   - Fixed position, bottom-right corner with 24px padding
+   - Z-index: 9999 (above all other elements)
+   - On mobile (width < 768px): adjust to 16px padding, smaller dimensions
+2. Visual design:
+   - Match site's luxury aesthetic with gold accents
+   - Floating chat bubble icon (60px × 60px)
+   - Smooth hover scale effect (1.1x)
+   - Smooth rotation on hover (5-10 degrees)
+   - Chat window: 360px width × 600px height (responsive on mobile: full minus 20px)
+   - Backdrop blur on message area
+3. Chatbot window components:
+   - Header with Creo Media branding
+   - Close button (X) in top-right
+   - Message history area (scrollable)
+   - Input field at bottom with send button
+   - Typing indicator when bot is responding
+4. Conversation functionality:
+   - Accept user messages and display in chat
+   - Integrate with Claude API for intelligent responses
+   - System prompt should position bot as Creo Media AI assistant
+   - Maintain conversation history during session
+   - Clear chat option in menu
+5. Response handling:
+   - Route questions about services to service pages
+   - Route portfolio/case study questions to portfolio
+   - Route contact questions to contact form
+   - Provide quick replies for common questions
+   - Include suggested follow-up questions
+6. Features:
+   - Persistent chat history (sessionStorage during visit)
+   - Suggested quick replies (chips/buttons)
+   - Rich message support (links, code blocks if needed)
+   - Typing animation before responses
+   - User avatar (initials) vs bot avatar (Creo logo)
+   - Timestamp on messages
+7. Mobile optimization:
+   - Full-screen modal on mobile when opened
+   - Simplified header
+   - Touch-friendly send button
+   - Better readability with adjusted font sizes
+8. Accessibility:
+   - aria-label on chat bubble
+   - Proper heading in modal
+   - Focus management (focus chat input on open)
+   - Keyboard support (Enter to send, Escape to close)
+   - Screen reader announcements for new messages
+9. Performance:
+   - Lazy load chatbot script
+   - Debounce API calls
+   - Cache common responses
+   - Implement message rate limiting
 
-### PROMPT 14: Implement Smooth Page Scroll & Anchor Navigation
-**Objective**: Add smooth scrolling behavior for anchor links and improve navigation to page sections.
+**System Prompt for AI:**
+```
+You are a helpful AI assistant for Creo Media, a premium creative agency based in Windhoek, Namibia. 
+You help visitors learn about our services (Content Production, Digital Management, Event Management, Podcasting),
+view our portfolio, and get started with a project. Be professional but friendly, concise but informative.
+Always suggest relevant pages or contact options when appropriate.
+```
 
-**Action Brief**:
-- Smooth scroll on anchor clicks:
-  - When user clicks "Skip to main content" or section links, page should scroll smoothly (not jump)
-  - CSS solution: html { scroll-behavior: smooth; } — add this to main stylesheet
-  - Test on all browsers (fallback for older browsers will be instant scroll)
-- Page navigation improvements:
-  - Add anchor links to main sections on pages:
-    - Homepage: #hero, #about, #services, #clients, #testimonials
-    - About page: #mission, #vision, #team, #values
-    - Portfolio page: #all-works, #featured-work, #case-studies
-    - Service page: #services, #faq
-  - Add "Back to Top" button (sticky, bottom-right, appears after scrolling 500px):
-    - Position: fixed, right: 24px, bottom: 80px (above chatbot if chatbot present)
-    - Size: 48px × 48px circle
-    - Icon: up arrow, color gold
-    - Hover: scale 1.1, shadow increase
-    - Click: scroll to top with smooth behavior
-  - Update navbar links to use anchor navigation where applicable
-
-**Deliverables**:
-- Updated HTML with anchor IDs on key sections
-- Global CSS: scroll-behavior: smooth
-- "Back to Top" button HTML + CSS + JavaScript
-- Testing on different page lengths
-
----
-
-## SECTION 6: UI/UX IMPROVEMENTS — DESIGN SYSTEM CONSISTENCY
-
-### PROMPT 15: Audit & Standardize Button Styles Site-Wide
-**Objective**: Ensure all buttons across the site use consistent styling and visual hierarchy.
-
-**Action Brief**:
-- Button audit:
-  - Primary buttons (main CTAs): gold background, white text, size 16px, padding 12px 32px
-  - Secondary buttons (less important): white background, gold text, size 14px, padding 10px 24px
-  - Tertiary buttons (links styled as buttons): text-only, gold underline on hover
-  - Button grouping: if multiple buttons together, use consistent spacing (gap: 16px)
-- Standardize button properties:
-  - Font: Syne 600, line-height 1.2
-  - Border-radius: 4px (matches card borders)
-  - Cursor: pointer
-  - Transition: all 0.3s ease
-  - States:
-    - Default: as described above
-    - Hover: scale(1.05), shadow: 0 4px 16px rgba(201,168,76,0.3)
-    - Active: background darker by 10%, no scale
-    - Disabled: opacity 0.5, cursor not-allowed
-    - Focus (keyboard): outline 2px solid gold, offset 2px
-- Apply to all buttons:
-  - CTA buttons (homepage, portfolio, contact)
-  - Form submit buttons (contact form)
-  - Modal buttons (close, confirm, cancel)
-  - Navigation buttons (next/prev in carousel)
-- Document button system in CSS comments for future consistency
-
-**Deliverables**:
-- Standardized button CSS (primary, secondary, tertiary variants)
-- Global button class definitions (.btn, .btn-primary, .btn-secondary, etc.)
-- Screenshot showing all button states
-- Component library reference
+**Expected Output:**
+- Fully functional chatbot on right side of all pages
+- Proper message handling with Claude API integration
+- Smooth animations and professional design
+- Complete mobile responsiveness
+- Full accessibility compliance
+- Session-based message history
 
 ---
 
-### PROMPT 16: Fix Image Responsive Scaling & Lazy Loading
-**Objective**: Ensure images load efficiently, scale responsively, and don't cause layout shift.
+## GLOBAL UI/UX IMPROVEMENTS
 
-**Action Brief**:
-- Image audit across all pages:
-  - Identify all images: hero banners, portfolio cards, partner logos, case study images
-  - Check for oversized images (e.g., 4000px wide on small screens)
-  - Current issues: images may load slowly, cause CLS (Cumulative Layout Shift)
-- Implement responsive images:
-  - Use srcset for hero images:
-    ```html
-    <img src="hero.jpg" 
-         srcset="hero-small.jpg 640w, hero-medium.jpg 1200w, hero-large.jpg 1920w"
-         sizes="(max-width: 640px) 100vw, (max-width: 1200px) 80vw, 100vw"
-         alt="Hero banner">
-    ```
-  - Ensure images scale to container width (CSS: img { max-width: 100%; height: auto; })
-- Add lazy loading:
-  - Use native lazy loading: `<img loading="lazy">`
-  - Or intersection observer for custom scroll animation
-  - Exclude hero/above-fold images from lazy loading
-- Optimize images:
-  - Compress PNG/JPG (use TinyPNG or ImageOptim)
-  - Use WebP format with fallback for newer browsers
-  - Set explicit width/height on images to prevent layout shift
-  - Add placeholder/skeleton while loading (optional, nice-to-have)
-- CSS fixes:
-  - img { max-width: 100%; height: auto; display: block; }
-  - picture element for art direction (different images for mobile/desktop)
+### PROMPT 8: Button & CTA Standardization Across Site
+**Objective:** Create consistent button system with proper states and animations
 
-**Deliverables**:
-- Updated image HTML with srcset and loading attributes
-- Image optimization report (before/after file sizes)
-- CSS improvements for image containers
-- Performance testing (Lighthouse score improvement)
+**Current Issues:**
+- Buttons have inconsistent padding and font sizes
+- No standard focus states for keyboard users
+- Click animations are missing or inconsistent
+- Disabled state is not properly styled
 
----
+**Requirements:**
+1. Define button hierarchy:
+   - **Primary CTA:** Gold background (#c9a84c), white text
+   - **Secondary:** Gold outline, gold text (#c9a84c)
+   - **Tertiary:** Text-only with underline on hover
+2. Button sizes:
+   - Large: 56px height, 32px padding (full-width on mobile)
+   - Medium: 48px height, 24px padding (default)
+   - Small: 40px height, 16px padding
+3. Button states:
+   - Default: Base styling
+   - Hover: Scale 1.05, shadow increase
+   - Active/Clicked: Slight scale down (0.98), shadow decrease
+   - Focus: Visible outline (3px gold, offset 2px)
+   - Disabled: Opacity 0.5, cursor not-allowed
+4. All state transitions:
+   - Background color: 200ms ease
+   - Transform: 150ms cubic-bezier(0.16, 1, 0.3, 1)
+   - Box-shadow: 200ms ease
+5. Text styling:
+   - Font: Syne (sans-serif)
+   - Weight: 700 (bold)
+   - Letter-spacing: 0.1em
+   - Text-transform: uppercase
+6. Icon support:
+   - Icons can appear before or after text
+   - Proper spacing (8px gap)
+   - Responsive sizing with text
+7. Button groups:
+   - Multiple buttons together use proper spacing (12px gap)
+   - Stack vertically on mobile (full-width each)
+8. Loading state:
+   - Show spinner icon instead of text
+   - Disable interaction during loading
+   - Maintain button dimensions
+9. Apply to all instances:
+   - "View Our Work" / "Get Started" on homepage
+   - "View Case Study" on portfolio
+   - "Send Message" on contact
+   - "Book Consultation" throughout
+   - "View Full Portfolio" buttons
+   - Service inquiry buttons
 
-### PROMPT 17: Add Loading States & Skeleton Screens for Dynamic Content
-**Objective**: Improve perceived performance by showing loading placeholders while content loads.
-
-**Action Brief**:
-- Identify dynamic content areas:
-  - Carousel cards (if fetched from API)
-  - Case study modals (if loading video/images)
-  - Contact form submission (while sending)
-  - Search results (if search functionality added)
-- Implement skeleton screens:
-  - Before carousel loads: show gray placeholder boxes matching card dimensions
-  - CSS approach: create div with background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); animation shimmer
-  - Skeleton timing: 1-2 seconds (if actual load is faster, show real content)
-  - Replace skeleton with actual content seamlessly
-- Loading indicators:
-  - Contact form submit: show spinner + "Sending..." text while request in progress
-  - Spinner design: gold color (#c9a84c), rotating animation (1s linear, infinite)
-  - Timeout: 5 seconds, then show error if no response
-- Error fallbacks:
-  - If carousel fails to load: show error message + retry button
-  - If form submission fails: show error with suggestion to email directly
-
-**Deliverables**:
-- Skeleton screen CSS (shimmer animation)
-- Loading spinner SVG/CSS
-- JavaScript logic for state management (loading → success/error)
-- Applied to at least 2 dynamic content areas
+**Expected Output:**
+- Standardized button component library
+- Consistent styling across entire site
+- Smooth, performant animations
+- Full accessibility support
 
 ---
 
-### PROMPT 18: Performance Optimization & Accessibility Audit
-**Objective**: Ensure site meets web standards for performance, accessibility, and SEO.
+### PROMPT 9: Link State Improvements Site-Wide
+**Objective:** Ensure all links have proper hover, focus, and visited states
 
-**Action Brief**:
-- Performance optimization:
-  - Run Lighthouse audit (Chrome DevTools) on all pages
-  - Target scores: Accessibility 90+, Best Practices 90+, SEO 90+, Performance 80+ (mobile may be lower)
-  - Identify and fix issues:
-    - Unused CSS: minify, remove unused styles
-    - JavaScript: split into modules, lazy-load non-critical JS
-    - Third-party scripts (fonts, analytics): ensure optimized loading
-    - Image optimization: ensure all images under 500KB, compressed
-    - Minify HTML/CSS/JS
-  - Use CDN for static assets if possible
-- Accessibility audit:
-  - Check color contrast: text on background should have 4.5:1 ratio for normal text, 3:1 for large text
-  - Test keyboard navigation: Tab through all interactive elements in order
-  - Test with screen reader: VoiceOver (Mac), NVDA (Windows)
-  - Verify all images have alt text (descriptive, not "image" or "photo")
-  - Check heading hierarchy: H1 → H2 → H3 (no skipping levels)
-  - Verify form labels associated with inputs (for/id attributes)
-  - Check for focus indicators (blue outline or gold border visible when using Tab)
-  - Ensure video has captions/transcript
-- SEO improvements:
-  - Meta descriptions: 150-160 chars, include target keywords
-  - Title tags: 50-60 chars, brand name + page topic
-  - Heading structure: one H1 per page, relevant keywords
-  - Internal linking: link related content, use descriptive anchor text
-  - Open Graph tags: for social sharing (og:title, og:description, og:image)
-  - Robots.txt and sitemap.xml present (for GitHub Pages, less critical)
-- Mobile-first design check:
-  - All text readable without zoom (minimum 16px)
-  - Touch targets: buttons/links minimum 44x44px
-  - Viewport meta tag: `<meta name="viewport" content="width=device-width, initial-scale=1">`
+**Requirements:**
+1. Text link styling:
+   - Color: #c9a84c (gold)
+   - Decoration: underline (gold, 2px)
+   - On hover: brightness increase, underline moves down 2px
+   - On visited: darker gold (#a68835)
+   - On focus: visible outline (same as buttons)
+2. Navigation links:
+   - Color: #f5f2ec (paper)
+   - On hover: color change to gold (#c9a84c)
+   - On active (current page): gold color + underline (3px, animated)
+   - Transition: 200ms ease
+3. Footer links:
+   - Color: rgba(245, 242, 236, 0.7)
+   - On hover: opacity 1, color gold
+   - On focus: visible outline
+4. CTA links (like "View Case Study"):
+   - Style as buttons or arrow-based links
+   - Consistent with button hover effects
+5. Service card links:
+   - Entire card should be clickable (expand click area)
+   - Cursor: pointer
+   - Hover: card lifts slightly, shadow increases
+6. Portfolio item links:
+   - Hover: image brightness increases, overlay appears with text
+   - Click: opens modal or detail page
+7. Breadcrumb links:
+   - Color: gold
+   - Separator text (> or /) in muted color
+   - Hover: underline appears
+   - Current page: no link styling, bold
 
-**Deliverables**:
-- Lighthouse audit reports (before/after) for all pages
-- Accessibility checklist (all items passing)
-- Performance optimization changes (minified assets, lazy loading)
-- Updated meta tags and SEO improvements
-- Mobile responsiveness validation
-
----
-
-## IMPLEMENTATION ROADMAP
-
-### Phase 1: Critical Fixes (Week 1-2)
-- Prompt 1: Navbar responsive behavior
-- Prompt 2: Navbar hover states
-- Prompt 4: FAQ dropdown functionality
-- Prompt 6: Chatbot response system
-- Prompt 7: Chatbot repositioning
-
-### Phase 2: Feature Integration (Week 2-3)
-- Prompt 9: Carousel integration into portfolio
-- Prompt 10: Carousel color/typography
-- Prompt 11: Video modal functionality
-- Prompt 12: CTA button audit
-
-### Phase 3: Enhancement & Polish (Week 3-4)
-- Prompt 3: Sticky navbar with scroll behavior
-- Prompt 5: FAQ styling
-- Prompt 8: Chatbot theming
-- Prompt 13: Contact form fixes
-- Prompt 14: Smooth scroll navigation
-- Prompt 15: Button standardization
-- Prompt 16: Image optimization
-- Prompt 17: Loading states
-
-### Phase 4: Quality Assurance (Week 4)
-- Prompt 18: Performance & accessibility audit
-- Cross-browser testing (Chrome, Firefox, Safari, Edge)
-- Mobile testing (iOS, Android)
-- Final visual polish and consistency check
+**Expected Output:**
+- Consistent link styling across site
+- Clear visual feedback for all link interactions
+- Proper accessibility with focus states
+- Better user experience and navigation clarity
 
 ---
 
-## TESTING CHECKLIST
+### PROMPT 10: Performance & Animation Optimization
+**Objective:** Ensure all animations are smooth and performant (60fps)
 
-### Desktop (1920px, 1440px, 1024px)
-- [ ] Navbar visible and sticky
-- [ ] Hover effects on all links/buttons
-- [ ] FAQs open/close smoothly
-- [ ] Carousel scrolls horizontally with drag
-- [ ] Video modal opens and plays
-- [ ] Forms validate and submit
-- [ ] Images load and display correctly
-- [ ] All CTAs navigate correctly
+**Requirements:**
+1. Audit all animations for jank/stuttering
+2. Use transform and opacity for animations (GPU-accelerated)
+3. Avoid animating: width, height, left, right, margin, padding
+4. Use will-change sparingly and remove after animation
+5. Set consistent animation timing:
+   - Hover interactions: 250ms
+   - Page transitions: 400-600ms
+   - Carousel slides: 300-500ms
+   - Modal opens: 300ms
+6. Use appropriate easing functions:
+   - cubic-bezier(0.16, 1, 0.3, 1) for delight/interaction
+   - ease-in-out for smooth transitions
+   - ease-out for entrance animations
+7. Implement requestAnimationFrame for scroll/drag animations
+8. Add loading states with spinners (CSS-based, not images)
+9. Lazy-load images with placeholder blur effect
+10. Test on low-end devices (throttle CPU 4x in DevTools)
+11. Preload critical images and fonts
+12. Use CSS containment for complex layouts
 
-### Tablet (768px - 1024px)
-- [ ] Navbar collapses to hamburger menu
-- [ ] Mobile menu opens/closes smoothly
-- [ ] Touch scroll works on carousel
-- [ ] All text readable without zoom
-- [ ] Buttons properly sized (min 44x44px)
-
-### Mobile (375px - 480px)
-- [ ] Navbar hamburger menu functional
-- [ ] Content reflows without horizontal scroll
-- [ ] Images scale properly
-- [ ] Carousel responsive (possibly single card view)
-- [ ] Touch interactions work (tap, swipe)
-- [ ] Forms usable on small screens
-- [ ] Chatbot position doesn't obstruct content
-
-### Accessibility
-- [ ] Keyboard navigation: Tab through all interactive elements
-- [ ] Screen reader: All text readable, alt tags present
-- [ ] Color contrast: Pass WCAG AA or AAA
-- [ ] Focus indicators: Visible on all interactive elements
-- [ ] Form labels: Associated with inputs
-
-### Performance
-- [ ] Lighthouse Performance score: 80+ (desktop), 60+ (mobile)
-- [ ] Lighthouse Accessibility score: 90+
-- [ ] Page load time: under 3 seconds (desktop), under 5 seconds (mobile)
-- [ ] No cumulative layout shift (CLS < 0.1)
-- [ ] Core Web Vitals: LCP, FID, CLS passing
+**Expected Output:**
+- All animations running at 60fps
+- No stuttering or lag on interactions
+- Proper performance on mobile devices
+- Optimized rendering performance
 
 ---
 
-## REFERENCE: CREO MEDIA DESIGN SYSTEM
+## FEATURE RESTORATION
+
+### PROMPT 11: Case Study Data Population & Dynamic Content
+**Objective:** Populate all case studies with real Creo Media data instead of placeholders
+
+**Current Issues:**
+- Case study cards show placeholder Arca Ventures, Meridian Health, etc. data
+- Actual Creo Media clients (Tatekulu, NCRST, Music Festival) not properly featured
+- Stats and metrics are placeholder numbers
+
+**Requirements:**
+1. Create case study data structure (JSON):
+   ```json
+   {
+     "case_studies": [
+       {
+         "id": 1,
+         "client": "Tatekulu Barbershop",
+         "title": "From Local Barbershop to Social Media Sensation",
+         "category": "Content Production",
+         "tagline": "300% engagement increase with viral content strategy",
+         "description": "Transformed a local barbershop into a viral sensation through authentic content strategy and consistent social media presence.",
+         "featured": true,
+         "image": "/assets/case-studies/tatekulu-1.jpg",
+         "video": "/assets/videos/tatekulu-showcase.mp4",
+         "gradient": "linear-gradient(135deg, #1a1209 0%, #3d2810 40%, #1f1208 100%)",
+         "challenge": "Low brand awareness, limited social presence, competing with larger franchises",
+         "approach": "Created authentic brand narrative, produced weekly video content, implemented consistent brand messaging",
+         "results": {
+           "engagement": { "value": "300%", "label": "Engagement Increase" },
+           "reach": { "value": "50K+", "label": "Video Views" },
+           "customers": { "value": "45%", "label": "New Customer Growth" },
+           "content": { "value": "12", "label": "Content Pieces" }
+         },
+         "testimonial": {
+           "text": "Creo Media transformed our brand presence completely. Their creative approach and attention to detail delivered results beyond expectations.",
+           "author": "Tatekulu Owner",
+           "role": "Barbershop Owner"
+         }
+       },
+       // Similar structure for NCRST, Music Festival, etc.
+     ]
+   }
+   ```
+2. Update carousel component to pull from this data
+3. Populate case study modal with complete information
+4. Add before/after section (if available)
+5. Include client testimonial with avatar/initials
+6. Add CTA with project type (e.g., "Start a Content Production Project")
+7. Implement case study filtering by category
+8. Add related case studies section at bottom
+9. Implement case study sharing (LinkedIn, Twitter, WhatsApp)
+10. Add view count and engagement metrics
+
+**Expected Output:**
+- All case studies populated with real Creo Media data
+- Dynamic content population from JSON data source
+- Proper filtering and categorization
+- Professional presentation of client results
+
+---
+
+### PROMPT 12: Service Page Dynamic Content & Integration
+**Objective:** Create dynamic service pages with proper content and CTAs
+
+**Requirements:**
+1. Each service page must include:
+   - Hero section with service description
+   - "What We Deliver" section (3-5 key deliverables)
+   - Process/methodology section (step-by-step visual guide)
+   - Related case studies carousel (2-4 cases)
+   - Pricing tiers (if applicable):
+     - Starter: min-cost option with key features
+     - Professional: mid-tier recommended option
+     - Premium: all-inclusive white-glove service
+   - FAQ section (5-7 service-specific questions)
+   - Client testimonials relevant to service
+   - CTA: "Get a Quote" or "Book Consultation"
+2. Content structure:
+   - Content Production: specs, turnaround times, equipment list
+   - Digital Management: services, reporting, support tiers
+   - Event Management: event types, capacity, capabilities
+   - Podcasting: studio specs, distribution options, package types
+3. Dynamic links:
+   - Case studies link to detailed modal
+   - FAQ items expand/collapse with smooth animation
+   - Testimonials carousel
+4. Mobile optimization:
+   - Stack content vertically
+   - Simplify pricing tables to cards
+   - Full-width CTAs
+5. Performance:
+   - Lazy-load images
+   - Optimize video for web
+
+**Expected Output:**
+- Complete, functional service pages
+- Dynamic content from data source
+- Professional presentation
+- Clear conversion paths
+
+---
+
+### PROMPT 13: Contact Form Enhancement & Validation
+**Objective:** Fix and enhance contact form with proper validation and feedback
+
+**Current Issues:**
+- Form likely has no validation
+- No visual feedback on submission
+- No success/error messages
+
+**Requirements:**
+1. Form fields to include:
+   - Name (required, min 2 chars)
+   - Email (required, valid email format)
+   - Company (optional)
+   - Service type (required, dropdown with options)
+   - Project timeline (required, radio buttons)
+   - Budget range (optional, dropdown)
+   - Message/Details (required, min 20 chars, max 2000)
+   - Files attachment (optional, max 3 files, max 10MB each)
+2. Validation:
+   - Real-time validation on blur
+   - Show error messages inline
+   - Disable submit until all required fields valid
+   - Highlight invalid fields with red border
+   - Clear errors when user corrects
+3. Feedback states:
+   - Default: normal styling
+   - Focused: gold border, shadow
+   - Valid: green checkmark indicator
+   - Invalid: red border, error text below
+   - Submitting: submit button shows spinner, disabled
+4. Success handling:
+   - Show success message with checkmark
+   - Clear form fields
+   - Show next steps (e.g., "We'll contact you within 24 hours")
+   - Option to send another message
+5. Error handling:
+   - Show error message if submission fails
+   - Preserve form data on error
+   - Suggest retry or contact alternative
+6. Integration:
+   - Send to email: contact.creomedia@gmail.com
+   - Save to database/sheet (if available)
+   - Auto-reply email to user
+7. Mobile optimization:
+   - Larger input areas
+   - Better keyboard handling
+   - Full-width fields
+   - Bottom-fixed submit button on long forms
+
+**Expected Output:**
+- Fully functional contact form
+- Proper validation and error handling
+- Good user feedback and experience
+- Accessible and mobile-optimized
+
+---
+
+### PROMPT 14: Image & Media Optimization Across Site
+**Objective:** Ensure all images load properly and are optimized
+
+**Issues:**
+- Some images may be loading slowly
+- Different image sizes needed for responsive design
+- Media content needs proper lazy-loading
+
+**Requirements:**
+1. Image optimization:
+   - Use WebP format with JPEG fallback
+   - Create responsive images (srcset for 1x, 2x, 3x)
+   - Proper aspect ratios maintained (no distortion)
+   - Lazy-load images below fold
+   - Blur-up placeholder while loading
+2. Image sizes:
+   - Hero: 1920 × 1080 (mobile: 1080 × 720)
+   - Service icons: 64 × 64, 128 × 128
+   - Case study cards: 320 × 520
+   - Portfolio grid: 400 × 300
+   - Partner logos: 200 × 100
+   - Testimonial avatars: 64 × 64
+3. Video optimization:
+   - Provide MP4 + WebM formats
+   - Add poster image (first frame)
+   - Autoplay only with muted attribute
+   - Provide playback controls
+   - Mobile: reduce bitrate for faster loading
+4. Implement:
+   - Native lazy-loading (loading="lazy")
+   - Intersection Observer for custom lazy-load
+   - Image CDN caching if possible
+   - Proper alt text on all images
+   - Srcset for responsive images
+5. Analytics:
+   - Track image load times
+   - Monitor Core Web Vitals impact
+   - Optimize based on performance data
+
+**Expected Output:**
+- All images properly optimized
+- Fast loading across devices
+- Proper responsive image handling
+- Better Core Web Vitals scores
+
+---
+
+## TESTING & QUALITY ASSURANCE
+
+### PROMPT 15: Cross-Browser & Device Testing Checklist
+**Objective:** Ensure site works perfectly on all platforms
+
+**Test Coverage Required:**
+1. **Browsers:**
+   - Chrome/Edge (latest)
+   - Firefox (latest)
+   - Safari (latest)
+   - Mobile Safari (iOS 14+)
+   - Chrome Mobile (Android 11+)
+
+2. **Devices:**
+   - Desktop (1920×1080, 2560×1440)
+   - Tablet (iPad: 768×1024)
+   - Mobile (iPhone 12: 390×844, Android: 360×720)
+
+3. **Functionality Tests:**
+   - All navigation links load correct pages
+   - All buttons trigger expected actions
+   - Forms submit successfully
+   - FAQs expand/collapse smoothly
+   - Carousel drag works on touch devices
+   - Videos play on all devices
+   - Chatbot opens/closes properly
+
+4. **Visual Tests:**
+   - No layout shifts (CLS < 0.1)
+   - All text is readable (min 16px)
+   - Colors meet WCAG AA contrast requirements
+   - Images load without distortion
+   - Icons render properly on all sizes
+
+5. **Performance Tests:**
+   - Lighthouse score > 85
+   - LCP < 2.5s
+   - FID < 100ms
+   - CLS < 0.1
+   - Page size < 3MB
+
+6. **Accessibility Tests:**
+   - Keyboard navigation works (Tab through all elements)
+   - Screen reader announces content properly
+   - Focus visible on all interactive elements
+   - Color not only distinguishing feature
+   - Forms have proper labels
+   - WCAG 2.1 Level AA compliance
+
+7. **SEO Tests:**
+   - Meta descriptions on all pages
+   - Title tags descriptive and unique
+   - H1-H6 hierarchy proper
+   - Images have alt text
+   - Structured data (Schema.org)
+   - Mobile viewport meta tag
+
+**Expected Output:**
+- Full compatibility across all tested platforms
+- Excellent performance scores
+- Complete accessibility compliance
+- Better search engine visibility
+
+---
+
+## IMPLEMENTATION PRIORITY MATRIX
+
+### Phase 1: Critical (Week 1-2)
+1. **Navbar & Navigation Fix** (Prompt 1) - Highest Priority
+2. **Hover & Click Effects** (Prompt 2)
+3. **FAQ Accordion** (Prompt 6)
+4. **Contact Form** (Prompt 13)
+
+### Phase 2: Core Enhancement (Week 3-4)
+5. **Portfolio Carousel Integration** (Prompt 3) - Highest Priority
+6. **Portfolio Modal** (Prompt 4)
+7. **Service Pages** (Prompt 5)
+8. **Button Standardization** (Prompt 8)
+
+### Phase 3: Polish & Optimization (Week 5-6)
+9. **Chatbot Implementation** (Prompt 7)
+10. **Link States** (Prompt 9)
+11. **Animation Optimization** (Prompt 10)
+12. **Case Study Data** (Prompt 11)
+13. **Dynamic Content** (Prompt 12)
+14. **Image Optimization** (Prompt 14)
+15. **Testing & QA** (Prompt 15)
+
+---
+
+## DESIGN SYSTEM REFERENCE
 
 ### Color Palette
-```
---ink: #0e0e0e (primary dark, text, backgrounds)
---paper: #f5f2ec (light, backgrounds, text on dark)
---gold: #c9a84c (primary accent, hover states, accents)
---gold-light: #e8c97a (lighter gold, secondary accent)
---ash: #2a2a2a (dark gray, secondary backgrounds)
---muted: #6b6b6b (muted gray, secondary text)
-```
+- **Primary Ink:** #0e0e0e
+- **Paper/Light:** #f5f2ec
+- **Gold/Accent:** #c9a84c
+- **Gold Light:** #e8c97a
+- **Ash/Secondary:** #2a2a2a
+- **Muted:** #6b6b6b
 
 ### Typography
-```
-Primary Font (headers, nav): Syne (400, 600, 700, 800)
-Secondary Font (body, serif): Cormorant Garamond (300, 400, 300i)
-Base Size: 16px
-Line Height: 1.5 (body), 1.3 (headers)
-```
+- **Headlines:** Cormorant Garamond (serif), weights 300-400, italic
+- **Body/UI:** Syne (sans-serif), weights 400-800
 
-### Spacing (8px base unit)
-```
-xs: 8px
-sm: 12px
-md: 16px
-lg: 24px
-xl: 32px
-2xl: 48px
-```
+### Spacing Scale
+- 4px, 8px, 12px, 16px, 20px, 24px, 28px, 32px, 40px, 48px, 56px, 64px
 
-### Border Radius
-```
-Small elements (buttons, inputs): 4px
-Medium elements (cards): 8px
-Large elements (modals): 12px
-Circles: 50%
-```
-
-### Shadows
-```
-sm: 0 2px 8px rgba(0,0,0,0.1)
-md: 0 4px 16px rgba(0,0,0,0.15)
-lg: 0 8px 24px rgba(0,0,0,0.2)
-xl: 0 12px 32px rgba(0,0,0,0.25)
-```
+### Responsive Breakpoints
+- Mobile: max-width 480px
+- Tablet: 481px - 768px
+- Desktop: 769px - 1200px
+- Large Desktop: 1201px+
 
 ### Animation Timing
-```
-Fade/opacity: 0.2s - 0.3s ease
-Scale/transform: 0.3s - 0.4s cubic-bezier(0.16, 1, 0.3, 1)
-Height/expansion: 0.3s - 0.4s ease
-Colors/background: 0.3s ease
-```
+- Quick: 150-200ms (hover, click feedback)
+- Standard: 300-400ms (transitions, modals)
+- Smooth: 500-600ms (page transitions, complex animations)
+
+### Easing Functions
+- Interaction: cubic-bezier(0.16, 1, 0.3, 1)
+- Smooth: ease-in-out
+- Quick: ease-out
 
 ---
 
-## CONCLUSION
+## DELIVERABLES CHECKLIST
 
-These 18 prompts provide a comprehensive, action-based framework for systematically fixing, enhancing, and upgrading the Creo Media website. Each prompt specifies exact objectives, technical actions, deliverables, and success criteria.
-
-**Next Steps:**
-1. Prioritize Phase 1 critical fixes (navbar, FAQs, chatbot)
-2. Execute prompts in order of dependency
-3. Test after each phase for cumulative functionality
-4. Document changes for future maintenance
-5. Archive this prompt document as development reference
+- [ ] Fully functional navbar with proper mobile menu
+- [ ] All hover and click effects working smoothly
+- [ ] Video carousel integrated into portfolio page
+- [ ] Case study modal with complete information
+- [ ] Service pages with content and CTAs
+- [ ] FAQ accordions on all relevant pages
+- [ ] Functional AI chatbot on all pages
+- [ ] Standardized button system
+- [ ] Proper link states throughout
+- [ ] Optimized animations at 60fps
+- [ ] Case studies populated with real data
+- [ ] Enhanced contact form with validation
+- [ ] Optimized images and media
+- [ ] Cross-browser and device compatibility
+- [ ] WCAG 2.1 AA accessibility compliance
+- [ ] Lighthouse score > 85
 
 ---
 
-**Document Version**: 1.0  
-**Last Updated**: April 26, 2026  
-**Prepared for**: Creo Media Solutions CC, Windhoek, Namibia
+**END OF MOAB PROMPTS DOCUMENT**
+
+---
+
+## NOTES FOR IMPLEMENTATION TEAMS
+
+### Important Considerations:
+1. **Version Control:** Use GitHub/GitLab with feature branches
+2. **Testing:** Implement after each prompt completion
+3. **Documentation:** Update README with changes
+4. **Backup:** Keep original files before major updates
+5. **Timeline:** Estimate 2-4 weeks for complete implementation
+6. **Budget:** Consider if any services require API keys (Claude for chatbot, image CDN, etc.)
+
+### Resource Requirements:
+- 1-2 Full-stack developers
+- 1 QA/Testing specialist
+- 1 Designer for review (optional)
+- Performance monitoring tools (Lighthouse, WebPageTest)
+
+### Success Metrics:
+- Lighthouse score improvement (current baseline → > 85)
+- User interaction engagement (chatbot, carousels)
+- Form submission rate increase
+- Reduced bounce rate
+- Improved mobile conversion rate
+
+---
+
+**Document Version:** 1.0  
+**Last Updated:** April 27, 2026  
+**Status:** Ready for Implementation
