@@ -1,0 +1,154 @@
+{
+  "case_studies": [
+    {
+      "id": 1,
+      "client": "Tatekulu Barbershop",
+      "title": "From Local Barbershop to Social Media Sensation",
+      "category": "Content Production",
+      "tagline": "300% engagement increase with viral content strategy",
+      "description": "Transformed a local barbershop into a viral sensation through authentic content strategy and consistent social media presence.",
+      "featured": true,
+      "image": "/assets/images/case-studies/tatekulu-1.jpg",
+      "video": "/assets/videos/tatekulu-showcase.mp4",
+      "gradient": "linear-gradient(135deg, #1a1209 0%, #3d2810 40%, #1f1208 100%)",
+      "challenge": "Low brand awareness, limited social presence, competing with larger franchises",
+      "approach": "Created authentic brand narrative, produced weekly video content, implemented consistent brand messaging",
+      "results": {
+        "engagement": { "value": "300%", "label": "Engagement Increase" },
+        "reach": { "value": "50K+", "label": "Video Views" },
+        "customers": { "value": "45%", "label": "New Customer Growth" },
+        "content": { "value": "12", "label": "Content Pieces" }
+      },
+      "testimonial": {
+        "text": "Creo Media transformed our brand presence completely. Their creative approach and attention to detail delivered results beyond expectations.",
+        "author": "Tatekulu Owner",
+        "role": "Barbershop Owner"
+      }
+    },
+    {
+      "id": 2,
+      "client": "NCRST",
+      "title": "National Commission on Research, Science and Technology",
+      "category": "Branding & Identity",
+      "tagline": "Establishing national presence through strategic branding",
+      "description": "Developed comprehensive brand identity for Namibia's national research commission, creating a professional and trustworthy image.",
+      "featured": true,
+      "image": "/assets/images/case-studies/ncrst-1.jpg",
+      "video": "/assets/videos/ncrst-showcase.mp4",
+      "gradient": "linear-gradient(135deg, #0a1a2a 0%, #1a3a5a 40%, #0a1a2a 100%)",
+      "challenge": "Limited brand recognition, need for professional government presence, outdated visual identity",
+      "approach": "Created modern brand guidelines, developed consistent visual language, implemented across all touchpoints",
+      "results": {
+        "engagement": { "value": "150%", "label": "Brand Recognition" },
+        "reach": { "value": "100K+", "label": "Audience Reach" },
+        "customers": { "value": "80%", "label": "Stakeholder Satisfaction" },
+        "content": { "value": "50+", "label": "Brand Assets Created" }
+      },
+      "testimonial": {
+        "text": "The new brand identity has elevated our organization's presence significantly. Creo Media understood our mission and delivered accordingly.",
+        "author": "NCRST Director",
+        "role": "Executive Director"
+      }
+    },
+    {
+      "id": 3,
+      "client": "Music Festival",
+      "title": "Annual Music Festival Digital Campaign",
+      "category": "Digital Marketing",
+      "tagline": "Sold-out event through strategic digital marketing",
+      "description": "Executed comprehensive digital marketing campaign for annual music festival, driving ticket sales and brand awareness.",
+      "featured": true,
+      "image": "/assets/images/case-studies/music-festival-1.jpg",
+      "video": "/assets/videos/music-festival-showcase.mp4",
+      "gradient": "linear-gradient(135deg, #2a0a1a 0%, #5a1a3a 40%, #2a0a1a 100%)",
+      "challenge": "Low ticket sales, limited brand awareness, competing with major festivals",
+      "approach": "Multi-channel social media campaign, influencer partnerships, targeted advertising, engaging content creation",
+      "results": {
+        "engagement": { "value": "500%", "label": "Social Engagement" },
+        "reach": { "value": "200K+", "label": "Campaign Reach" },
+        "customers": { "value": "100%", "label": "Event Sold Out" },
+        "content": { "value": "100+", "label": "Content Pieces" }
+      },
+      "testimonial": {
+        "text": "Creo Media's digital strategy was instrumental in making our festival a success. Their creativity and execution were exceptional.",
+        "author": "Festival Organizer",
+        "role": "Event Director"
+      }
+    },
+    {
+      "id": 4,
+      "client": "Local Restaurant",
+      "title": "Restaurant Rebrand & Social Media Launch",
+      "category": "Content Production",
+      "tagline": "Revitalized brand with authentic storytelling",
+      "description": "Rebranded local restaurant with fresh visual identity and launched social media presence to attract new customers.",
+      "featured": false,
+      "image": "/assets/images/case-studies/restaurant-1.jpg",
+      "video": "/assets/videos/restaurant-showcase.mp4",
+      "gradient": "linear-gradient(135deg, #1a2a0a 0%, #3a5a1a 40%, #1a2a0a 100%)",
+      "challenge": "Outdated brand image, minimal social presence, declining customer base",
+      "approach": "Complete brand refresh, social media strategy, content creation, customer engagement campaigns",
+      "results": {
+        "engagement": { "value": "200%", "label": "Social Growth" },
+        "reach": { "value": "30K+", "label": "Local Reach" },
+        "customers": { "value": "35%", "label": "New Customers" },
+        "content": { "value": "25", "label": "Content Pieces" }
+      },
+      "testimonial": {
+        "text": "The rebrand brought new life to our restaurant. Creo Media captured our essence perfectly.",
+        "author": "Restaurant Owner",
+        "role": "Owner & Chef"
+      }
+    },
+    {
+      "id": 5,
+      "client": "Tech Startup",
+      "title": "Startup Brand Launch & Digital Presence",
+      "category": "Branding & Identity",
+      "tagline": "From concept to market-ready brand",
+      "description": "Launched complete brand identity for tech startup, including logo, website, and digital marketing strategy.",
+      "featured": false,
+      "image": "/assets/images/case-studies/tech-startup-1.jpg",
+      "video": "/assets/videos/tech-startup-showcase.mp4",
+      "gradient": "linear-gradient(135deg, #0a0a2a 0%, #1a1a5a 40%, #0a0a2a 100%)",
+      "challenge": "No brand identity, limited budget, competitive tech market",
+      "approach": "Modern brand design, website development, social media setup, launch campaign",
+      "results": {
+        "engagement": { "value": "250%", "label": "Brand Awareness" },
+        "reach": { "value": "75K+", "label": "Market Reach" },
+        "customers": { "value": "50%", "label": "Lead Generation" },
+        "content": { "value": "40", "label": "Brand Assets" }
+      },
+      "testimonial": {
+        "text": "Creo Media delivered a complete brand package that helped us stand out in a crowded market.",
+        "author": "Startup Founder",
+        "role": "CEO"
+      }
+    },
+    {
+      "id": 6,
+      "client": "Fashion Brand",
+      "title": "Fashion Brand Social Media Strategy",
+      "category": "Digital Marketing",
+      "tagline": "Building fashion community through social media",
+      "description": "Developed social media strategy for fashion brand, focusing on visual storytelling and community engagement.",
+      "featured": false,
+      "image": "/assets/images/case-studies/fashion-1.jpg",
+      "video": "/assets/videos/fashion-showcase.mp4",
+      "gradient": "linear-gradient(135deg, #2a0a2a 0%, #5a1a5a 40%, #2a0a2a 100%)",
+      "challenge": "Low engagement, inconsistent posting, unclear brand voice",
+      "approach": "Content calendar development, visual style guide, influencer collaborations, engagement strategy",
+      "results": {
+        "engagement": { "value": "400%", "label": "Engagement Rate" },
+        "reach": { "value": "150K+", "label": "Follower Growth" },
+        "customers": { "value": "60%", "label": "Conversion Rate" },
+        "content": { "value": "80", "label": "Posts Created" }
+      },
+      "testimonial": {
+        "text": "Our social media presence has never been stronger. Creo Media understood our aesthetic and audience.",
+        "author": "Brand Manager",
+        "role": "Marketing Director"
+      }
+    }
+  ]
+}

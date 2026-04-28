@@ -1,0 +1,494 @@
+{
+  "services": [
+    {
+      "id": "content-production",
+      "name": "Content Production",
+      "title": "Premium Content Production",
+      "description": "From concept to creation, we produce compelling video, photo, and digital content that tells your brand story and engages your audience.",
+      "heroImage": "/assets/images/services/content-production-hero.jpg",
+      "deliverables": [
+        "Professional Video Production",
+        "High-End Photography",
+        "Social Media Content",
+        "Brand Storytelling",
+        "Post-Production & Editing"
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Discovery",
+          "description": "We learn your brand, goals, and target audience to create a tailored content strategy."
+        },
+        {
+          "step": 2,
+          "title": "Concept Development",
+          "description": "Our creative team develops compelling concepts and storyboards for your content."
+        },
+        {
+          "step": 3,
+          "title": "Production",
+          "description": "Professional filming and photography with state-of-the-art equipment."
+        },
+        {
+          "step": 4,
+          "title": "Post-Production",
+          "description": "Expert editing, color grading, and final polish to deliver stunning results."
+        }
+      ],
+      "relatedCaseStudies": [1, 4],
+      "pricing": [
+        {
+          "name": "Starter",
+          "price": "N$5,000",
+          "features": [
+            "5 Content Pieces",
+            "Basic Editing",
+            "Social Media Ready",
+            "1 Revision Round"
+          ]
+        },
+        {
+          "name": "Professional",
+          "price": "N$15,000",
+          "features": [
+            "15 Content Pieces",
+            "Advanced Editing",
+            "4K Quality",
+            "Color Grading",
+            "3 Revision Rounds",
+            "Priority Support"
+          ],
+          "recommended": true
+        },
+        {
+          "name": "Premium",
+          "price": "Custom",
+          "features": [
+            "Unlimited Content",
+            "Full Production Team",
+            "Drone Footage",
+            "Animation & VFX",
+            "Unlimited Revisions",
+            "Dedicated Account Manager"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "What types of content do you produce?",
+          "answer": "We produce a wide range of content including promotional videos, social media content, product photography, brand films, event coverage, and more."
+        },
+        {
+          "question": "How long does content production take?",
+          "answer": "Timeline varies based on project scope. Simple social content can be delivered in 1-2 weeks, while full production projects typically take 4-8 weeks."
+        },
+        {
+          "question": "Do you provide scripts and concepts?",
+          "answer": "Yes, our creative team develops concepts, scripts, and storyboards as part of our content production service."
+        },
+        {
+          "question": "What equipment do you use?",
+          "answer": "We use professional-grade cameras, lighting, and audio equipment including 4K cameras, drone systems, and professional lighting setups."
+        },
+        {
+          "question": "Can you handle large-scale productions?",
+          "answer": "Absolutely. We have experience with large-scale productions including commercials, music videos, and event coverage with full production crews."
+        }
+      ],
+      "testimonials": [
+        {
+          "text": "Creo Media's content production elevated our brand completely. The quality and creativity exceeded our expectations.",
+          "author": "Tatekulu Owner",
+          "role": "Barbershop Owner"
+        }
+      ],
+      "cta": "Start a Content Production Project"
+    },
+    {
+      "id": "branding",
+      "name": "Branding & Identity",
+      "title": "Strategic Branding & Identity",
+      "description": "We craft memorable brand identities that resonate with your audience and set you apart from the competition.",
+      "heroImage": "/assets/images/services/branding-hero.jpg",
+      "deliverables": [
+        "Logo Design",
+        "Brand Guidelines",
+        "Visual Identity System",
+        "Brand Strategy",
+        "Digital Brand Assets"
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Brand Audit",
+          "description": "We analyze your current brand positioning and market landscape."
+        },
+        {
+          "step": 2,
+          "title": "Strategy Development",
+          "description": "Creating a comprehensive brand strategy that aligns with your business goals."
+        },
+        {
+          "step": 3,
+          "title": "Visual Identity",
+          "description": "Designing logos, color palettes, typography, and visual elements."
+        },
+        {
+          "step": 4,
+          "title": "Brand Guidelines",
+          "description": "Comprehensive guidelines to ensure consistent brand application."
+        }
+      ],
+      "relatedCaseStudies": [2, 5],
+      "pricing": [
+        {
+          "name": "Starter",
+          "price": "N$8,000",
+          "features": [
+            "Logo Design",
+            "Color Palette",
+            "Typography",
+            "Basic Brand Guidelines"
+          ]
+        },
+        {
+          "name": "Professional",
+          "price": "N$20,000",
+          "features": [
+            "Complete Visual Identity",
+            "Brand Strategy",
+            "Comprehensive Guidelines",
+            "Digital Assets",
+            "2 Revision Rounds"
+          ],
+          "recommended": true
+        },
+        {
+          "name": "Premium",
+          "price": "Custom",
+          "features": [
+            "Full Brand System",
+            "Brand Architecture",
+            "Implementation Support",
+            "Brand Training",
+            "Ongoing Consultation"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "What's included in a branding package?",
+          "answer": "Our branding packages include logo design, color systems, typography, visual identity elements, brand guidelines, and digital assets depending on the package level."
+        },
+        {
+          "question": "How long does the branding process take?",
+          "answer": "Typically 4-6 weeks for a complete branding project, depending on the scope and number of revision rounds."
+        },
+        {
+          "question": "Do you work with existing brands?",
+          "answer": "Yes, we offer brand refresh services to update and modernize existing brand identities while maintaining brand equity."
+        },
+        {
+          "question": "Will I own the final brand assets?",
+          "answer": "Yes, upon final payment, you own all brand assets and intellectual property created for your project."
+        }
+      ],
+      "testimonials": [
+        {
+          "text": "The new brand identity has elevated our organization's presence significantly. Creo Media understood our mission and delivered accordingly.",
+          "author": "NCRST Director",
+          "role": "Executive Director"
+        }
+      ],
+      "cta": "Start a Branding Project"
+    },
+    {
+      "id": "digital-marketing",
+      "name": "Digital Marketing",
+      "title": "Results-Driven Digital Marketing",
+      "description": "Strategic digital marketing campaigns that drive engagement, conversions, and measurable business results.",
+      "heroImage": "/assets/images/services/digital-marketing-hero.jpg",
+      "deliverables": [
+        "Social Media Strategy",
+        "Paid Advertising",
+        "Content Marketing",
+        "Email Campaigns",
+        "Analytics & Reporting"
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Research & Planning",
+          "description": "Deep dive into your audience, competitors, and market opportunities."
+        },
+        {
+          "step": 2,
+          "title": "Strategy Development",
+          "description": "Creating a comprehensive digital marketing strategy tailored to your goals."
+        },
+        {
+          "step": 3,
+          "title": "Campaign Execution",
+          "description": "Implementing campaigns across relevant digital channels."
+        },
+        {
+          "step": 4,
+          "title": "Optimization",
+          "description": "Continuous monitoring, testing, and optimization for maximum results."
+        }
+      ],
+      "relatedCaseStudies": [3, 6],
+      "pricing": [
+        {
+          "name": "Starter",
+          "price": "N$3,000/month",
+          "features": [
+            "Social Media Management",
+            "Basic Analytics",
+            "Monthly Reporting",
+            "Content Calendar"
+          ]
+        },
+        {
+          "name": "Professional",
+          "price": "N$8,000/month",
+          "features": [
+            "Full Digital Strategy",
+            "Paid Ad Management",
+            "Content Creation",
+            "Advanced Analytics",
+            "Bi-Weekly Reporting"
+          ],
+          "recommended": true
+        },
+        {
+          "name": "Premium",
+          "price": "Custom",
+          "features": [
+            "Multi-Channel Strategy",
+            "Full-Service Campaigns",
+            "Dedicated Team",
+            "Real-Time Dashboard",
+            "Strategy Consultation"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Which platforms do you work with?",
+          "answer": "We work with all major platforms including Facebook, Instagram, TikTok, LinkedIn, Twitter, YouTube, and Google Ads."
+        },
+        {
+          "question": "How do you measure success?",
+          "answer": "We use comprehensive analytics to track KPIs including engagement, reach, conversions, ROI, and other metrics relevant to your goals."
+        },
+        {
+          "question": "Do you handle ad budget separately?",
+          "answer": "Yes, ad spend is paid directly to the platforms. Our fee covers strategy, management, and optimization."
+        },
+        {
+          "question": "Can you help with email marketing?",
+          "answer": "Yes, we offer email marketing services including campaign design, automation, list management, and performance optimization."
+        }
+      ],
+      "testimonials": [
+        {
+          "text": "Creo Media's digital strategy was instrumental in making our festival a success. Their creativity and execution were exceptional.",
+          "author": "Festival Organizer",
+          "role": "Event Director"
+        }
+      ],
+      "cta": "Start a Digital Marketing Campaign"
+    },
+    {
+      "id": "events",
+      "name": "Event Management",
+      "title": "Exceptional Event Experiences",
+      "description": "From concept to execution, we create memorable events that leave lasting impressions on your audience.",
+      "heroImage": "/assets/images/services/events-hero.jpg",
+      "deliverables": [
+        "Event Planning",
+        "Production Management",
+        "Technical Setup",
+        "On-Site Coordination",
+        "Post-Event Analysis"
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Concept & Planning",
+          "description": "Understanding your vision and creating a comprehensive event plan."
+        },
+        {
+          "step": 2,
+          "title": "Production Design",
+          "description": "Designing the visual and technical elements of your event."
+        },
+        {
+          "step": 3,
+          "title": "Execution",
+          "description": "Seamless event management with professional on-site coordination."
+        },
+        {
+          "step": 4,
+          "title": "Post-Event",
+          "description": "Comprehensive analysis and reporting on event success."
+        }
+      ],
+      "relatedCaseStudies": [3],
+      "pricing": [
+        {
+          "name": "Starter",
+          "price": "N$10,000",
+          "features": [
+            "Basic Event Planning",
+            "Day-of Coordination",
+            "Standard AV Setup",
+            "Timeline Management"
+          ]
+        },
+        {
+          "name": "Professional",
+          "price": "N$25,000",
+          "features": [
+            "Full Event Production",
+            "Custom Design",
+            "Professional AV",
+            "Vendor Coordination",
+            "Event Photography"
+          ],
+          "recommended": true
+        },
+        {
+          "name": "Premium",
+          "price": "Custom",
+          "features": [
+            "Large-Scale Production",
+            "Full Creative Direction",
+            "Multi-Day Events",
+            "Complete Technical Setup",
+            "Dedicated Event Team"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "What types of events do you manage?",
+          "answer": "We manage corporate events, product launches, conferences, festivals, private parties, and experiential marketing activations."
+        },
+        {
+          "question": "How far in advance should we book?",
+          "answer": "We recommend booking at least 2-3 months in advance for smaller events, and 4-6 months for larger productions."
+        },
+        {
+          "question": "Do you provide equipment?",
+          "answer": "Yes, we provide professional audiovisual equipment, staging, lighting, and all necessary technical infrastructure."
+        },
+        {
+          "question": "Can you handle outdoor events?",
+          "answer": "Absolutely. We have extensive experience with outdoor events and can handle weather contingencies and site-specific requirements."
+        }
+      ],
+      "testimonials": [
+        {
+          "text": "An unforgettable experience that brought our community together safely. Exceptional execution.",
+          "author": "Event Organizer",
+          "role": "Community Leader"
+        }
+      ],
+      "cta": "Plan Your Event"
+    },
+    {
+      "id": "podcasting",
+      "name": "Podcasting",
+      "title": "Professional Podcast Production",
+      "description": "Complete podcast production services from concept to distribution, helping you share your voice with the world.",
+      "heroImage": "/assets/images/services/podcasting-hero.jpg",
+      "deliverables": [
+        "Podcast Strategy",
+        "Recording & Editing",
+        "Sound Design",
+        "Show Art & Branding",
+        "Distribution Setup"
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Concept Development",
+          "description": "Defining your podcast concept, format, and target audience."
+        },
+        {
+          "step": 2,
+          "title": "Production",
+          "description": "Professional recording in our studio or on-location with high-quality equipment."
+        },
+        {
+          "step": 3,
+          "title": "Post-Production",
+          "description": "Expert editing, sound design, mixing, and mastering."
+        },
+        {
+          "step": 4,
+          "title": "Distribution",
+          "description": "Setup on all major platforms and launch support."
+        }
+      ],
+      "relatedCaseStudies": [],
+      "pricing": [
+        {
+          "name": "Starter",
+          "price": "N$2,000/episode",
+          "features": [
+            "Basic Editing",
+            "Sound Mixing",
+            "Show Notes",
+            "Distribution to Major Platforms"
+          ]
+        },
+        {
+          "name": "Professional",
+          "price": "N$4,000/episode",
+          "features": [
+            "Full Production",
+            "Sound Design",
+            "Custom Music",
+            "Transcription",
+            "Social Media Clips"
+          ],
+          "recommended": true
+        },
+        {
+          "name": "Premium",
+          "price": "Custom",
+          "features": [
+            "Studio Recording",
+            "Full Production Team",
+            "Video Recording",
+            "Complete Brand Package",
+            "Marketing Support"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Do you provide recording space?",
+          "answer": "Yes, we have a professional recording studio equipped for podcast production with high-quality microphones and sound treatment."
+        },
+        {
+          "question": "How long is a typical episode?",
+          "answer": "Episode length varies based on your format. We work with podcasts ranging from 15 minutes to 2+ hours."
+        },
+        {
+          "question": "Which platforms do you distribute to?",
+          "answer": "We distribute to all major platforms including Spotify, Apple Podcasts, Google Podcasts, Amazon Music, and more."
+        },
+        {
+          "question": "Can you help with podcast branding?",
+          "answer": "Yes, we offer complete podcast branding including show art, logo design, and visual identity for your podcast."
+        }
+      ],
+      "testimonials": [],
+      "cta": "Start Your Podcast"
+    }
+  ]
+}

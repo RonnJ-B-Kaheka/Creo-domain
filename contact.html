@@ -68,8 +68,10 @@
                     class="media-text">Media</span></a>
 
             <div class="nav-actions">
-                <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
-                    <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+                <button class="nav-open-btn" aria-label="open menu" data-nav-toggler aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
                 </button>
             </div>
 
@@ -610,6 +612,17 @@
                     <p class="section-subtitle has-before text-center">F.A.Q</p>
                     <h2 class="h2 section-title text-center">Questions Before <span class="has-before">Reaching
                             Out?</span></h2>
+
+                    <!-- FAQ Search -->
+                    <div style="max-width: 600px; margin: 30px auto 40px;">
+                        <input 
+                            type="text" 
+                            id="faq-search" 
+                            placeholder="Search FAQs..." 
+                            style="width: 100%; padding: 15px 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: var(--white); font-size: 1.4rem; outline: none; transition: all 0.3s ease;"
+                        >
+                        <span id="faq-result-count" style="display: block; text-align: center; margin-top: 10px; color: var(--text-secondary); font-size: 1.2rem;"></span>
+                    </div>
 
                     <div style="max-width: 800px; margin: 40px auto 0;">
                         <button class="glass-card faq-item" style="padding: 25px; margin-bottom: 15px; cursor: pointer; width: 100%; text-align: left; border: none; background: transparent; transition: all 0.3s ease;" aria-expanded="false" aria-controls="faq-contact-1">
