@@ -1,0 +1,173 @@
+{
+    "faqs": {
+        "contact": [{
+                "id": 1,
+                "question": "What services does Creo Media offer?",
+                "answer": "Creo Media specializes in Content Production, Digital Management, Event Management, and Podcasting. We create premium creative solutions tailored to your brand's needs."
+            },
+            {
+                "id": 2,
+                "question": "How long does a typical project take?",
+                "answer": "Project timelines vary based on scope and complexity. Simple content pieces may take 1-2 weeks, while comprehensive campaigns can range from 4-12 weeks. We'll provide a detailed timeline during the consultation phase."
+            },
+            {
+                "id": 3,
+                "question": "What's your pricing model?",
+                "answer": "We offer flexible pricing options: project-based, retainer packages, or hourly rates depending on your needs. We'll provide a custom quote after discussing your requirements and goals."
+            },
+            {
+                "id": 4,
+                "question": "Do you work with startups and small businesses?",
+                "answer": "Absolutely! We work with businesses of all sizes, from startups to established corporations. We scale our services to match your budget and needs."
+            },
+            {
+                "id": 5,
+                "question": "Can you handle rush projects?",
+                "answer": "Yes, we can accommodate urgent timelines. Rush projects may have additional fees depending on team availability and scope. Contact us to discuss your specific timeline."
+            },
+            {
+                "id": 6,
+                "question": "Do you provide revisions?",
+                "answer": "Yes! Revision rounds are included in our packages. The number of revisions varies by project type. We ensure you're satisfied with the final deliverables."
+            },
+            {
+                "id": 7,
+                "question": "How do we communicate during the project?",
+                "answer": "We maintain regular communication through email, video calls, and project management tools. You'll have a dedicated point of contact for your project."
+            },
+            {
+                "id": 8,
+                "question": "What's your process for content creation?",
+                "answer": "Our process includes: Discovery & Strategy, Concept Development, Production/Creation, Review & Feedback, Revisions, and Final Delivery. We keep you involved at every stage."
+            },
+            {
+                "id": 9,
+                "question": "Do you offer maintenance and support after project completion?",
+                "answer": "Yes! We offer ongoing support packages for content updates, platform maintenance, analytics reporting, and strategic guidance."
+            },
+            {
+                "id": 10,
+                "question": "Can you help with distribution and promotion?",
+                "answer": "We provide guidance on distribution strategies and can manage social media posting, email campaigns, and other promotion channels as part of our Digital Management services."
+            },
+            {
+                "id": 11,
+                "question": "What's your process for client onboarding?",
+                "answer": "We start with an initial consultation to understand your goals, brand, and needs. We'll then create a proposal, sign an agreement, and begin the project planning phase."
+            },
+            {
+                "id": 12,
+                "question": "How do I book a consultation?",
+                "answer": "You can book directly through our website contact form, or reach out to us at contact.creomedia@gmail.com. We'll get back to you within 24 hours."
+            }
+        ],
+        "about": [{
+                "id": 1,
+                "question": "Who is Creo Media?",
+                "answer": "Creo Media is a premium creative agency based in Windhoek, Namibia. We specialize in creating innovative content and digital solutions that help brands stand out."
+            },
+            {
+                "id": 2,
+                "question": "What's your company mission?",
+                "answer": "Our mission is to deliver exceptional creative solutions that empower brands and drive meaningful results. We believe in the power of African creativity combined with global standards."
+            },
+            {
+                "id": 3,
+                "question": "How long has Creo Media been in business?",
+                "answer": "We've been delivering premium creative services for several years, building a strong reputation for quality, innovation, and client satisfaction."
+            },
+            {
+                "id": 4,
+                "question": "Where is Creo Media located?",
+                "answer": "We're based in Windhoek, Namibia, but we work with clients locally and internationally."
+            },
+            {
+                "id": 5,
+                "question": "What makes Creo Media different?",
+                "answer": "We combine African creativity with global standards. Our team brings diverse expertise, attention to detail, and a passion for delivering exceptional results."
+            },
+            {
+                "id": 6,
+                "question": "Who is on the Creo Media team?",
+                "answer": "Our team consists of experienced content creators, digital strategists, designers, videographers, and project managers, all dedicated to delivering excellence."
+            },
+            {
+                "id": 7,
+                "question": "What industries do you specialize in?",
+                "answer": "We work across diverse industries including tech, retail, hospitality, nonprofits, healthcare, and more. Our experience spans various sectors and markets."
+            },
+            {
+                "id": 8,
+                "question": "Can you handle international projects?",
+                "answer": "Yes! We work with clients across Africa and beyond. We understand different markets and can adapt our approach to various audiences and cultures."
+            }
+        ],
+        "portfolio": [{
+                "id": 1,
+                "question": "How do you select case studies to showcase?",
+                "answer": "We showcase projects that demonstrate our capabilities, represent different service areas, and highlight measurable results and client success."
+            },
+            {
+                "id": 2,
+                "question": "Can you work in my industry?",
+                "answer": "Likely yes! We've worked across various industries. Even if we haven't worked in your specific sector, our diverse experience allows us to deliver quality work."
+            },
+            {
+                "id": 3,
+                "question": "How do you measure project success?",
+                "answer": "We measure success through agreed-upon KPIs: engagement rates, traffic, conversions, brand awareness, customer satisfaction, and project-specific metrics."
+            },
+            {
+                "id": 4,
+                "question": "Can we see more examples?",
+                "answer": "Absolutely! Contact us and we can share a portfolio tailored to your industry and project type. We may have additional case studies not publicly displayed."
+            },
+            {
+                "id": 5,
+                "question": "Do you have client testimonials?",
+                "answer": "Yes! We have testimonials from satisfied clients. You can find them throughout our website, and we can connect you with references upon request."
+            },
+            {
+                "id": 6,
+                "question": "What's your approach to confidential projects?",
+                "answer": "We respect client confidentiality. Some projects aren't publicly showcased due to client requests. We can discuss these experiences under NDA."
+            }
+        ],
+        "services": [{
+                "id": 1,
+                "question": "How does Content Production differ from Digital Management?",
+                "answer": "Content Production focuses on creating high-quality videos, photos, and creative assets. Digital Management handles strategy, social media, and online presence optimization."
+            },
+            {
+                "id": 2,
+                "question": "Can I use Creo Media for a one-time project?",
+                "answer": "Yes! We offer both project-based and retainer services. You can hire us for a single project or develop an ongoing partnership."
+            },
+            {
+                "id": 3,
+                "question": "Do you provide strategy consulting?",
+                "answer": "Yes, strategy is integrated into most of our services. We can also provide standalone strategy consulting for content, digital, or event initiatives."
+            },
+            {
+                "id": 4,
+                "question": "What equipment do you use?",
+                "answer": "We use professional-grade equipment for content production including 4K cameras, drones, professional audio equipment, and state-of-the-art editing software."
+            },
+            {
+                "id": 5,
+                "question": "Do you provide training and support?",
+                "answer": "Yes! We can train your team on content creation, social media management, and other skills. We also provide ongoing support for all our services."
+            },
+            {
+                "id": 6,
+                "question": "What's included in ongoing support?",
+                "answer": "Ongoing support can include content updates, platform maintenance, analytics reporting, strategy refinement, and performance optimization based on your needs."
+            },
+            {
+                "id": 7,
+                "question": "Can you work with my existing tools and platforms?",
+                "answer": "Yes! We're skilled with various platforms, tools, and software. We'll integrate our work with your existing systems and workflows."
+            }
+        ]
+    }
+}

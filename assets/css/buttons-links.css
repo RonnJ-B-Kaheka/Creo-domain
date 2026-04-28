@@ -9,8 +9,13 @@
  * - Accessibility: visible focus states, keyboard support
  */
 
+
 /* ======================== */
+
+
 /* BUTTON BASE STYLES */
+
+
 /* ======================== */
 
 .btn {
@@ -35,24 +40,32 @@
     will-change: transform, box-shadow, background-color;
 }
 
+
 /* Remove clip-path for better transitions */
+
 .btn {
     clip-path: none;
 }
 
+
 /* Hover state - smooth lift effect */
+
 .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 30px rgba(201, 168, 76, 0.3);
 }
 
+
 /* Active/clicked state - smooth press effect */
+
 .btn:active {
     transform: translateY(0);
     box-shadow: 0 4px 12px rgba(201, 168, 76, 0.2);
 }
 
+
 /* Focus state for keyboard accessibility */
+
 .btn:focus-visible {
     outline: 3px solid #c9a84c;
     outline-offset: 2px;
@@ -62,7 +75,9 @@
     outline: none;
 }
 
+
 /* Disabled state */
+
 .btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -70,27 +85,35 @@
     transform: none;
 }
 
+
 /* ======================== */
+
+
 /* PRIMARY BUTTON (GOLD) */
+
+
 /* ======================== */
 
 .btn-primary {
-    background-color: #c9a84c;
+    background-color: var(--hot-pink);
     color: var(--white) !important;
-    box-shadow: 0 4px 15px rgba(201, 168, 76, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 0, 85, 0.3);
 }
 
 .btn-primary:hover {
-    background-color: #d4b860;
-    box-shadow: 0 12px 30px rgba(201, 168, 76, 0.4);
+    background-color: var(--cyan);
+    color: var(--pure-black) !important;
+    box-shadow: 0 12px 30px rgba(0, 229, 255, 0.5);
 }
 
 .btn-primary:active {
-    background-color: #c9a84c;
-    box-shadow: 0 2px 8px rgba(201, 168, 76, 0.2);
+    background-color: var(--hot-pink);
+    box-shadow: 0 2px 8px rgba(255, 0, 85, 0.2);
 }
 
+
 /* Optional ripple effect on primary button */
+
 .btn-primary::before {
     content: '';
     position: absolute;
@@ -110,8 +133,13 @@
     height: 300px;
 }
 
+
 /* ======================== */
+
+
 /* SECONDARY BUTTON (OUTLINE) */
+
+
 /* ======================== */
 
 .btn-secondary {
@@ -135,8 +163,13 @@
     box-shadow: none;
 }
 
+
 /* ======================== */
+
+
 /* TERTIARY BUTTON (TEXT) */
+
+
 /* ======================== */
 
 .btn-tertiary {
@@ -170,8 +203,13 @@
     color: #d4b860 !important;
 }
 
+
 /* ======================== */
+
+
 /* BUTTON SIZES */
+
+
 /* ======================== */
 
 .btn-large {
@@ -192,8 +230,13 @@
     font-size: 0.9rem;
 }
 
+
 /* ======================== */
+
+
 /* BUTTON GROUPS */
+
+
 /* ======================== */
 
 .btn-group {
@@ -211,14 +254,18 @@
     .btn-group {
         flex-direction: column;
     }
-
     .btn-group .btn {
         width: 100%;
     }
 }
 
+
 /* ======================== */
+
+
 /* LINK STYLES */
+
+
 /* ======================== */
 
 .text-link {
@@ -254,8 +301,13 @@
     border-radius: 2px;
 }
 
+
 /* ======================== */
+
+
 /* NAVIGATION LINKS */
+
+
 /* ======================== */
 
 nav a,
@@ -277,8 +329,13 @@ nav a:focus-visible,
     outline-offset: 2px;
 }
 
+
 /* ======================== */
+
+
 /* CARD & SERVICE LINKS */
+
+
 /* ======================== */
 
 .link-card,
@@ -308,8 +365,13 @@ nav a:focus-visible,
     outline-offset: 4px;
 }
 
+
 /* ======================== */
+
+
 /* PLAY BUTTON (PORTFOLIO) */
+
+
 /* ======================== */
 
 .play-button {
@@ -344,8 +406,13 @@ nav a:focus-visible,
     color: var(--white);
 }
 
+
 /* ======================== */
+
+
 /* FOOTER LINKS */
+
+
 /* ======================== */
 
 footer a {
@@ -364,11 +431,18 @@ footer a:focus-visible {
     outline-offset: 2px;
 }
 
-/* ======================== */
-/* FOCUS VISIBLE FALLBACK */
+
 /* ======================== */
 
+
+/* FOCUS VISIBLE FALLBACK */
+
+
+/* ======================== */
+
+
 /* For browsers that don't support :focus-visible */
+
 .btn:focus,
 .text-link:focus,
 nav a:focus,
@@ -380,7 +454,9 @@ footer a:focus,
     outline-offset: 2px;
 }
 
+
 /* Remove outline for mouse users (pointer: coarse excludes touch) */
+
 @media (pointer: fine) {
     .btn:focus:not(:focus-visible),
     .text-link:focus:not(:focus-visible),
@@ -390,8 +466,13 @@ footer a:focus,
     }
 }
 
+
 /* ======================== */
+
+
 /* ACCESSIBILITY & REDUCED MOTION */
+
+
 /* ======================== */
 
 @media (prefers-reduced-motion: reduce) {
@@ -408,8 +489,13 @@ footer a:focus,
     }
 }
 
+
 /* ======================== */
+
+
 /* FOCUS-WITHIN FOR CARDS */
+
+
 /* ======================== */
 
 .link-card:focus-within,
@@ -419,8 +505,13 @@ footer a:focus,
     outline-offset: 4px;
 }
 
+
 /* ======================== */
+
+
 /* LOADING STATE */
+
+
 /* ======================== */
 
 .btn.is-loading {
@@ -440,11 +531,18 @@ footer a:focus,
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
+
 /* ======================== */
+
+
 /* RESPONSIVE ADJUSTMENTS */
+
+
 /* ======================== */
 
 @media (max-width: 768px) {
@@ -453,15 +551,12 @@ footer a:focus,
         padding-inline: 20px;
         font-size: 0.9rem;
     }
-
     .btn-large {
         min-height: 48px;
     }
-
     .text-link {
         font-size: 0.95rem;
     }
-
     /* Larger hover areas on mobile */
     .link-card,
     .service-card,
@@ -470,15 +565,22 @@ footer a:focus,
     }
 }
 
+
 /* ======================== */
+
+
 /* BUTTON ANIMATION HELPERS */
+
+
 /* ======================== */
 
 .btn {
     position: relative;
 }
 
+
 /* Pulse effect helper class */
+
 .btn.has-pulse::after {
     content: '';
     position: absolute;

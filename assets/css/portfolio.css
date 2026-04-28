@@ -20,6 +20,7 @@ body.page-portfolio {
     padding: 0 30px;
 }
 
+
 /* HERO */
 
 .portfolio-hero {
@@ -46,6 +47,7 @@ body.page-portfolio {
     max-width: 600px;
     margin: 0 auto 40px;
 }
+
 
 /* FILTER BAR */
 
@@ -91,12 +93,13 @@ body.page-portfolio {
     color: white;
 }
 
+
 /* GRID */
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
     margin-bottom: 100px;
 }
 
@@ -108,6 +111,14 @@ body.page-portfolio {
     border: 1px solid rgba(255, 255, 255, 0.08);
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    aspect-ratio: 4 / 3;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
 }
 
 .portfolio-item:hover {
@@ -232,6 +243,7 @@ body.page-portfolio {
     gap: 6px;
 }
 
+
 /* LIGHTBOX MODAL */
 
 .portfolio-modal {
@@ -271,7 +283,6 @@ body.page-portfolio {
         opacity: 0;
         transform: translateY(50px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -379,6 +390,7 @@ body.page-portfolio {
     color: var(--portfolio-muted);
 }
 
+
 /* TESTIMONIAL */
 
 .modal-testimonial {
@@ -441,6 +453,7 @@ body.page-portfolio {
     box-shadow: 0 10px 30px rgba(255, 0, 85, 0.4);
 }
 
+
 /* BEFORE/AFTER SLIDER */
 
 .before-after-container {
@@ -491,10 +504,12 @@ body.page-portfolio {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+
 /* VIDEO CAROUSEL STYLES */
 
 .video-carousel-section {
-    padding: 80px 0;
+    padding: 120px 0 80px;
+    margin-top: 60px;
 }
 
 .video-carousel-container {
@@ -691,6 +706,7 @@ body.page-portfolio {
     transform: translate(-50%, -50%) scale(1);
 }
 
+
 /* CAROUSEL DOTS */
 
 .carousel-dots {
@@ -719,52 +735,44 @@ body.page-portfolio {
     transform: scale(1.2);
 }
 
+
 /* RESPONSIVE */
 
 @media (max-width: 768px) {
     .portfolio-grid {
         grid-template-columns: 1fr;
     }
-
     .filter-bar {
         flex-wrap: wrap;
         border-radius: 16px;
     }
-
     .results-grid {
         grid-template-columns: 1fr;
     }
-
     .modal-body {
         padding: 20px;
     }
-
     .modal-title {
         font-size: 1.8rem;
     }
-
     .modal-content {
         max-width: 95vw;
         width: 95vw;
         max-height: 90vh;
     }
-
     .modal-hero-img {
         height: 250px;
     }
-
     /* Video carousel mobile adjustments */
     .video-card {
         flex: 0 0 280px;
         width: 280px;
         height: 480px;
     }
-
     .video-carousel {
         gap: 16px;
         padding: 16px 0;
     }
-
     .carousel-dot {
         width: 44px;
         height: 44px;

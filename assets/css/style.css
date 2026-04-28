@@ -529,20 +529,20 @@ body {
 }
 
 .btn-primary:is(:hover, :focus) {
-    background-color: var(--white);
-    color: #c9a84c !important;
-    box-shadow: 0 0 30px #c9a84c;
+    background-color: var(--cyan);
+    color: var(--pure-black) !important;
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.5);
     transform: translateY(-2px);
     transition: all 0.3s ease !important;
 }
 
 .btn-primary:is(:hover, :focus) .span {
-    color: #c9a84c;
+    color: var(--pure-black);
     transition: all 0.3s ease;
 }
 
 .btn-primary:is(:hover, :focus) * {
-    color: #c9a84c !important;
+    color: var(--pure-black) !important;
 }
 
 .btn-secondary {
@@ -795,7 +795,7 @@ body {
     .mega-menu {
         display: none !important;
     }
-    .mega-menu-trigger::after {
+    .mega-menu-trigger::before {
         display: none;
     }
     .mega-menu-trigger {
@@ -853,9 +853,7 @@ body {
         padding: 0;
     }
     nav.navbar .wrapper {
-        display: block;
-        padding: 0;
-        margin: 0;
+        display: none;
     }
     .navbar-list {
         display: flex;
@@ -876,6 +874,26 @@ body {
     .overlay,
     .nav-open-btn {
         display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .nav-open-btn {
+        display: none !important;
+    }
+    /* Ensure navbar and all links are clickable on desktop */
+    .navbar {
+        pointer-events: auto !important;
+    }
+    .navbar-link {
+        pointer-events: auto !important;
+        cursor: pointer !important;
+    }
+    .navbar-list {
+        pointer-events: none;
+    }
+    .navbar-item {
+        pointer-events: auto;
     }
 }
 
@@ -1044,7 +1062,7 @@ body {
     font-weight: var(--fw-700);
     padding-block: 18px;
     text-transform: uppercase;
-    transition: all 200ms ease-out;
+    transition: color 200ms ease, background-color 200ms ease, transform 150ms cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     display: flex;
     align-items: center;
@@ -1053,13 +1071,18 @@ body {
     letter-spacing: 1px;
     color: #f5f2ec;
     cursor: pointer;
-    will-change: color, background;
+    will-change: color, background, transform;
+}
+
+.navbar-link {
+    position: relative;
+    display: inline-block;
 }
 
 .navbar-link::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     left: 0;
     width: 100%;
     height: 3px;
@@ -1082,10 +1105,11 @@ body {
     background: rgba(201, 168, 76, 0.08);
 }
 
-.navbar-link:is(:hover, :focus) {
+.navbar-link:focus-visible {
     color: #c9a84c;
     outline: 3px solid #c9a84c;
     outline-offset: 2px;
+    background: rgba(201, 168, 76, 0.08);
 }
 
 .navbar-link:active {
@@ -1093,15 +1117,16 @@ body {
     transform: scale(0.98);
 }
 
-.navbar-link.active {
+.navbar-link.active,
+.navbar-link[aria-current="page"] {
     color: #c9a84c;
     background: rgba(201, 168, 76, 0.1);
     border-left: 3px solid #c9a84c;
-    padding-left: 15px;
-    margin-left: -18px;
+    padding-left: 18px;
 }
 
-.navbar-link.active::after {
+.navbar-link.active::after,
+.navbar-link[aria-current="page"]::after {
     transform: scaleX(1);
     background: #c9a84c;
 }
@@ -1121,6 +1146,8 @@ body {
 .overlay.active {
     opacity: 1;
     pointer-events: all;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
 }
 
 
@@ -1933,8 +1960,8 @@ body {
 .gpu-accelerated {
     transform: translateZ(0);
     will-change: transform;
-    backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 
@@ -3901,9 +3928,9 @@ button.faq-item[aria-expanded="true"] .faq-icon {
 
 .creo-chatbot {
     position: fixed;
-    bottom: 24px;
+    bottom: 90px;
     right: 24px;
-    z-index: 9999;
+    z-index: 10000;
     font-family: var(--ff-body);
 }
 
@@ -4123,9 +4150,10 @@ button.faq-item[aria-expanded="true"] .faq-icon {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--hot-pink) transparent;
 }
+
+
+/* Webkit scrollbar (Safari, Chrome <121, mobile) */
 
 .chat-messages::-webkit-scrollbar {
     width: 4px;
@@ -4134,6 +4162,16 @@ button.faq-item[aria-expanded="true"] .faq-icon {
 .chat-messages::-webkit-scrollbar-thumb {
     background: var(--hot-pink);
     border-radius: 10px;
+}
+
+
+/* Modern browsers scrollbar (Firefox, Chrome 121+) */
+
+@supports (scrollbar-width: thin) {
+    .chat-messages {
+        scrollbar-width: thin;
+        scrollbar-color: var(--hot-pink) transparent;
+    }
 }
 
 .message {
@@ -5279,10 +5317,10 @@ button.faq-item[aria-expanded="true"] .faq-icon {
     cursor: pointer;
 }
 
-.mega-menu-trigger::after {
+.mega-menu-trigger::before {
     content: '';
     position: absolute;
-    right: -8px;
+    right: -10px;
     top: 50%;
     transform: translateY(-50%);
     width: 0;
@@ -5294,8 +5332,8 @@ button.faq-item[aria-expanded="true"] .faq-icon {
     transition: transform 0.3s ease;
 }
 
-.mega-menu-trigger:hover::after,
-.mega-menu-trigger[aria-expanded="true"]::after {
+.mega-menu-trigger:hover::before,
+.mega-menu-trigger[aria-expanded="true"]::before {
     transform: translateY(-50%) rotate(180deg);
 }
 
@@ -5305,10 +5343,9 @@ button.faq-item[aria-expanded="true"] .faq-icon {
 .mega-menu {
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 50%;
     width: 100vw;
     max-width: 1200px;
-    left: 50%;
     transform: translateX(-50%) translateY(10px);
     background: linear-gradient(135deg, rgba(14, 14, 14, 0.98) 0%, rgba(20, 20, 20, 0.98) 100%);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -5320,6 +5357,7 @@ button.faq-item[aria-expanded="true"] .faq-icon {
     transition: all 0.3s ease;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     z-index: 1000;
+    pointer-events: none;
 }
 
 .mega-menu-trigger[aria-expanded="true"]+.mega-menu,
@@ -5327,6 +5365,22 @@ button.faq-item[aria-expanded="true"] .faq-icon {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+
+
+/* Ensure mega menu trigger links are clickable and navigate */
+
+.navbar-item.has-mega-menu .navbar-link {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Remove any background from has-mega-menu items */
+
+.navbar-item.has-mega-menu {
+    background: transparent !important;
 }
 
 

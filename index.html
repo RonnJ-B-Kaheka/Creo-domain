@@ -74,10 +74,12 @@
     <!-- 
     - custom css link
   -->
+    <link rel="stylesheet" href="./assets/css/faq.css">
     <link rel="stylesheet" href="./assets/css/buttons-links.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/unified-hero.css">
     <link rel="stylesheet" href="./assets/css/wow.css">
+    <link rel="stylesheet" href="./assets/css/components.css">
 
     <!-- 
     - google font link
@@ -134,8 +136,7 @@
 <body id="top">
 
     <!-- Skip navigation link for accessibility -->
-    <a href="#main-content" class="skip-link" style="position: absolute; top: -40px; left: 6px; background: #000; color: white; padding: 8px; z-index: 1000; text-decoration: none; border-radius: 4px; transition: top 0.3s;">Skip
-        to main content</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- GRAIN OVERLAY -->
     <div class="grain-overlay"></div>
@@ -233,10 +234,6 @@
                         <a href="about.html" class="navbar-link" data-nav-link role="menuitem" aria-label="About us page">About</a>
                     </li>
 
-                    <li class="navbar-item" role="none">
-                        <a href="contact.html" class="navbar-link" data-nav-link role="menuitem" aria-label="Contact us page">Contact</a>
-                    </li>
-
                     <li class="navbar-item has-mega-menu" role="none">
                         <a href="portfolio.html" class="navbar-link mega-menu-trigger" data-nav-link role="menuitem" aria-label="Portfolio page" aria-expanded="false" aria-haspopup="true">Portfolio</a>
                         <!-- Mega Menu Dropdown -->
@@ -324,10 +321,10 @@
             <!-- 
         - #OVERVIEW
       -->
-            <section class="section overview" id="overview" aria-label="overview" style="position: relative; overflow: hidden; padding-block: 150px; border-top: 1px solid rgba(255,255,255,0.05); background: #000;">
+            <section class="section overview section-overview" id="overview" aria-label="overview">
 
                 <!-- VIDEO BACKGROUND (Multiple High-Reliability Web Sources) -->
-                <video autoplay muted loop playsinline preload="auto" poster="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; pointer-events: none; opacity: 0.6;">
+                <video class="video-background" autoplay muted loop playsinline preload="auto" poster="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
                     <source src="https://v.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4"
                         type="video/mp4">
                     <source
@@ -337,15 +334,14 @@
                 </video>
 
                 <!-- DARK GRADIENT OVERLAY (Enhanced depth) -->
-                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.9) 100%); z-index: 2; pointer-events: none;">
-                </div>
+                <div class="overlay-dark"></div>
 
-                <div class="container" style="position: relative; z-index: 3;">
-                    <div class="glass-card" style="padding: 60px; text-align: center; max-width: 1000px; margin: 0 auto; -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.1);">
+                <div class="container container-relative">
+                    <div class="glass-card glass-card-overlay">
                         <p class="section-subtitle has-before text-center">Brand Introduction</p>
-                        <h2 class="h2 section-title glitch-text" data-text="CREO MEDIA SOLUTIONS CC" style="margin-top: 20px; font-size: 3rem;">CREO <span class="has-before">MEDIA SOLUTIONS
+                        <h2 class="h2 section-title glitch-text overview-subtitle" data-text="CREO MEDIA SOLUTIONS CC">CREO <span class="has-before">MEDIA SOLUTIONS
                                 CC</span></h2>
-                        <p class="section-text" style="font-size: 1.4rem; color: var(--text-main); line-height: 1.8; margin-top: 30px; text-align: center; max-width: 800px; margin-inline: auto;">
+                        <p class="section-text overview-text">
                             Creo Media is a Namibian-based content marketing and creative agency. We deliver end-to-end creative solutions: social media management, strategy, content production (video, photo, design, copy), media placements, and corporate events. We work with brands
                             and organisations to build visibility, credibility, and influence through premium storytelling executed at global standards.
                         </p>
@@ -356,71 +352,71 @@
             <!-- 
         - #CASE STUDIES
       -->
-            <section class="section case-studies" id="case-studies" aria-label="case-studies" style="background-color: var(--pure-black);">
+            <section class="section case-studies section-case-studies" id="case-studies" aria-label="case-studies">
                 <div class="container">
                     <p class="section-subtitle has-before text-center">Our Impact</p>
                     <h2 class="h2 section-title text-center glitch-text" data-text="CASE STUDIES">CASE <span class="has-before">STUDIES</span></h2>
-                    <p class="text-center" style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 50px;">Real results for real brands. See how we've helped our clients achieve their goals.</p>
+                    <p class="text-center case-studies-intro">Real results for real brands. See how we've helped our clients achieve their goals.</p>
 
-                    <div class="case-studies-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 50px;">
+                    <div class="case-studies-grid grid-auto-fit">
 
                         <!-- Case Study 1 -->
-                        <div class="case-study-card glass-card" data-category="content" data-industry="retail" data-impact="high" style="padding: 40px; border: 1px solid rgba(255,255,255,0.1); cursor: pointer; transition: var(--transition-2);" onclick="window.location.href='portfolio.html'">
-                            <div class="industry-badge" style="display: inline-block; background: rgba(201, 168, 76, 0.2); color: #c9a84c; padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">Retail</div>
-                            <h3 class="h3" style="color: var(--white); margin-bottom: 15px;">Tatekulu Barbershop</h3>
-                            <p class="card-text" style="color: var(--text-secondary); margin-bottom: 25px; line-height: 1.6;">Transformed local barbershop into a viral social media sensation with authentic content strategy.</p>
-                            <div class="results-summary" style="display: flex; gap: 20px; margin-bottom: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                        <div class="case-study-card glass-card case-study-clickable" data-category="content" data-industry="retail" data-impact="high" onclick="window.location.href='portfolio.html'">
+                            <div class="industry-badge-retail">Retail</div>
+                            <h3 class="h3 case-study-heading">Tatekulu Barbershop</h3>
+                            <p class="card-text case-study-text">Transformed local barbershop into a viral social media sensation with authentic content strategy.</p>
+                            <div class="results-summary results-summary-flex">
                                 <div class="stat-counter">
-                                    <span style="font-size: 1.5rem; font-weight: 900; color: #c9a84c; display: block;">300%</span>
-                                    <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Engagement</span>
+                                    <span class="stat-value stat-value-gold">300%</span>
+                                    <span class="stat-label">Engagement</span>
                                 </div>
                                 <div class="stat-counter">
-                                    <span style="font-size: 1.5rem; font-weight: 900; color: #c9a84c; display: block;">50K+</span>
-                                    <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Views</span>
+                                    <span class="stat-value stat-value-gold">50K+</span>
+                                    <span class="stat-label">Views</span>
                                 </div>
                             </div>
-                            <a href="portfolio.html" style="color: #c9a84c; font-size: 0.875rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: gap 0.3s ease;">View Case Study <ion-icon name="arrow-forward-outline"></ion-icon></a>
+                            <a href="portfolio.html" class="case-link-gold">View Case Study <ion-icon name="arrow-forward-outline"></ion-icon></a>
                         </div>
 
                         <!-- Case Study 2 -->
-                        <div class="case-study-card glass-card" data-category="digital" data-industry="government" data-impact="high" style="padding: 40px; border: 1px solid rgba(255,255,255,0.1); cursor: pointer; transition: var(--transition-2);" onclick="window.location.href='portfolio.html'">
-                            <div class="industry-badge" style="display: inline-block; background: rgba(0, 229, 255, 0.2); color: var(--cyan); padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">Government</div>
-                            <h3 class="h3" style="color: var(--white); margin-bottom: 15px;">NCRST Digital Transformation</h3>
-                            <p class="card-text" style="color: var(--text-secondary); margin-bottom: 25px; line-height: 1.6;">Modernized digital presence for Namibia's research council with improved user experience.</p>
-                            <div class="results-summary" style="display: flex; gap: 20px; margin-bottom: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                        <div class="case-study-card glass-card case-study-clickable" data-category="digital" data-industry="government" data-impact="high" onclick="window.location.href='portfolio.html'">
+                            <div class="industry-badge-government">Government</div>
+                            <h3 class="h3 case-study-heading">NCRST Digital Transformation</h3>
+                            <p class="card-text case-study-text">Modernized digital presence for Namibia's research council with improved user experience.</p>
+                            <div class="results-summary results-summary-flex">
                                 <div class="stat-counter">
-                                    <span style="font-size: 1.5rem; font-weight: 900; color: var(--cyan); display: block;">250%</span>
-                                    <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Traffic</span>
+                                    <span class="stat-value stat-value-cyan">250%</span>
+                                    <span class="stat-label">Traffic</span>
                                 </div>
                                 <div class="stat-counter">
-                                    <span style="font-size: 1.5rem; font-weight: 900; color: var(--cyan); display: block;">85%</span>
-                                    <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Satisfaction</span>
+                                    <span class="stat-value stat-value-cyan">85%</span>
+                                    <span class="stat-label">Satisfaction</span>
                                 </div>
                             </div>
-                            <a href="portfolio.html" style="color: var(--cyan); font-size: 0.875rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: gap 0.3s ease;">View Case Study <ion-icon name="arrow-forward-outline"></ion-icon></a>
+                            <a href="portfolio.html" class="case-link-cyan">View Case Study <ion-icon name="arrow-forward-outline"></ion-icon></a>
                         </div>
 
                         <!-- Case Study 3 -->
-                        <div class="case-study-card glass-card" data-category="events" data-industry="entertainment" data-impact="medium" style="padding: 40px; border: 1px solid rgba(255,255,255,0.1); cursor: pointer; transition: var(--transition-2);" onclick="window.location.href='portfolio.html'">
-                            <div class="industry-badge" style="display: inline-block; background: rgba(255, 230, 0, 0.2); color: #FFE600; padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">Entertainment</div>
-                            <h3 class="h3" style="color: var(--white); margin-bottom: 15px;">Music Festival Launch</h3>
-                            <p class="card-text" style="color: var(--text-secondary); margin-bottom: 25px; line-height: 1.6;">Produced and managed a landmark music festival with hybrid streaming capabilities.</p>
-                            <div class="results-summary" style="display: flex; gap: 20px; margin-bottom: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                        <div class="case-study-card glass-card case-study-clickable" data-category="events" data-industry="entertainment" data-impact="medium" onclick="window.location.href='portfolio.html'">
+                            <div class="industry-badge-entertainment">Entertainment</div>
+                            <h3 class="h3 case-study-heading">Music Festival Launch</h3>
+                            <p class="card-text case-study-text">Produced and managed a landmark music festival with hybrid streaming capabilities.</p>
+                            <div class="results-summary results-summary-flex">
                                 <div class="stat-counter">
-                                    <span style="font-size: 1.5rem; font-weight: 900; color: #FFE600; display: block;">10K+</span>
-                                    <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Attendees</span>
+                                    <span class="stat-value stat-value-yellow">10K+</span>
+                                    <span class="stat-label">Attendees</span>
                                 </div>
                                 <div class="stat-counter">
-                                    <span style="font-size: 1.5rem; font-weight: 900; color: #FFE600; display: block;">5K+</span>
-                                    <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Live Stream</span>
+                                    <span class="stat-value stat-value-yellow">5K+</span>
+                                    <span class="stat-label">Live Stream</span>
                                 </div>
                             </div>
-                            <a href="portfolio.html" style="color: #FFE600; font-size: 0.875rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: gap 0.3s ease;">View Case Study <ion-icon name="arrow-forward-outline"></ion-icon></a>
+                            <a href="portfolio.html" class="case-link-yellow">View Case Study <ion-icon name="arrow-forward-outline"></ion-icon></a>
                         </div>
 
                     </div>
 
-                    <div style="text-align: center; margin-top: 50px;">
+                    <div class="text-center-margin">
                         <a href="portfolio.html" class="btn btn-primary has-before has-after">View All Case Studies</a>
                     </div>
                 </div>
@@ -429,28 +425,28 @@
             <!-- 
         - #VISION
       -->
-            <section class="section vision" id="vision" aria-label="purpose" style="background-color: var(--bg-primary); padding-block: 80px; position: relative; overflow: hidden;">
+            <section class="section vision section-vision" id="vision" aria-label="purpose">
                 <div class="container">
-                    <div class="grid-list" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px;">
+                    <div class="grid-list grid-vision">
 
                         <!-- VISION CARD -->
-                        <div class="glass-card" style="padding: 40px; border-left: 5px solid var(--hot-pink); background: rgba(255,255,255,0.02); height: 100%; display: flex; flex-direction: column;">
+                        <div class="glass-card glass-card-vision">
                             <p class="section-subtitle has-before">Our Vision</p>
-                            <h2 class="h2 section-title" style="font-size: 2.2rem; margin-top: 10px;">
+                            <h2 class="h2 section-title vision-title">
                                 THE FUTURE OF <span class="has-before">CREATIVE</span>
                             </h2>
-                            <p class="section-text" style="font-size: 1.6rem; color: var(--text-main); line-height: 1.6; margin-top: 20px; font-weight: 500; font-style: italic; flex-grow: 1;">
+                            <p class="section-text vision-text">
                                 "To build a marketing agency that can compete internationally, attracting global clients that pay in first world standards while empowering the African creative ecosystem to set new benchmarks in excellence."
                             </p>
                         </div>
 
                         <!-- MISSION CARD -->
-                        <div class="glass-card" style="padding: 40px; border-left: 5px solid var(--cyan); background: rgba(255,255,255,0.02); height: 100%; display: flex; flex-direction: column;">
+                        <div class="glass-card glass-card-mission">
                             <p class="section-subtitle has-before" style="--color: var(--cyan);">Our Mission</p>
-                            <h2 class="h2 section-title" style="font-size: 2.2rem; margin-top: 10px;">
+                            <h2 class="h2 section-title vision-title">
                                 INNOVATIVE <span class="has-before" style="--color: var(--cyan);">STABILITY</span>
                             </h2>
-                            <p class="section-text" style="font-size: 1.6rem; color: var(--text-main); line-height: 1.6; margin-top: 20px; font-weight: 500;">
+                            <p class="section-text mission-text">
                                 To keep brands on the forefront of innovative marketing. We make it our responsibility to keep our clients well-adjusted for stability and growth in the marketplace.
                             </p>
                         </div>
@@ -471,13 +467,12 @@
             <!-- 
         - #QUOTE
       -->
-            <section class="section quote" aria-label="brand quote" style="padding-block: 100px; background: var(--bg-primary);">
-                <div class="container" style="text-align: center;">
-                    <h3 class="h2 glitch-text" data-text="&ldquo;Every question deserves a creative answer&rdquo;" style="font-style: italic; font-weight: 300; opacity: 0.9; letter-spacing: 1px; max-width: 800px; margin-inline: auto; line-height: 1.4;">
-                        &ldquo;Every question <span style="color: var(--hot-pink); font-weight: 700;">deserves</span> a creative answer&rdquo;
+            <section class="section quote section-quote" aria-label="brand quote">
+                <div class="container container-center">
+                    <h3 class="h2 glitch-text quote-text" data-text="&ldquo;Every question deserves a creative answer&rdquo;">
+                        &ldquo;Every question <span class="quote-emphasis">deserves</span> a creative answer&rdquo;
                     </h3>
-                    <div style="width: 40px; height: 2px; background: var(--hot-pink); margin: 30px auto 0; opacity: 0.5;">
-                    </div>
+                    <div class="quote-divider"></div>
                 </div>
             </section>
 
@@ -495,10 +490,10 @@
                     <li>
                         <div class="service-card" data-color="teal">
                             <div class="card-icon">
-                                <ion-icon name="videocam-outline" aria-hidden="true" style="font-size: 30px; color: hsl(174, 77%, 50%);"></ion-icon>
+                                <ion-icon name="videocam-outline" aria-hidden="true" class="service-icon-cyan"></ion-icon>
                             </div>
                             <h3 class="h3 card-title">Content Production</h3>
-                            <p class="card-text" style="margin-top: 10px; color: var(--text-secondary);">
+                            <p class="card-text service-card-text">
                                 Video production, photography, and graphic design
                             </p>
                         </div>
@@ -507,10 +502,10 @@
                     <li>
                         <div class="service-card" data-color="purple">
                             <div class="card-icon">
-                                <ion-icon name="desktop-outline" aria-hidden="true" style="font-size: 30px; color: hsl(267, 76%, 57%);"></ion-icon>
+                                <ion-icon name="desktop-outline" aria-hidden="true" class="service-icon-purple"></ion-icon>
                             </div>
                             <h3 class="h3 card-title">Digital Management</h3>
-                            <p class="card-text" style="margin-top: 10px; color: var(--text-secondary);">
+                            <p class="card-text service-card-text">
                                 Website design & management, social media management
                             </p>
                         </div>
@@ -519,10 +514,10 @@
                     <li>
                         <div class="service-card" data-color="orange">
                             <div class="card-icon">
-                                <ion-icon name="calendar-outline" aria-hidden="true" style="font-size: 30px; color: hsl(343, 98%, 60%);"></ion-icon>
+                                <ion-icon name="calendar-outline" aria-hidden="true" class="service-icon-pink"></ion-icon>
                             </div>
                             <h3 class="h3 card-title">Event Management</h3>
-                            <p class="card-text" style="margin-top: 10px; color: var(--text-secondary);">
+                            <p class="card-text service-card-text">
                                 Corporate events, brand activations, conferences, launches
                             </p>
                         </div>
@@ -531,10 +526,10 @@
                     <li>
                         <div class="service-card" data-color="pink">
                             <div class="card-icon">
-                                <ion-icon name="mic-outline" aria-hidden="true" style="font-size: 30px; color: hsl(343, 98%, 60%);"></ion-icon>
+                                <ion-icon name="mic-outline" aria-hidden="true" class="service-icon-pink"></ion-icon>
                             </div>
                             <h3 class="h3 card-title">Podcasting</h3>
-                            <p class="card-text" style="margin-top: 10px; color: var(--text-secondary);">
+                            <p class="card-text service-card-text">
                                 Video & audio podcast production, studio & on-location podcasts
                             </p>
                         </div>
@@ -1151,7 +1146,6 @@
     <!--
     - custom js link
   -->
-    <script src="./assets/js/navbar.js" defer></script>
     <script src="./assets/js/script.js" defer></script>
 
     <!-- 

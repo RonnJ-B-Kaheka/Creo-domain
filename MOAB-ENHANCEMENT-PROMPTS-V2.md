@@ -306,7 +306,7 @@
 
 **Current Issues:**
 - Chatbot icon exists but chatbot is NOT responding to messages
-- Chatbot positioned on wrong side of page (user wants opposite side)
+- Chatbot positioned on wrong side of page (user wants opposite side, above the "to top of page" arrow button)
 - No proper message handling or conversation context
 - No API integration for intelligent responses
 - Possibly missing event listeners

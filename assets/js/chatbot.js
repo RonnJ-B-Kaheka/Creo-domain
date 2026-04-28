@@ -5,112 +5,112 @@
 
 const chatbotKnowledge = {
     intents: [{
-        keywords: ["service", "what do you do", "pillars", "offer", "services"],
-        responses: [
-            "We specialize in Content Production, Digital Management, Event Management, and Podcasting. Each service is tailored to elevate your brand presence.",
-            "Our ecosystem is built on end-to-end creative solutions. We handle everything from high-end video sets to digital growth strategies.",
-            "Creo Media isn't just an agency; we're a creative powerhouse focusing on Vision, Strategy, and global-standard Execution."
-        ]
-    },
-    {
-        keywords: ["namibia", "location", "based", "windhoek", "where"],
-        responses: [
-            "Our headquarters is strategically located in Windhoek, Namibia. From the heart of Africa, we deliver global standards.",
-            "We are Namibian-born but globally focused. We operate out of Windhoek to bridge the gap between African creativity and the world.",
-            "You'll find us in Windhoek, Namibia—defining the modern digital landscape of the region."
-        ]
-    },
-    {
-        keywords: ["price", "cost", "standard", "budget", "expensive", "pricing"],
-        responses: [
-            "Our pricing is customized based on project scope and requirements. We offer transparent packages designed to deliver premium results at competitive rates.",
-            "Every project is unique. We attract global clients who value first-world standards of excellence. Let's discuss your specific mission.",
-            "Our pricing reflects the high-energy brutalism and technical precision we bring to every frame and pixel."
-        ]
-    },
-    {
-        keywords: ["contact", "email", "talk", "reach", "call", "hello"],
-        responses: [
-            "The most direct line is contact.creomedia@gmail.com. Or head to our Contact page to start the briefing process.",
-            "Ready to reach the forefront? Let's talk. You can find our details on the Contact page or ping contact.creomedia@gmail.com.",
-            "Communication is the first step to innovation. Use our Contact link or email us at contact.creomedia@gmail.com."
-        ]
-    },
-    {
-        keywords: ["aim", "vision", "mission", "goal", "philosophy", "objectives"],
-        responses: [
-            "Our vision? To compete internationally and empower the African creative ecosystem. We don't just follow standards—we set them.",
-            "Every question deserves a creative answer. That's our brand heartbeat. We keep brands at the forefront of innovation.",
-            "We make it our responsibility to keep our clients well-adjusted for stability and growth in the marketplace."
-        ]
-    },
-    {
-        keywords: ["who", "leadership", "team", "founder", "creo media"],
-        responses: [
-            "Our leadership is driven by a singular mission to elevate African content. Check out our 'About' page for the full intelligence on the team.",
-            "We are a collective of designers, creators, and strategists obsessed with perfection. We are Creo Media."
-        ]
-    },
-    {
-        keywords: ["time", "timeline", "delivery", "schedule", "deadline", "how long", "project take", "duration"],
-        responses: [
-            "Timeline varies by project complexity. Simple projects may take 2-3 weeks, while comprehensive campaigns can take 2-3 months. We provide estimates during consultation."
-        ]
-    },
-    {
-        keywords: ["international", "global", "worldwide", "abroad", "international clients", "foreign clients"],
-        responses: [
-            "Absolutely! Though based in Namibia, we serve clients globally with our advanced digital collaboration tools and global creator network."
-        ]
-    },
-    {
-        keywords: ["portfolio", "examples", "work", "case study", "past work", "previous projects", "projects", "work experience"],
-        responses: [
-            "Certainly! Visit our Portfolio section to see diverse projects across various industries. We showcase our expertise in content production, digital management, events, and podcasting."
-        ]
-    },
-    {
-        keywords: ["process", "workflow", "steps", "procedure", "process", "workflow"],
-        responses: [
-            "After form submission, we schedule a 15-minute Discovery Call. If there's alignment, we issue a formal Protocol Proposal within 24 hours."
-        ]
-    },
-    {
-        keywords: ["payment", "billing", "invoice", "money", "pricing"],
-        responses: [
-            "We offer transparent pricing with options for deposits and milestone-based billing. Payment terms are discussed during the proposal phase."
-        ]
-    },
-    {
-        keywords: ["support", "help", "assistance", "maintenance", "ongoing support", "after completion", "post-project support", "customer support"],
-        responses: [
-            "Absolutely! We offer maintenance and support packages to ensure sustained success of your project. These can be customized to suit your specific requirements."
-        ]
-    },
-    {
-        keywords: ["content", "production", "video", "photography", "graphic design", "copywriting", "social media content"],
-        responses: [
-            "Our content production covers video, photography, graphic design, copywriting, and social media content."
-        ]
-    },
-    {
-        keywords: ["digital", "management", "strategy", "online", "brand presence", "digital marketing", "social media management", "website design"],
-        responses: [
-            "Digital management includes website design, social media management, digital marketing strategies, and online brand presence."
-        ]
-    },
-    {
-        keywords: ["event", "management", "conference", "launch", "corporate events", "brand activations", "product launches", "brand experiences"],
-        responses: [
-            "Event management covers corporate events, brand activations, conferences, product launches, and brand experiences."
-        ]
-    },
-    {
-        keywords: ["podcasting", "audio", "studio", "recording", "podcast production", "audio production", "studio recording", "on-location recording", "podcast editing", "audio distribution"],
-        responses: [
-            "Our podcasting services include video & audio production, studio & on-location recording, editing, and distribution."
-        ]
-    }
+            keywords: ["service", "what do you do", "pillars", "offer", "services"],
+            responses: [
+                "We specialize in Content Production, Digital Management, Event Management, and Podcasting. Each service is tailored to elevate your brand presence.",
+                "Our ecosystem is built on end-to-end creative solutions. We handle everything from high-end video sets to digital growth strategies.",
+                "Creo Media isn't just an agency; we're a creative powerhouse focusing on Vision, Strategy, and global-standard Execution."
+            ]
+        },
+        {
+            keywords: ["namibia", "location", "based", "windhoek", "where"],
+            responses: [
+                "Our headquarters is strategically located in Windhoek, Namibia. From the heart of Africa, we deliver global standards.",
+                "We are Namibian-born but globally focused. We operate out of Windhoek to bridge the gap between African creativity and the world.",
+                "You'll find us in Windhoek, Namibia—defining the modern digital landscape of the region."
+            ]
+        },
+        {
+            keywords: ["price", "cost", "standard", "budget", "expensive", "pricing"],
+            responses: [
+                "Our pricing is customized based on project scope and requirements. We offer transparent packages designed to deliver premium results at competitive rates.",
+                "Every project is unique. We attract global clients who value first-world standards of excellence. Let's discuss your specific mission.",
+                "Our pricing reflects the high-energy brutalism and technical precision we bring to every frame and pixel."
+            ]
+        },
+        {
+            keywords: ["contact", "email", "talk", "reach", "call", "hello"],
+            responses: [
+                "The most direct line is contact.creomedia@gmail.com. Or head to our Contact page to start the briefing process.",
+                "Ready to reach the forefront? Let's talk. You can find our details on the Contact page or ping contact.creomedia@gmail.com.",
+                "Communication is the first step to innovation. Use our Contact link or email us at contact.creomedia@gmail.com."
+            ]
+        },
+        {
+            keywords: ["aim", "vision", "mission", "goal", "philosophy", "objectives"],
+            responses: [
+                "Our vision? To compete internationally and empower the African creative ecosystem. We don't just follow standards—we set them.",
+                "Every question deserves a creative answer. That's our brand heartbeat. We keep brands at the forefront of innovation.",
+                "We make it our responsibility to keep our clients well-adjusted for stability and growth in the marketplace."
+            ]
+        },
+        {
+            keywords: ["who", "leadership", "team", "founder", "creo media"],
+            responses: [
+                "Our leadership is driven by a singular mission to elevate African content. Check out our 'About' page for the full intelligence on the team.",
+                "We are a collective of designers, creators, and strategists obsessed with perfection. We are Creo Media."
+            ]
+        },
+        {
+            keywords: ["time", "timeline", "delivery", "schedule", "deadline", "how long", "project take", "duration"],
+            responses: [
+                "Timeline varies by project complexity. Simple projects may take 2-3 weeks, while comprehensive campaigns can take 2-3 months. We provide estimates during consultation."
+            ]
+        },
+        {
+            keywords: ["international", "global", "worldwide", "abroad", "international clients", "foreign clients"],
+            responses: [
+                "Absolutely! Though based in Namibia, we serve clients globally with our advanced digital collaboration tools and global creator network."
+            ]
+        },
+        {
+            keywords: ["portfolio", "examples", "work", "case study", "past work", "previous projects", "projects", "work experience"],
+            responses: [
+                "Certainly! Visit our Portfolio section to see diverse projects across various industries. We showcase our expertise in content production, digital management, events, and podcasting."
+            ]
+        },
+        {
+            keywords: ["process", "workflow", "steps", "procedure", "process", "workflow"],
+            responses: [
+                "After form submission, we schedule a 15-minute Discovery Call. If there's alignment, we issue a formal Protocol Proposal within 24 hours."
+            ]
+        },
+        {
+            keywords: ["payment", "billing", "invoice", "money", "pricing"],
+            responses: [
+                "We offer transparent pricing with options for deposits and milestone-based billing. Payment terms are discussed during the proposal phase."
+            ]
+        },
+        {
+            keywords: ["support", "help", "assistance", "maintenance", "ongoing support", "after completion", "post-project support", "customer support"],
+            responses: [
+                "Absolutely! We offer maintenance and support packages to ensure sustained success of your project. These can be customized to suit your specific requirements."
+            ]
+        },
+        {
+            keywords: ["content", "production", "video", "photography", "graphic design", "copywriting", "social media content"],
+            responses: [
+                "Our content production covers video, photography, graphic design, copywriting, and social media content."
+            ]
+        },
+        {
+            keywords: ["digital", "management", "strategy", "online", "brand presence", "digital marketing", "social media management", "website design"],
+            responses: [
+                "Digital management includes website design, social media management, digital marketing strategies, and online brand presence."
+            ]
+        },
+        {
+            keywords: ["event", "management", "conference", "launch", "corporate events", "brand activations", "product launches", "brand experiences"],
+            responses: [
+                "Event management covers corporate events, brand activations, conferences, product launches, and brand experiences."
+            ]
+        },
+        {
+            keywords: ["podcasting", "audio", "studio", "recording", "podcast production", "audio production", "studio recording", "on-location recording", "podcast editing", "audio distribution"],
+            responses: [
+                "Our podcasting services include video & audio production, studio & on-location recording, editing, and distribution."
+            ]
+        }
     ],
     default: [
         "That's an interesting question. I'm optimized for creative strategy. Try asking about our Services, Pricing, or how to Contact us.",
@@ -134,35 +134,35 @@ const chatbotKnowledge = {
     },
     // Enhanced FAQs for better matching
     enhancedFaqs: [{
-        keywords: ["refund", "policy", "money back", "return", "refund policy", "cancellation", "cancellation policy"],
-        responses: [
-            "We offer project-specific refund policies detailed in our contract terms. Generally, refunds are evaluated based on project stage and deliverable completion."
-        ]
-    },
-    {
-        keywords: ["brand consistency", "consistency", "brand guidelines", "identity", "standards", "branding"],
-        responses: [
-            "We create comprehensive brand guidelines and style guides to maintain consistency across all touchpoints and platforms for your brand."
-        ]
-    },
-    {
-        keywords: ["technology stack", "tech stack", "programming languages", "tools", "platforms", "development tools", "software development", "coding languages"],
-        responses: [
-            "We leverage modern technologies including React, Vue, Next.js, Node.js, and cloud platforms like AWS and Google Cloud, tailored to project requirements."
-        ]
-    },
-    {
-        keywords: ["revisions", "feedback", "changes", "iterations", "revision history", "iteration process"],
-        responses: [
-            "We include a specified number of revision rounds in our contracts. We encourage structured feedback to ensure efficient project iteration and client satisfaction."
-        ]
-    },
-    {
-        keywords: ["response time", "response", "reply time", "how long to reply", "answer time", "customer service", "support response time"],
-        responses: [
-            "We review all inquiries within 12 business hours. For urgent production requests, our executive team is notified immediately."
-        ]
-    }
+            keywords: ["refund", "policy", "money back", "return", "refund policy", "cancellation", "cancellation policy"],
+            responses: [
+                "We offer project-specific refund policies detailed in our contract terms. Generally, refunds are evaluated based on project stage and deliverable completion."
+            ]
+        },
+        {
+            keywords: ["brand consistency", "consistency", "brand guidelines", "identity", "standards", "branding"],
+            responses: [
+                "We create comprehensive brand guidelines and style guides to maintain consistency across all touchpoints and platforms for your brand."
+            ]
+        },
+        {
+            keywords: ["technology stack", "tech stack", "programming languages", "tools", "platforms", "development tools", "software development", "coding languages"],
+            responses: [
+                "We leverage modern technologies including React, Vue, Next.js, Node.js, and cloud platforms like AWS and Google Cloud, tailored to project requirements."
+            ]
+        },
+        {
+            keywords: ["revisions", "feedback", "changes", "iterations", "revision history", "iteration process"],
+            responses: [
+                "We include a specified number of revision rounds in our contracts. We encourage structured feedback to ensure efficient project iteration and client satisfaction."
+            ]
+        },
+        {
+            keywords: ["response time", "response", "reply time", "how long to reply", "answer time", "customer service", "support response time"],
+            responses: [
+                "We review all inquiries within 12 business hours. For urgent production requests, our executive team is notified immediately."
+            ]
+        }
     ]
 };
 
@@ -181,7 +181,8 @@ class CreoChatbot {
         this.addQuickActions();
         this.addKeyboardShortcut();
         if (this.messageHistory.length === 0) {
-            this.greet();
+            // Don't auto-greet - wait for user interaction
+            // this.greet();
         } else {
             this.restoreMessages();
         }
@@ -211,22 +212,22 @@ class CreoChatbot {
     createUI() {
         const chatbotHTML = `
             <div id="creo-chatbot" class="creo-chatbot">
-                <div class="chat-window glass-card">
+                <div class="chat-window glass-card" role="dialog" aria-modal="true" aria-labelledby="chat-title" aria-hidden="true">
                     <div class="chat-header">
                         <div class="header-info">
                             <div class="status-dot"></div>
-                            <span class="bot-name">ORION AI</span>
+                            <span class="bot-name" id="chat-title">ORION AI</span>
                         </div>
-                        <button class="chat-close"><ion-icon name="close-outline"></ion-icon></button>
+                        <button class="chat-close" aria-label="Close chat"><ion-icon name="close-outline"></ion-icon></button>
                     </div>
-                    <div id="chat-messages" class="chat-messages"></div>
+                    <div id="chat-messages" class="chat-messages" role="log" aria-live="polite"></div>
                     <div id="typing-indicator" class="typing-indicator">Orion is thinking...</div>
                     <div class="chat-input-area">
-                        <input type="text" id="chat-input" placeholder="Ask Orion anything..." autocomplete="off">
-                        <button id="chat-send"><ion-icon name="paper-plane-outline"></ion-icon></button>
+                        <input type="text" id="chat-input" placeholder="Ask Orion anything..." autocomplete="off" aria-label="Ask Orion anything">
+                        <button id="chat-send" aria-label="Send message"><ion-icon name="paper-plane-outline"></ion-icon></button>
                     </div>
                 </div>
-                <button class="chat-trigger">
+                <button class="chat-trigger" aria-label="Open chat with Orion" aria-expanded="false" aria-controls="creo-chatbot">
                     <img src="./assets/images/robot-avatar.png" alt="Orion AI" class="robot-avatar-img">
                 </button>
             </div>
@@ -243,6 +244,14 @@ class CreoChatbot {
         this.messagesContainer = document.querySelector('#chat-messages');
         this.closeBtn = document.querySelector('.chat-close');
         this.typingIndicator = document.querySelector('#typing-indicator');
+
+        if (this.window) {
+            this.window.setAttribute('aria-hidden', 'true');
+        }
+
+        if (this.messagesContainer) {
+            this.messagesContainer.setAttribute('aria-live', 'polite');
+        }
     }
 
     addEventListeners() {
@@ -251,6 +260,16 @@ class CreoChatbot {
         this.sendBtn.addEventListener('click', () => this.handleSend());
         this.input.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') this.handleSend();
+        });
+        document.addEventListener('click', (e) => {
+            if (this.isOpen && !this.window.contains(e.target) && !this.trigger.contains(e.target)) {
+                this.toggle();
+            }
+        });
+        document.addEventListener('keydown', (e) => {
+            if (this.isOpen && e.key === 'Escape') {
+                this.toggle();
+            }
         });
     }
 
@@ -298,7 +317,7 @@ class CreoChatbot {
 
     handleQuickAction(e) {
         const action = e.currentTarget.dataset.action;
-        switch(action) {
+        switch (action) {
             case 'portfolio':
                 this.addMessage("Show me the portfolio", 'user');
                 this.addMessage("Certainly! Visit our <a href='portfolio.html' target='_blank' style='color: var(--cyan); text-decoration: underline;'>Portfolio section</a> to see diverse projects across various industries. We showcase our expertise in content production, digital management, events, and podcasting.", 'bot');
@@ -332,6 +351,8 @@ class CreoChatbot {
         this.isOpen = !this.isOpen;
         this.window.classList.toggle('active', this.isOpen);
         this.trigger.classList.toggle('active', this.isOpen);
+        this.trigger.setAttribute('aria-expanded', String(this.isOpen));
+        this.window.setAttribute('aria-hidden', String(!this.isOpen));
 
         // Random spin animation
         const spinClasses = ['spin-cw', 'spin-ccw', 'spin-double'];
@@ -340,7 +361,9 @@ class CreoChatbot {
         this.trigger.classList.add(randomClass);
         setTimeout(() => this.trigger.classList.remove(randomClass), 1000);
 
-        if (this.isOpen) this.input.focus();
+        if (this.isOpen) {
+            this.input.focus();
+        }
     }
 
     greet() {

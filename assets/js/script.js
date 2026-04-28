@@ -36,7 +36,7 @@ const addEventOnElem = function(elem, type, callback) {
  */
 
 // Safe element selection with error handling
-let navbar, navTogglers, navbarLinks, overlay;
+let navbar, navTogglers, navbarLinks, overlay, navActions;
 
 // Initialize all navbar functionality after DOM is loaded
 function initNavbar() {
@@ -45,6 +45,10 @@ function initNavbar() {
     navTogglers = document.querySelectorAll("[data-nav-toggler]");
     navbarLinks = document.querySelectorAll("[data-nav-link]");
     overlay = document.querySelector("[data-overlay]");
+    navActions = document.querySelector('.nav-actions');
+
+    const navOpenBtn = document.querySelector('.nav-open-btn');
+    const navCloseBtn = document.querySelector('.nav-close-btn');
 
     // Validate elements
     if (!navbar) {
@@ -57,52 +61,71 @@ function initNavbar() {
         return;
     }
 
+    if (navOpenBtn) {
+        navOpenBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    if (navCloseBtn) {
+        navCloseBtn.setAttribute('aria-label', 'Close menu');
+    }
+
+    if (navbar) {
+        navbar.setAttribute('aria-hidden', 'true');
+    }
+
+    if (overlay) {
+        overlay.setAttribute('aria-hidden', 'true');
+    }
+
     // Define toggle function
     const toggleNavbar = function(event) {
-        // Only prevent default for button clicks, not overlay
-        if (event && event.target.closest('.nav-open-btn, .nav-close-btn')) {
+        if (event && event.currentTarget && event.currentTarget.matches('.nav-open-btn, .nav-close-btn')) {
             event.preventDefault();
         }
 
         try {
-            // Ensure navbar exists
             if (!navbar) {
                 console.error('ERROR: Navbar element not available');
                 return;
             }
 
-            // Toggle navbar active class
-            navbar.classList.toggle('active');
+            const menuIsOpen = navbar.classList.contains('active');
 
-            // Toggle hamburger animation on open button
-            const navOpenBtn = document.querySelector('.nav-open-btn');
+            if (menuIsOpen) {
+                closeNavbar();
+                return;
+            }
+
+            navbar.classList.add('active');
+            navbar.setAttribute('aria-hidden', 'false');
+
             if (navOpenBtn) {
-                navOpenBtn.classList.toggle('is-active', navbar.classList.contains('active'));
-                navOpenBtn.setAttribute('aria-expanded', navbar.classList.contains('active'));
+                navOpenBtn.classList.add('is-active');
+                navOpenBtn.setAttribute('aria-expanded', 'true');
             }
 
-            // Fade nav actions when navbar is active (only on desktop)
-            const navActions = document.querySelector('.nav-actions');
-            if (navActions) {
-                if (navbar.classList.contains('active') && window.innerWidth >= 992) {
-                    navActions.classList.add('faded');
-                } else {
-                    navActions.classList.remove('faded');
-                }
-            }
-
-            // Toggle overlay if it exists
             if (overlay) {
-                overlay.classList.toggle('active');
+                overlay.classList.add('active');
+                overlay.setAttribute('aria-hidden', 'false');
             }
 
-            // Setup focus trap when opening
-            if (navbar.classList.contains('active')) {
-                setupFocusTrap();
-            } else {
-                removeFocusTrap();
+            if (navActions) {
+                navActions.classList.add('faded');
             }
 
+            const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+            if (scrollBarWidth > 0) {
+                document.body.style.paddingRight = `${scrollBarWidth}px`;
+            }
+            document.body.style.overflow = 'hidden';
+
+            setupFocusTrap();
+
+            setTimeout(() => {
+                if (navbarLinks[0]) {
+                    navbarLinks[0].focus();
+                }
+            }, 100);
         } catch (error) {
             console.error('Error in toggleNavbar function:', error);
         }
@@ -110,7 +133,6 @@ function initNavbar() {
 
     // Attach event listeners
     if (navTogglers.length > 0) {
-        // Use direct event listener attachment for better reliability
         navTogglers.forEach((toggler) => {
             toggler.addEventListener('click', toggleNavbar);
         });
@@ -118,8 +140,15 @@ function initNavbar() {
         console.error('CRITICAL ERROR: No navbar toggler elements found');
     }
 
+    // Close menu on Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navbar.classList.contains('active')) {
+            e.preventDefault();
+            closeNavbar();
+        }
+    });
+
     // Setup other navbar listeners
-    setupNavTogglers();
     setupNavbarLinkListeners();
     setupOverlayListener();
 }
@@ -140,12 +169,14 @@ function closeNavbar() {
     try {
         if (navbar) {
             navbar.classList.remove("active");
+            navbar.setAttribute('aria-hidden', 'true');
             // Remove focus trap when closing navbar
             removeFocusTrap();
         }
 
         if (overlay) {
             overlay.classList.remove("active");
+            overlay.setAttribute('aria-hidden', 'true');
         }
 
         // Reset hamburger animation
@@ -153,6 +184,7 @@ function closeNavbar() {
         if (navOpenBtn) {
             navOpenBtn.classList.remove('is-active');
             navOpenBtn.setAttribute('aria-expanded', 'false');
+            navOpenBtn.focus();
         }
 
         // Unfade nav actions when navbar is closed
@@ -160,6 +192,9 @@ function closeNavbar() {
         if (navActions) {
             navActions.classList.remove('faded');
         }
+
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
     } catch (error) {
         console.error('Error closing navbar:', error);
     }
@@ -249,39 +284,27 @@ function removeFocusTrap() {
     }
 }
 
-// Add event listener to nav togglers to handle focus trap
-function setupNavTogglers() {
-    if (navTogglers && navTogglers.length > 0) {
-        navTogglers.forEach(toggler => {
-            toggler.addEventListener('click', function() {
-                // Small delay to ensure the navbar is rendered before setting up focus trap
-                setTimeout(() => {
-                    if (navbar && navbar.classList.contains('active')) {
-                        setupFocusTrap();
-                    }
-                }, 100);
-            });
-        });
-    }
-}
-
 // Close navbar when clicking on a link
 function setupNavbarLinkListeners() {
     if (navbarLinks && navbarLinks.length > 0) {
         addEventOnElem(navbarLinks, "click", function(e) {
-            // Don't close navbar for mega menu triggers on desktop (they need to toggle menu)
             const isMegaMenuTrigger = this.classList.contains('mega-menu-trigger');
-            const isDesktop = window.innerWidth > 991;
-            
-            if (!isMegaMenuTrigger || !isDesktop) {
-                // For regular links or mega menu links on mobile, let them navigate normally
-                // The browser will handle the navigation automatically
-                // Close navbar after a short delay to allow navigation to start
+            const isDesktop = window.innerWidth >= 992;
+
+            // On desktop, mega menu triggers should navigate to their href
+            // On mobile, they should just toggle the menu without navigating
+            if (isMegaMenuTrigger && isDesktop) {
+                // Let the link navigate normally on desktop
+                setTimeout(() => {
+                    closeNavbar();
+                }, 50);
+            } else if (!isMegaMenuTrigger || !isDesktop) {
+                // For regular links or mega menu links on mobile
                 setTimeout(() => {
                     closeNavbar();
                 }, 100);
             }
-            
+
             updateActiveNavLink(this);
         });
 
@@ -295,14 +318,16 @@ function setupNavbarLinkListeners() {
 // Update active navigation link
 function updateActiveNavLink(clickedLink) {
     try {
-        // Remove active class from all links
+        // Remove active state from all links
         navbarLinks.forEach(link => {
             link.classList.remove('active');
+            link.removeAttribute('aria-current');
         });
 
-        // Add active class to clicked link
+        // Add active state to the clicked link
         if (clickedLink) {
             clickedLink.classList.add('active');
+            clickedLink.setAttribute('aria-current', 'page');
         }
     } catch (error) {
         console.error('Error updating active nav link:', error);
@@ -319,27 +344,33 @@ function setActiveNavLinkByPage() {
 
         navbarLinks.forEach(link => {
             link.classList.remove('active');
+            link.removeAttribute('aria-current');
+
             const href = link.getAttribute('href') || '';
             const linkPage = href.split('/').pop().replace('.html', '').toLowerCase();
+
+            let isActive = false;
 
             // Direct match
             if (currentPageName === linkPage ||
                 (currentPageName === 'index' && linkPage === '#home') ||
                 (currentPageName === '' && linkPage === '#home')) {
-                link.classList.add('active');
-                return;
+                isActive = true;
             }
 
             // Service sub-page handling: if on a service sub-page, highlight Services
-            if (pathParts.includes('services') && linkPage === 'service') {
-                link.classList.add('active');
-                return;
+            if (!isActive && pathParts.includes('services') && linkPage === 'service') {
+                isActive = true;
             }
 
             // Portfolio sub-page handling
-            if (pathParts.includes('portfolio') && linkPage === 'portfolio') {
+            if (!isActive && pathParts.includes('portfolio') && linkPage === 'portfolio') {
+                isActive = true;
+            }
+
+            if (isActive) {
                 link.classList.add('active');
-                return;
+                link.setAttribute('aria-current', 'page');
             }
         });
     } catch (error) {
@@ -727,7 +758,7 @@ function initContactForm() {
 
     // Form submission
     if (form) {
-        form.addEventListener('submit', async (e) => {
+        form.addEventListener('submit', async(e) => {
             e.preventDefault();
 
             if (!validateStep(currentStep)) {
@@ -871,15 +902,15 @@ function toggleFAQ(button) {
                 otherIcon.setAttribute('name', 'chevron-forward-outline');
             }
 
-            // Remove active state styling
-            otherButton.style.background = 'transparent';
-            otherButton.style.borderColor = '';
+            otherButton.classList.remove('active');
         }
     });
 
     // Toggle current FAQ
     if (!isOpen) {
         button.setAttribute('aria-expanded', 'true');
+        button.classList.add('active');
+
         if (content) {
             content.style.maxHeight = content.scrollHeight + 'px';
             content.style.opacity = '1';
@@ -888,14 +919,12 @@ function toggleFAQ(button) {
             icon.style.transform = 'rotate(90deg)';
             icon.setAttribute('name', 'chevron-down-outline');
         }
-        // Add active state styling with gold accent
-        button.style.background = 'rgba(201, 168, 76, 0.1)';
-        button.style.borderColor = 'rgba(201, 168, 76, 0.3)';
-        
-        // Track analytics
+
         trackFAQClick(button);
     } else {
         button.setAttribute('aria-expanded', 'false');
+        button.classList.remove('active');
+
         if (content) {
             content.style.maxHeight = '0px';
             content.style.opacity = '0';
@@ -904,9 +933,6 @@ function toggleFAQ(button) {
             icon.style.transform = 'rotate(0deg)';
             icon.setAttribute('name', 'chevron-forward-outline');
         }
-        // Remove active state styling
-        button.style.background = 'transparent';
-        button.style.borderColor = '';
     }
 }
 
@@ -948,12 +974,12 @@ function trackFAQClick(button) {
     // Track FAQ opens in localStorage for analytics
     const questionText = button.textContent.trim();
     const faqStats = JSON.parse(localStorage.getItem('faqStats') || '{}');
-    
+
     if (!faqStats[questionText]) {
         faqStats[questionText] = 0;
     }
     faqStats[questionText]++;
-    
+
     localStorage.setItem('faqStats', JSON.stringify(faqStats));
 }
 
@@ -1369,7 +1395,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('modalTags').innerHTML = `<span class="modal-tag">${data.category}</span>`;
         document.getElementById('modalChallenge').textContent = data.challenge;
         document.getElementById('modalApproach').textContent = data.approach;
-        
+
         // Populate results
         const resultsGrid = document.getElementById('modalResults');
         resultsGrid.innerHTML = Object.entries(data.results).map(([key, result]) => `
@@ -2272,8 +2298,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     megaMenuTriggers.forEach(trigger => {
         trigger.addEventListener('click', function(e) {
-            // Only toggle on desktop - mega menus are hidden on mobile
-            if (window.innerWidth > 991) {
+            // On desktop, let the link navigate normally (don't prevent default)
+            // The hover will show the mega menu, clicking will navigate
+            if (window.innerWidth <= 991) {
+                // On mobile, toggle the menu
                 e.preventDefault();
                 const parentItem = this.closest('.navbar-item');
                 const isExpanded = this.getAttribute('aria-expanded') === 'true';
@@ -2290,7 +2318,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 parentItem.classList.toggle('active');
                 this.setAttribute('aria-expanded', !isExpanded);
             }
-            // On mobile, let the link work normally (navigate to the page)
+            // On desktop (>991px), let the link navigate to service.html or portfolio.html
         });
     });
 
