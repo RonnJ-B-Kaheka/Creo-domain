@@ -1,0 +1,504 @@
+/**
+ * BUTTON & LINK SYSTEM - GLOBAL STYLES
+ * Standardized interactive elements with smooth animations
+ *
+ * All buttons and links use consistent:
+ * - Transition timing: 200ms hover, 150ms click
+ * - Easing: ease-out for smooth deceleration
+ * - GPU acceleration with will-change
+ * - Accessibility: visible focus states, keyboard support
+ */
+
+/* ======================== */
+/* BUTTON BASE STYLES */
+/* ======================== */
+
+.btn {
+    max-width: max-content;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    min-height: 48px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding-inline: 24px;
+    overflow: hidden;
+    transition: all 200ms ease-out;
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    font-family: var(--ff-heading);
+    will-change: transform, box-shadow, background-color;
+}
+
+/* Remove clip-path for better transitions */
+.btn {
+    clip-path: none;
+}
+
+/* Hover state - smooth lift effect */
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(201, 168, 76, 0.3);
+}
+
+/* Active/clicked state - smooth press effect */
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(201, 168, 76, 0.2);
+}
+
+/* Focus state for keyboard accessibility */
+.btn:focus-visible {
+    outline: 3px solid #c9a84c;
+    outline-offset: 2px;
+}
+
+.btn:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Disabled state */
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+    transform: none;
+}
+
+/* ======================== */
+/* PRIMARY BUTTON (GOLD) */
+/* ======================== */
+
+.btn-primary {
+    background-color: #c9a84c;
+    color: var(--white) !important;
+    box-shadow: 0 4px 15px rgba(201, 168, 76, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: #d4b860;
+    box-shadow: 0 12px 30px rgba(201, 168, 76, 0.4);
+}
+
+.btn-primary:active {
+    background-color: #c9a84c;
+    box-shadow: 0 2px 8px rgba(201, 168, 76, 0.2);
+}
+
+/* Optional ripple effect on primary button */
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 400ms ease-out, height 400ms ease-out;
+    pointer-events: none;
+}
+
+.btn-primary:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* ======================== */
+/* SECONDARY BUTTON (OUTLINE) */
+/* ======================== */
+
+.btn-secondary {
+    background-color: transparent;
+    color: #c9a84c !important;
+    border: 2px solid #c9a84c;
+    clip-path: none;
+    box-shadow: none;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(201, 168, 76, 0.1);
+    border-color: #d4b860;
+    color: #d4b860 !important;
+    box-shadow: 0 8px 20px rgba(201, 168, 76, 0.2);
+}
+
+.btn-secondary:active {
+    background-color: rgba(201, 168, 76, 0.05);
+    border-color: #c9a84c;
+    box-shadow: none;
+}
+
+/* ======================== */
+/* TERTIARY BUTTON (TEXT) */
+/* ======================== */
+
+.btn-tertiary {
+    background-color: transparent;
+    color: #c9a84c !important;
+    box-shadow: none;
+    border: none;
+    padding-inline: 0;
+    position: relative;
+}
+
+.btn-tertiary::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #c9a84c;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 200ms ease-out;
+}
+
+.btn-tertiary:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.btn-tertiary:hover {
+    color: #d4b860 !important;
+}
+
+/* ======================== */
+/* BUTTON SIZES */
+/* ======================== */
+
+.btn-large {
+    min-height: 56px;
+    padding-inline: 32px;
+    font-size: 1.1rem;
+}
+
+.btn-medium {
+    min-height: 48px;
+    padding-inline: 24px;
+    font-size: 1rem;
+}
+
+.btn-small {
+    min-height: 40px;
+    padding-inline: 16px;
+    font-size: 0.9rem;
+}
+
+/* ======================== */
+/* BUTTON GROUPS */
+/* ======================== */
+
+.btn-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn-group .btn {
+    flex: 1;
+    min-width: 150px;
+}
+
+@media (max-width: 768px) {
+    .btn-group {
+        flex-direction: column;
+    }
+
+    .btn-group .btn {
+        width: 100%;
+    }
+}
+
+/* ======================== */
+/* LINK STYLES */
+/* ======================== */
+
+.text-link {
+    color: #c9a84c;
+    text-decoration: underline;
+    text-decoration-color: #c9a84c;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+    transition: all 200ms ease-out;
+    cursor: pointer;
+    will-change: color, text-decoration-color;
+}
+
+.text-link:hover {
+    color: #d4b860;
+    text-decoration-color: #d4b860;
+    text-underline-offset: 4px;
+}
+
+.text-link:active {
+    color: #c9a84c;
+    text-underline-offset: 2px;
+}
+
+.text-link:visited {
+    color: #a68835;
+    text-decoration-color: #a68835;
+}
+
+.text-link:focus-visible {
+    outline: 3px solid #c9a84c;
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* ======================== */
+/* NAVIGATION LINKS */
+/* ======================== */
+
+nav a,
+.nav-link {
+    color: #f5f2ec;
+    transition: all 200ms ease-out;
+    position: relative;
+    will-change: color;
+}
+
+nav a:hover,
+.nav-link:hover {
+    color: #c9a84c;
+}
+
+nav a:focus-visible,
+.nav-link:focus-visible {
+    outline: 3px solid #c9a84c;
+    outline-offset: 2px;
+}
+
+/* ======================== */
+/* CARD & SERVICE LINKS */
+/* ======================== */
+
+.link-card,
+.service-card,
+.project-card {
+    transition: all 250ms ease-out;
+    will-change: transform, box-shadow;
+}
+
+.link-card:hover,
+.service-card:hover,
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.link-card:active,
+.service-card:active,
+.project-card:active {
+    transform: translateY(-2px);
+}
+
+.link-card:focus-visible,
+.service-card:focus-visible,
+.project-card:focus-visible {
+    outline: 3px solid #c9a84c;
+    outline-offset: 4px;
+}
+
+/* ======================== */
+/* PLAY BUTTON (PORTFOLIO) */
+/* ======================== */
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(201, 168, 76, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 250ms ease-out;
+    will-change: transform, box-shadow;
+    z-index: 2;
+}
+
+.play-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 8px 25px rgba(201, 168, 76, 0.5);
+}
+
+.play-button:active {
+    transform: translate(-50%, -50%) scale(0.95);
+}
+
+.play-button ion-icon {
+    font-size: 2rem;
+    color: var(--white);
+}
+
+/* ======================== */
+/* FOOTER LINKS */
+/* ======================== */
+
+footer a {
+    color: rgba(245, 242, 236, 0.7);
+    transition: all 200ms ease-out;
+    will-change: color, opacity;
+}
+
+footer a:hover {
+    color: #c9a84c;
+    opacity: 1;
+}
+
+footer a:focus-visible {
+    outline: 3px solid #c9a84c;
+    outline-offset: 2px;
+}
+
+/* ======================== */
+/* FOCUS VISIBLE FALLBACK */
+/* ======================== */
+
+/* For browsers that don't support :focus-visible */
+.btn:focus,
+.text-link:focus,
+nav a:focus,
+footer a:focus,
+.link-card:focus,
+.service-card:focus,
+.project-card:focus {
+    outline: 3px solid #c9a84c;
+    outline-offset: 2px;
+}
+
+/* Remove outline for mouse users (pointer: coarse excludes touch) */
+@media (pointer: fine) {
+    .btn:focus:not(:focus-visible),
+    .text-link:focus:not(:focus-visible),
+    nav a:focus:not(:focus-visible),
+    footer a:focus:not(:focus-visible) {
+        outline: none;
+    }
+}
+
+/* ======================== */
+/* ACCESSIBILITY & REDUCED MOTION */
+/* ======================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .btn,
+    .text-link,
+    nav a,
+    footer a,
+    .link-card,
+    .service-card,
+    .project-card,
+    .play-button {
+        transition: none;
+        animation: none;
+    }
+}
+
+/* ======================== */
+/* FOCUS-WITHIN FOR CARDS */
+/* ======================== */
+
+.link-card:focus-within,
+.service-card:focus-within,
+.project-card:focus-within {
+    outline: 3px solid #c9a84c;
+    outline-offset: 4px;
+}
+
+/* ======================== */
+/* LOADING STATE */
+/* ======================== */
+
+.btn.is-loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.btn.is-loading::after {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--white);
+    animation: spin 600ms linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ======================== */
+/* RESPONSIVE ADJUSTMENTS */
+/* ======================== */
+
+@media (max-width: 768px) {
+    .btn {
+        min-height: 44px;
+        padding-inline: 20px;
+        font-size: 0.9rem;
+    }
+
+    .btn-large {
+        min-height: 48px;
+    }
+
+    .text-link {
+        font-size: 0.95rem;
+    }
+
+    /* Larger hover areas on mobile */
+    .link-card,
+    .service-card,
+    .project-card {
+        touch-action: manipulation;
+    }
+}
+
+/* ======================== */
+/* BUTTON ANIMATION HELPERS */
+/* ======================== */
+
+.btn {
+    position: relative;
+}
+
+/* Pulse effect helper class */
+.btn.has-pulse::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: currentColor;
+    opacity: 0;
+    animation: pulse-ring 1.5s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+}
